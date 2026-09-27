@@ -483,3 +483,24 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .post thead th { font: 600 13px/1.2 var(--mono); color: var(--text); letter-spacing: .03em; text-transform: uppercase; }
 .post tbody td { color: var(--muted); }
 .post tbody td:first-child { color: var(--text); font-weight: 500; }
+
+/* ── Pricing ──────────────────────────────────────────────────────────── */
+.price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; max-width: 820px; margin: 0 auto; align-items: start; }
+.plan { position: relative; display: flex; flex-direction: column; padding: 30px 28px; border-radius: 24px;
+  background: rgba(255, 255, 255, .025); border: 1px solid var(--line-2); }
+.plan.featured { border-color: rgba(70, 230, 255, .45);
+  background: linear-gradient(160deg, rgba(47, 107, 255, .16), rgba(70, 230, 255, .04) 60%, rgba(255, 255, 255, .02));
+  box-shadow: 0 30px 80px -34px rgba(47, 107, 255, .7); }
+.plan .badge { position: absolute; top: 16px; right: 18px; font: 600 11px/1 var(--mono); letter-spacing: .08em;
+  text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(70, 230, 255, .4); border-radius: 999px; padding: 6px 10px; }
+.plan-head h2 { font: 400 30px/1 var(--serif); margin-bottom: 12px; }
+.plan .amount { font: 400 clamp(40px, 5vw, 54px)/1 var(--serif); color: var(--text); }
+.plan .amount .once { font: 500 15px/1 var(--mono); color: var(--muted); }
+.plan .per { margin-top: 8px; font: 400 13px/1.4 var(--mono); color: var(--dim); }
+.plan .feat { list-style: none; margin: 22px 0; padding: 0; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+.plan .feat li { position: relative; padding-left: 26px; color: var(--muted); font-size: 15px; line-height: 1.45; }
+.plan .feat li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 12px; height: 7px;
+  border-left: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); transform: rotate(-45deg); }
+.plan .feat li b { color: var(--text); }
+.plan .plan-cta { width: 100%; justify-content: center; }
+@media (max-width: 720px) { .price-grid { grid-template-columns: 1fr; } }
