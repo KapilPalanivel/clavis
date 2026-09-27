@@ -207,7 +207,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 }
 
 /* ── Sections ────────────────────────────────────────────────────────── */
-section.block { position: relative; padding: clamp(96px, 12vw, 160px) 0; }
+.block { position: relative; padding: clamp(96px, 12vw, 160px) 0; }
 .block-head { display: grid; gap: 18px; max-width: 760px; margin-bottom: clamp(48px, 6vw, 80px); }
 .block-head.center { margin-inline: auto; text-align: center; justify-items: center; }
 .rule { height: 1px; background: linear-gradient(90deg, transparent, var(--line-2), transparent); }
