@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security — Clavis</title>
+  <meta name="description" content="How Clavis protects your files: AES-256-GCM, Argon2id, everything on your PC, signed updates. Written in plain English.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:title" content="How Clavis keeps your files private">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html" aria-current="page">Security</a>
+        <a href="blog.html">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero" id="top">
+      <div class="hero-mark-glow" aria-hidden="true"></div>
+      <img class="hero-mark" src="assets/img/icon-512.png" alt="" aria-hidden="true">
+      <div class="wrap intro">
+        <span class="eyebrow">Security &amp; trust</span>
+        <h1 class="display">Strong where <em>it matters.</em></h1>
+        <p class="lede">Clavis locks your files with the same encryption used to protect sensitive data worldwide — and it all happens on your own PC. Here's exactly how, in plain English, including the parts we're still honest about.</p>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="how">
+      <div class="wrap">
+        <div class="block-head">
+          <span class="eyebrow">How your files are locked</span>
+          <h2 class="h2">The encryption, <em>step by step.</em></h2>
+        </div>
+        <div class="principles">
+          <article class="principle"><span class="num">I.</span><h3>Your password becomes a key</h3><p>Clavis runs your password through <b>Argon2id</b> — a slow, memory-hard function built to resist brute-force and custom cracking hardware. The result is the key; the password itself is never stored or sent anywhere.</p></article>
+          <article class="principle" style="--d:.06s"><span class="num">II.</span><h3>Files are sealed with AES-256-GCM</h3><p><b>AES-256-GCM</b> is authenticated encryption: it both hides your data and detects any tampering. Large files are processed in 64&nbsp;KiB authenticated chunks, so even huge files encrypt with a small, steady memory footprint.</p></article>
+          <article class="principle"><span class="num">III.</span><h3>Integrity is checked on the way out</h3><p>Every chunk is verified as a file is decrypted. If a single byte was changed or corrupted, Clavis refuses the file instead of handing you bad data.</p></article>
+          <article class="principle" style="--d:.06s"><span class="num">IV.</span><h3>A recovery key, sealed to you</h3><p>The one-time recovery key lets you back in if you forget your password. It's protected with public-key cryptography (X25519) and shown only once — Clavis can't recover it for you, and neither can we.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="local">
+      <div class="wrap dl-grid">
+        <div class="panel">
+          <h2>Everything stays on your PC</h2>
+          <ul class="req">
+            <li>Accounts <span>None — nothing to sign up for</span></li>
+            <li>Your files <span>Never uploaded anywhere</span></li>
+            <li>Your password <span>Never leaves your computer</span></li>
+            <li>Works offline <span>Yes — encryption needs no internet</span></li>
+            <li>Goes online only <span>To check for updates</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Updates you can trust</h2>
+          <p>When Clavis updates itself, it doesn't just download a file and run it. Each update carries a cryptographic signature, and the app checks that signature before installing anything. An update that isn't properly signed is refused — so a tampered or fake update can't slip in.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="see" style="padding-top:0">
+      <div class="wrap">
+        <div class="block-head">
+          <span class="eyebrow">See it</span>
+          <h2 class="h2">Calm on top, <em>serious underneath.</em></h2>
+        </div>
+        <figure class="shot">
+          <img src="assets/img/app-light.png" alt="The Clavis app window on Windows" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <div class="rule"></div>
+
+    <section class="block" id="honest">
+      <div class="wrap">
+        <div class="block-head">
+          <span class="eyebrow">Plain honesty</span>
+          <h2 class="h2">What we don't <em>pretend.</em></h2>
+        </div>
+        <dl class="specs">
+          <div class="spec"><dt>Source code</dt><dd>Clavis is closed-source today. The crypto it uses (AES-256-GCM, Argon2id, X25519) is public, standard and widely trusted.</dd></div>
+          <div class="spec"><dt>Independent audit</dt><dd>Not yet formally audited. We don't claim otherwise.</dd></div>
+          <div class="spec"><dt>Deleting originals</dt><dd>Best effort. On SSDs, cloud folders and drives with shadow copies, the OS may keep remnants — the app tells you this.</dd></div>
+          <div class="spec"><dt>The Windows warning</dt><dd>The installer isn't signed with a paid certificate yet, so Windows may show “unknown publisher.” It doesn't mean anything is wrong — see below.</dd></div>
+          <div class="spec"><dt>Lost password &amp; recovery key</dt><dd>If you lose both, your files cannot be opened — by anyone. That's the point of real encryption.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block" id="verify" style="padding-top:0">
+      <div class="wrap dl-grid">
+        <div class="panel">
+          <h2>Verify it yourself</h2>
+          <p>Don't just take our word for it. Before installing, you can upload the file to <a href="https://www.virustotal.com/gui/home/upload">VirusTotal</a> and see it scanned by dozens of antivirus engines at once.</p>
+          <p>Prefer no installer at all? Use the <a href="download.html">portable ZIP</a> — unzip it and run <b>Clavis.exe</b> directly. Nothing is written to system folders.</p>
+        </div>
+        <div class="panel faq">
+          <h2>Questions</h2>
+          <details><summary>Can you or anyone recover my files?</summary><p>No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked.</p></details>
+          <details><summary>Is my password sent anywhere?</summary><p>Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it.</p></details>
+          <details><summary>Why does Windows warn me?</summary><p>The installer isn't signed with a paid certificate yet. Click <b>More info → Run anyway</b>, or scan it on VirusTotal first.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <img class="mark" src="assets/img/icon-192.png" alt="" width="104" height="104">
+        <h2 class="h2">Your key, <em>your files.</em></h2>
+        <p class="lede">Download Clavis for Windows and keep control of your own data.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Download for Windows
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>

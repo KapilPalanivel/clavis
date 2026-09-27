@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt a folder on Windows (free) — Clavis</title>
+  <meta name="description" content="Four free ways to encrypt a folder on Windows 10 and 11 — EFS, a 7-Zip archive, BitLocker and a dedicated app — with the trade-offs of each.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt a folder on Windows (free)">
+  <meta property="og:description" content="Four free ways to encrypt a folder on Windows 10 and 11, and how to pick the right one.">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How to encrypt a folder on Windows (free)","datePublished":"2026-09-27","author":{"@type":"Person","name":"Kapil Palanivel"},"image":"https://clavis.is-a.dev/assets/img/og.png"}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · September 27, 2026</p>
+        <h1>How to encrypt a folder on Windows (free)</h1>
+        <p>If you keep tax returns, ID scans, contracts or private photos on your PC, encrypting them means that even if your laptop is lost, stolen or snooped on, those files stay unreadable without your password. Windows gives you a few built-in options, and there are free apps that make it simpler. Here are four ways, and how to choose.</p>
+
+        <h2>1. Windows EFS (“Encrypt contents to secure data”)</h2>
+        <p>Right-click a folder → <strong>Properties → Advanced → “Encrypt contents to secure data.”</strong> Windows encrypts the folder transparently, tied to your Windows user account.</p>
+        <ul>
+          <li><strong>Good:</strong> built in, no download, invisible once set up.</li>
+          <li><strong>Catch:</strong> only on Windows <strong>Pro/Enterprise</strong> (not Home). It's tied to your Windows login, so if that profile breaks and you didn't export the key, the files are gone. It doesn't help if someone has your unlocked account.</li>
+        </ul>
+
+        <h2>2. A password-protected 7-Zip archive</h2>
+        <p>Install the free <a href="https://www.7-zip.org/">7-Zip</a>, right-click the folder → <strong>7-Zip → Add to archive</strong>, set the format to 7z, and enter a password (tick <em>Encrypt file names</em>). It uses AES-256.</p>
+        <ul>
+          <li><strong>Good:</strong> free, works on any edition of Windows, strong encryption.</li>
+          <li><strong>Catch:</strong> you're managing a separate archive file. To use anything inside you extract the whole thing, and it's easy to leave decrypted copies lying around.</li>
+        </ul>
+
+        <h2>3. BitLocker</h2>
+        <p>BitLocker encrypts an entire drive, not a single folder. Useful for whole-disk protection on a laptop.</p>
+        <ul>
+          <li><strong>Good:</strong> protects everything if the machine is lost or stolen.</li>
+          <li><strong>Catch:</strong> Pro/Enterprise only, and it's all-or-nothing — no per-folder control. Once you're logged in, the files are open.</li>
+        </ul>
+
+        <h2>4. A dedicated encryption app</h2>
+        <p>A purpose-built app gives you per-file and per-folder encryption on any edition of Windows, with a proper way back in if you forget your password. That's the gap <a href="./">Clavis</a> fills — free, local, no account.</p>
+
+        <div class="callout">
+          <b>With Clavis:</b> install it, create a vault with a password, and keep the one-time recovery key it shows you. Then drag a file or folder in, press <b>Encrypt</b>, and it's locked with AES-256-GCM. Drag it back and press <b>Decrypt</b> to open it. Everything happens on your PC — nothing is uploaded.
+        </div>
+
+        <figure class="shot"><img src="assets/img/app-light.png" alt="Encrypting a folder in Clavis on Windows" loading="lazy"></figure>
+
+        <h2>Which should you use?</h2>
+        <ul>
+          <li><strong>Just need a quick locked bundle?</strong> A 7-Zip archive is fine.</li>
+          <li><strong>On Windows Pro and want whole-disk cover?</strong> BitLocker.</li>
+          <li><strong>Want simple, per-folder encryption on any Windows, with a recovery key?</strong> Use a dedicated app like Clavis.</li>
+        </ul>
+
+        <h2>Whatever you choose, remember two things</h2>
+        <p><strong>Use a strong, unique password</strong> — real encryption is only as strong as the password behind it. And <strong>keep a way back in.</strong> Good encryption means nobody can open your files without the password — including you. A recovery key or an exported key is what saves you if you forget it.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
