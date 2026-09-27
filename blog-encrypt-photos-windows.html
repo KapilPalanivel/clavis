@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt photos on Windows (free) — Clavis</title>
+  <meta name="description" content="Lock private photos on Windows for free — stop them syncing to the cloud, encrypt the folder, and clear the leftovers most guides forget.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt photos on Windows (free)">
+  <meta property="og:description" content="Lock private photos on Windows for free, and clear the cloud copies and thumbnails most guides forget.">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How to encrypt photos on Windows (free)","datePublished":"2026-09-27","author":{"@type":"Person","name":"Kapil Palanivel"},"image":"https://clavis.is-a.dev/assets/img/og.png"}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · September 27, 2026</p>
+        <h1>How to encrypt photos on Windows (free)</h1>
+        <p>Some photos are just for you. Locking them on Windows is free and quick — but photos have a twist that most guides skip: copies of them often already sit in the cloud and in Windows' own caches. Here's how to encrypt your photos properly, and clear the leftovers so "private" actually means private.</p>
+
+        <h2>Step 1: stop them syncing to the cloud first</h2>
+        <p>This is the step people forget. If your photos live in a folder that auto-syncs — OneDrive's Camera Roll, Google Photos backup, iCloud for Windows — then a copy is <em>already</em> on someone's server before you encrypt anything. Do this first:</p>
+        <ul>
+          <li><strong>Move the photos out</strong> of any synced folder (OneDrive, Google Drive, Dropbox) into a local-only folder, e.g. <code>C:\Users\You\Private</code>.</li>
+          <li><strong>Turn off camera/photo backup</strong> in OneDrive settings and any Google Photos / iCloud desktop app.</li>
+          <li>If copies were already uploaded, <strong>delete them from the cloud</strong> too (including its trash/recently-deleted).</li>
+        </ul>
+
+        <h2>Step 2: encrypt the photos</h2>
+        <p>Now lock them locally. Two good free options:</p>
+
+        <h3>Option A — a password-protected 7-Zip archive</h3>
+        <p>Install the free <a href="https://www.7-zip.org/">7-Zip</a>, select your photos, right-click → <strong>7-Zip → Add to archive</strong>, choose the <strong>7z</strong> format, set a password and tick <em>Encrypt file names</em>. It uses AES-256. Good for a one-off bundle you'll tuck away.</p>
+
+        <h3>Option B — encrypt the folder with a dedicated app</h3>
+        <p>For a whole folder of photos you'll keep adding to, a dedicated app is smoother than repacking an archive each time. <a href="./">Clavis</a> encrypts a folder in place with <strong>AES-256-GCM</strong>, on your PC, and gives you a recovery key in case you forget the password.</p>
+        <div class="callout">
+          <b>With Clavis:</b> drag your photo folder in, press <b>Encrypt</b>, set a strong password. The photos become locked files only your password opens. To view them, decrypt the folder. Nothing is uploaded — it all happens on your computer.
+        </div>
+
+        <figure class="shot"><img src="assets/img/app-light.png" alt="Encrypting a photo folder with Clavis on Windows" loading="lazy"></figure>
+
+        <p><strong>On Windows Pro?</strong> You can also right-click the folder → Properties → Advanced → <em>Encrypt contents to secure data</em> (EFS). It's tied to your Windows account, so export the key as a backup — and note it doesn't help if someone is already using your unlocked account.</p>
+
+        <h2>Step 3: clear the leftovers (the part guides miss)</h2>
+        <p>After encrypting, plain copies can linger. Tidy them:</p>
+        <ul>
+          <li><strong>Delete the original photos</strong> once you've confirmed the encrypted copies open. (Deleting is best effort on SSDs — the OS may keep remnants — but it removes the obvious copies.)</li>
+          <li><strong>Empty the Recycle Bin.</strong></li>
+          <li><strong>Clear thumbnail cache:</strong> run <em>Disk Cleanup</em> → tick <em>Thumbnails</em>. Windows caches small previews of your images.</li>
+          <li><strong>Check the Photos app</strong> and any editor's "recent files" for previews.</li>
+        </ul>
+
+        <div class="callout">
+          <b>Avoid "lock my photos" apps and websites you don't know.</b> Many upload your images to their servers, or are just a hidden folder with no real encryption. If a photo is private enough to lock, don't hand it to a random app first — encrypt it yourself, on your PC.
+        </div>
+
+        <h2>Two habits that decide everything</h2>
+        <ul>
+          <li><strong>Use a strong, unique password.</strong> Your photos are only as protected as the password on them.</li>
+          <li><strong>Keep your recovery key or password safe.</strong> Real encryption means a forgotten password locks <em>you</em> out too — store the recovery key somewhere separate.</li>
+        </ul>
+
+        <p>Encrypting photos on Windows is easy; the discipline is clearing the cloud copies and caches around them. Do both and your private photos stay private. <a href="./">Clavis</a> handles the encryption in two clicks — the <a href="security.html">Security page</a> explains how.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
