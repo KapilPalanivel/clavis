@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why local encryption beats trusting the cloud — Clavis</title>
+  <meta name="description" content="The cloud is convenient, but you hand over control of your files. Here's why local encryption keeps the keys in your hands — and how to safely use both together.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Why local encryption beats trusting the cloud">
+  <meta property="og:description" content="Why local encryption keeps the keys in your hands, and how to safely use cloud storage on top of it.">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Why local encryption beats trusting the cloud","datePublished":"2026-09-27","author":{"@type":"Person","name":"Kapil Palanivel"},"image":"https://clavis.is-a.dev/assets/img/og.png"}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Opinion · September 27, 2026</p>
+        <h1>Why local encryption beats trusting the cloud</h1>
+        <p>Cloud storage is genuinely useful — your files follow you to every device, they're backed up, and sharing is a link away. But there's a quiet trade you make: your private files now live on someone else's computers, under someone else's rules. Local encryption changes who's actually in control. And the good news is you don't have to choose one or the other.</p>
+
+        <h2>What "it's in the cloud" really means</h2>
+        <p>When you drop files into a mainstream cloud service, a few things are true even if nothing ever goes wrong:</p>
+        <ul>
+          <li><strong>The provider usually holds the keys.</strong> Most consumer clouds encrypt files on their servers — but they hold the keys, which means they (and anyone who compels them) can read your files.</li>
+          <li><strong>Your files can be scanned.</strong> Automated systems inspect uploads for policy and legal reasons. Sometimes that flags innocent files.</li>
+          <li><strong>It's a giant target.</strong> A single breach of a big provider exposes millions of accounts at once. You inherit their risk.</li>
+          <li><strong>Your account can be locked.</strong> A wrong automated decision can cut you off from your own files, sometimes with little recourse.</li>
+          <li><strong>The terms can change.</strong> Pricing, features and policies shift, and your data is along for the ride.</li>
+        </ul>
+
+        <h2>The local-first difference</h2>
+        <p>Encrypting files on your own PC flips the control back to you:</p>
+        <ul>
+          <li><strong>Only you hold the key.</strong> Your password never leaves your machine. No provider — and nobody who leans on a provider — can open your files.</li>
+          <li><strong>It works offline.</strong> No account, no network needed to lock or unlock your data.</li>
+          <li><strong>You're not in the blast radius.</strong> There's no central pile of your plaintext for a breach to spill.</li>
+          <li><strong>Nothing to be locked out of.</strong> Your files sit on your disk; no company stands between you and them.</li>
+        </ul>
+
+        <h2>Being fair: the cloud isn't the enemy</h2>
+        <p>Let's not pretend. The cloud earns its place: effortless sync across devices, automatic backup if your laptop dies, and easy sharing. Going purely local means <em>you</em> own the backup problem — if your only copy is on one drive and it fails, that's on you. So the honest answer isn't "never use the cloud." It's "don't hand the cloud your files in the clear."</p>
+
+        <h2>The best of both: encrypt first, then sync</h2>
+        <p>Here's the move that gives you convenience <em>and</em> control: <strong>encrypt files on your PC, then put the encrypted files in your cloud.</strong> The provider only ever sees scrambled data. You still get sync, backup and sharing — but your privacy no longer depends on trusting them.</p>
+        <div class="callout">
+          <b>With Clavis:</b> encrypt a file or folder locally (AES-256-GCM), then drop the resulting encrypted file into your OneDrive, Google Drive or Dropbox folder. It syncs everywhere as unreadable ciphertext. To open it, sync it back and decrypt with your password. The cloud becomes just storage — it never holds your key.
+        </div>
+
+        <figure class="shot"><img src="assets/img/app-light.png" alt="Encrypting files locally with Clavis before syncing to the cloud" loading="lazy"></figure>
+
+        <h2>Local vs cloud, at a glance</h2>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>&nbsp;</th><th>Cloud (as-is)</th><th>Local encryption</th><th>Encrypt + sync</th></tr></thead>
+          <tbody>
+            <tr><td>Who holds the key</td><td>The provider</td><td>You</td><td>You</td></tr>
+            <tr><td>Provider can read files</td><td>Usually yes</td><td>No</td><td>No</td></tr>
+            <tr><td>Sync across devices</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+            <tr><td>Automatic backup</td><td>Yes</td><td>Up to you</td><td>Yes</td></tr>
+            <tr><td>Works offline</td><td>Limited</td><td>Yes</td><td>Yes</td></tr>
+            <tr><td>Exposed in a provider breach</td><td>Yes</td><td>No</td><td>No (ciphertext only)</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h2>Two things to keep in mind</h2>
+        <ul>
+          <li><strong>Use a strong password.</strong> When you hold the key, the password is everything. Make it long and unique.</li>
+          <li><strong>Keep your recovery key.</strong> The flip side of "only you can open it" is that losing your password locks you out too. Store the recovery key somewhere safe.</li>
+        </ul>
+
+        <p>Local encryption isn't about fearing the cloud — it's about not outsourcing the one thing you shouldn't: the key to your own files. <a href="./">Clavis</a> is built for exactly this, and the <a href="security.html">Security page</a> shows how it works.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
