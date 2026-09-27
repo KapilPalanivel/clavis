@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AES-256-GCM and Argon2id, in plain English — Clavis</title>
+  <meta name="description" content="What AES-256-GCM and Argon2id actually mean, without the math — the two building blocks behind modern file encryption, explained simply.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AES-256-GCM and Argon2id, in plain English">
+  <meta property="og:description" content="The two building blocks behind modern file encryption, explained without the math.">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"AES-256-GCM and Argon2id, in plain English","datePublished":"2026-09-27","author":{"@type":"Person","name":"Kapil Palanivel"},"image":"https://clavis.is-a.dev/assets/img/og.png"}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Explainer · September 27, 2026</p>
+        <h1>AES-256-GCM and Argon2id, in plain English</h1>
+        <p>Open the settings of almost any serious encryption tool — Clavis included — and you'll meet two names: <strong>AES-256-GCM</strong> and <strong>Argon2id</strong>. They sound like robot serial numbers. They're actually the two jobs behind locking a file with a password: turning your password into a key, and using that key to seal your data. Here's what each one does, no math required.</p>
+
+        <h2>The problem: a password isn't a key</h2>
+        <p>Encryption needs a <em>key</em> — a long, random-looking value. But humans type <em>passwords</em>, which are short and predictable. If a tool just used your password directly as the key, weak passwords would mean weak encryption. So the first job is turning a password into a proper key. That's Argon2id. The second job is using that key to lock the data. That's AES-256-GCM.</p>
+
+        <h2>Argon2id: turning a password into a key</h2>
+        <p>Argon2id is a <strong>password hashing function</strong>. It takes your password and grinds it into a fixed-size key. The clever part is that it's <strong>deliberately slow and memory-hungry</strong>.</p>
+        <p>Why would slow be good? Because attackers guess passwords by trying billions of them. If turning one password into a key takes real time and a chunk of memory, the attacker's billions of guesses suddenly cost enormous time and hardware. Argon2id won the international Password Hashing Competition precisely because it resists the custom cracking rigs (GPUs, ASICs) that chew through older methods.</p>
+        <p>Two more pieces:</p>
+        <ul>
+          <li><strong>Salt</strong> — a random value mixed in so that two people with the same password still get different keys. It stops attackers from pre-computing answers.</li>
+          <li><strong>The "id" variant</strong> — a blend of Argon2's two modes that defends against both memory-inspection and timing attacks. It's the recommended default.</li>
+        </ul>
+        <div class="callout"><b>Analogy:</b> a password is a short note; Argon2id is a slow, elaborate machine that turns that note into a one-of-a-kind key. Making a single key is fine for you; making billions is a nightmare for an attacker.</div>
+
+        <h2>AES-256-GCM: locking the data</h2>
+        <p>AES (Advanced Encryption Standard) is the encryption the world runs on — governments, banks and browsers all use it. Let's unpack the full name:</p>
+        <ul>
+          <li><strong>AES</strong> — the cipher itself: proven, fast, everywhere.</li>
+          <li><strong>256</strong> — the key size in bits. A 256-bit key has so many possible values that trying them all is beyond any computer that will ever exist. This is where "brute force is hopeless" actually comes from.</li>
+          <li><strong>GCM</strong> (Galois/Counter Mode) — the mode it runs in. GCM doesn't just scramble your data; it also produces an <strong>authentication tag</strong> that detects tampering.</li>
+        </ul>
+        <p>That last part matters more than people expect. Plain encryption hides your data but can't always tell you if someone flipped a few bytes. GCM is <strong>authenticated encryption</strong>: on decryption it checks the tag, and if anything was altered — even one byte — it refuses to hand you the file instead of quietly giving you corrupted data.</p>
+        <div class="callout"><b>Analogy:</b> AES-256 is a bank-vault lock; GCM adds a tamper-evident seal across the door. If the seal is broken, you know not to trust what's inside.</div>
+
+        <h2>Why the two together</h2>
+        <p>They cover different halves of the same job. Argon2id makes sure a human-friendly password becomes a strong key that's painful to guess. AES-256-GCM uses that key to seal your data and prove it wasn't tampered with. Weak key derivation would undermine great encryption; great key derivation with weak encryption would be pointless. You want both — which is why modern tools pair them.</p>
+
+        <h2>The jargon, decoded</h2>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>Term</th><th>In plain English</th></tr></thead>
+          <tbody>
+            <tr><td>Argon2id</td><td>Turns your password into a strong key, slowly, to defeat guessing</td></tr>
+            <tr><td>Salt</td><td>Random spice so identical passwords don't make identical keys</td></tr>
+            <tr><td>AES</td><td>The world-standard encryption cipher</td></tr>
+            <tr><td>256-bit key</td><td>A key so large that brute force is effectively impossible</td></tr>
+            <tr><td>GCM</td><td>A mode that also detects tampering (authenticated encryption)</td></tr>
+            <tr><td>Authentication tag</td><td>The tamper-evident seal checked when you decrypt</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h2>What this does <em>not</em> protect against</h2>
+        <p>Strong crypto is not magic. Being honest about the edges:</p>
+        <ul>
+          <li><strong>A weak password.</strong> Argon2id slows guessing, but "password123" still falls. Use a long, unique password.</li>
+          <li><strong>Malware while a file is open.</strong> Once you decrypt and open a file, it's plain data on your PC. Encryption can't protect what's already unlocked in front of you.</li>
+          <li><strong>Forgetting everything.</strong> If you lose your password and your recovery key, no one — not even the app's maker — can open your files. That's the whole point.</li>
+        </ul>
+
+        <p>This is exactly the pairing <a href="./">Clavis</a> uses: your password becomes a key with Argon2id, and your files are sealed with AES-256-GCM, all on your own PC. If you want the specifics, the <a href="security.html">Security page</a> lays them out.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
