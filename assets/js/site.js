@@ -197,3 +197,19 @@
     document.getElementById(solo).style.paddingTop = "120px";
   }
 })();
+
+/* ── Privacy-friendly analytics (GoatCounter) ─────────────────────────────
+   No cookies, no personal data, no cross-site tracking — so no cookie banner
+   is needed. Set ENDPOINT to your GoatCounter URL (from goatcounter.com signup);
+   this is the ONLY place to change it. Leave "" to disable. */
+(() => {
+  "use strict";
+  const ENDPOINT = "https://clavis.goatcounter.com/count";
+  const host = location.hostname;
+  if (!ENDPOINT || host === "localhost" || host === "127.0.0.1" || host === "") return;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "//gc.zgo.at/count.js";
+  s.setAttribute("data-goatcounter", ENDPOINT);
+  document.head.appendChild(s);
+})();
