@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A simpler VeraCrypt alternative for everyday files (Windows) — Clavis</title>
+  <meta name="description" content="VeraCrypt is powerful but built for volumes and whole disks. If you just want to lock a few files on Windows, here's a simpler alternative — and when to stick with VeraCrypt.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A simpler VeraCrypt alternative for everyday files (Windows)">
+  <meta property="og:description" content="When VeraCrypt is overkill for just locking a few files — a simpler per-file option, and when to stick with VeraCrypt.">
+  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"A simpler VeraCrypt alternative for everyday files (Windows)","datePublished":"2026-09-27","author":{"@type":"Person","name":"Kapil Palanivel"},"image":"https://clavis.is-a.dev/assets/img/og.png"}
+  </script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Comparison · September 27, 2026</p>
+        <h1>A simpler VeraCrypt alternative for everyday files (Windows)</h1>
+        <p><a href="https://www.veracrypt.fr/">VeraCrypt</a> is one of the most respected encryption tools around — open-source, independently audited, and trusted for serious work. But it's built around <strong>encrypted volumes and whole disks</strong>, and for a lot of people that's more than they need. If you just want to lock a handful of files or a folder on Windows, there's a simpler path. This post is an honest look at both — including when you should stick with VeraCrypt.</p>
+
+        <h2>What VeraCrypt is genuinely great at</h2>
+        <p>Credit where it's due. VeraCrypt is excellent, and for some needs it's the right answer:</p>
+        <ul>
+          <li><strong>Open-source and audited</strong> — anyone can inspect the code, and it has been through independent security audits.</li>
+          <li><strong>Encrypted volumes</strong> — you create a container (or encrypt a whole drive/USB) and mount it as a drive letter.</li>
+          <li><strong>Hidden volumes / plausible deniability</strong> — a volume inside a volume, for high-threat situations.</li>
+          <li><strong>Cross-platform</strong> — Windows, macOS and Linux.</li>
+        </ul>
+
+        <h2>Where people find it heavy</h2>
+        <p>The power comes with friction, especially if you only want to protect a few files:</p>
+        <ul>
+          <li>You think in <strong>containers and drive letters</strong>, not files. You create a volume, decide its size up front, then mount and unmount it.</li>
+          <li>There's a real <strong>learning curve</strong> — volume types, encryption/hash choices, keyfiles, mount options.</li>
+          <li>It's built for volumes, so <strong>"just encrypt this one folder and send it"</strong> isn't the natural workflow.</li>
+        </ul>
+
+        <h2>The simpler alternative: per-file encryption</h2>
+        <p>If your goal is "lock these files with a password," a per-file encryption app is a better fit than a volume manager. That's what <a href="./">Clavis</a> does: you pick a password, drag a file or folder in, press <strong>Encrypt</strong>. No containers, no mounting, no size to decide in advance. It uses <strong>AES-256-GCM</strong> with <strong>Argon2id</strong> password hardening, runs entirely on your PC, and gives you a one-time <strong>recovery key</strong> in case you forget your password.</p>
+
+        <figure class="shot"><img src="assets/img/app-light.png" alt="Clavis encrypting files on Windows" loading="lazy"></figure>
+
+        <h2>Honest comparison</h2>
+        <div class="table-wrap">
+        <table>
+          <thead><tr><th>&nbsp;</th><th>VeraCrypt</th><th>Clavis</th></tr></thead>
+          <tbody>
+            <tr><td>Model</td><td>Encrypted volumes &amp; whole disks</td><td>Per file &amp; per folder</td></tr>
+            <tr><td>Workflow</td><td>Create, mount, unmount a volume</td><td>Drag in, press Encrypt</td></tr>
+            <tr><td>Encryption</td><td>AES / others, XTS</td><td>AES-256-GCM, Argon2id</td></tr>
+            <tr><td>Open-source</td><td>Yes</td><td>No (closed-source)</td></tr>
+            <tr><td>Independent audit</td><td>Yes</td><td>Not yet</td></tr>
+            <tr><td>Forgot-password recovery</td><td>No (by design)</td><td>One-time recovery key</td></tr>
+            <tr><td>Platforms</td><td>Windows, macOS, Linux</td><td>Windows 10 &amp; 11</td></tr>
+            <tr><td>Learning curve</td><td>Moderate–steep</td><td>Minimal</td></tr>
+            <tr><td>Price</td><td>Free</td><td>Free</td></tr>
+          </tbody>
+        </table>
+        </div>
+
+        <h2>So which should you use?</h2>
+        <p><strong>Stick with VeraCrypt if</strong> you need open-source and audited software, whole-disk or USB encryption, hidden volumes / plausible deniability, or the same tool across Windows, macOS and Linux. For high-stakes threat models, an audited open-source tool is the safer default — and we'll say that plainly.</p>
+        <p><strong>Clavis is the simpler choice if</strong> you're on Windows, you want to lock individual files and folders without learning volumes, and you'd like a recovery key so a forgotten password doesn't mean lost files.</p>
+
+        <div class="callout">
+          <b>Being straight with you:</b> Clavis is closed-source and not yet independently audited, and its installer isn't signed with a paid certificate yet. If those matter for your threat model, VeraCrypt is the better pick. See the <a href="security.html">Security page</a> for exactly how Clavis works and how to verify the download.
+        </div>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>

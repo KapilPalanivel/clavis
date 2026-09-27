@@ -473,3 +473,11 @@ section.block { position: relative; padding: clamp(96px, 12vw, 160px) 0; }
   background: linear-gradient(135deg, rgba(47, 107, 255, .12), rgba(70, 230, 255, .03)); color: var(--text); font-size: 15.5px; }
 .post .callout b { color: var(--cyan); }
 .post-cta { margin-top: 40px; text-align: center; }
+
+/* ── Prose tables (blog comparisons) ──────────────────────────────────── */
+.post .table-wrap { overflow-x: auto; margin: 24px 0; }
+.post table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 460px; }
+.post th, .post td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line-2); vertical-align: top; }
+.post thead th { font: 600 13px/1.2 var(--mono); color: var(--text); letter-spacing: .03em; text-transform: uppercase; }
+.post tbody td { color: var(--muted); }
+.post tbody td:first-child { color: var(--text); font-weight: 500; }
