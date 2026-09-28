@@ -1,0 +1,5 @@
+Contact: mailto:clavis.enc@gmail.com
+Expires: 2027-09-27T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://kapilpalanivel.github.io/clavis/.well-known/security.txt
+Policy: https://kapilpalanivel.github.io/clavis/security.html

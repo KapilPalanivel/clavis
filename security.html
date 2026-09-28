@@ -7,8 +7,13 @@
   <meta name="description" content="How Clavis protects your files: AES-256-GCM, Argon2id, everything on your PC, signed updates. Written in plain English.">
   <meta name="theme-color" content="#05080F">
   <meta property="og:title" content="How Clavis keeps your files private">
-  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta property="og:image" content="https://kapilpalanivel.github.io/clavis/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kapilpalanivel.github.io/clavis/security.html">
+  <meta property="og:url" content="https://kapilpalanivel.github.io/clavis/security.html">
+  <meta property="og:site_name" content="Clavis">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="How Clavis protects your files: AES-256-GCM, Argon2id, everything on your PC, signed updates. Written in plain English.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -16,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you or anyone recover my files?","acceptedAnswer":{"@type":"Answer","text":"No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked."}},{"@type":"Question","name":"Is my password sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it."}},{"@type":"Question","name":"Why does Windows warn me?","acceptedAnswer":{"@type":"Answer","text":"The installer isn't signed with a paid certificate yet. Click More info → Run anyway, or scan it on VirusTotal first."}}]}</script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -121,7 +127,7 @@
       <div class="wrap dl-grid">
         <div class="panel">
           <h2>Verify it yourself</h2>
-          <p>Don't just take our word for it. Before installing, you can upload the file to <a href="https://www.virustotal.com/gui/home/upload">VirusTotal</a> and see it scanned by dozens of antivirus engines at once.</p>
+          <p>Don't just take our word for it. The <a href="download.html">download page</a> lists the SHA-256 checksum of every file, so you can confirm yours is exactly what was published (in PowerShell: <code>Get-FileHash .\Clavis-Setup.exe</code>). You can also upload the file to <a href="https://www.virustotal.com/gui/home/upload">VirusTotal</a> to have it scanned by dozens of antivirus engines at once.</p>
           <p>Prefer no installer at all? Use the <a href="download.html">portable ZIP</a> — unzip it and run <b>Clavis.exe</b> directly. Nothing is written to system folders.</p>
         </div>
         <div class="panel faq">

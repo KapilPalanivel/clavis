@@ -1,0 +1,52 @@
+# Clavis
+
+> Clavis is a file-encryption app for Windows 10 and 11, made by Kapil Palanivel. It encrypts files on the user's own PC with AES-256-GCM, deriving keys from the user's password with Argon2id. There is no account and no cloud: files, passwords and recovery keys are never uploaded, so only the user holds the key.
+
+Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
+
+Current version: 2.3.1, released 2026-09-26. Installer: Clavis-Setup.exe (42 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+
+## Key facts
+
+- Platform: Windows 10 and Windows 11, 64-bit. Per-user install; no administrator rights needed.
+- Encryption: AES-256-GCM authenticated encryption. Large files are processed as a stream of 64 KiB authenticated chunks, so memory use stays small. Integrity is verified on every decrypt; a tampered or corrupted file is refused.
+- Keys: the password is turned into a key with Argon2id (memory-hard). Encrypted files hide their original names.
+- Recovery: an optional one-time recovery key, protected with X25519 public-key cryptography, lets the user back in after forgetting the password. It is shown once; the developer cannot recover it.
+- Privacy: everything runs locally. The app only goes online to check for updates; updates are signed with Ed25519 and verified before they install. The website uses cookieless, privacy-friendly analytics.
+- Other features: auto-lock on system sleep and Windows lock, session timeout, best-effort secure delete, drag and drop, light and dark themes, activity history.
+
+## Editions and price
+
+- Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks. Security features are never paywalled.
+- Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), launching soon. Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files) and a key-file second factor. Licensing works offline with no account.
+- The Free/Pro split applies from version 3.0; earlier versions include every feature.
+
+## Honest limitations
+
+- Clavis is closed-source and has not been independently audited. It uses standard, public cryptography (AES-256-GCM, Argon2id, X25519, Ed25519).
+- The installer is not yet signed with a code-signing certificate, so Windows SmartScreen may show "unknown publisher" until it is.
+- Secure delete is best effort: SSDs, cloud-synced folders and shadow copies may keep remnants.
+- If both the password and the recovery key are lost, the files cannot be recovered by anyone.
+- Windows only; there are no macOS, Linux or mobile versions.
+
+## Pages
+
+- [Home](https://kapilpalanivel.github.io/clavis/): overview
+- [Download](https://kapilpalanivel.github.io/clavis/download.html): installer, portable ZIP, checksums, install steps, FAQ
+- [Security](https://kapilpalanivel.github.io/clavis/security.html): how the encryption works in plain English, and its limits
+- [Pricing](https://kapilpalanivel.github.io/clavis/pricing.html): Free vs Pro
+- [About](https://kapilpalanivel.github.io/clavis/about.html): why Clavis exists and technical specifications
+- [Privacy policy](https://kapilpalanivel.github.io/clavis/privacy.html) and [Terms](https://kapilpalanivel.github.io/clavis/terms.html)
+
+## Guides
+
+- [How to encrypt a folder on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-encrypt-folder-on-windows.html)
+- [A simpler VeraCrypt alternative for everyday files](https://kapilpalanivel.github.io/clavis/blog-veracrypt-alternative.html)
+- [AES-256-GCM and Argon2id, in plain English](https://kapilpalanivel.github.io/clavis/blog-aes-256-gcm-argon2id-explained.html)
+- [Why local encryption beats trusting the cloud](https://kapilpalanivel.github.io/clavis/blog-local-vs-cloud-encryption.html)
+- [How to password-protect a PDF on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-password-protect-pdf-windows.html)
+- [How to encrypt photos on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-encrypt-photos-windows.html)
+
+## Contact
+
+- Email: clavis.enc@gmail.com

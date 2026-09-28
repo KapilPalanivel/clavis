@@ -7,8 +7,13 @@
   <meta name="description" content="Download Clavis for Windows 10 and 11. One installer, no administrator rights needed.">
   <meta name="theme-color" content="#05080F">
   <meta property="og:title" content="Download Clavis for Windows">
-  <meta property="og:image" content="https://clavis.is-a.dev/assets/img/og.png">
+  <meta property="og:image" content="https://kapilpalanivel.github.io/clavis/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://kapilpalanivel.github.io/clavis/download.html">
+  <meta property="og:url" content="https://kapilpalanivel.github.io/clavis/download.html">
+  <meta property="og:site_name" content="Clavis">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Download Clavis for Windows 10 and 11. One installer, no administrator rights needed.">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -16,6 +21,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where are my files and vaults kept?","acceptedAnswer":{"@type":"Answer","text":"On your PC only. Encrypted files stay where you put them, and your vault settings live in your Windows user folder."}},{"@type":"Question","name":"How do updates work?","acceptedAnswer":{"@type":"Answer","text":"Clavis checks once a day (or when you choose Settings → Updates → Check now). Updates are small, and you choose when the app restarts."}},{"@type":"Question","name":"What if I forget my password?","acceptedAnswer":{"@type":"Answer","text":"Use the recovery key Clavis gave you when you created your vault — choose “Forgot password?” on the unlock screen."}},{"@type":"Question","name":"Can I uninstall it?","acceptedAnswer":{"@type":"Answer","text":"Yes — from Windows Settings → Apps. Your encrypted files and vaults are left untouched, so keep Clavis (or reinstall it) to open them."}},{"@type":"Question","name":"Does Clavis upload my files?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens on your computer. Clavis only goes online to check for updates."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://kapilpalanivel.github.io/clavis/#website","url":"https://kapilpalanivel.github.io/clavis/","name":"Clavis","description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","inLanguage":"en","publisher":{"@id":"https://kapilpalanivel.github.io/clavis/#author"}},{"@type":"Person","@id":"https://kapilpalanivel.github.io/clavis/#author","name":"Kapil Palanivel","url":"https://kapilpalanivel.github.io/clavis/about.html"},{"@type":"SoftwareApplication","@id":"https://kapilpalanivel.github.io/clavis/#software","name":"Clavis","alternateName":"Clavis file encryption for Windows","description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","url":"https://kapilpalanivel.github.io/clavis/","applicationCategory":"SecurityApplication","applicationSubCategory":"File encryption","operatingSystem":"Windows 10, Windows 11 (64-bit)","softwareVersion":"2.3.1","dateModified":"2026-09-26","downloadUrl":"https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-Setup.exe","installUrl":"https://kapilpalanivel.github.io/clavis/download.html","fileSize":"42 MB","image":"https://kapilpalanivel.github.io/clavis/assets/img/icon-512.png","screenshot":"https://kapilpalanivel.github.io/clavis/assets/img/app-light.png","featureList":["AES-256-GCM authenticated encryption","Argon2id password-based key derivation","Streaming encryption of large files in 64 KiB authenticated chunks","Integrity verification on every decrypt","One-time recovery key (sealed with X25519)","Encrypted file names","Best-effort secure delete of originals","Auto-lock on system sleep and Windows lock","Ed25519-signed in-app updates","Installer or portable ZIP; per-user install without administrator rights","Pro: folder and batch encryption, multiple vaults, watch folders, key-file two-factor"],"isAccessibleForFree":true,"offers":{"@type":"Offer","name":"Clavis Free","price":"0","priceCurrency":"USD","url":"https://kapilpalanivel.github.io/clavis/download.html"},"author":{"@id":"https://kapilpalanivel.github.io/clavis/#author"},"publisher":{"@id":"https://kapilpalanivel.github.io/clavis/#author"}}]}</script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -46,8 +53,8 @@
           <div>
             <h1>Clavis for Windows</h1>
             <div class="meta">
-              <span class="pill accent">Version <span data-release="version">2.3.0</span></span>
-              <span class="pill"><span data-release="size">41 MB</span></span>
+              <span class="pill accent">Version <span data-release="version">2.3.1</span></span>
+              <span class="pill"><span data-release="size">42 MB</span></span>
               <span class="pill">Released <span data-release="date">September 26, 2026</span></span>
             </div>
           </div>
@@ -67,6 +74,13 @@
           <b>Windows may say “Windows protected your PC” or “Unknown publisher.”</b> That's normal for a new,
           independent app — nothing is wrong. Click
           <span class="kbd">More info</span> then <span class="kbd">Run anyway</span>. The portable ZIP behaves the same.
+        </div>
+        <div class="checksums">
+          <b>Verify your download</b> — compare the SHA-256 checksum with the file you got. In PowerShell: <code>Get-FileHash .\Clavis-Setup.exe</code>
+          <dl>
+            <div><dt>Clavis-Setup.exe</dt><dd><code class="hash">30c30d5469c4e14bae41623c173f6f18140ea618ba7361c651e2934f25d69bf6</code></dd></div>
+            <div><dt>Clavis-windows.zip</dt><dd><code class="hash">3739b19498efdf34654f434f38a45086df01f539b7ba5e79563f0d51bacd14b6</code></dd></div>
+          </dl>
         </div>
       </div>
     </section>
