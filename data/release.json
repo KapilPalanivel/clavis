@@ -2,5 +2,7 @@
   "version": "2.3.1",
   "date": "2026-09-26",
   "size": "42 MB",
+  "sha256": "30c30d5469c4e14bae41623c173f6f18140ea618ba7361c651e2934f25d69bf6",
+  "zipSha256": "3739b19498efdf34654f434f38a45086df01f539b7ba5e79563f0d51bacd14b6",
   "notes": "# Clavis 2.3.1\n\n## 🔧 Improvements\n\n- Behind-the-scenes hardening of the app's internals.\n\n## Install / upgrade\n\n- **Already installed:** the app updates itself (Settings → Updates → Check now).\n- **New install:** download **Clavis-Setup.exe** from the website and run it.\n\nYour vaults and settings are kept.\n"
 }
