@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you or anyone recover my files?","acceptedAnswer":{"@type":"Answer","text":"No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked."}},{"@type":"Question","name":"Is my password sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it."}},{"@type":"Question","name":"Why does Windows warn me?","acceptedAnswer":{"@type":"Answer","text":"The installer isn't signed with a paid certificate yet. Click More info → Run anyway, or scan it on VirusTotal first."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you or anyone recover my files?","acceptedAnswer":{"@type":"Answer","text":"No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked."}},{"@type":"Question","name":"Is Clavis safe against quantum computers?","acceptedAnswer":{"@type":"Answer","text":"Your files are encrypted with AES-256, which is considered safe against quantum computers. The recovery key — the one part that uses public-key cryptography — is protected by X25519 together with ML-KEM-768, the post-quantum standard, since Clavis 3.3. Recovery keys made with older versions still work; Settings shows “classic” next to them and lets you upgrade."}},{"@type":"Question","name":"Is my password sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it."}},{"@type":"Question","name":"Why does Windows warn me?","acceptedAnswer":{"@type":"Answer","text":"The installer isn't signed with a paid certificate yet. Click More info → Run anyway, or scan it on VirusTotal first."}}]}</script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -64,10 +64,10 @@
           <h2 class="h2">The encryption, <em>step by step.</em></h2>
         </div>
         <div class="principles">
-          <article class="principle"><span class="num">I.</span><h3>Your password becomes a key</h3><p>Clavis runs your password through <b>Argon2id</b> — a slow, memory-hard function built to resist brute-force and custom cracking hardware. The result is the key; the password itself is never stored or sent anywhere.</p></article>
+          <article class="principle"><span class="num">I.</span><h3>Your password becomes a key</h3><p>Clavis runs your password through <b>Argon2id</b> — a slow, memory-hard function built to resist brute-force and custom cracking hardware. Clavis measures your PC once and uses as much memory as it comfortably can (up to 128&nbsp;MiB per file), so each guess costs an attacker more. The result is the key; the password itself is never stored or sent anywhere. While you choose a password, Clavis estimates how long it would take to crack — checking it against the 10,000 most common passwords and patterns like keyboard runs, dates and l33t swaps — and tells you why a weak one is weak.</p></article>
           <article class="principle" style="--d:.06s"><span class="num">II.</span><h3>Files are sealed with AES-256-GCM</h3><p><b>AES-256-GCM</b> is authenticated encryption: it both hides your data and detects any tampering. Large files are processed in 64&nbsp;KiB authenticated chunks, so even huge files encrypt with a small, steady memory footprint.</p></article>
           <article class="principle"><span class="num">III.</span><h3>Integrity is checked on the way out</h3><p>Every chunk is verified as a file is decrypted. If a single byte was changed or corrupted, Clavis refuses the file instead of handing you bad data.</p></article>
-          <article class="principle" style="--d:.06s"><span class="num">IV.</span><h3>A recovery key, sealed to you</h3><p>The one-time recovery key lets you back in if you forget your password. It's protected with public-key cryptography (X25519) and shown only once — Clavis can't recover it for you, and neither can we.</p></article>
+          <article class="principle" style="--d:.06s"><span class="num">IV.</span><h3>A recovery key, sealed to you</h3><p>The one-time recovery key lets you back in if you forget your password. It's protected with <b>post-quantum</b> public-key cryptography — X25519 combined with <b>ML-KEM-768</b>, the new NIST standard (FIPS&nbsp;203) — so it stays safe as long as either one holds, even against future quantum computers. It's shown only once — Clavis can't recover it for you, and neither can we.</p></article>
         </div>
       </div>
     </section>
@@ -114,7 +114,7 @@
           <h2 class="h2">What we don't <em>pretend.</em></h2>
         </div>
         <dl class="specs">
-          <div class="spec"><dt>Source code</dt><dd>Clavis is closed-source today. The crypto it uses (AES-256-GCM, Argon2id, X25519) is public, standard and widely trusted.</dd></div>
+          <div class="spec"><dt>Source code</dt><dd>Clavis is closed-source today. The crypto it uses (AES-256-GCM, Argon2id, X25519, ML-KEM-768) is public, standard and widely trusted.</dd></div>
           <div class="spec"><dt>Independent audit</dt><dd>Not yet formally audited. We don't claim otherwise.</dd></div>
           <div class="spec"><dt>Deleting originals</dt><dd>Best effort. On SSDs, cloud folders and drives with shadow copies, the OS may keep remnants — the app tells you this.</dd></div>
           <div class="spec"><dt>The Windows warning</dt><dd>The installer isn't signed with a paid certificate yet, so Windows may show “unknown publisher.” It doesn't mean anything is wrong — see below.</dd></div>
@@ -133,6 +133,7 @@
         <div class="panel faq">
           <h2>Questions</h2>
           <details><summary>Can you or anyone recover my files?</summary><p>No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked.</p></details>
+          <details><summary>Is Clavis safe against quantum computers?</summary><p>Your files are encrypted with AES-256, which is considered safe against quantum computers. The recovery key — the one part that uses public-key cryptography — is protected by X25519 together with ML-KEM-768, the post-quantum standard, since Clavis 3.3. Recovery keys made with older versions still work; Settings shows “classic” next to them and lets you upgrade.</p></details>
           <details><summary>Is my password sent anywhere?</summary><p>Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it.</p></details>
           <details><summary>Why does Windows warn me?</summary><p>The installer isn't signed with a paid certificate yet. Click <b>More info → Run anyway</b>, or scan it on VirusTotal first.</p></details>
         </div>

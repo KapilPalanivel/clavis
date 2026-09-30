@@ -4,14 +4,15 @@
 
 Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
 
-Current version: 3.2.0, released 2026-09-30. Installer: Clavis-Setup.exe (42 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+Current version: 3.3.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
 ## Key facts
 
 - Platform: Windows 10 and Windows 11, 64-bit. Per-user install; no administrator rights needed.
 - Encryption: AES-256-GCM authenticated encryption. Large files are processed as a stream of 64 KiB authenticated chunks, so memory use stays small. Integrity is verified on every decrypt; a tampered or corrupted file is refused.
 - Keys: the password is turned into a key with Argon2id (memory-hard). Encrypted files hide their original names.
-- Recovery: an optional one-time recovery key, protected with X25519 public-key cryptography, lets the user back in after forgetting the password. It is shown once; the developer cannot recover it.
+- Recovery: an optional one-time recovery key lets the user back in after forgetting the password. Since version 3.3 it is protected with post-quantum hybrid public-key cryptography (X25519 + ML-KEM-768, FIPS 203); older recovery keys keep working. It is shown once; the developer cannot recover it.
+- Password strength: while a password is chosen, Clavis estimates the time to crack it (common-password list, keyboard patterns, dates, repeats, l33t swaps) and warns about weak ones. Argon2id memory is tuned to the user's PC (up to 128 MiB).
 - Privacy: everything runs locally. The app only goes online to check for updates; updates are signed with Ed25519 and verified before they install. The website uses cookieless, privacy-friendly analytics.
 - Explorer integration: right-click a file or folder in Windows File Explorer → Clavis → Encrypt, Decrypt, Verify or Add to Watch Folder (on Windows 11 under "Show more options").
 - Other features: auto-lock on system sleep and Windows lock, session timeout, best-effort secure delete, drag and drop, light and dark themes, activity history.
@@ -24,7 +25,7 @@ Current version: 3.2.0, released 2026-09-30. Installer: Clavis-Setup.exe (42 MB)
 
 ## Honest limitations
 
-- Clavis is closed-source and has not been independently audited. It uses standard, public cryptography (AES-256-GCM, Argon2id, X25519, Ed25519).
+- Clavis is closed-source and has not been independently audited. It uses standard, public cryptography (AES-256-GCM, Argon2id, X25519, ML-KEM-768, Ed25519).
 - The installer is not yet signed with a code-signing certificate, so Windows SmartScreen may show "unknown publisher" until it is.
 - Secure delete is best effort: SSDs, cloud-synced folders and shadow copies may keep remnants.
 - If both the password and the recovery key are lost, the files cannot be recovered by anyone.
