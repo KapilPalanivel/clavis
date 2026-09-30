@@ -75,11 +75,26 @@
           independent app — nothing is wrong. Click
           <span class="kbd">More info</span> then <span class="kbd">Run anyway</span>. The portable ZIP behaves the same.
         </div>
-        <p class="fineprint" style="margin-top:16px"><b>Linux</b> (Ubuntu, Debian and derivatives, 64-bit):
-          <a href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-linux.deb">Clavis-linux.deb</a>
-          — install with <code>sudo apt install ./Clavis-linux.deb</code>. On Linux, update by installing the newer .deb.</p>
+        <div class="dl-card intro dl-linux" id="linux" style="margin-top:28px">
+          <img src="assets/img/icon-192.png" alt="Clavis icon" width="112" height="112">
+          <div>
+            <h2 class="dl-title">Clavis for Linux</h2>
+            <div class="meta">
+              <span class="pill accent">Version <span data-release="version">3.7.0</span></span>
+              <span class="pill">.deb · Ubuntu, Debian &amp; derivatives</span>
+              <span class="pill">64-bit</span>
+            </div>
+          </div>
+          <div class="dl-actions">
+            <a class="btn btn-primary" id="dl-linux" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-linux.deb">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+              Download Clavis-linux.deb
+            </a>
+          </div>
+        </div>
+        <p class="fineprint" style="margin-top:18px">Install: <code>sudo apt install ./Clavis-linux.deb</code> · Open <b>Clavis</b> from your apps menu · Command line: <code>/opt/clavis/bin/clavis-cli</code> · To update, install the newer .deb. Same vaults and .enc files as on Windows.</p>
         <div class="checksums">
-          <b>Verify your download</b> — compare the SHA-256 checksum with the file you got. In PowerShell: <code>Get-FileHash .\Clavis-Setup.exe</code>
+          <b>Verify your download</b> — compare the SHA-256 checksum with the file you got. In PowerShell: <code>Get-FileHash .\Clavis-Setup.exe</code> · On Linux: <code>sha256sum Clavis-linux.deb</code>
           <dl>
             <div><dt>Clavis-Setup.exe</dt><dd><code class="hash">26d9e45f7112ee21217f523e7d9443fa1dc077a4affbe54912f23465a9211d70</code></dd></div>
             <div><dt>Clavis-windows.zip</dt><dd><code class="hash">c909dfbf006284bf32882fe6bfca8a078f2248240519ac0415faa0bf4732cfb9</code></dd></div>
