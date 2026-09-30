@@ -4,7 +4,7 @@
 
 Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
 
-Current version: 3.4.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+Current version: 3.5.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
 ## Key facts
 
@@ -12,6 +12,7 @@ Current version: 3.4.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 - Encryption: AES-256-GCM authenticated encryption. Large files are processed as a stream of 64 KiB authenticated chunks, so memory use stays small. Integrity is verified on every decrypt; a tampered or corrupted file is refused.
 - Keys: the password is turned into a key with Argon2id (memory-hard). Encrypted files hide their original names.
 - Recovery: an optional one-time recovery key lets the user back in after forgetting the password. Since version 3.3 it is protected with post-quantum hybrid public-key cryptography (X25519 + ML-KEM-768, FIPS 203); older recovery keys keep working. It is shown once; the developer cannot recover it.
+- Sharing (since 3.5): every vault has a Clavis ID (a public key with a short fingerprint). Encrypting a file for someone (Premium) seals a random file key to each recipient with X25519 + ML-KEM-768 and signs the whole file with the sender's Ed25519 key; recipients see who sent it and tampered files won't open. Opening files shared with you is free. No password is shared.
 - Password strength: while a password is chosen, Clavis estimates the time to crack it (common-password list, keyboard patterns, dates, repeats, l33t swaps) and warns about weak ones. Argon2id memory is tuned to the user's PC (up to 128 MiB).
 - Privacy: everything runs locally. The app only goes online to check for updates; updates are signed with Ed25519 and verified before they install. The website uses cookieless, privacy-friendly analytics.
 - Explorer integration: right-click a file or folder in Windows File Explorer → Clavis → Encrypt, Decrypt, Verify or Add to Watch Folder (on Windows 11 under "Show more options").
@@ -21,7 +22,7 @@ Current version: 3.4.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 
 - Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks. Security features are never paywalled.
 - Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), bought at https://kapilpalanivel.github.io/clavis/pricing.html. Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
-- Clavis Premium: a one-time purchase of $39 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Sharing encrypted files with other people and recovery-key backup with version history are planned for Premium. Pro owners can upgrade by paying the difference.
+- Clavis Premium: a one-time purchase of $39 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Premium also encrypts files for other people (see Sharing). Recovery-key backup with version history is planned for Premium. Pro owners can upgrade by paying the difference.
 - Licences: no account is needed. A store key is checked once online with the payment provider (Lemon Squeezy) when activated, after which it works offline.
 - The Free/Pro split applies from version 3.0 and Premium from 3.4; earlier versions include every feature they had.
 
