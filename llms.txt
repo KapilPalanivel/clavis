@@ -4,7 +4,7 @@
 
 Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
 
-Current version: 3.3.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+Current version: 3.4.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
 ## Key facts
 
@@ -20,8 +20,10 @@ Current version: 3.3.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 ## Editions and price
 
 - Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks. Security features are never paywalled.
-- Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), bought at https://kapilpalanivel.github.io/clavis/pricing.html. Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, and opening encrypted files without leaving a decrypted copy. No account is needed: a Pro key is checked once online with the payment provider (Lemon Squeezy) when activated, after which Pro works offline.
-- The Free/Pro split applies from version 3.0; earlier versions include every feature.
+- Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), bought at https://kapilpalanivel.github.io/clavis/pricing.html. Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
+- Clavis Premium: a one-time purchase of $39 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Sharing encrypted files with other people and recovery-key backup with version history are planned for Premium. Pro owners can upgrade by paying the difference.
+- Licences: no account is needed. A store key is checked once online with the payment provider (Lemon Squeezy) when activated, after which it works offline.
+- The Free/Pro split applies from version 3.0 and Premium from 3.4; earlier versions include every feature they had.
 
 ## Honest limitations
 
@@ -36,7 +38,7 @@ Current version: 3.3.0, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 - [Home](https://kapilpalanivel.github.io/clavis/): overview
 - [Download](https://kapilpalanivel.github.io/clavis/download.html): installer, portable ZIP, checksums, install steps, FAQ
 - [Security](https://kapilpalanivel.github.io/clavis/security.html): how the encryption works in plain English, and its limits
-- [Pricing](https://kapilpalanivel.github.io/clavis/pricing.html): Free vs Pro
+- [Pricing](https://kapilpalanivel.github.io/clavis/pricing.html): Free vs Pro vs Premium
 - [About](https://kapilpalanivel.github.io/clavis/about.html): why Clavis exists and technical specifications
 - [Privacy policy](https://kapilpalanivel.github.io/clavis/privacy.html) and [Terms](https://kapilpalanivel.github.io/clavis/terms.html)
 

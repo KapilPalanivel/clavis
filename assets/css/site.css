@@ -503,6 +503,11 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   border-left: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); transform: rotate(-45deg); }
 .plan .feat li b { color: var(--text); }
 .plan .plan-cta { width: 100%; justify-content: center; }
+.price-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1120px; }
+.plan .feat li code { font: 500 13px var(--mono); color: var(--text); }
+.plan .soon { margin-left: 6px; font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--dim); border: 1px solid var(--line-2); border-radius: 999px; padding: 3px 7px; vertical-align: 2px; }
+@media (max-width: 960px) { .price-grid.three { grid-template-columns: 1fr; max-width: 520px; } }
 @media (max-width: 720px) { .price-grid { grid-template-columns: 1fr; } }
 
 /* ── Pricing creed (trust statement) ──────────────────────────────────── */
