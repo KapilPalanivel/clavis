@@ -353,7 +353,6 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 }
 .dl-card > img { width: 112px; height: 112px; border-radius: 28px; box-shadow: 0 24px 60px -16px rgba(47, 107, 255, .85); }
 .dl-card h1 { font: 400 clamp(38px, 4.4vw, 58px)/1 var(--serif); margin-bottom: 14px; }
-.dl-card .dl-title { font: 400 clamp(32px, 3.6vw, 46px)/1 var(--serif); margin-bottom: 14px; }
 .meta { display: flex; flex-wrap: wrap; gap: 10px; }
 .pill { font: 500 13px/1 var(--mono); padding: 9px 13px; border-radius: 999px; color: var(--muted); background: rgba(5, 8, 15, .45); border: 1px solid var(--line-2); }
 .pill.accent { color: var(--cyan); border-color: rgba(70, 230, 255, .35); }
@@ -362,6 +361,31 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .dl-card .btn-ghost { --h: 48px; padding: 0 24px; font-size: 15px; }
 .dl-actions .btn { justify-content: center; white-space: nowrap; }
 .dl-actions .btn svg { width: 18px; height: 18px; flex: none; }
+/* One download card: header, then a tile per operating system (visitor's OS first). */
+.dl-card.dl-one { display: flex; flex-direction: column; gap: 28px; align-items: stretch; }
+.dl-head { display: flex; align-items: center; gap: 26px; }
+.dl-head > img { width: 96px; height: 96px; border-radius: 24px; box-shadow: 0 24px 60px -16px rgba(47, 107, 255, .85); flex: none; }
+.os-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.os-tile { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 22px 22px 18px; border-radius: 22px;
+  background: rgba(5, 8, 15, .35); border: 1px solid var(--line-2); }
+.os-tile.is-you { border-color: rgba(70, 230, 255, .5); background: linear-gradient(160deg, rgba(47, 107, 255, .18), rgba(5, 8, 15, .35) 70%); }
+.os-badge { display: none; position: absolute; top: 16px; right: 16px; font: 600 10.5px/1 var(--mono); letter-spacing: .08em;
+  text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(70, 230, 255, .4); border-radius: 999px; padding: 6px 9px; }
+.os-tile.is-you .os-badge { display: inline-block; }
+.os-grid.detected .os-tile:not(.is-you) .btn-primary { background: rgba(255, 255, 255, .07); color: var(--text); box-shadow: none; border: 1px solid var(--line-2); }
+.os-head { display: flex; align-items: center; gap: 14px; margin-bottom: 4px; }
+.os-logo { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; flex: none;
+  background: rgba(255, 255, 255, .06); border: 1px solid var(--line-2); }
+.os-logo svg { width: 30px; height: 30px; }
+.os-name { font: 400 28px/1 var(--serif); color: var(--text); }
+.os-sub { margin-top: 6px; font: 400 12.5px/1.4 var(--mono); color: var(--dim); }
+.os-tile .btn { width: 100%; justify-content: center; white-space: nowrap; }
+.os-tile .btn svg { width: 18px; height: 18px; flex: none; }
+.dl-card .os-tile .btn-primary { --h: 54px; font-size: 16px; }
+.dl-card .os-tile .btn-ghost { --h: 44px; font-size: 14px; }
+.os-note { margin: 2px 0 0; font: 400 12.5px/1.6 var(--mono); color: var(--dim); }
+.os-note code { color: var(--muted); }
+@media (max-width: 560px) { .dl-head { flex-direction: column; align-items: flex-start; gap: 18px; } .os-badge { position: static; align-self: flex-start; } }
 @media (max-width: 860px) { .dl-card { grid-template-columns: 1fr; text-align: left; } .dl-actions { align-items: stretch; } .dl-card .btn { width: 100%; } }
 
 .dl-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }

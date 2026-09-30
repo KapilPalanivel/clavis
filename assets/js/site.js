@@ -154,6 +154,15 @@
     addEventListener("scroll", par, { passive: true }); par();
   }
 
+  /* ── Download page: the visitor's system first, marked "For this computer" ── */
+  const tiles = $$(".os-tile[data-os]");
+  if (tiles.length) {
+    const ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || "";
+    const os = /win/i.test(ua) ? "windows" : /android/i.test(navigator.userAgent) ? "" : /linux|x11/i.test(ua) ? "linux" : "";
+    const mine = tiles.find(t => t.dataset.os === os);
+    if (mine) { mine.classList.add("is-you"); mine.parentNode.classList.add("detected"); mine.parentNode.prepend(mine); }
+  }
+
   /* ── Release info (version, size, notes) ──────────────────────────── */
   const need = $$("[data-release]").length || $("#notes");
   if (need) fetch("data/release.json", { cache: "no-cache" })

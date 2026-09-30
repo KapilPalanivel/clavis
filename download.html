@@ -48,51 +48,47 @@
   <main>
     <section class="dl-hero" id="get">
       <div class="wrap">
-        <div class="dl-card intro">
-          <img src="assets/img/icon-192.png" alt="Clavis icon" width="112" height="112">
-          <div>
-            <h1>Clavis for Windows</h1>
-            <div class="meta">
-              <span class="pill accent">Version <span data-release="version">3.7.0</span></span>
-              <span class="pill"><span data-release="size">41 MB</span></span>
-              <span class="pill">Released <span data-release="date">October 1, 2026</span></span>
+        <div class="dl-card dl-one">
+          <div class="dl-head">
+            <img src="assets/img/icon-192.png" alt="Clavis icon" width="96" height="96">
+            <div>
+              <h1>Download Clavis</h1>
+              <div class="meta">
+                <span class="pill accent">Version <span data-release="version">3.7.0</span></span>
+                <span class="pill">Released <span data-release="date">October 1, 2026</span></span>
+                <span class="pill">Free · no account</span>
+              </div>
             </div>
           </div>
-          <div class="dl-actions">
-            <a class="btn btn-primary" id="dl-btn" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-Setup.exe">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
-              Download Clavis-Setup.exe
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-windows.zip">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
-              Portable ZIP (no installer)
-            </a>
+
+          <div class="os-grid">
+            <div class="os-tile" data-os="windows">
+              <span class="os-badge">For this computer</span>
+              <div class="os-head">
+                <span class="os-logo"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4cc2ff" d="M2.5 4.4 10.4 3.3v7.9H2.5z"/><path fill="#4cc2ff" d="M11.6 3.1 21.5 1.8v9.4h-9.9z"/><path fill="#4cc2ff" d="M2.5 12.4h7.9v7.9l-7.9-1.1z"/><path fill="#4cc2ff" d="M11.6 12.4h9.9v9.4l-9.9-1.3z"/></svg></span>
+                <div><div class="os-name">Windows</div><div class="os-sub">Windows 10 &amp; 11 · 64-bit · <span data-release="size">41 MB</span></div></div>
+              </div>
+              <a class="btn btn-primary" id="dl-btn" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-Setup.exe"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg> Clavis-Setup.exe</a>
+              <a class="btn btn-ghost" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-windows.zip"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg> Portable ZIP (no installer)</a>
+              <p class="os-note">No administrator rights needed. Portable ZIP: unzip anywhere and run <b>Clavis.exe</b>.</p>
+            </div>
+            <div class="os-tile" data-os="linux">
+              <span class="os-badge">For this computer</span>
+              <div class="os-head">
+                <span class="os-logo"><svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="37" rx="17" ry="21" fill="#2a3242" stroke="#8b97ad" stroke-width="1.5"/><ellipse cx="32" cy="41" rx="10.5" ry="14" fill="#f1f3f7"/><circle cx="32" cy="19" r="11.5" fill="#2a3242" stroke="#8b97ad" stroke-width="1.5"/><ellipse cx="27.6" cy="18" rx="3" ry="3.6" fill="#fff"/><ellipse cx="36.4" cy="18" rx="3" ry="3.6" fill="#fff"/><circle cx="28.1" cy="18.8" r="1.4" fill="#111"/><circle cx="35.9" cy="18.8" r="1.4" fill="#111"/><path d="M27 23.6c2-1.7 8-1.7 10 0-1.7 2.8-8.3 2.8-10 0z" fill="#f5b21b"/><ellipse cx="22.5" cy="57" rx="7" ry="3.4" fill="#f5b21b"/><ellipse cx="41.5" cy="57" rx="7" ry="3.4" fill="#f5b21b"/></svg></span>
+                <div><div class="os-name">Linux</div><div class="os-sub">.deb · Ubuntu, Debian &amp; derivatives · 64-bit</div></div>
+              </div>
+              <a class="btn btn-primary" id="dl-linux" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-linux.deb"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg> Clavis-linux.deb</a>
+              <p class="os-note">Install: <code>sudo apt install ./Clavis-linux.deb</code><br>Update by installing the newer .deb. Command line: <code>/opt/clavis/bin/clavis-cli</code></p>
+            </div>
           </div>
+          <p class="os-note" style="text-align:center">Same vaults and the same .enc files on every system — encrypt on one, open on another.</p>
         </div>
-        <p class="fineprint" style="margin-top:18px">Windows 10 &amp; 11 · 64-bit · No administrator rights needed · Portable ZIP: unzip anywhere and run <b>Clavis.exe</b></p>
         <div class="smartscreen" style="margin-top:16px">
-          <b>Windows may say “Windows protected your PC” or “Unknown publisher.”</b> That's normal for a new,
+          <b>On Windows you may see “Windows protected your PC” or “Unknown publisher.”</b> That's normal for a new,
           independent app — nothing is wrong. Click
           <span class="kbd">More info</span> then <span class="kbd">Run anyway</span>. The portable ZIP behaves the same.
         </div>
-        <div class="dl-card intro dl-linux" id="linux" style="margin-top:28px">
-          <img src="assets/img/icon-192.png" alt="Clavis icon" width="112" height="112">
-          <div>
-            <h2 class="dl-title">Clavis for Linux</h2>
-            <div class="meta">
-              <span class="pill accent">Version <span data-release="version">3.7.0</span></span>
-              <span class="pill">.deb · Ubuntu, Debian &amp; derivatives</span>
-              <span class="pill">64-bit</span>
-            </div>
-          </div>
-          <div class="dl-actions">
-            <a class="btn btn-primary" id="dl-linux" href="https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-linux.deb">
-              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
-              Download Clavis-linux.deb
-            </a>
-          </div>
-        </div>
-        <p class="fineprint" style="margin-top:18px">Install: <code>sudo apt install ./Clavis-linux.deb</code> · Open <b>Clavis</b> from your apps menu · Command line: <code>/opt/clavis/bin/clavis-cli</code> · To update, install the newer .deb. Same vaults and .enc files as on Windows.</p>
         <div class="checksums">
           <b>Verify your download</b> — compare the SHA-256 checksum with the file you got. In PowerShell: <code>Get-FileHash .\Clavis-Setup.exe</code> · On Linux: <code>sha256sum Clavis-linux.deb</code>
           <dl>
