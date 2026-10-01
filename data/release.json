@@ -1,9 +1,9 @@
 {
-  "version": "3.7.8",
-  "date": "2026-10-01",
+  "version": "3.8.0",
+  "date": "2026-10-02",
   "size": "41 MB",
-  "sha256": "4928e4b063db8be949c6a734c7513d1fa8ed2bfad12b98a1c1c4eb801568e597",
-  "zipSha256": "a9905f2879d397ac62cdbe389f49f232a8d0e3aa21f485375eae61d40b4d5315",
-  "debSha256": "d7876575f77a0dcb8f3a08571dbb5aaa753153becee51bdf8fd2357002772b38",
-  "notes": "# Clavis 3.7.8\n\n## 🎁 Gift and trial keys\n\n- **Settings → License** now shows **This PC's code** with a Copy button. If someone is giving you a Clavis key as a gift or a trial, send them this code: the key they make for you works on your PC only.\n- Trial keys show their end date. When a trial ends, Clavis simply goes back to Free; your files and vaults are untouched.\n- If a key can't be used on this PC, Settings → License now says why.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "2639e2e4fde07cc0a5ef0e65638e80c15de811ce1d82a21ff2ba73de81e42be9",
+  "zipSha256": "88a66d724203a4300d43ace52f9301eb1f1b337d57bf805c5a8c02c757879e65",
+  "debSha256": "ad2fe6a27150d02bd0149948e2bd6bf93e79e91aa8157ffe2c7ff768576ee176",
+  "notes": "# Clavis 3.8.0\n\n## 🔧 Under the hood\n\n- Groundwork for Clavis on Android: the encryption engine has been separated from the Windows/Linux app so the same, tested code can run on phones.\n- Nothing changes in how you use Clavis. Your encrypted files, vaults, recovery keys, shared files and backups open exactly as before — this release is checked against files made by every earlier version of Clavis.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
