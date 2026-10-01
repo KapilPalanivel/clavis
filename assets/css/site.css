@@ -641,3 +641,4 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .features-more { margin-top: 30px; text-align: center; }
 .features-more a { color: var(--cyan); font-weight: 600; }
 .card::before { pointer-events: none; }
+.os-note a, .mobile-note a { color: var(--cyan); }
