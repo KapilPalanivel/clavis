@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox — Clavis</title>
+  <meta name="description" content="Cloud storage encrypts your files with keys the provider holds. How to add your own encryption first, so the cloud only ever stores ciphertext.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox — Clavis">
+  <meta property="og:description" content="Cloud storage encrypts your files with keys the provider holds. How to add your own encryption first, so the cloud only ever stores ciphertext.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=514d6e2e8b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html#article","headline":"How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox","description":"Cloud storage encrypts your files with keys the provider holds. How to add your own encryption first, so the cloud only ever stores ciphertext.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox","item":"https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 1, 2026</p>
+        <h1>How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox</h1>
+<p>OneDrive, Google Drive and Dropbox all say your files are encrypted. They are — with keys the provider holds. That protects you from someone
+stealing a hard drive from a data centre. It doesn't protect you from the provider itself, a legal request, an employee, a breach of your account,
+or an automated scanner reading your documents.</p>
+<p>The fix is <strong>client-side encryption</strong>: encrypt the file on your PC first, so the cloud only ever receives ciphertext.
+Here are three ways to do it, from manual to automatic.</p>
+
+<h2>Option 1: a password-protected archive</h2>
+<p>With the free <a href="https://www.7-zip.org/">7-Zip</a>, right-click files → <em>7-Zip → Add to archive</em>, choose 7z, set a password and
+tick <em>Encrypt file names</em>, then move the archive into your cloud folder. Fine for a one-off, clumsy for anything you change often.</p>
+
+<h2>Option 2: an encrypted vault folder</h2>
+<p>Tools like Cryptomator keep a vault folder inside your cloud folder and show it as a virtual drive. Good if you want to work on files "inside" the
+vault all day; it's another drive letter to manage.</p>
+
+<h2>Option 3: encrypt straight into the cloud folder</h2>
+<p><a href="./">Clavis Premium</a> has <strong>Encrypt to cloud folder</strong>: it finds your OneDrive, Google Drive or Dropbox folder and puts an
+encrypted copy of your files into a <code>Clavis</code> subfolder there. The sync app uploads <code>.enc</code> files with random names —
+nothing about the content, or even the file names, reaches the provider. Your originals stay where they are.</p>
+<figure class="help-shot"><img src="assets/img/help/cloud.webp" width="869" height="325" alt="Encrypting files into the cloud folder with Clavis" loading="lazy"></figure>
+<p>Right-click any file or folder → <em>Clavis → Encrypt to cloud folder</em>, and you're done. On another PC with your vault, open or decrypt the
+files from the cloud folder like any others. Full walkthrough: <a href="help-encrypt-to-cloud.html">Encrypt files into your cloud folder</a>.</p>
+
+<h2>Three things to get right whichever tool you use</h2>
+<ul>
+  <li><strong>Encrypt before the file touches the synced folder.</strong> If you save a plain file there first, it's uploaded within seconds —
+      and it stays in the provider's version history even after you delete it.</li>
+  <li><strong>Check for old copies.</strong> Look in the cloud's web interface, its recycle bin and version history for unencrypted copies.</li>
+  <li><strong>Keep your key off the cloud.</strong> The password and recovery key protect everything; don't store them in the same account.</li>
+</ul>
+<p>More on the reasoning in <a href="blog-local-vs-cloud-encryption.html">Why local encryption beats trusting the cloud</a>.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows and Linux
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
+        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=9d5a2ac5e2" defer></script>
+</body>
+</html>

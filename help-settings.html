@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clavis settings explained — Clavis Help</title>
+  <meta name="description" content="Every Clavis setting in one place: licence, session timeout and auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language and updates.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Clavis settings explained — Clavis Help">
+  <meta property="og:description" content="Every Clavis setting in one place: licence, session timeout and auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language and updates.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/help-settings.html">
+  <meta property="og:url" content="https://clavisenc.com/help-settings.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=514d6e2e8b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clavisenc.com/help-settings.html#article","headline":"Clavis settings explained","description":"Every Clavis setting in one place: licence, session timeout and auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language and updates.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/help-settings.html","image":["https://clavisenc.com/assets/img/help/settings-security.webp","https://clavisenc.com/assets/img/help/settings-updates.webp"],"isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"proficiencyLevel":"Beginner"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://clavisenc.com/help.html"},{"@type":"ListItem","position":3,"name":"Clavis settings explained","item":"https://clavisenc.com/help-settings.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html" aria-current="page">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post help-article">
+        <p class="post-meta"><a href="help.html">Help</a> · Settings &amp; troubleshooting · <span class="plan-chip plan-free">Free</span></p>
+        <h1>Clavis settings explained</h1>
+<p>Open <strong>Settings</strong> from the sidebar. Changes take effect when you press <strong>Save</strong>.</p>
+<h2>Security and auto-lock</h2>
+<figure class="help-shot">
+  <img src="assets/img/help/settings-security.webp" width="882" height="576" alt="Security and auto-lock settings" loading="lazy">
+  <ol class="help-steps"><li>Lock the vault after this many idle minutes</li><li>Size Argon2id to this PC&#x27;s speed</li><li>Lock when the PC sleeps or you lock Windows</li></ol>
+</figure>
+<ul>
+  <li><strong>Session timeout</strong> — Clavis locks the vault after this many minutes without activity.</li>
+  <li><strong>Argon2id</strong> — how hard Clavis makes each password guess. <strong>Tune for this PC</strong> picks the strongest
+      setting that still unlocks quickly on your computer. It applies to files you encrypt from now on.</li>
+  <li><strong>Lock on system sleep</strong> and <strong>lock on session deactivate</strong> (locking Windows or switching user)
+      lock the vault straight away.</li>
+</ul>
+<h2>Licence</h2>
+<p>Shows your plan. See <a href="help-license.html">Activate Pro or Premium</a>.</p>
+<h2>Recovery key, backup and cloud folder</h2>
+<p>See <a href="help-recovery-key.html">Recovery key</a>, <a href="help-backup-restore.html">Backup &amp; restore</a> and
+<a href="help-encrypt-to-cloud.html">Encrypt to cloud</a>.</p>
+<h2>Language</h2>
+<p>See <a href="help-language.html">Change the language</a>.</p>
+<h2>Updates and Explorer</h2>
+<figure class="help-shot">
+  <img src="assets/img/help/settings-updates.webp" width="882" height="450" alt="Updates and Explorer settings" loading="lazy">
+  <ol class="help-steps"><li>Check for a new version</li><li>Clavis in the Explorer right-click menu</li></ol>
+</figure>
+<p>Clavis checks for updates once a day (untick to turn that off) and every update is signature-checked before it's installed.
+The Explorer option adds or removes the <a href="help-explorer-menu.html">right-click menu</a>.</p>
+<h2>Performance</h2>
+<p><strong>Compression level</strong> trades speed for smaller files. Already-compressed files like photos, videos and ZIPs barely shrink.</p>
+        <nav class="help-pager" aria-label="More help"><a href="help-command-line.html"><span>← Previous</span>Encrypt from the command line (clavis-cli)</a><a class="next" href="help-license.html"><span>Next →</span>Activate Clavis Pro or Premium</a></nav>
+        <p class="help-more">Can't find what you need? <a href="help.html">All help articles</a> · <a href="mailto:clavis.enc@gmail.com">Email us</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
+        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=9d5a2ac5e2" defer></script>
+</body>
+</html>

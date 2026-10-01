@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What a post-quantum recovery key is, and why your encryption needs one — Clavis</title>
+  <meta name="description" content="Forgetting your password shouldn&#x27;t mean losing your files. How recovery keys work, what &#x27;post-quantum&#x27; adds, and how to store one safely.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What a post-quantum recovery key is, and why your encryption needs one — Clavis">
+  <meta property="og:description" content="Forgetting your password shouldn&#x27;t mean losing your files. How recovery keys work, what &#x27;post-quantum&#x27; adds, and how to store one safely.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-post-quantum-recovery-key.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-post-quantum-recovery-key.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=514d6e2e8b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-post-quantum-recovery-key.html#article","headline":"What a post-quantum recovery key is, and why your encryption needs one","description":"Forgetting your password shouldn't mean losing your files. How recovery keys work, what 'post-quantum' adds, and how to store one safely.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-post-quantum-recovery-key.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"What a post-quantum recovery key is, and why your encryption needs one","item":"https://clavisenc.com/blog-post-quantum-recovery-key.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Explainer · October 1, 2026</p>
+        <h1>What a post-quantum recovery key is, and why your encryption needs one</h1>
+<p>Real encryption has an uncomfortable property: if you forget the password, nobody can let you back in. There's no "reset password" email,
+because there's no company holding a copy of your key. That's exactly what makes it secure — and exactly what makes people nervous.</p>
+<p>The answer is a <strong>recovery key</strong>: a second, very long key, written down once and stored away from your computer.</p>
+
+<h2>How a recovery key works</h2>
+<p>When you create a vault, Clavis generates a random recovery key and uses it to seal a copy of what's needed to unlock the vault. The key itself is
+shown to you <strong>once</strong> and never saved on your PC. If you later forget your password, you type the recovery key and you're back in —
+Clavis even shows you the forgotten password so you can note it down.</p>
+<figure class="help-shot"><img src="assets/img/help/recovery-key.webp" width="754" height="537" alt="The Clavis recovery key screen" loading="lazy"></figure>
+
+<h2>Why "post-quantum"?</h2>
+<p>Most public-key cryptography in use today (RSA, elliptic curves) could be broken by a large enough <strong>quantum computer</strong>. Such machines
+don't exist yet — but encrypted data can be copied today and stored until they do. This is called <em>"harvest now, decrypt later"</em>, and it matters
+for anything that has to stay private for years: medical records, legal papers, family documents.</p>
+<p>Clavis seals the recovery key with a <strong>hybrid</strong>: classical <strong>X25519</strong> <em>plus</em> <strong>ML-KEM-768</strong>, the
+post-quantum algorithm standardised by NIST as FIPS 203. To get in, an attacker would have to break both. If either one holds, your files do.
+(The file encryption itself, AES-256-GCM, is already considered safe against quantum computers at that key size.)</p>
+
+<h2>How to store a recovery key</h2>
+<ul>
+  <li><strong>Print it or write it down</strong> and keep it with your passport or other important papers.</li>
+  <li><strong>Or put it in a password manager</strong> — one that's protected by a different password than your vault.</li>
+  <li><strong>Never</strong> save it as a text file next to your encrypted files or in the same cloud folder.</li>
+  <li>If you think someone saw it, make a new one: <em>Settings → Recovery key → Replace…</em> The old one stops working immediately.</li>
+</ul>
+<p>Moving to a new computer? A <a href="help-backup-restore.html">vault backup</a> carries the recovery key with it, encrypted.
+Step-by-step help: <a href="help-recovery-key.html">Your recovery key: save it, use it, replace it</a>.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows and Linux
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
+        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=9d5a2ac5e2" defer></script>
+</body>
+</html>

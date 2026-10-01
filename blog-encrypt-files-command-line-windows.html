@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files from the command line on Windows (and Linux) — Clavis</title>
+  <meta name="description" content="Encrypt, decrypt and verify files from PowerShell, cmd or bash with clavis-cli — including passwords in scripts and scheduled encrypted backups.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files from the command line on Windows (and Linux) — Clavis">
+  <meta property="og:description" content="Encrypt, decrypt and verify files from PowerShell, cmd or bash with clavis-cli — including passwords in scripts and scheduled encrypted backups.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-files-command-line-windows.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-files-command-line-windows.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=514d6e2e8b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-files-command-line-windows.html#article","headline":"How to encrypt files from the command line on Windows (and Linux)","description":"Encrypt, decrypt and verify files from PowerShell, cmd or bash with clavis-cli — including passwords in scripts and scheduled encrypted backups.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-files-command-line-windows.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files from the command line on Windows (and Linux)","item":"https://clavisenc.com/blog-encrypt-files-command-line-windows.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 1, 2026</p>
+        <h1>How to encrypt files from the command line on Windows (and Linux)</h1>
+<p>Point-and-click is fine for a few files. For a nightly backup, a folder of exports or a deployment script, you want encryption you can
+<strong>script</strong>. Windows has no built-in command for file encryption that's easy to move between machines (<code>cipher /e</code> uses EFS,
+which is tied to your Windows account), so here's how to do it with <code>clavis-cli</code>, the command-line side of <a href="./">Clavis</a>.</p>
+
+<h2>The basics</h2>
+<p>The Windows installer puts <code>clavis-cli</code> on your PATH. Open a new PowerShell or Command Prompt and:</p>
+<figure class="term" aria-label="clavis-cli in PowerShell"><div class="term-bar"><i></i><i></i><i></i><span>Windows PowerShell</span></div><pre><span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli encrypt Reports</span>
+<span class="t-dim">Password:</span>
+encrypted  Reports\Board minutes.docx  -&gt;  e9c09fcd-2129-4319-a6a1-14ea7efbcf04.enc
+encrypted  Reports\Q3 sales.xlsx  -&gt;  89c7af5f-df0c-42e1-8a4b-a38c825b7b77.enc
+2 files.
+
+<span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli list Reports</span>
+<span class="t-dim">Password:</span>
+Q3 sales.xlsx	89c7af5f-df0c-42e1-8a4b-a38c825b7b77.enc
+Board minutes.docx	e9c09fcd-2129-4319-a6a1-14ea7efbcf04.enc
+
+<span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli verify Reports</span>
+<span class="t-dim">Password:</span>
+ok         Reports\89c7af5f-df0c-42e1-8a4b-a38c825b7b77.enc  (Q3 sales.xlsx, 7.3 KB)
+ok         Reports\e9c09fcd-2129-4319-a6a1-14ea7efbcf04.enc  (Board minutes.docx, 8.8 KB)
+2 files.</pre></figure>
+<p><code>encrypt</code> takes files and folders and securely deletes the originals (add <code>--keep</code> to keep them, <code>--out DIR</code> to write
+elsewhere). <code>list</code> shows the real names behind the random <code>.enc</code> names, and <code>verify</code> checks every file is intact.
+Wildcards such as <code>*.xlsx</code> work even in cmd.exe.</p>
+
+<h2>Passwords in scripts — the safe way</h2>
+<p>clavis-cli never accepts a password as a command-line argument: arguments are visible to every other program on the machine and saved in your shell
+history. Interactively, it asks with a hidden prompt. In scripts, pipe it in with <code>--password-stdin</code>, reading it from somewhere protected —
+for example the Windows Credential Manager, or a file only your account can read.</p>
+
+<h2>A scheduled encrypted backup</h2>
+<p>A simple pattern for Task Scheduler (or cron on Linux):</p>
+<ol>
+  <li>Copy what you want to back up into a staging folder.</li>
+  <li><code>clavis-cli encrypt --out D:\Backup\Encrypted Staging --password-stdin</code></li>
+  <li><code>clavis-cli verify D:\Backup\Encrypted --password-stdin</code> — and alert if the exit code isn't 0.</li>
+</ol>
+<p>Exit codes make scripts easy: <code>0</code> ok, <code>1</code> some files failed, <code>2</code> usage error, <code>3</code> needs Clavis Premium,
+<code>4</code> wrong password or key file. Every run also appears in the app's Activity history.</p>
+
+<h2>On Linux</h2>
+<p>Install the .deb and use <code>/opt/clavis/bin/clavis-cli</code> the same way. The file format is identical, so a file encrypted on Linux opens on
+Windows with the same vault, and vice versa.</p>
+<p>All commands and options: <a href="help-command-line.html">Encrypt from the command line (clavis-cli)</a>. The command line is part of Clavis Premium.</p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows and Linux
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
+        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=9d5a2ac5e2" defer></script>
+</body>
+</html>

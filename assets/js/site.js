@@ -19,6 +19,23 @@
     menu.setAttribute("aria-expanded", String(open));
   });
 
+  /* ── Help centre search: filters the article cards as you type ────── */
+  const helpSearch = $("[data-help-search]");
+  if (helpSearch) helpSearch.addEventListener("input", () => {
+    const words = helpSearch.value.toLowerCase().split(/\s+/).filter(Boolean);
+    let shown = 0;
+    $$(".help-cat").forEach(sec => {
+      let any = false;
+      $$(".help-card", sec).forEach(card => {
+        const hit = words.every(w => card.textContent.toLowerCase().includes(w));
+        card.hidden = !hit; any = any || hit; if (hit) shown++;
+      });
+      sec.hidden = !any;
+    });
+    const empty = $(".help-empty");
+    if (empty) empty.hidden = shown > 0;
+  });
+
   /* ── Reveal on scroll ─────────────────────────────────────────────── */
   const io = new IntersectionObserver(es => es.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }

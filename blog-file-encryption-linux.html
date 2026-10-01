@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files on Linux (Ubuntu and Debian) — Clavis</title>
+  <meta name="description" content="The main ways to encrypt individual files on Ubuntu and Debian — gpg, archives, full-disk encryption — and a simple app that works the same on Windows.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files on Linux (Ubuntu and Debian) — Clavis">
+  <meta property="og:description" content="The main ways to encrypt individual files on Ubuntu and Debian — gpg, archives, full-disk encryption — and a simple app that works the same on Windows.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-file-encryption-linux.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-file-encryption-linux.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=514d6e2e8b">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-file-encryption-linux.html#article","headline":"How to encrypt files on Linux (Ubuntu and Debian)","description":"The main ways to encrypt individual files on Ubuntu and Debian — gpg, archives, full-disk encryption — and a simple app that works the same on Windows.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-file-encryption-linux.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files on Linux (Ubuntu and Debian)","item":"https://clavisenc.com/blog-file-encryption-linux.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 1, 2026</p>
+        <h1>How to encrypt files on Linux (Ubuntu and Debian)</h1>
+<p>Linux gives you strong encryption out of the box — it's just spread across several tools with different jobs. Here's which to use for what,
+and a simpler option if you also work on Windows.</p>
+
+<h2>Full-disk encryption (LUKS)</h2>
+<p>Ubuntu and Debian offer to encrypt the whole disk during installation. Do it: it protects everything if your laptop is lost or stolen while switched off.
+It does <em>not</em> protect files once you're logged in, or files you copy to a USB stick, cloud folder or email.</p>
+
+<h2>Single files with gpg</h2>
+<p><code>gpg --symmetric --cipher-algo AES256 report.pdf</code> encrypts a file with a passphrase; <code>gpg -d report.pdf.gpg</code> decrypts it.
+It's everywhere and well tested, but there's no file-name hiding, no batch handling of folders, and no recovery if you forget the passphrase.</p>
+
+<h2>Archives</h2>
+<p><code>7z a -p -mhe=on secret.7z folder/</code> creates an AES-256 archive that also hides file names. Handy for a one-off bundle.</p>
+
+<h2>A file-encryption app that works the same on Windows</h2>
+<p><a href="./">Clavis</a> is available as a <strong>.deb for Ubuntu, Debian and derivatives</strong>. Install it with
+<code>sudo apt install ./Clavis-linux.deb</code> and you get the same app as on Windows: AES-256-GCM, Argon2id, encrypted file names,
+a post-quantum <a href="help-recovery-key.html">recovery key</a>, and the same file format — a file encrypted on Linux opens on Windows with the same vault.</p>
+<figure class="help-shot"><img src="assets/img/help/main-encrypt.webp" width="1206" height="855" alt="The Clavis window" loading="lazy"></figure>
+<p>Prefer the terminal? <code>/opt/clavis/bin/clavis-cli</code> (Premium) encrypts, decrypts, verifies and lists from bash or cron —
+see <a href="blog-encrypt-files-command-line-windows.html">encrypting from the command line</a>.</p>
+
+<h2>Which should you use?</h2>
+<ul>
+  <li><strong>Laptop could be stolen?</strong> Full-disk encryption, always.</li>
+  <li><strong>Sending one file to a Linux user who has gpg?</strong> gpg.</li>
+  <li><strong>Keeping private files encrypted day to day, across Linux and Windows, with a way back in if you forget the password?</strong> Clavis.</li>
+</ul>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Download Clavis for Linux or Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
+        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
+      <span class="latin">clāvis — Latin, “key”</span>
+      <span>© <span data-year>2026</span> Kapil Palanivel</span>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=9d5a2ac5e2" defer></script>
+</body>
+</html>
