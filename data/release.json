@@ -1,9 +1,9 @@
 {
-  "version": "3.7.7",
+  "version": "3.7.8",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "23d15ca86f4b0bd3b42997c9f50a8d90c8c29ccdd5025314c7f85898cbc17873",
-  "zipSha256": "0cafe6bedef56451deb4b6042064fb9b2f4816affeff32af3c5b1fd205e4e219",
-  "debSha256": "0c28b185133df28eca383c4bc8baf31a3706461498cd56297eb33ad9c1935777",
-  "notes": "# Clavis 3.7.7\n\n## 📖 New: Clavis Help\n\n- **https://clavisenc.com/help.html** — step-by-step guides with annotated screenshots for every feature: getting started, encrypting and opening files, watch folders, notes, cloud folders, sharing, backups, previous versions, the command line and settings.\n\n## 🛠 Fixed\n\n- The **Sharing** window no longer cuts off its text and buttons or shows a sideways scroll bar.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "4928e4b063db8be949c6a734c7513d1fa8ed2bfad12b98a1c1c4eb801568e597",
+  "zipSha256": "a9905f2879d397ac62cdbe389f49f232a8d0e3aa21f485375eae61d40b4d5315",
+  "debSha256": "d7876575f77a0dcb8f3a08571dbb5aaa753153becee51bdf8fd2357002772b38",
+  "notes": "# Clavis 3.7.8\n\n## 🎁 Gift and trial keys\n\n- **Settings → License** now shows **This PC's code** with a Copy button. If someone is giving you a Clavis key as a gift or a trial, send them this code: the key they make for you works on your PC only.\n- Trial keys show their end date. When a trial ends, Clavis simply goes back to Free; your files and vaults are untouched.\n- If a key can't be used on this PC, Settings → License now says why.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
