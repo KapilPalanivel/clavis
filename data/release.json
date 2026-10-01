@@ -1,9 +1,9 @@
 {
-  "version": "3.7.2",
+  "version": "3.7.3",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "0644e096599c0d294e1bf3619a1ffcc21320d055b1f3af7a873f5a92362f63df",
-  "zipSha256": "5ef7000855661d19727de2c1cc30ed3f12af3f0a1a005b895dd82366e3994950",
-  "debSha256": "ada62f98e29bec9452960084533283443d9be855b8f2d3ddc0e32caec85e8bfa",
-  "notes": "# Clavis 3.7.2\n\n## ✨ New\n\n- **Quit Clavis** button at the top right of the window. It closes Clavis completely. The window's × still only hides Clavis to the tray, where watch folders keep working. If Clavis is still busy with your files, it asks first.\n\n## 🛠 Fixed\n\n- **Hindi showed as empty boxes in Settings → Language.** Every language name now appears in its own script, whatever language Clavis is in.\n- **The \"restart Clavis\" message appeared twice.** It now appears once in the current language and once in the newly chosen one.\n- **More Tamil and Hindi:**\n  - the Select Vault window and creating a vault;\n  - the Recovery Key window and reminder;\n  - the weak-password warning;\n  - the \"time to crack\" estimate and its reasons;\n  - Yes / No / OK / Cancel buttons.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
+  "sha256": "ff92f89ef333baaa852038be898c181be24bc959484d882bdd837df04510371b",
+  "zipSha256": "f5f90a3c661ba0aa1e3f607153b094ef84cf9d7f41bfd99daa03f644395f9727",
+  "debSha256": "40ca607720a917c177841e9a555219855320334f1850e55812a1febcd9468ed2",
+  "notes": "# Clavis 3.7.3\n\n## ✨ New\n\n- **Double-click a Clavis ID** (`.clavisid`) to add that person to your contacts. Clavis shows their fingerprint so you can check it first. Before, Windows asked which app should open the file.\n- **Double-click a vault backup** (`.clavisbackup`) to restore it. On a new PC this works before you've set up any vault, and Clavis then asks for the vault's password as usual.\n- Both file types now show the Clavis icon in Explorer.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now). The new file types are registered the next time Clavis starts.\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
 }
