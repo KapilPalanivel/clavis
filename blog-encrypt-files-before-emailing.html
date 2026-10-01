@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files before emailing them — Clavis</title>
+  <meta name="description" content="Four ways to encrypt a file before you attach it — 7-Zip, Office and PDF passwords, your email service, and public-key sharing — plus the one rule for passwords.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files before emailing them">
+  <meta property="og:description" content="Four ways to encrypt a file before you email it, and the one rule for passwords.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-files-before-emailing.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-files-before-emailing.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=dadc8a5f02">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-files-before-emailing.html#article","headline":"How to encrypt files before emailing them","description":"Four ways to encrypt a file before you attach it — 7-Zip, Office and PDF passwords, your email service, and public-key sharing — plus the one rule for passwords.","datePublished":"2026-10-02","dateModified":"2026-10-02","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-files-before-emailing.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files before emailing them","item":"https://clavisenc.com/blog-encrypt-files-before-emailing.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is email encrypted already?","acceptedAnswer":{"@type":"Answer","text":"Usually only in transit between mail servers. The message and its attachments are stored readable in both mailboxes and their backups, so anyone who gets into either account can open them. Encrypting the file before you attach it closes that gap."}},{"@type":"Question","name":"Is Gmail confidential mode encrypted?","acceptedAnswer":{"@type":"Answer","text":"No. Confidential mode can block forwarding, copying and downloading and can make a message expire, but it doesn't encrypt the contents, and Google can still read them. Encrypt sensitive attachments before sending."}},{"@type":"Question","name":"How do I send the password safely?","acceptedAnswer":{"@type":"Answer","text":"Never in the same email. Use a different channel — a text message, a phone call or a messaging app — or agree on it in person. Or use public-key sharing such as Clavis, which needs no shared password."}},{"@type":"Question","name":"Can I email an encrypted file to someone who doesn't use Clavis?","acceptedAnswer":{"@type":"Answer","text":"For Clavis sharing they need Clavis, which is free to install and free for opening files shared with them. If they can't install anything, use a password-protected 7-Zip archive or Office document instead and send the password separately."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 2, 2026</p>
+        <h1>How to encrypt files before emailing them</h1>
+        <p>A tax return for your accountant, a passport scan for a landlord, a contract for a lawyer — email is how these things travel, and email is not a safe place for them. Attachments sit in your Sent folder, the recipient's inbox, and every backup of both, often for years. If any of those accounts is ever compromised, the files go with it.</p>
+        <p>Encrypting the file <em>before</em> you attach it means the email only ever carries a locked file. Here are four ways to do that, and the one rule that matters for all of them.</p>
+
+        <h2>The one rule: never send the password in the same email</h2>
+        <p>If the password travels with the file, anyone who gets the email gets both. Send the password another way — a text message, a phone call, a messaging app — or agree on it in person. Better still, use a method that needs no shared password at all (option 4).</p>
+
+        <h2>Option 1: a password-protected 7-Zip archive</h2>
+        <p>Install the free <a href="https://www.7-zip.org/" rel="noopener">7-Zip</a>, select the files → <strong>7-Zip → Add to archive</strong>, choose 7z, set a password and tick <strong>Encrypt file names</strong>. Attach the .7z file.</p>
+        <ul>
+          <li><strong>Good:</strong> free, strong (AES-256) and works for any kind of file.</li>
+          <li><strong>Catch:</strong> the recipient needs 7-Zip or a similar tool — Windows' built-in zip support can't open it — and you still have to get the password to them safely.</li>
+        </ul>
+
+        <h2>Option 2: password-protect the document itself</h2>
+        <p>Word, Excel and PowerPoint can encrypt a file with a password: <strong>File → Info → Protect Document → Encrypt with Password</strong>. PDFs can be password-protected with a PDF editor — see <a href="blog-password-protect-pdf-windows.html">how to password-protect a PDF on Windows</a>.</p>
+        <ul>
+          <li><strong>Good:</strong> the recipient opens it in an app they already have.</li>
+          <li><strong>Catch:</strong> only works for those file types, and the password still has to travel separately.</li>
+        </ul>
+
+        <h2>Option 3: your email service's encryption</h2>
+        <p>Some services can encrypt the message itself. Microsoft 365 business plans have an <strong>Encrypt</strong> button in Outlook, and services such as Proton Mail encrypt messages end to end.</p>
+        <ul>
+          <li><strong>Good:</strong> no extra tools if you already have the right plan.</li>
+          <li><strong>Catch:</strong> it depends on your provider and plan, the recipient often has to open the message in a web portal, and the attachment usually isn't encrypted once it's downloaded. Note that Gmail's <strong>confidential mode</strong> is not encryption: it stops forwarding and can set an expiry date, but Google can still read the contents.</li>
+        </ul>
+
+        <h2>Option 4: encrypt the file for one person, with no password</h2>
+        <p>With public-key encryption, you lock a file so only one specific person can open it. There's no password to send, so there's nothing to intercept. This is how <a href="./">Clavis</a> sharing works:</p>
+        <ol>
+          <li>The recipient installs Clavis (free) and sends you their <strong>Clavis ID</strong> — a small file that's safe to share.</li>
+          <li>You add it to your contacts, then right-click the file → <strong>Show more options → Clavis → Encrypt for someone…</strong> and pick them.</li>
+          <li>Attach the .enc file to your email. Only their Clavis can open it, and it's signed by you, so they know it really came from you.</li>
+        </ol>
+        <p>Encrypting for someone is part of <a href="pricing.html">Clavis Premium</a>; opening shared files is free. The full walkthrough is in <a href="blog-share-encrypted-files-without-password.html">how to share encrypted files without sending a password</a>.</p>
+
+        <h2>Which should you use?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Option</th><th>Recipient needs</th><th>Password to send</th><th>Best for</th></tr></thead>
+            <tbody>
+              <tr><td>7-Zip archive</td><td>7-Zip or similar</td><td>Yes — separately</td><td>Several files, any type</td></tr>
+              <tr><td>Office / PDF password</td><td>Word, Excel or a PDF reader</td><td>Yes — separately</td><td>One document</td></tr>
+              <tr><td>Email service encryption</td><td>Often a web portal</td><td>No</td><td>If your plan already includes it</td></tr>
+              <tr><td>Clavis sharing</td><td>Clavis (free)</td><td>No</td><td>Someone you send files to often</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Two habits that help:</strong> delete the sent copy from your Sent folder once the recipient has the file, and remember that most email services limit attachments to around 20–25 MB. For bigger files, encrypt them first and share them through a cloud folder instead — see <a href="blog-encrypt-before-onedrive-google-drive-dropbox.html">how to encrypt files before uploading them to the cloud</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>Is email encrypted already?</summary><p>Usually only in transit between mail servers. The message and its attachments are stored readable in both mailboxes and their backups, so anyone who gets into either account can open them. Encrypting the file before you attach it closes that gap.</p></details>
+          <details><summary>Is Gmail confidential mode encrypted?</summary><p>No. Confidential mode can block forwarding, copying and downloading and can make a message expire, but it doesn't encrypt the contents, and Google can still read them. Encrypt sensitive attachments before sending.</p></details>
+          <details><summary>How do I send the password safely?</summary><p>Never in the same email. Use a different channel — a text message, a phone call or a messaging app — or agree on it in person. Or use public-key sharing such as Clavis, which needs no shared password.</p></details>
+          <details><summary>Can I email an encrypted file to someone who doesn't use Clavis?</summary><p>For Clavis sharing they need Clavis, which is free to install and free for opening files shared with them. If they can't install anything, use a password-protected 7-Zip archive or Office document instead and send the password separately.</p></details>
+        </div>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
+</body>
+</html>

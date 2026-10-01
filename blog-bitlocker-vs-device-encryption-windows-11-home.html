@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BitLocker vs Device encryption on Windows 11 Home: what's the difference? — Clavis</title>
+  <meta name="description" content="Windows 11 Home has Device encryption, Pro has BitLocker. What each one encrypts, how to check yours, where the recovery key is, and what neither protects.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BitLocker vs Device encryption on Windows 11 Home: what's the difference?">
+  <meta property="og:description" content="Device encryption vs BitLocker: what each protects, and what neither does.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=dadc8a5f02">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html#article","headline":"BitLocker vs Device encryption on Windows 11 Home: what's the difference?","description":"Windows 11 Home has Device encryption, Pro has BitLocker. What each one encrypts, how to check yours, where the recovery key is, and what neither protects.","datePublished":"2026-10-02","dateModified":"2026-10-02","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"BitLocker vs Device encryption on Windows 11 Home: what's the difference?","item":"https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is Device encryption as secure as BitLocker?","acceptedAnswer":{"@type":"Answer","text":"The encryption itself is the same. Device encryption is BitLocker with fewer options: it covers the internal drive, unlocks automatically with the PC's TPM chip, and keeps its recovery key in your Microsoft account. BitLocker adds per-drive control, a startup PIN and encryption of USB sticks."}},{"@type":"Question","name":"Why don't I have Device encryption on my PC?","acceptedAnswer":{"@type":"Answer","text":"Device encryption needs supported hardware, including a TPM chip, and you need to sign in with a Microsoft account to switch it on. If Settings doesn't show it, run System Information as administrator and read the Automatic Device Encryption Support line for the reason."}},{"@type":"Question","name":"Should I upgrade to Windows 11 Pro just for BitLocker?","acceptedAnswer":{"@type":"Answer","text":"Only if you need its extra controls, such as a startup PIN or encrypting USB sticks with BitLocker To Go. For a stolen laptop, Device encryption already protects the drive. For protecting files while you're signed in or when you share them, you need file encryption on either edition."}},{"@type":"Question","name":"Where is my Device encryption recovery key?","acceptedAnswer":{"@type":"Answer","text":"In your Microsoft account. Go to aka.ms/myrecoverykey, sign in with the account you use on the PC, and find the key for your device. Write it down somewhere other than the PC."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Explainer · October 2, 2026</p>
+        <h1>BitLocker vs Device encryption on Windows 11 Home: what's the difference?</h1>
+        <p>Search for “BitLocker Windows 11 Home” and you'll find two names for what sounds like the same thing. <strong>BitLocker</strong> is the full drive-encryption tool in Windows 11 Pro. <strong>Device encryption</strong> is the cut-down version that many Windows 11 Home PCs get instead. They use the same encryption underneath, but what you can control — and what they protect — is different.</p>
+
+        <h2>The short answer</h2>
+        <ul>
+          <li><strong>Windows 11 Home</strong> has <strong>Device encryption</strong> (on supported hardware), not BitLocker. It's a simple on/off switch for your PC's drive.</li>
+          <li><strong>Windows 11 Pro</strong> has full <strong>BitLocker</strong>: you choose which drives to encrypt, how they unlock, and you can encrypt USB sticks with BitLocker To Go.</li>
+          <li><strong>Both</strong> protect a PC that's switched off and stolen. <strong>Neither</strong> protects your files once you're signed in, or files you copy to a USB stick, an email or the cloud.</li>
+        </ul>
+
+        <h2>Side by side</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th></th><th>Device encryption</th><th>BitLocker</th></tr></thead>
+            <tbody>
+              <tr><td>Windows edition</td><td>Home and Pro, on supported hardware</td><td>Pro, Enterprise, Education</td></tr>
+              <tr><td>How you turn it on</td><td>One switch in Settings</td><td>Control Panel → Manage BitLocker, per drive</td></tr>
+              <tr><td>What it encrypts</td><td>The PC's internal drive</td><td>Any drive you choose, including USB sticks (BitLocker To Go)</td></tr>
+              <tr><td>Unlock options</td><td>Automatic with the PC's TPM chip</td><td>TPM, TPM + PIN, or a password for data drives</td></tr>
+              <tr><td>Recovery key</td><td>Saved to your Microsoft account</td><td>Microsoft account, a file, a printout or a USB stick</td></tr>
+              <tr><td>Needs a Microsoft account</td><td>Yes, to switch it on</td><td>No</td></tr>
+              <tr><td>Protects files while you're signed in</td><td>No</td><td>No</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>How to check whether your PC has Device encryption</h2>
+        <ol>
+          <li>Open <strong>Settings → Privacy &amp; security</strong>.</li>
+          <li>Look for <strong>Device encryption</strong>. If it's there, you can see whether it's on and switch it on or off.</li>
+          <li>If it isn't listed, your hardware doesn't support it. To see why, search Start for <strong>System Information</strong>, right-click it → <strong>Run as administrator</strong>, and check the <strong>Automatic Device Encryption Support</strong> line.</li>
+        </ol>
+        <p>Many new PCs arrive with Device encryption already switched on, especially if you signed in with a Microsoft account during setup. That's worth knowing, because of the next point.</p>
+
+        <h2>Find your recovery key before you need it</h2>
+        <p>With either BitLocker or Device encryption, a firmware update, a hardware change or a repair can make Windows ask for the <strong>recovery key</strong> at startup. Without it, the drive stays locked — including all your files. For Device encryption, the key is in your Microsoft account at <strong>aka.ms/myrecoverykey</strong>. Look it up now and write it down somewhere off the PC.</p>
+
+        <h2>What drive encryption doesn't do</h2>
+        <p>Device encryption and BitLocker are about the <em>drive</em>. Once Windows has started and you're signed in, every file is readable to anyone using your account — a family member, a repair shop with your password, or malware. And the moment you copy a file somewhere else, it's no longer encrypted: a USB stick, an email attachment or your OneDrive folder.</p>
+        <p>That's what file encryption is for. An app like <a href="./">Clavis</a> encrypts individual files with AES-256-GCM, so they stay locked while you're signed in and wherever you copy them, and it works on Home without administrator rights. The best setup uses both: drive encryption for a stolen laptop, file encryption for your most private files.</p>
+        <p>See also: <a href="blog-encrypt-files-windows-11-home.html">how to encrypt files on Windows 11 Home</a> and <a href="blog-encrypt-usb-drive-windows-11-home.html">how to encrypt a USB drive on Windows 11 Home</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>Is Device encryption as secure as BitLocker?</summary><p>The encryption itself is the same. Device encryption is BitLocker with fewer options: it covers the internal drive, unlocks automatically with the PC's TPM chip, and keeps its recovery key in your Microsoft account. BitLocker adds per-drive control, a startup PIN and encryption of USB sticks.</p></details>
+          <details><summary>Why don't I have Device encryption on my PC?</summary><p>Device encryption needs supported hardware, including a TPM chip, and you need to sign in with a Microsoft account to switch it on. If Settings doesn't show it, run System Information as administrator and read the Automatic Device Encryption Support line for the reason.</p></details>
+          <details><summary>Should I upgrade to Windows 11 Pro just for BitLocker?</summary><p>Only if you need its extra controls, such as a startup PIN or encrypting USB sticks with BitLocker To Go. For a stolen laptop, Device encryption already protects the drive. For protecting files while you're signed in or when you share them, you need file encryption on either edition.</p></details>
+          <details><summary>Where is my Device encryption recovery key?</summary><p>In your Microsoft account. Go to aka.ms/myrecoverykey, sign in with the account you use on the PC, and find the key for your device. Write it down somewhere other than the PC.</p></details>
+        </div>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Encrypt your files with Clavis — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
+</body>
+</html>

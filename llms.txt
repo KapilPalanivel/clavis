@@ -90,6 +90,8 @@ Current version: 3.8.0, released 2026-10-02. Windows installer: Clavis-Setup.exe
 
 ## Guides
 
+- [BitLocker vs Device encryption on Windows 11 Home: what's the difference?](https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html)
+- [How to encrypt files before emailing them](https://clavisenc.com/blog-encrypt-files-before-emailing.html)
 - [How to encrypt a USB drive on Windows 11 Home (without BitLocker)](https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html)
 - [How to encrypt files on Windows 11 Home (no BitLocker needed)](https://clavisenc.com/blog-encrypt-files-windows-11-home.html)
 - [How to share encrypted files without sending a password](https://clavisenc.com/blog-share-encrypted-files-without-password.html)
