@@ -1,9 +1,9 @@
 {
-  "version": "3.7.1",
+  "version": "3.7.2",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "7b74c27accc154c3d75a7ef0375ee65d9f2ea6ddcc4863ddb7c10c8199472aa0",
-  "zipSha256": "78f7ecd76af473af1c2e5f2a64194121a504fa2917605c9966dca5bc2353303d",
-  "debSha256": "c411bdd3a633933932fe3550a5200defdd32dc3aaec16463cbe629cea1528d12",
-  "notes": "# Clavis 3.7.1\n\n## 🛠 Fixed\n\n- **Tamil and Hindi now display properly in the main window.** In 3.7, the main window and sidebar showed empty boxes in place of Tamil or Hindi text. They now use a font that has both scripts.\n- More of the main window is translated: the page title, Source and Operation sections, Browse, the hints, Ready, the watch-folder status and About.\n- The sidebar widens to fit longer Tamil menu names instead of cutting them off.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from the website.\n- **New install:** download Clavis from the website.\n\nYour vaults and settings are kept.\n"
+  "sha256": "0644e096599c0d294e1bf3619a1ffcc21320d055b1f3af7a873f5a92362f63df",
+  "zipSha256": "5ef7000855661d19727de2c1cc30ed3f12af3f0a1a005b895dd82366e3994950",
+  "debSha256": "ada62f98e29bec9452960084533283443d9be855b8f2d3ddc0e32caec85e8bfa",
+  "notes": "# Clavis 3.7.2\n\n## ✨ New\n\n- **Quit Clavis** button at the top right of the window. It closes Clavis completely. The window's × still only hides Clavis to the tray, where watch folders keep working. If Clavis is still busy with your files, it asks first.\n\n## 🛠 Fixed\n\n- **Hindi showed as empty boxes in Settings → Language.** Every language name now appears in its own script, whatever language Clavis is in.\n- **The \"restart Clavis\" message appeared twice.** It now appears once in the current language and once in the newly chosen one.\n- **More Tamil and Hindi:**\n  - the Select Vault window and creating a vault;\n  - the Recovery Key window and reminder;\n  - the weak-password warning;\n  - the \"time to crack\" estimate and its reasons;\n  - Yes / No / OK / Cancel buttons.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
 }
