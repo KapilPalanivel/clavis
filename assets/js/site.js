@@ -7,7 +7,6 @@
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
   const range = (p, a, b) => clamp((p - a) / (b - a));                 // 0→1 across [a,b]
   const ease  = t => t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-  const back  = t => { const c = 1.9; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
 
   /* ── Nav ──────────────────────────────────────────────────────────── */
   const nav = $(".nav");
@@ -42,133 +41,149 @@
   }), { rootMargin: "0px 0px -8% 0px", threshold: .12 });
   $$("[data-reveal]").forEach(el => io.observe(el));
 
-  /* ── Card light follows the pointer ───────────────────────────────── */
-  $$(".card").forEach(c => c.addEventListener("pointermove", e => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty("--mx", (e.clientX - r.left) + "px");
-    c.style.setProperty("--my", (e.clientY - r.top) + "px");
-  }));
-
-  /* ── Lock story (home hero) ───────────────────────────────────────── */
+  /* ── Home story: the real Clavis window, scroll-synced ────────────────
+     Three zones are measured on every resize — copy on top, the window in the
+     middle, the file tray underneath — and placed so they never overlap. Scroll
+     progress p (0→1 across #story) then drives everything:
+       .02–.17  window rises from under the hero and docks
+       .19–.37  files fly from the tray into Source, the path types in
+       .41–.64  Execute, the key turns, Encrypting 1…3 of 3
+       .62–.72  files come back out as .enc
+       .73–.87  feature callouts take the tray
+       .86–1    closing line                                                */
   const story = $("#story");
   if (story) {
-    const scene   = $("#scene");
-    const lines   = $$("#doc-lines text");
-    const plain   = lines.map(t => t.textContent);
-    const CH      = "0123456789ABCDEFabcdef+/=#$%&*@";
-    const thresh  = plain.map(s => [...s].map((_, i) => ((i * 7919 + s.length * 104729) % 997) / 997));
-    const ribbonF = $("#ribbon-front"), ribbonB = $("#ribbon-back");
-    const lenF = ribbonF.getTotalLength(), lenB = ribbonB.getTotalLength();
-    [ribbonF, ribbonB].forEach((r, i) => { const L = i ? lenB : lenF; r.style.strokeDasharray = L; });
-    const key     = $("#key"), keyBow = $("#key-bow"), slot = $("#keyhole-slot");
-    const shackle = $("#shackle"), ring = $("#click-ring"), glow = $("#lock-glow");
-    const bits    = $("#bits"), docG = $("#doc");
-    const steps   = $$(".steps li"), stepsEl = $(".steps"), now = $(".now"), hint = $(".scroll-hint");
-    const captions = steps.map(li => li.querySelector("span").textContent);
+    const stage = $("#stage"), hero = $("#hero"), copy = $("#copy"), device = $("#device"), win = $("#win");
+    const tray = $("#tray"), chips = $$(".chip", tray), callouts = $$(".feat-pill", tray), chaps = $$(".chap", copy);
+    const field = $("#field"), pathEl = $("#path"), exec = $("#exec"), seal = $("#seal"), key = $("#key"), bow = $("#bow");
+    const ring = $("#ring"), hole = $("#hole"), sbar = $("#sbar"), pbar = $("#pbar"), stxt = $("#stxt"), ssub = $("#ssub");
+    const rail = $$("#rail div");
+    const W = 880, H = 560, NAV = 76, PATH = "C:\\Users\\you\\Documents\\Tax Returns 2025";
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const out = t => 1 - Math.pow(1 - t, 3);
+    const icons = chips.map(c => $(".fi", c).innerHTML);
+    const lockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>';
+    let L = null, cur = 0, target = 0, raf = 0;
 
-    // Drifting ciphertext glyphs behind the scene.
-    if (bits) for (let i = 0; i < 26; i++) {
-      const t = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      t.setAttribute("x", (20 + (i * 211) % 520).toString());
-      t.setAttribute("y", (40 + (i * 137) % 540).toString());
-      t.textContent = CH[(i * 13) % CH.length] + CH[(i * 29) % CH.length];
-      t.style.animationDelay = (-(i * 0.73) % 9) + "s";
-      bits.appendChild(t);
-    }
+    const offsetIn = (el, anc) => { let x = 0, y = 0; while (el && el !== anc) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return [x, y]; };
 
-    const forced = new URLSearchParams(location.search).get("story");   // ?story=0.7 → fixed frame (screenshots)
-    let target = 0, cur = forced !== null ? +forced : 0, raf = 0, lastStep = -1;
-
-    const progress = () => {
-      const r = story.getBoundingClientRect();
-      return clamp(-r.top / (r.height - innerHeight));
+    const layout = () => {
+      const vw = stage.clientWidth, vh = stage.clientHeight;
+      if (!vw || !vh) return;
+      const g = clamp(vh * .035, 14, 36), pad = clamp(vh * .04, 14, 44);
+      const heroTop = NAV + pad;
+      hero.style.top = heroTop + "px";
+      const copyH = copy.offsetHeight, trayH = tray.offsetHeight, heroH = hero.offsetHeight;
+      const room = vh - heroTop - pad;
+      const s = Math.max(.2, Math.min(1, (room - copyH - trayH - 2 * g) / H, (vw - (vw < 640 ? 16 : 40)) / W));
+      const free = Math.max(0, room - (copyH + g + s * H + g + trayH));
+      const copyTop = heroTop + free / 2;                 // centre the copy · window · tray stack
+      copy.style.top = copyTop + "px";
+      const dockTop = copyTop + copyH + g;
+      tray.style.top = (dockTop + s * H + g) + "px";
+      const startTop = Math.max(dockTop, heroTop + heroH + g * 1.6);
+      const [fx, fy] = offsetIn(field, device);
+      const fieldC = [vw / 2 - s * W / 2 + s * (fx + field.offsetWidth * .35), dockTop + s * (fy + field.offsetHeight / 2)];
+      const chipC = chips.map(c => { const [x, y] = offsetIn(c, stage); return [x + c.offsetWidth / 2, y + c.offsetHeight / 2]; });
+      L = { s, dockTop, startTop, fieldC, chipC };
     };
 
     const render = p => {
-      // 1. Text → ciphertext (0.06–0.42)
-      const s = range(p, .06, .42), seed = Math.floor(p * 360);
-      lines.forEach((t, li) => {
-        const src = plain[li]; let out = "";
-        for (let i = 0; i < src.length; i++) {
-          if (s <= thresh[li][i]) { out += src[i]; continue; }
-          const h = (Math.imul(i + 1, 2654435761) ^ Math.imul(li + 7, 40503) ^ Math.imul(seed + 3, 97)) >>> 0;
-          out += CH[h % CH.length];
-        }
-        t.textContent = out;
-        t.style.fill = s > .5 ? "#2F6BFF" : "#33415F";
+      if (!L) layout();
+      if (!L) return;
+      const { s, dockTop, startTop, fieldC, chipC } = L;
+      const h = range(p, .015, .085);
+      hero.style.opacity = 1 - h;
+      hero.style.transform = `translateY(${(-48 * h).toFixed(1)}px)`;
+      hero.style.visibility = h >= 1 ? "hidden" : "visible";
+      chaps.forEach(c => {
+        const a = +c.dataset.a, b = +c.dataset.b;
+        const o = range(p, a, a + .035) * (1 - range(p, b - .035, b));
+        c.style.opacity = o;
+        c.style.transform = `translateY(${((1 - o) * 18).toFixed(1)}px)`;
+        c.style.visibility = o > 0 ? "visible" : "hidden";
       });
-      // 2. Ribbon wraps (0.18–0.52)
-      const w = ease(range(p, .18, .52));
-      ribbonB.style.strokeDashoffset = lenB * (1 - clamp(w * 2));
-      ribbonF.style.strokeDashoffset = lenF * (1 - clamp(w * 2 - 1));
-      // 3. Key slides into the keyhole (0.40–0.62)
-      const k = ease(range(p, .40, .62));
-      const kIn = range(p, .36, .44);
-      key.style.opacity = kIn;
-      key.setAttribute("transform", `translate(${(1 - k) * 150} 0)`);
-      // 4. Key turns (0.62–0.74): the bow flattens as it rotates about the shaft; the slot turns
-      const turn = ease(range(p, .62, .74));
-      keyBow.setAttribute("transform", `scale(1 ${1 - turn * .78})`);
-      slot.setAttribute("transform", `rotate(${turn * 90})`);
-      // 5. Shackle drops and clicks (0.72–0.84)
-      const d = range(p, .72, .84);
-      shackle.setAttribute("transform", `translate(0 ${-46 * (1 - (d < 1 ? back(d) : 1))})`);
-      const c = range(p, .84, .96);
-      ring.setAttribute("r", (14 + c * 70).toFixed(1));
-      ring.style.opacity = c > 0 && c < 1 ? (1 - c) : 0;
-      glow.style.opacity = .25 + .75 * range(p, .8, 1);
-      if (bits) bits.style.opacity = .15 + .6 * range(p, .1, .5);
-      if (docG) docG.style.opacity = 1 - .12 * range(p, .5, .9);
-      // Captions
-      const step = p < .24 ? 0 : p < .56 ? 1 : p < .8 ? 2 : 3;
-      if (step !== lastStep) {
-        steps.forEach((li, i) => li.classList.toggle("on", i <= step));
-        if (now) now.textContent = captions[step] || "";
-        lastStep = step;
-      }
-      if (stepsEl) stepsEl.style.setProperty("--p", p.toFixed(4));
-      if (hint) hint.style.opacity = p > .04 ? 0 : 1;
+      // the window rises from under the hero, flattens and docks
+      const d = ease(range(p, .05, .17)), k = ease(range(p, .86, .95));
+      const scl = s * lerp(.92, 1, d);
+      const ty = lerp(startTop, dockTop, d) + scl * H / 2 - H / 2;
+      device.style.transform = `translate(-50%, ${ty.toFixed(1)}px) perspective(2200px) rotateX(${(14 * (1 - d)).toFixed(2)}deg) scale(${scl.toFixed(4)})`;
+      win.style.boxShadow = `0 70px 120px -50px rgba(0,0,0,.95), 0 0 0 1px rgba(255,255,255,.07), 0 0 ${(90 * k).toFixed(0)}px -10px rgba(217,168,79,.4)`;
+      // files: wait in the tray, fly into Source, come back out as .enc
+      const trayIn = range(p, .13, .17);
+      chips.forEach((c, i) => {
+        const a = .19 + i * .03, t = ease(range(p, a, a + .09));
+        const b = .62 + i * .022, u = ease(range(p, b, b + .08));
+        const enc = p >= b, nm = $("b", c), sm = $("small", c);
+        const want = enc ? nm.dataset.out : nm.dataset.in;
+        if (nm.textContent !== want) {
+          nm.textContent = want; sm.textContent = enc ? sm.dataset.out : sm.dataset.in;
+          c.classList.toggle("enc", enc); $(".fi", c).innerHTML = enc ? lockIcon : icons[i];
+        }
+        const f = enc ? 1 - u : t;                         // 0 = resting in the tray, 1 = inside Source
+        const dx = (fieldC[0] - chipC[i][0]) * f, dy = (fieldC[1] - chipC[i][1]) * f - Math.sin(Math.PI * f) * 60;
+        c.style.transform = `translate(${dx.toFixed(1)}px, ${dy.toFixed(1)}px) scale(${lerp(1, .22, f).toFixed(3)})`;
+        c.style.opacity = ((enc ? 1 : trayIn) * (1 - range(f, .55, .9)) * (1 - range(p, .71, .74))).toFixed(3);
+      });
+      // Source types the folder path
+      const typing = range(p, .27, .37), n = Math.round(PATH.length * typing);
+      const html = n ? PATH.slice(0, n) + (typing < 1 ? '<span class="caret"></span>' : "") : '<span class="ph">Choose a file or folder…</span>';
+      if (pathEl.innerHTML !== html) pathEl.innerHTML = html;
+      field.classList.toggle("hot", p > .19 && p < .4);
+      // Execute, the seal, the key
+      const press = range(p, .41, .43) * (1 - range(p, .44, .46));
+      exec.style.transform = `scale(${(1 - .03 * press).toFixed(3)})`;
+      const so = range(p, .43, .46) * (1 - range(p, .59, .62));
+      seal.style.opacity = so; seal.style.visibility = so > 0 ? "visible" : "hidden";
+      const kin = out(range(p, .45, .52)), turn = ease(range(p, .52, .56));
+      key.style.opacity = range(p, .45, .47) * (1 - range(p, .58, .6));
+      key.style.transform = `translateX(${((1 - kin) * 240).toFixed(1)}px)`;
+      bow.setAttribute("transform", `translate(176 32) scale(1 ${(1 - .8 * turn).toFixed(3)}) translate(-176 -32)`);
+      hole.style.transform = `rotate(${(90 * turn).toFixed(1)}deg)`;
+      const c = range(p, .555, .61);
+      ring.style.opacity = c > 0 && c < 1 ? 1 - c : 0;
+      ring.style.transform = `scale(${(1 + .9 * c).toFixed(3)})`;
+      // status bar, worded like the app's own
+      const prog = range(p, .55, .64);
+      pbar.style.transform = `scaleX(${prog.toFixed(3)})`;
+      pbar.style.opacity = prog > 0 && prog < 1 ? 1 : 0;
+      let st, sub = "", ok = false;
+      if (p < .36) st = "Ready";
+      else if (p < .55) st = "Tax Returns 2025 · 3 files";
+      else if (p < .64) st = `Encrypting ${Math.min(3, 1 + Math.floor(prog * 3))} of 3…`;
+      else { st = "Encrypted 3 files in Tax Returns 2025"; sub = p < .86 ? "· originals deleted" : "· locks when you step away"; ok = true; }
+      if (stxt.textContent !== st) stxt.textContent = st;
+      if (ssub.textContent !== sub) ssub.textContent = sub;
+      sbar.classList.toggle("ok", ok);
+      callouts.forEach((el, i) => {
+        const o = range(p, .73 + i * .02, .76 + i * .02) * (1 - range(p, .845, .87));
+        el.style.opacity = o.toFixed(3);
+        el.style.transform = `translateY(${((1 - o) * 14).toFixed(1)}px)`;
+      });
+      const step = p < .41 ? 0 : p < .67 ? 1 : p < .86 ? 2 : 3;
+      rail.forEach((r, i) => r.classList.toggle("on", i === step));
     };
 
+    const forced = new URLSearchParams(location.search).get("story");   // ?story=0.7 → fixed frame (screenshots)
+    const progress = () => { const r = story.getBoundingClientRect(); return clamp(-r.top / (r.height - innerHeight)); };
     const tick = () => {
-      cur += (target - cur) * .12;
-      if (Math.abs(target - cur) < .0005) cur = target;
+      cur += (target - cur) * .16;
+      if (Math.abs(target - cur) < .0004) cur = target;
       render(cur);
       raf = cur !== target ? requestAnimationFrame(tick) : 0;
     };
     const onScroll = () => {
-      if (forced !== null) return;
-      target = progress();
-      if (reduced) { cur = target = 1; render(1); return; }
-      if (!raf) raf = requestAnimationFrame(tick);
+      target = forced !== null ? +forced : progress();
+      if (reduced || forced !== null) { cur = target; render(cur); }
+      else if (!raf) raf = requestAnimationFrame(tick);
     };
+    const relayout = () => { layout(); render(cur); };
     addEventListener("scroll", onScroll, { passive: true });
-    addEventListener("resize", onScroll);
-    render(reduced ? 1 : cur); onScroll();
-
-    // Gentle 3D tilt toward the pointer.
-    const wrap = $(".scene-wrap");
-    if (wrap && !reduced) {
-      wrap.addEventListener("pointermove", e => {
-        const r = wrap.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
-        scene.style.transform = `rotateY(${x * 10}deg) rotateX(${-y * 8}deg)`;
-      });
-      wrap.addEventListener("pointerleave", () => { scene.style.transform = ""; });
-    }
-  }
-
-  /* ── Product windows parallax ─────────────────────────────────────── */
-  const wins = $(".windows");
-  if (wins && !reduced) {
-    const front = $(".window.front", wins), backW = $(".window.back", wins);
-    const par = () => {
-      const r = wins.getBoundingClientRect();
-      const t = clamp((innerHeight - r.top) / (innerHeight + r.height)) - .5;   // -0.5…0.5
-      front.style.transform = `translateY(${t * -50}px)`;
-      backW.style.transform = `translateY(${t * 40}px)`;
-    };
-    addEventListener("scroll", par, { passive: true }); par();
+    let rz = 0;
+    addEventListener("resize", () => { cancelAnimationFrame(rz); rz = requestAnimationFrame(relayout); });
+    if (document.fonts) { document.fonts.addEventListener("loadingdone", relayout); document.fonts.ready.then(relayout); }
+    addEventListener("load", relayout);
+    onScroll();
   }
 
   /* ── Download page: the visitor's system first, marked "For this computer" ── */
