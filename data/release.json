@@ -1,9 +1,9 @@
 {
-  "version": "3.7.3",
+  "version": "3.7.4",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "ff92f89ef333baaa852038be898c181be24bc959484d882bdd837df04510371b",
-  "zipSha256": "f5f90a3c661ba0aa1e3f607153b094ef84cf9d7f41bfd99daa03f644395f9727",
-  "debSha256": "40ca607720a917c177841e9a555219855320334f1850e55812a1febcd9468ed2",
-  "notes": "# Clavis 3.7.3\n\n## ✨ New\n\n- **Double-click a Clavis ID** (`.clavisid`) to add that person to your contacts. Clavis shows their fingerprint so you can check it first. Before, Windows asked which app should open the file.\n- **Double-click a vault backup** (`.clavisbackup`) to restore it. On a new PC this works before you've set up any vault, and Clavis then asks for the vault's password as usual.\n- Both file types now show the Clavis icon in Explorer.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now). The new file types are registered the next time Clavis starts.\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
+  "sha256": "a341f7930afbb39e508a850c9bcb9f6c1eb0f5f5877a9c70e545bf927fa74448",
+  "zipSha256": "9814a4549af51c32b6d5cdec5cf1aa6a3b8f62f39c746ec6789ea1390ee887fe",
+  "debSha256": "d18da5c4f0d6f98aa7012c518cd2ffcc640cd93f45a39304d0cf4b40a1042b5b",
+  "notes": "# Clavis 3.7.4\n\n## 🛠 Improved\n\n- **`clavis-cli list` and `clavis-cli verify` work on the current folder** when you don't name one. `encrypt` and `decrypt` still need you to say which files, so nothing gets encrypted by accident.\n- Clearer message when a command needs a file, e.g. `clavis-cli encrypt report.pdf`. The terminal prompt now always starts on a new line afterwards.\n- Typing `clavis help` (the app, not the command line) now explains that the command line is `clavis-cli`, instead of doing nothing.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
 }
