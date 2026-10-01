@@ -158,8 +158,10 @@
   const tiles = $$(".os-tile[data-os]");
   if (tiles.length) {
     const ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || "";
-    const os = /win/i.test(ua) ? "windows" : /android/i.test(navigator.userAgent) ? "" : /linux|x11/i.test(ua) ? "linux" : "";
+    const phone = /android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent);
+    const os = phone ? "" : /win/i.test(ua) ? "windows" : /linux|x11/i.test(ua) ? "linux" : "";
     const mine = tiles.find(t => t.dataset.os === os);
+    if (phone) { const n = $("#mobile-note"); if (n) n.hidden = false; }
     if (mine) { mine.classList.add("is-you"); mine.parentNode.classList.add("detected"); mine.parentNode.prepend(mine); }
   }
 

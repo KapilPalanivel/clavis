@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=d27e1656f2">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's actually free?","acceptedAnswer":{"@type":"Answer","text":"Encrypting and decrypting individual files with full-strength AES-256-GCM, one vault, the recovery key, integrity checks and secure delete. The security is identical to Pro — Pro adds power features, never stronger crypto."}},{"@type":"Question","name":"What's the difference between Pro and Premium?","acceptedAnswer":{"@type":"Answer","text":"Pro is for working with lots of files on your PC: folders, several vaults, watch folders, key-file 2FA, secure notes, opening files without a decrypted copy and browsing encrypted folders. Premium adds everything that reaches beyond one PC: encrypting straight into your cloud folder, the command line for scripts and scheduled backups, and — as they arrive — sharing with other people and recovery-key backup with version history."}},{"@type":"Question","name":"Can I upgrade from Pro to Premium later?","acceptedAnswer":{"@type":"Answer","text":"Yes, and you only pay the difference. Email clavis.enc@gmail.com from the address you bought Pro with and we'll send you an upgrade code."}},{"@type":"Question","name":"How do I activate Pro or Premium?","acceptedAnswer":{"@type":"Answer","text":"Your license key arrives by email right after you buy. Open Clavis → Settings → License → paste the key → Activate. The key is checked once online; after that Pro works offline, with no account."}},{"@type":"Question","name":"One licence, how many PCs?","acceptedAnswer":{"@type":"Answer","text":"Your license covers your own computers. To move it to a new PC, open Settings → License → Remove license on the old one first, then activate on the new one."}},{"@type":"Question","name":"Can I try before I buy?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's what the Free version is for. It gives you the full app and full-strength encryption, so you can be sure before upgrading. Because you can try everything for free, Pro purchases are final."}},{"@type":"Question","name":"Do I have to pay for updates?","acceptedAnswer":{"@type":"Answer","text":"No. Pro and Premium are one-time and include all future updates."}}]}</script>
+  <link rel="stylesheet" href="assets/css/site.css?v=4b006bf971">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's actually free?","acceptedAnswer":{"@type":"Answer","text":"Encrypting and decrypting individual files with full-strength AES-256-GCM, one vault, the recovery key, integrity checks and secure delete. The security is identical to Pro — Pro adds power features, never stronger crypto."}},{"@type":"Question","name":"What's the difference between Pro and Premium?","acceptedAnswer":{"@type":"Answer","text":"Pro is for working with lots of files on your PC: folders, several vaults, watch folders, key-file 2FA, secure notes, opening files without a decrypted copy and browsing encrypted folders. Premium adds everything that reaches beyond one PC: encrypting straight into your cloud folder, the command line for scripts and scheduled backups, and — as they arrive — sharing with other people and recovery-key backup with version history."}},{"@type":"Question","name":"Can I upgrade from Pro to Premium later?","acceptedAnswer":{"@type":"Answer","text":"Yes, and you only pay the difference. Email clavis.enc@gmail.com from the address you bought Pro with and we'll send you an upgrade code."}},{"@type":"Question","name":"When can I buy Pro or Premium?","acceptedAnswer":{"@type":"Answer","text":"Very soon — the store is being set up. Email clavis.enc@gmail.com and you'll hear the day it opens. Meanwhile, Clavis Free has the full encryption."}},{"@type":"Question","name":"How do I activate Pro or Premium?","acceptedAnswer":{"@type":"Answer","text":"Your license key will arrive by email right after you buy. Open Clavis → Settings → License → paste the key → Activate. The key is checked once online; after that Pro works offline, with no account."}},{"@type":"Question","name":"One licence, how many PCs?","acceptedAnswer":{"@type":"Answer","text":"Your license covers your own computers. To move it to a new PC, open Settings → License → Remove license on the old one first, then activate on the new one."}},{"@type":"Question","name":"Can I try before I buy?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's what the Free version is for. It gives you the full app and full-strength encryption, so you can be sure before upgrading. Because you can try everything for free, Pro purchases are final."}},{"@type":"Question","name":"Do I have to pay for updates?","acceptedAnswer":{"@type":"Answer","text":"No. Pro and Premium are one-time and include all future updates."}}]}</script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -107,7 +107,8 @@
               <li>Browse encrypted folders by real name</li>
               <li>All future updates included</li>
             </ul>
-            <a class="btn btn-ghost plan-cta" id="buy-pro" href="https://getclavis.lemonsqueezy.com/checkout/buy/154daf0e-07f0-4da6-87a7-ff60b67e5dfc">Buy Pro — $29</a>
+            <span class="btn btn-ghost plan-cta is-soon" id="buy-pro" aria-disabled="true">Coming soon</span>
+            <a class="plan-ask" href="mailto:clavis.enc@gmail.com?subject=Clavis%20Pro">Ask about Pro → clavis.enc@gmail.com</a>
           </div>
 
           <div class="plan featured">
@@ -125,12 +126,13 @@
               <li>One-file vault backup &amp; previous versions of edited files</li>
               <li>All future updates included</li>
             </ul>
-            <a class="btn btn-primary plan-cta" id="buy-premium" href="https://getclavis.lemonsqueezy.com/">Buy Premium — $39</a>
+            <span class="btn btn-primary plan-cta is-soon" id="buy-premium" aria-disabled="true">Coming soon</span>
+            <a class="plan-ask" href="mailto:clavis.enc@gmail.com?subject=Clavis%20Premium">Ask about Premium → clavis.enc@gmail.com</a>
           </div>
 
         </div>
 
-        <p class="fineprint" style="text-align:center;margin-top:18px">Secure checkout by Lemon Squeezy. Your key arrives by email; paste it in Clavis → Settings → License.</p>
+        <p class="fineprint" style="text-align:center;margin-top:18px">Pro and Premium go on sale soon. Want to be told, or have a question? Email <a href="mailto:clavis.enc@gmail.com?subject=Clavis">clavis.enc@gmail.com</a>. Everything in Free works today.</p>
         <p class="fineprint" style="text-align:center;margin-top:26px">Business / team licensing is planned. Interested? Email <span style="color:var(--cyan)">clavis.enc@gmail.com</span>.</p>
       </div>
     </section>
@@ -148,7 +150,8 @@
           <details><summary>What's actually free?</summary><p>Encrypting and decrypting individual files with full-strength AES-256-GCM, one vault, the recovery key, integrity checks and secure delete. The security is identical to Pro — Pro adds power features, never stronger crypto.</p></details>
           <details><summary>What's the difference between Pro and Premium?</summary><p>Pro is for working with lots of files on your PC: folders, several vaults, watch folders, key-file 2FA, secure notes, opening files without a decrypted copy and browsing encrypted folders. Premium adds everything that reaches beyond one PC: encrypting straight into your cloud folder, the command line for scripts and scheduled backups, and — as they arrive — sharing with other people and recovery-key backup with version history.</p></details>
           <details><summary>Can I upgrade from Pro to Premium later?</summary><p>Yes, and you only pay the difference. Email <span style="color:var(--cyan)">clavis.enc@gmail.com</span> from the address you bought Pro with and we'll send you an upgrade code.</p></details>
-          <details><summary>How do I activate Pro or Premium?</summary><p>Your license key arrives by email right after you buy. Open Clavis → Settings → License → paste the key → Activate. The key is checked once online; after that Pro works offline, with no account.</p></details>
+          <details><summary>When can I buy Pro or Premium?</summary><p>Very soon — the store is being set up. Email <a href="mailto:clavis.enc@gmail.com?subject=Clavis%20Pro%20/%20Premium">clavis.enc@gmail.com</a> and you'll hear the day it opens. Meanwhile, Clavis Free has the full encryption.</p></details>
+          <details><summary>How do I activate Pro or Premium?</summary><p>Your license key will arrive by email right after you buy. Open Clavis → Settings → License → paste the key → Activate. The key is checked once online; after that Pro works offline, with no account.</p></details>
           <details><summary>One licence, how many PCs?</summary><p>Your license covers your own computers. To move it to a new PC, open Settings → License → Remove license on the old one first, then activate on the new one.</p></details>
           <details><summary>Can I try before I buy?</summary><p>Yes — that's what the Free version is for. It gives you the full app and full-strength encryption, so you can be sure before upgrading. Because you can try everything for free, Pro purchases are final.</p></details>
           <details><summary>Do I have to pay for updates?</summary><p>No. Pro and Premium are one-time and include all future updates.</p></details>
@@ -177,10 +180,10 @@
       <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
       <span class="latin">clāvis — Latin, “key”</span>
       <span>© <span data-year>2026</span> Kapil Palanivel</span>
-      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=08a3961a7a" defer></script>
+  <script src="assets/js/site.js?v=62cf326e8e" defer></script>
 </body>
 </html>

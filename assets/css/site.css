@@ -383,6 +383,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .os-tile .btn svg { width: 18px; height: 18px; flex: none; }
 .dl-card .os-tile .btn-primary { --h: 54px; font-size: 16px; }
 .dl-card .os-tile .btn-ghost { --h: 44px; font-size: 14px; }
+.mobile-note { margin: 0; padding: 14px 16px; border-radius: 16px; font-size: 14px; line-height: 1.55; color: var(--muted);
+  background: rgba(70, 230, 255, .07); border: 1px solid rgba(70, 230, 255, .3); }
+.mobile-note[hidden] { display: none; }
 .os-note { margin: 2px 0 0; font: 400 12.5px/1.6 var(--mono); color: var(--dim); }
 .os-note code { color: var(--muted); }
 @media (max-width: 560px) { .dl-head { flex-direction: column; align-items: flex-start; gap: 18px; } .os-badge { position: static; align-self: flex-start; } }
@@ -528,6 +531,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   border-left: 2px solid var(--cyan); border-bottom: 2px solid var(--cyan); transform: rotate(-45deg); }
 .plan .feat li b { color: var(--text); }
 .plan .plan-cta { width: 100%; justify-content: center; }
+.plan .plan-cta.is-soon { cursor: default; opacity: .75; pointer-events: none; }
+.plan .plan-ask { display: block; margin-top: 12px; text-align: center; font: 500 13px/1.4 var(--mono); color: var(--cyan); }
+.plan .plan-ask:hover { text-decoration: underline; }
 .price-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1120px; }
 .plan .feat li code { font: 500 13px var(--mono); color: var(--text); }
 .plan .soon { margin-left: 6px; font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
