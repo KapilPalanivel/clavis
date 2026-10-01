@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=bb205a33b0">
+  <link rel="stylesheet" href="assets/css/site.css?v=8fdefed4b4">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clavisenc.com/help-troubleshooting.html#article","headline":"Troubleshooting and common questions","description":"Answers to common Clavis problems: forgotten passwords, wrong password errors, files that won't open, SmartScreen warnings and moving to a new PC.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/help-troubleshooting.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"proficiencyLevel":"Beginner"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://clavisenc.com/help.html"},{"@type":"ListItem","position":3,"name":"Troubleshooting and common questions","item":"https://clavisenc.com/help-troubleshooting.html"}]}]}</script>
 </head>
 <body>
@@ -72,15 +72,21 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"I forgot my password.","acceptedAnswer":{"@type":"Answer","text":"Use your recovery key: on the unlock screen choose \"Forgot password? Use recovery key\". Without the password or the recovery key, nobody — including Clavis — can open your files. That is what makes the encryption real."}},{"@type":"Question","name":"Clavis says my password is wrong, but I'm sure it's right.","acceptedAnswer":{"@type":"Answer","text":"Check Caps Lock and your keyboard layout, and make sure the right vault is selected (click the vault name at the bottom of the sidebar). If the vault uses a key file, it must be the exact same, unchanged file."}},{"@type":"Question","name":"An encrypted file won't decrypt and Clavis says it was changed or damaged.","acceptedAnswer":{"@type":"Answer","text":"Clavis checks every chunk of every file and refuses to return data that has been altered. Try a copy from your backup or cloud folder. Use Verify regularly to catch problems early."}},{"@type":"Question","name":"A file encrypted on another PC won't open here.","acceptedAnswer":{"@type":"Answer","text":"Files belong to the vault that encrypted them. Restore that vault's backup on this PC, or ask the sender to share the file with your Clavis ID instead."}},{"@type":"Question","name":"Windows SmartScreen says \"Windows protected your PC\".","acceptedAnswer":{"@type":"Answer","text":"Choose More info, then Run anyway. SmartScreen shows this for apps that are new and don't yet have a long download history. You can check the file against the SHA-256 checksum on the download page."}},{"@type":"Question","name":"I don't see Clavis in the right-click menu.","acceptedAnswer":{"@type":"Answer","text":"On Windows 11 it's under Show more options. Check Settings, Explorer, Show Clavis in the right-click menu. The menu is only available in the installed app, not the portable ZIP."}},{"@type":"Question","name":"I closed the window but Clavis is still running.","acceptedAnswer":{"@type":"Answer","text":"The window's close button hides Clavis to the system tray so watch folders keep working. Use Quit Clavis in the top-right corner to stop it completely."}},{"@type":"Question","name":"How do I move to a new computer?","acceptedAnswer":{"@type":"Answer","text":"Make a vault backup in Settings, copy your .enc files, install Clavis on the new PC and choose Restore from a backup on the first screen. Remove your licence on the old PC and activate it on the new one."}},{"@type":"Question","name":"Where does Clavis keep my vault?","acceptedAnswer":{"@type":"Answer","text":"In the .fileencryptionapp folder in your user folder (for example C:\\Users\\You\\.fileencryptionapp). Your password is never stored there — only what's needed to check it."}},{"@type":"Question","name":"Does Clavis upload anything?","acceptedAnswer":{"@type":"Answer","text":"No. Encryption happens on your PC. Clavis only connects to the internet to check for updates and to activate or remove a licence."}}]}</script>
   <footer class="footer">
     <div class="wrap">
-      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
-      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
-        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
-      <span class="latin">clāvis — Latin, “key”</span>
-      <span>© <span data-year>2026</span> Kapil Palanivel</span>
-      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=31b2ae4a43" defer></script>
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
 </body>
 </html>

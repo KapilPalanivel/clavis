@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=bb205a33b0">
+  <link rel="stylesheet" href="assets/css/site.css?v=8fdefed4b4">
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -45,9 +45,7 @@
   </header>
 
   <main>
-    <section class="page-hero" id="top">
-      <div class="hero-mark-glow" aria-hidden="true"></div>
-      <img class="hero-mark" src="assets/img/icon-512.png" alt="" aria-hidden="true">
+    <section class="blog-top" id="top">
       <div class="wrap intro">
         <span class="eyebrow">The Clavis blog</span>
         <h1 class="display">Keeping files <em>private.</em></h1>
@@ -55,108 +53,71 @@
       </div>
     </section>
 
-    <div class="rule"></div>
-
-    <section class="block" id="posts">
+    <section class="block" id="posts" style="padding-top:0">
       <div class="wrap">
-        <div class="post-list">
-          <a class="post-card" href="blog-share-encrypted-files-without-password.html">
-            <span class="tag">Guide</span>
-            <h3>How to share encrypted files without sending a password</h3>
-            <p>Sending the password with the file defeats the point. How public-key sharing works, and how to send an encrypted file only one person can open.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+        <a class="feat-post" href="blog-clavis-vs-cryptomator-axcrypt-bitlocker.html">
+          <span class="cover" aria-hidden="true"><span class="glyphs">23ab=56d0189+34bc067e129a/45cd178f23ab=56d0189+34bc067e129a/45c=178f23ab=56d0289+34bc067e129a/45c=178f23ab=56d0289+34b/067e139a/45c=178f23ab=56d0289+34b/067e139a/45c=178f23ab=56d0289+34b/067e139a/45c=178f24a+=56d0289+34b/067e139a/45c=178f24a+=56d0289+35b/067e139a/45c=178f24a+=56d0289+35b/067e139f/45c=178f24a+=56d0289+35b/067e139f/46c=178f24a+=56d028e+35b/067e139f/46c=178f24a+=57d028e+35b/067e139f/46c=178f24a+=57d028e+35b/067e139f/46c=17df24a+=57d028e+35b/068e139f/46c=17df24a+=57d028e+35b/068e139f/46c=17ef24a+=57d028e+35b/06de139f/46c=17ef24a+=57d028e+35b/06de139f/46c=17ef24a+=5cd028f+35b/06de139f/46c=17ef24a+=5cd028f+35b/06de139+/46c=17ef24a+=5cd028f+35b/06de139+/4bc=17ef24a+=5cd028f+35b/06de139+/4bc=17ef24a/=5cd028f+3ab/06de139+/4bc=17ef24a/=5cd028f+3ab=06de139+/4bc=17ef24a/=5cd028f+3ab=06de139+/4bc=17ef29a/=5cd028f+3ab=06de139+/4bc017ef29a/=5cd028f+3ab=06de139+/4bc017ef29a/=5cd128f+3ab=06de189+/4bc017ef29a/=5cd128f+3ab=06de189+/4bc017ef29a/=5cd178f+3ab=06de289+/4bc017ef29a/=5cd178f+3ab=06de289+/4bc017ef39a/=5cd178f+3ab=06de289+/4bc067ef39a/=5cd178f+3ab=06de289+/4bc067ef39a/=5cd178f+4ab=56de289+/4bc067ef39a/=5cd178f+4ab=56de289+/5bc067ef39a/=5cd178f+4ab=56de289+/5bc067ef39a/45cd178f+4ab=56de289+/5bc067ef39a/46cd178f+4ab=56de289+/5bc067ef39a/46cd178f+4ab=57de289+35bc067ef39a/46cd178f+4ab=57de289+35bc067ef39a/46cd178f24ab=57de289+35bc068ef39a/46cd178f24ab=57de289+35bc068ef39a/46</span><span class="word">vs.</span></span>
+          <span class="fp-body"><span class="tag">Comparison · October 1, 2026</span><h2>Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?</h2><p>An honest comparison of four popular ways to encrypt files on Windows — what each protects, how they work day to day, and who each one suits.</p><span class="btn btn-ghost">Read the comparison →</span></span>
+        </a>
+        <div class="blog-filters" role="group" aria-label="Show">
+          <button type="button" data-blog-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-blog-filter="Guide" aria-pressed="false">Guides</button>
+          <button type="button" data-blog-filter="Explainer" aria-pressed="false">Explainers</button>
+          <button type="button" data-blog-filter="Comparison" aria-pressed="false">Comparisons</button>
+          <button type="button" data-blog-filter="Opinion" aria-pressed="false">Opinion</button>
+        </div>
+        <div class="post-list blog-grid">
+          <a class="post-card" href="blog-share-encrypted-files-without-password.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">ac=57d028a+35bd068e139b/46c0179f24ac=57d028a+35bd068e139b/46c0179f24ac=57d128a+35b=068e139b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+4</span><span class="word">Share</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>How to share encrypted files without sending a password</h3><p>Sending the password with the file defeats the point. How public-key sharing works, and how to send an encrypted file only one person can open.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-post-quantum-recovery-key.html">
-            <span class="tag">Explainer</span>
-            <h3>What a post-quantum recovery key is, and why your encryption needs one</h3>
-            <p>Forgetting your password shouldn&#x27;t mean losing your files. How recovery keys work, what &#x27;post-quantum&#x27; adds, and how to store one safely.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-post-quantum-recovery-key.html" data-tag="Explainer">
+            <span class="cover" aria-hidden="true"><span class="glyphs">f24ac=57d028a+35bd068e139b/46c0179f24ac=57d128a+35b=068e139b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128</span><span class="word">Quantum</span></span>
+            <span class="pc-body"><span class="tag">Explainer · October 1, 2026</span><h3>What a post-quantum recovery key is, and why your encryption needs one</h3><p>Forgetting your password shouldn&#x27;t mean losing your files. How recovery keys work, what &#x27;post-quantum&#x27; adds, and how to store one safely.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-encrypt-before-onedrive-google-drive-dropbox.html">
-            <span class="tag">Guide</span>
-            <h3>How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox</h3>
-            <p>Cloud storage encrypts your files with keys the provider holds. How to add your own encryption first, so the cloud only ever stores ciphertext.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-encrypt-before-onedrive-google-drive-dropbox.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">179f24ac=57d128a+35b=068e139b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d</span><span class="word">Cloud</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox</h3><p>Cloud storage encrypts your files with keys the provider holds. How to add your own encryption first, so the cloud only ever stores ciphertext.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-encrypt-files-command-line-windows.html">
-            <span class="tag">Guide</span>
-            <h3>How to encrypt files from the command line on Windows (and Linux)</h3>
-            <p>Encrypt, decrypt and verify files from PowerShell, cmd or bash with clavis-cli — including passwords in scripts and scheduled encrypted backups.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-encrypt-files-command-line-windows.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">6c0179f24ac=57d128a+35b=068e239b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=</span><span class="word">CLI</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>How to encrypt files from the command line on Windows (and Linux)</h3><p>Encrypt, decrypt and verify files from PowerShell, cmd or bash with clavis-cli — including passwords in scripts and scheduled encrypted backups.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-move-encrypted-files-to-new-pc.html">
-            <span class="tag">Guide</span>
-            <h3>How to move encrypted files to a new PC without losing access</h3>
-            <p>New laptop? The encrypted files are the easy part — the keys are what people lose. A checklist for moving an encrypted setup safely.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-move-encrypted-files-to-new-pc.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">b/46c0179f24ac=57d128a+35b=068e239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34</span><span class="word">Move</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>How to move encrypted files to a new PC without losing access</h3><p>New laptop? The encrypted files are the easy part — the keys are what people lose. A checklist for moving an encrypted setup safely.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-file-encryption-linux.html">
-            <span class="tag">Guide</span>
-            <h3>How to encrypt files on Linux (Ubuntu and Debian)</h3>
-            <p>The main ways to encrypt individual files on Ubuntu and Debian — gpg, archives, full-disk encryption — and a simple app that works the same on Windows.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-file-encryption-linux.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">239b/46c0179f24a/=57d128a+35b=068e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018e</span><span class="word">Linux</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>How to encrypt files on Linux (Ubuntu and Debian)</h3><p>The main ways to encrypt individual files on Ubuntu and Debian — gpg, archives, full-disk encryption — and a simple app that works the same on Windows.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-clavis-vs-cryptomator-axcrypt-bitlocker.html">
-            <span class="tag">Comparison</span>
-            <h3>Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?</h3>
-            <p>An honest comparison of four popular ways to encrypt files on Windows — what each protects, how they work day to day, and who each one suits.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-clavis-free-vs-pro-vs-premium.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">68e239b/46c0179f34a/=57d128a+35b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc0</span><span class="word">Plans</span></span>
+            <span class="pc-body"><span class="tag">Guide · October 1, 2026</span><h3>Clavis Free vs Pro vs Premium: which do you need?</h3><p>What each Clavis edition includes, who it&#x27;s for, and why the encryption is identical in all three.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-clavis-free-vs-pro-vs-premium.html">
-            <span class="tag">Guide</span>
-            <h3>Clavis Free vs Pro vs Premium: which do you need?</h3>
-            <p>What each Clavis edition includes, who it&#x27;s for, and why the encryption is identical in all three.</p>
-            <span class="when">October 1, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-encrypt-photos-windows.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5</span><span class="word">Photos</span></span>
+            <span class="pc-body"><span class="tag">Guide · September 27, 2026</span><h3>How to encrypt photos on Windows (free)</h3><p>Lock private photos on Windows — and clear the cloud copies and thumbnail caches most guides forget.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-encrypt-photos-windows.html">
-            <span class="tag">Guide</span>
-            <h3>How to encrypt photos on Windows (free)</h3>
-            <p>Lock private photos on Windows — and clear the cloud copies and thumbnail caches most guides forget.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-password-protect-pdf-windows.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">+45b=068e239+/46c0179f34a/=57d128a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+45b=07de23a</span><span class="word">PDF</span></span>
+            <span class="pc-body"><span class="tag">Guide · September 27, 2026</span><h3>How to password-protect a PDF on Windows (free)</h3><p>The reliable free ways to lock a PDF on Windows, why to avoid online tools, and a stronger option that works for any file.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-password-protect-pdf-windows.html">
-            <span class="tag">Guide</span>
-            <h3>How to password-protect a PDF on Windows (free)</h3>
-            <p>The reliable free ways to lock a PDF on Windows, why to avoid online tools, and a stronger option that works for any file.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-local-vs-cloud-encryption.html" data-tag="Opinion">
+            <span class="cover" aria-hidden="true"><span class="glyphs">28a+45b=068e239+/46c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+4ab=07de</span><span class="word">Local</span></span>
+            <span class="pc-body"><span class="tag">Opinion · September 27, 2026</span><h3>Why local encryption beats trusting the cloud</h3><p>The cloud is convenient, but you hand over control. Why local encryption keeps the keys in your hands — and how to safely use both together.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-local-vs-cloud-encryption.html">
-            <span class="tag">Opinion</span>
-            <h3>Why local encryption beats trusting the cloud</h3>
-            <p>The cloud is convenient, but you hand over control. Why local encryption keeps the keys in your hands — and how to safely use both together.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-aes-256-gcm-argon2id-explained.html" data-tag="Explainer">
+            <span class="cover" aria-hidden="true"><span class="glyphs">7d128f+45b=068e239+/56c0179f34a/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+4ab=07de23a+/5bc018ef34b/=6cd129f+4ab=0</span><span class="word">AES</span></span>
+            <span class="pc-body"><span class="tag">Explainer · September 27, 2026</span><h3>AES-256-GCM and Argon2id, in plain English</h3><p>The two names behind modern file encryption — what they actually mean, without the math, and what they don't protect against.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-aes-256-gcm-argon2id-explained.html">
-            <span class="tag">Explainer</span>
-            <h3>AES-256-GCM and Argon2id, in plain English</h3>
-            <p>The two names behind modern file encryption — what they actually mean, without the math, and what they don't protect against.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-veracrypt-alternative.html" data-tag="Comparison">
+            <span class="cover" aria-hidden="true"><span class="glyphs">/=57d128f+45b=068e239+/56c0179f34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+4ab=07de23a+/5bc018ef34b/=6cd129f+4ab=07de23a+/5bc018ef34b/=6cd129f+4a</span><span class="word">Simpler</span></span>
+            <span class="pc-body"><span class="tag">Comparison · September 27, 2026</span><h3>A simpler VeraCrypt alternative for everyday files</h3><p>VeraCrypt is powerful but built for volumes and whole disks. If you just want to lock a few files on Windows, here's a simpler option — and when to stick with VeraCrypt.</p><span class="more">Read →</span></span>
           </a>
-          <a class="post-card" href="blog-veracrypt-alternative.html">
-            <span class="tag">Comparison</span>
-            <h3>A simpler VeraCrypt alternative for everyday files</h3>
-            <p>VeraCrypt is powerful but built for volumes and whole disks. If you just want to lock a few files on Windows, here's a simpler option — and when to stick with VeraCrypt.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
-          </a>
-          <a class="post-card" href="blog-encrypt-folder-on-windows.html">
-            <span class="tag">Guide</span>
-            <h3>How to encrypt a folder on Windows (free)</h3>
-            <p>Four ways to lock a folder on Windows 10 and 11 — from the built-in options to a free app — and how to pick the right one.</p>
-            <span class="when">September 27, 2026</span>
-            <span class="more">Read →</span>
+          <a class="post-card" href="blog-encrypt-folder-on-windows.html" data-tag="Guide">
+            <span class="cover" aria-hidden="true"><span class="glyphs">34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=068e239+/56c017ef34a/=67d128f+45b=07de239+/56c017ef34a/=67d128f+45b=07de239+/56c018ef34a/=67d128f+45b=07de239+/56c018ef34a/=6cd128f+45b=07de239+/56c018ef34a/=6cd129f+45b=07de239+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+45b=07de23a+/5bc018ef34a/=6cd129f+4ab=07de23a+/5bc018ef34b/=6cd129f+4ab=07de23a+/5bc018ef34b/=6cd129f+4ac=07de23a+/5bc018ef39b/=6cd129f</span><span class="word">Folder</span></span>
+            <span class="pc-body"><span class="tag">Guide · September 27, 2026</span><h3>How to encrypt a folder on Windows (free)</h3><p>Four ways to lock a folder on Windows 10 and 11 — from the built-in options to a free app — and how to pick the right one.</p><span class="more">Read →</span></span>
           </a>
         </div>
       </div>
@@ -165,15 +126,21 @@
 
   <footer class="footer">
     <div class="wrap">
-      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
-      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a>
-        <a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
-      <span class="latin">clāvis — Latin, “key”</span>
-      <span>© <span data-year>2026</span> Kapil Palanivel</span>
-      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=31b2ae4a43" defer></script>
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
 </body>
 </html>

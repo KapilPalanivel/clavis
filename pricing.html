@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=bb205a33b0">
+  <link rel="stylesheet" href="assets/css/site.css?v=8fdefed4b4">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's actually free?","acceptedAnswer":{"@type":"Answer","text":"Encrypting and decrypting individual files with full-strength AES-256-GCM, one vault, the recovery key, integrity checks and secure delete. The security is identical to Pro — Pro adds power features, never stronger crypto."}},{"@type":"Question","name":"What's the difference between Pro and Premium?","acceptedAnswer":{"@type":"Answer","text":"Pro is for working with lots of files on your PC: folders, several vaults, watch folders, key-file 2FA, secure notes, opening files without a decrypted copy and browsing encrypted folders. Premium adds everything that reaches beyond one PC: encrypting straight into your cloud folder, the command line for scripts and scheduled backups, sharing encrypted files with other people, one-file vault backups and previous versions of files you edit."}},{"@type":"Question","name":"Can I upgrade from Pro to Premium later?","acceptedAnswer":{"@type":"Answer","text":"Yes, and you only pay the difference. Email clavis.enc@gmail.com from the address you bought Pro with and we'll send you an upgrade code."}},{"@type":"Question","name":"When can I buy Pro or Premium?","acceptedAnswer":{"@type":"Answer","text":"Very soon — the store is being set up. Email clavis.enc@gmail.com and you'll hear the day it opens. Meanwhile, Clavis Free has the full encryption."}},{"@type":"Question","name":"How do I activate Pro or Premium?","acceptedAnswer":{"@type":"Answer","text":"Your license key will arrive by email right after you buy. Open Clavis → Settings → License → paste the key → Activate. The key is checked once online; after that Pro works offline, with no account."}},{"@type":"Question","name":"One licence, how many PCs?","acceptedAnswer":{"@type":"Answer","text":"Your license covers your own computers. To move it to a new PC, open Settings → License → Remove license on the old one first, then activate on the new one."}},{"@type":"Question","name":"Can I try before I buy?","acceptedAnswer":{"@type":"Answer","text":"Yes — that's what the Free version is for. It gives you the full app and full-strength encryption, so you can be sure before upgrading. Because you can try everything for free, Pro purchases are final."}},{"@type":"Question","name":"Do I have to pay for updates?","acceptedAnswer":{"@type":"Answer","text":"No. Pro and Premium are one-time and include all future updates."}}]}</script>
 </head>
 <body>
@@ -173,6 +173,31 @@
         <div class="panel">
           <h2>Why one-time, not a subscription?</h2>
           <p>Most encryption tools bill you every year. Clavis Pro and Premium are single payments — you buy it once and it's yours, including future updates. It's an app that runs on your PC, not a service you rent.</p>
+          <figure class="cost" aria-label="Cost over three years: a 45 dollar yearly subscription reaches 135 dollars, Clavis Pro stays at 29 dollars">
+            <figcaption><span>What you pay over three years</span><span class="cost-key"><span><i class="sub"></i>Yearly subscription</span><span><i class="own"></i>Clavis Pro</span></span></figcaption>
+            <div class="cost-year"><span class="cost-y">Year 1</span>
+              <div class="cost-bars">
+                <div class="cost-bar sub" style="--w:33%"><span>$45</span></div>
+                <div class="cost-bar own" style="--w:21%"><span>$29</span></div>
+              </div></div>
+            <div class="cost-year"><span class="cost-y">Year 2</span>
+              <div class="cost-bars">
+                <div class="cost-bar sub" style="--w:67%"><span>$90</span></div>
+                <div class="cost-bar own" style="--w:21%"><span>$29</span></div>
+              </div></div>
+            <div class="cost-year"><span class="cost-y">Year 3</span>
+              <div class="cost-bars">
+                <div class="cost-bar sub" style="--w:100%"><span>$135</span></div>
+                <div class="cost-bar own" style="--w:21%"><span>$29</span></div>
+              </div></div>
+            <p class="cost-note">Example: a typical $45-a-year subscription. Clavis Premium is $39 once.</p>
+          </figure>
+          <ul class="perks">
+            <li><b>Pay once, keep it.</b> No renewals, no expiry date.</li>
+            <li><b>Every future update included.</b> New features arrive inside the app.</li>
+            <li><b>Works offline, no account.</b> Your licence is checked once, then never again.</li>
+            <li><b>Grow later.</b> Move from Pro to Premium by paying only the difference.</li>
+          </ul>
         </div>
         <div class="panel faq">
           <h2>Questions</h2>
@@ -205,14 +230,21 @@
 
   <footer class="footer">
     <div class="wrap">
-      <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
-      <nav aria-label="Footer"><a href="./">Home</a><a href="about.html">About</a><a href="security.html">Security</a><a href="blog.html">Blog</a><a href="help.html">Help</a><a href="pricing.html">Pricing</a><a href="download.html">Download</a></nav>
-      <span class="latin">clāvis — Latin, “key”</span>
-      <span>© <span data-year>2026</span> Kapil Palanivel</span>
-      <nav class="foot-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact: clavis.enc@gmail.com</a></nav>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=31b2ae4a43" defer></script>
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
 </body>
 </html>

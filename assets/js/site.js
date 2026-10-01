@@ -197,6 +197,35 @@
     if (mine) { mine.classList.add("is-you"); mine.parentNode.classList.add("detected"); mine.parentNode.prepend(mine); }
   }
 
+  /* ── Blog: filter cards by type ───────────────────────────────────── */
+  const filters = $$("[data-blog-filter]");
+  filters.forEach(b => b.addEventListener("click", () => {
+    const f = b.dataset.blogFilter;
+    filters.forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+    $$(".post-card[data-tag]").forEach(c => { c.hidden = f !== "all" && c.dataset.tag !== f; });
+  }));
+
+  /* ── Articles: a thin reading-progress bar under the top edge ─────── */
+  if ($("article .post, .post article, article.post, .wrap.post")) {
+    const bar = document.createElement("div");
+    bar.className = "readbar"; bar.setAttribute("aria-hidden", "true");
+    document.body.appendChild(bar);
+    const upd = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? clamp(scrollY / max) : 0})`;
+    };
+    addEventListener("scroll", upd, { passive: true }); upd();
+  }
+
+  /* ── Copy buttons: data-copy="#id" copies that element's text ─────── */
+  $$("[data-copy]").forEach(b => b.addEventListener("click", () => {
+    const el = $(b.dataset.copy); if (!el) return;
+    const label = b.textContent;
+    const done = t => { b.textContent = t; setTimeout(() => { b.textContent = label; }, 1600); };
+    const pick = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done("Press Ctrl+C"); };
+    if (navigator.clipboard) navigator.clipboard.writeText(el.textContent).then(() => done("Copied"), pick); else pick();
+  }));
+
   /* ── Release info (version, size, notes) ──────────────────────────── */
   const need = $$("[data-release]").length || $("#notes");
   if (need) fetch("data/release.json", { cache: "no-cache" })
