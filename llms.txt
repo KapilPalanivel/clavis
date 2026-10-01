@@ -2,7 +2,7 @@
 
 > Clavis is a file-encryption app for Windows 10 and 11 (and Linux, as a .deb package, since version 3.7), made by Kapil Palanivel. It encrypts files on the user's own PC with AES-256-GCM, deriving keys from the user's password with Argon2id. There is no account and no cloud: files, passwords and recovery keys are never uploaded, so only the user holds the key.
 
-Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
+Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://clavisenc.com/. It is unrelated to other products or companies named Clavis.
 
 Current version: 3.7.5, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
@@ -22,7 +22,7 @@ Current version: 3.7.5, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 ## Editions and price
 
 - Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks. Security features are never paywalled.
-- Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), coming soon at https://kapilpalanivel.github.io/clavis/pricing.html (not on sale yet; enquiries: clavis.enc@gmail.com). Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
+- Clavis Pro: a one-time purchase of $29 (no subscription, future updates included), coming soon at https://clavisenc.com/pricing.html (not on sale yet; enquiries: clavis.enc@gmail.com). Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
 - Clavis Premium: a one-time purchase of $39 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Premium also encrypts files for other people (see Sharing). Premium also makes one-file vault backups (recovery key, Clavis ID, contacts and notes, encrypted with the vault password) and keeps previous versions of files edited with Open; restoring a backup is free. Pro owners can upgrade by paying the difference.
 - Licences: no account is needed. A store key is checked once online with the payment provider (Lemon Squeezy) when activated, after which it works offline.
 - The Free/Pro split applies from version 3.0 and Premium from 3.4; earlier versions include every feature they had.
@@ -37,21 +37,21 @@ Current version: 3.7.5, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 
 ## Pages
 
-- [Home](https://kapilpalanivel.github.io/clavis/): overview
-- [Download](https://kapilpalanivel.github.io/clavis/download.html): installer, portable ZIP, checksums, install steps, FAQ
-- [Security](https://kapilpalanivel.github.io/clavis/security.html): how the encryption works in plain English, and its limits
-- [Pricing](https://kapilpalanivel.github.io/clavis/pricing.html): Free vs Pro vs Premium
-- [About](https://kapilpalanivel.github.io/clavis/about.html): why Clavis exists and technical specifications
-- [Privacy policy](https://kapilpalanivel.github.io/clavis/privacy.html) and [Terms](https://kapilpalanivel.github.io/clavis/terms.html)
+- [Home](https://clavisenc.com/): overview
+- [Download](https://clavisenc.com/download.html): installer, portable ZIP, checksums, install steps, FAQ
+- [Security](https://clavisenc.com/security.html): how the encryption works in plain English, and its limits
+- [Pricing](https://clavisenc.com/pricing.html): Free vs Pro vs Premium
+- [About](https://clavisenc.com/about.html): why Clavis exists and technical specifications
+- [Privacy policy](https://clavisenc.com/privacy.html) and [Terms](https://clavisenc.com/terms.html)
 
 ## Guides
 
-- [How to encrypt a folder on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-encrypt-folder-on-windows.html)
-- [A simpler VeraCrypt alternative for everyday files](https://kapilpalanivel.github.io/clavis/blog-veracrypt-alternative.html)
-- [AES-256-GCM and Argon2id, in plain English](https://kapilpalanivel.github.io/clavis/blog-aes-256-gcm-argon2id-explained.html)
-- [Why local encryption beats trusting the cloud](https://kapilpalanivel.github.io/clavis/blog-local-vs-cloud-encryption.html)
-- [How to password-protect a PDF on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-password-protect-pdf-windows.html)
-- [How to encrypt photos on Windows (free)](https://kapilpalanivel.github.io/clavis/blog-encrypt-photos-windows.html)
+- [How to encrypt a folder on Windows (free)](https://clavisenc.com/blog-encrypt-folder-on-windows.html)
+- [A simpler VeraCrypt alternative for everyday files](https://clavisenc.com/blog-veracrypt-alternative.html)
+- [AES-256-GCM and Argon2id, in plain English](https://clavisenc.com/blog-aes-256-gcm-argon2id-explained.html)
+- [Why local encryption beats trusting the cloud](https://clavisenc.com/blog-local-vs-cloud-encryption.html)
+- [How to password-protect a PDF on Windows (free)](https://clavisenc.com/blog-password-protect-pdf-windows.html)
+- [How to encrypt photos on Windows (free)](https://clavisenc.com/blog-encrypt-photos-windows.html)
 
 ## Contact
 

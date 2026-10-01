@@ -31,4 +31,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://kapilpalanivel.github.io/clavis/sitemap.xml
+Sitemap: https://clavisenc.com/sitemap.xml
