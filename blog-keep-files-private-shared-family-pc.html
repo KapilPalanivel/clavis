@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to keep files private on a shared family PC (Windows 11) — Clavis</title>
+  <meta name="description" content="Hiding files doesn't protect them. How to keep your files private on a shared Windows 11 PC: separate accounts, locking the screen, and encrypting what matters.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to keep files private on a shared family PC (Windows 11)">
+  <meta property="og:description" content="Hiding files isn't privacy. A ten-minute setup for a shared family PC.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-keep-files-private-shared-family-pc.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-keep-files-private-shared-family-pc.html">
+  <meta property="og:site_name" content="Clavis">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=dadc8a5f02">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-keep-files-private-shared-family-pc.html#article","headline":"How to keep files private on a shared family PC (Windows 11)","description":"Hiding files doesn't protect them. How to keep your files private on a shared Windows 11 PC: separate accounts, locking the screen, and encrypting what matters.","datePublished":"2026-10-02","dateModified":"2026-10-02","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-keep-files-private-shared-family-pc.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to keep files private on a shared family PC (Windows 11)","item":"https://clavisenc.com/blog-keep-files-private-shared-family-pc.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can other users on my PC see my files?","acceptedAnswer":{"@type":"Answer","text":"A standard user can't open the files in your user folder. An administrator can, and so can anyone who takes the drive out of the PC. If you all share one Windows account, everyone can see everything. Encrypting your private files protects them in every one of these cases."}},{"@type":"Question","name":"Does hiding a file protect it?","acceptedAnswer":{"@type":"Answer","text":"No. Hidden files reappear with View → Show → Hidden items, and many “folder lock” tools only hide or move files. Only encryption makes a file unreadable without your password."}},{"@type":"Question","name":"Can an administrator open my encrypted files?","acceptedAnswer":{"@type":"Answer","text":"An administrator can see that the .enc files exist and could delete them, but can't read them without your password. Keep a backup of anything important, because encryption protects privacy, not against deletion."}},{"@type":"Question","name":"How do I lock my files when I step away from the PC?","acceptedAnswer":{"@type":"Answer","text":"Press Windows key + L. Windows locks, and Clavis locks its vault at the same time, so your encrypted files need your password again before anyone can open them."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 2, 2026</p>
+        <h1>How to keep files private on a shared family PC (Windows 11)</h1>
+        <p>One computer in the living room, used by everyone. The kids do homework on it, a partner checks email, a relative borrows it for a weekend — and somewhere on it are your tax papers, medical letters or private photos. Here's what actually keeps those files private, what only looks like it does, and a setup that takes ten minutes.</p>
+
+        <h2>What doesn't work: hiding files</h2>
+        <p>Right-click → <strong>Properties → Hidden</strong> makes a file disappear from File Explorer — until someone opens <strong>View → Show → Hidden items</strong>, which takes two clicks. Many “folder lock” tricks and free “password protect folder” tools do the same thing in a fancier way: the files are hidden or moved, not encrypted. Anyone who knows where to look, or who boots the PC from a USB stick, can read them.</p>
+
+        <h2>Step 1: give everyone their own Windows account</h2>
+        <p>This is the single most useful change, and it's free. Open <strong>Settings → Accounts → Other users</strong> (or <strong>Family</strong>) and add an account for each person. Make the other accounts <strong>standard users</strong>, not administrators.</p>
+        <ul>
+          <li><strong>Good:</strong> each person gets their own desktop, Documents folder and browser. A standard user can't open the files in your user folder.</li>
+          <li><strong>Catch:</strong> anyone with an <strong>administrator</strong> account can still get into other users' folders, and so can someone who takes the drive out of the PC. If everyone shares one login, this step does nothing.</li>
+        </ul>
+
+        <h2>Step 2: lock the PC when you walk away</h2>
+        <p>Press <strong>Windows key + L</strong> every time you leave the computer. It takes a second and stops anyone sitting down at your open account. Windows can also lock automatically after a few minutes: <strong>Settings → Accounts → Sign-in options</strong>, then set when Windows asks you to sign in again, or turn on <strong>Dynamic lock</strong> to lock when your paired phone walks away.</p>
+
+        <h2>Step 3: encrypt the files that really matter</h2>
+        <p>Separate accounts keep honest people out. Encryption keeps <em>everyone</em> out — other users, administrators, a repair shop, and anyone who takes the drive out — because without your password the files are just noise.</p>
+        <p>On Windows 11 Home there's no BitLocker or EFS, so use a file-encryption app. With <a href="./">Clavis</a>:</p>
+        <ol>
+          <li><a href="download.html">Install Clavis</a> in your own Windows account. It installs just for you, with no administrator rights, so other family accounts don't see it.</li>
+          <li>Create your vault with a password nobody else in the house knows, and keep the <a href="help-recovery-key.html">recovery key</a> somewhere safe.</li>
+          <li>Right-click your private files → <strong>Show more options → Clavis → Encrypt</strong>. They become <code>.enc</code> files with random names, so even the file names give nothing away.</li>
+        </ol>
+        <p>Clavis locks itself when you lock Windows, switch user or put the PC to sleep, and after a few minutes without use — so a file you were working on doesn't stay open for the next person. Clavis Free encrypts files one at a time; <a href="pricing.html">Clavis Pro</a> encrypts whole folders and can keep secure notes for things like PINs and passwords.</p>
+
+        <h2>What each step protects against</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Step</th><th>Other family accounts</th><th>An administrator account</th><th>Someone using your unlocked account</th><th>Drive taken out of the PC</th></tr></thead>
+            <tbody>
+              <tr><td>Hidden files</td><td>No</td><td>No</td><td>No</td><td>No</td></tr>
+              <tr><td>Separate standard accounts</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
+              <tr><td>Windows + L / auto-lock</td><td>—</td><td>—</td><td>Yes</td><td>No</td></tr>
+              <tr><td>Device encryption</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr>
+              <tr><td>Encrypted files (Clavis)</td><td>Yes</td><td>Yes</td><td>Yes, once Clavis has locked</td><td>Yes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The ten-minute setup: separate accounts for everyone, <strong>Windows + L</strong> as a habit, and your most private files encrypted. If your PC supports it, also turn on <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">Device encryption</a> for the drive itself.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>Can other users on my PC see my files?</summary><p>A standard user can't open the files in your user folder. An administrator can, and so can anyone who takes the drive out of the PC. If you all share one Windows account, everyone can see everything. Encrypting your private files protects them in every one of these cases.</p></details>
+          <details><summary>Does hiding a file protect it?</summary><p>No. Hidden files reappear with View → Show → Hidden items, and many “folder lock” tools only hide or move files. Only encryption makes a file unreadable without your password.</p></details>
+          <details><summary>Can an administrator open my encrypted files?</summary><p>An administrator can see that the .enc files exist and could delete them, but can't read them without your password. Keep a backup of anything important, because encryption protects privacy, not against deletion.</p></details>
+          <details><summary>How do I lock my files when I step away from the PC?</summary><p>Press Windows key + L. Windows locks, and Clavis locks its vault at the same time, so your encrypted files need your password again before anyone can open them.</p></details>
+        </div>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis</span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:clavis.enc@gmail.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:clavis.enc@gmail.com">clavis.enc@gmail.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=806b50ada0" defer></script>
+</body>
+</html>
