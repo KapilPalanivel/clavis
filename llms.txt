@@ -4,7 +4,7 @@
 
 Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://clavisenc.com/. It is unrelated to other products or companies named Clavis.
 
-Current version: 3.7.5, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+Current version: 3.7.6, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
 ## Key facts
 
