@@ -1,9 +1,9 @@
 {
-  "version": "3.7.6",
+  "version": "3.7.7",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "6d792f936eefed21b46b591dab51e2ce0030100667d2585f9410a9e2094a0c52",
-  "zipSha256": "ac496d25b4ae3cf9a3d43b0b38b4d26eec2023a2aa20a8d9b20b3ddc14b35205",
-  "debSha256": "9af074fdf46d599a3cba437303ee4adfc394205c68477ed7c0b30a37b35d5db4",
-  "notes": "# Clavis 3.7.6\n\n## ✨ New home: clavisenc.com\n\n- Clavis's website is now **https://clavisenc.com**. Links inside the app go there: pricing, release notes and help. Old links keep working and lead to the new address.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "23d15ca86f4b0bd3b42997c9f50a8d90c8c29ccdd5025314c7f85898cbc17873",
+  "zipSha256": "0cafe6bedef56451deb4b6042064fb9b2f4816affeff32af3c5b1fd205e4e219",
+  "debSha256": "0c28b185133df28eca383c4bc8baf31a3706461498cd56297eb33ad9c1935777",
+  "notes": "# Clavis 3.7.7\n\n## 📖 New: Clavis Help\n\n- **https://clavisenc.com/help.html** — step-by-step guides with annotated screenshots for every feature: getting started, encrypting and opening files, watch folders, notes, cloud folders, sharing, backups, previous versions, the command line and settings.\n\n## 🛠 Fixed\n\n- The **Sharing** window no longer cuts off its text and buttons or shows a sideways scroll bar.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
