@@ -4,7 +4,7 @@
 
 Name note: this is "Clavis" the Windows file-encryption app (Latin *clāvis*, "key"), website https://kapilpalanivel.github.io/clavis/. It is unrelated to other products or companies named Clavis.
 
-Current version: 3.7.4, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
+Current version: 3.7.5, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB). A portable ZIP is also available. SHA-256 checksums for both files are published on the download page.
 
 ## Key facts
 
@@ -13,7 +13,7 @@ Current version: 3.7.4, released 2026-10-01. Installer: Clavis-Setup.exe (41 MB)
 - Keys: the password is turned into a key with Argon2id (memory-hard). Encrypted files hide their original names.
 - Recovery: an optional one-time recovery key lets the user back in after forgetting the password. Since version 3.3 it is protected with post-quantum hybrid public-key cryptography (X25519 + ML-KEM-768, FIPS 203); older recovery keys keep working. It is shown once; the developer cannot recover it.
 - Sharing (since 3.5): every vault has a Clavis ID (a public key with a short fingerprint). Encrypting a file for someone (Premium) seals a random file key to each recipient with X25519 + ML-KEM-768 and signs the whole file with the sender's Ed25519 key; recipients see who sent it and tampered files won't open. Opening files shared with you is free. No password is shared.
-- Languages: English, with first-draft Tamil and Hindi translations of the main screens (Settings -> Language).
+- Languages: English, with first-draft French, German, Tamil and Hindi translations of the main screens (Settings -> Language).
 - Password strength: while a password is chosen, Clavis estimates the time to crack it (common-password list, keyboard patterns, dates, repeats, l33t swaps) and warns about weak ones. Argon2id memory is tuned to the user's PC (up to 128 MiB).
 - Privacy: everything runs locally. The app only goes online to check for updates; updates are signed with Ed25519 and verified before they install. The website uses cookieless, privacy-friendly analytics.
 - Explorer integration: right-click a file or folder in Windows File Explorer → Clavis → Encrypt, Decrypt, Verify or Add to Watch Folder (on Windows 11 under "Show more options").
