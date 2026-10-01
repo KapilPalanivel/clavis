@@ -1,9 +1,9 @@
 {
-  "version": "3.7.5",
+  "version": "3.7.6",
   "date": "2026-10-01",
   "size": "41 MB",
-  "sha256": "fdb9a1bec3d91e12f833fd5f4d757877eaa24ab555efe9f2adcc39fda097f297",
-  "zipSha256": "608449519165ce2fdea35eeb8c2deec064da0c97ca5ec931324b805d84709575",
-  "debSha256": "8793c7120febd30e7eb66d46ce9da9d3ed2dccbcf4eb92c7f05108a9ac9112f5",
-  "notes": "# Clavis 3.7.5\n\n## ✨ New\n\n- **Français and Deutsch.** Settings → Language now offers French and German alongside English, Tamil and Hindi, then restart Clavis. Translated so far:\n  - the main window and sidebar;\n  - setting up and unlocking a vault, and the recovery key;\n  - the password-strength advice;\n  - Settings section titles.\n\n  These are first versions. Corrections are welcome at clavis.enc@gmail.com.\n- If Windows is set to French or German, Clavis uses that language automatically (\"System default\").\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from the website.\n\nYour vaults and settings are kept.\n"
+  "sha256": "6d792f936eefed21b46b591dab51e2ce0030100667d2585f9410a9e2094a0c52",
+  "zipSha256": "ac496d25b4ae3cf9a3d43b0b38b4d26eec2023a2aa20a8d9b20b3ddc14b35205",
+  "debSha256": "9af074fdf46d599a3cba437303ee4adfc394205c68477ed7c0b30a37b35d5db4",
+  "notes": "# Clavis 3.7.6\n\n## ✨ New home: clavisenc.com\n\n- Clavis's website is now **https://clavisenc.com**. Links inside the app go there: pricing, release notes and help. Old links keep working and lead to the new address.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
