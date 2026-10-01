@@ -772,3 +772,4 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .hashes .hash { font: 400 12.5px/1.5 var(--mono); color: var(--cyan); word-break: break-all; }
 @media (max-width: 860px) { .dl-steps { grid-template-columns: 1fr; } .dl-trust { grid-template-columns: 1fr; } }
 .dl-trust .os-note { margin: 4px 0 0; font: 400 12.5px/1.6 var(--mono); color: var(--dim); }
+.post a.btn-primary { color: var(--brass-ink); } .post a.btn-ghost { color: var(--text); }

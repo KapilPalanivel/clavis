@@ -90,6 +90,7 @@ Current version: 3.8.0, released 2026-10-02. Windows installer: Clavis-Setup.exe
 
 ## Guides
 
+- [How to encrypt files on Windows 11 Home (no BitLocker needed)](https://clavisenc.com/blog-encrypt-files-windows-11-home.html)
 - [How to share encrypted files without sending a password](https://clavisenc.com/blog-share-encrypted-files-without-password.html)
 - [What a post-quantum recovery key is, and why your encryption needs one](https://clavisenc.com/blog-post-quantum-recovery-key.html)
 - [How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox](https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html)
