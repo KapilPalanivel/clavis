@@ -55,8 +55,8 @@
   if (story) {
     const stage = $("#stage"), hero = $("#hero"), copy = $("#copy"), device = $("#device"), win = $("#win");
     const tray = $("#tray"), chips = $$(".chip", tray), callouts = $$(".feat-pill", tray), chaps = $$(".chap", copy);
-    const field = $("#field"), pathEl = $("#path"), exec = $("#exec"), seal = $("#seal"), key = $("#key"), bow = $("#bow");
-    const ring = $("#ring"), hole = $("#hole"), sbar = $("#sbar"), pbar = $("#pbar"), stxt = $("#stxt"), ssub = $("#ssub");
+    const field = $("#field"), pathEl = $("#path"), exec = $("#exec"), seal = $("#seal");
+    const dial = $("#pl-dial"), shackle = $("#pl-shackle"), glow = $("#pl-glow"), sbar = $("#sbar"), pbar = $("#pbar"), stxt = $("#stxt"), ssub = $("#ssub");
     const rail = $$("#rail div");
     const W = 880, H = 560, NAV = 76, PATH = "C:\\Users\\you\\Documents\\Tax Returns 2025";
     const lerp = (a, b, t) => a + (b - a) * t;
@@ -64,6 +64,16 @@
     const icons = chips.map(c => $(".fi", c).innerHTML);
     const lockIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/></svg>';
     let L = null, cur = 0, target = 0, raf = 0;
+    (() => {
+      const NS = "http://www.w3.org/2000/svg", mk = (tag, a) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); return e; };
+      const ticks = $("#pl-ticks"), nums = $("#pl-nums"), grip = $("#pl-grip"), cx = 110, cy = 152;
+      for (let i = 0; i < 100; i++) {
+        const a = i * 3.6 * Math.PI / 180, r1 = i % 10 ? 37 : 33;
+        ticks.appendChild(mk("line", { x1: cx + r1 * Math.sin(a), y1: cy - r1 * Math.cos(a), x2: cx + 42 * Math.sin(a), y2: cy - 42 * Math.cos(a), "stroke-width": i % 10 ? .6 : 1.2, "stroke-opacity": i % 10 ? .45 : .9 }));
+        if (i % 10 === 0) { const t = mk("text", { x: cx + 26 * Math.sin(a), y: cy - 26 * Math.cos(a) + 2.5 }); t.textContent = String(i).padStart(2, "0"); nums.appendChild(t); }
+      }
+      for (let i = 0; i < 20; i++) { const a = i * 18 * Math.PI / 180; grip.appendChild(mk("line", { x1: cx + 9 * Math.sin(a), y1: cy - 9 * Math.cos(a), x2: cx + 14 * Math.sin(a), y2: cy - 14 * Math.cos(a) })); }
+    })();
 
     const offsetIn = (el, anc) => { let x = 0, y = 0; while (el && el !== anc) { x += el.offsetLeft; y += el.offsetTop; el = el.offsetParent; } return [x, y]; };
 
@@ -133,16 +143,17 @@
       // Execute, the seal, the key
       const press = range(p, .41, .43) * (1 - range(p, .44, .46));
       exec.style.transform = `scale(${(1 - .03 * press).toFixed(3)})`;
-      const so = range(p, .43, .46) * (1 - range(p, .59, .62));
+      const so = range(p, .43, .46) * (1 - range(p, .62, .65));
       seal.style.opacity = so; seal.style.visibility = so > 0 ? "visible" : "hidden";
-      const kin = out(range(p, .45, .53)), turn = ease(range(p, .53, .57));
-      key.setAttribute("opacity", range(p, .45, .47).toFixed(3));
-      key.setAttribute("transform", `translate(${((1 - kin) * 190).toFixed(1)} 0)`);        // slides into the keyway
-      bow.setAttribute("transform", `translate(224 80) scale(1 ${(1 - .82 * turn).toFixed(3)}) translate(-224 -80)`);  // turns on its axis
-      hole.setAttribute("transform", `rotate(${(90 * turn).toFixed(1)})`);
-      const c = range(p, .565, .62);
-      ring.setAttribute("opacity", (c > 0 && c < 1 ? 1 - c : 0).toFixed(3));
-      ring.setAttribute("transform", `translate(110 80) scale(${(1 + .7 * c).toFixed(3)}) translate(-110 -80)`);
+      // the combination: right to 27 (one turn past), left to 04, right to 91 — then the shackle drops
+      const A = n => -n * 3.6;
+      const d1 = ease(range(p, .46, .51)), d2 = ease(range(p, .515, .545)), d3 = ease(range(p, .55, .58));
+      const ang = p >= .55 ? A(4) + (A(91) - 360 - A(4)) * d3 : p >= .515 ? (A(27) - 360) + (A(4) - (A(27) - 360)) * d2 : (A(27) - 360) * d1;
+      dial.setAttribute("transform", `rotate(${ang.toFixed(1)} 110 152)`);
+      const drop = range(p, .582, .6), back = t => { const c = 1.7; return 1 + (c + 1) * Math.pow(t - 1, 3) + c * Math.pow(t - 1, 2); };
+      shackle.setAttribute("transform", `translate(0 ${(-24 * (1 - (drop < 1 ? back(drop) : 1))).toFixed(1)})`);
+      const c = range(p, .598, .625);
+      glow.setAttribute("opacity", (c > 0 && c < 1 ? Math.sin(Math.PI * c) : 0).toFixed(3));
       // status bar, worded like the app's own
       const prog = range(p, .55, .64);
       pbar.style.transform = `scaleX(${prog.toFixed(3)})`;
