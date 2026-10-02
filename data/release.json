@@ -1,9 +1,9 @@
 {
-  "version": "3.8.0",
+  "version": "3.8.1",
   "date": "2026-10-02",
-  "size": "41 MB",
-  "sha256": "2639e2e4fde07cc0a5ef0e65638e80c15de811ce1d82a21ff2ba73de81e42be9",
-  "zipSha256": "88a66d724203a4300d43ace52f9301eb1f1b337d57bf805c5a8c02c757879e65",
-  "debSha256": "ad2fe6a27150d02bd0149948e2bd6bf93e79e91aa8157ffe2c7ff768576ee176",
-  "notes": "# Clavis 3.8.0\n\n## 🔧 Under the hood\n\n- Groundwork for Clavis on Android: the encryption engine has been separated from the Windows/Linux app so the same, tested code can run on phones.\n- Nothing changes in how you use Clavis. Your encrypted files, vaults, recovery keys, shared files and backups open exactly as before — this release is checked against files made by every earlier version of Clavis.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "size": "42 MB",
+  "sha256": "fccb2dc2f2e0a580aad5170b13be88af27c50420a1865720067e70d6ce7efec3",
+  "zipSha256": "659a470df21f4d7cb3ff9841134956e28d93a0f94be4a9ddccfb786d68388dbd",
+  "debSha256": "67aecb6ba1e4eebb4ba7fb9c1f928d3817beaf3cdb7214fb43a888d423e8b026",
+  "notes": "# Clavis 3.8.1\n\n## 🌍 Every window in your language\n\n- Clavis is now fully translated into **French, German, Tamil and Hindi** — Settings, Sharing, Secure Notes, Backups, Watch Folders, Browse Encrypted, Open Files, Activity, recovery keys, updates and every message along the way. (Settings → Language, then restart.)\n\n## ✨ Fixes\n\n- Text no longer gets cut off in any language: long buttons move onto a second line, explanations wrap neatly, and Hindi words are never split in half.\n- In Sharing, the Close and Encrypt buttons always stay in view, and the fingerprint label shows correctly in Tamil and Hindi.\n- Fixed the wording of the \"Watch Folder not found\" and \"Watch Folder was deleted or moved\" messages.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
