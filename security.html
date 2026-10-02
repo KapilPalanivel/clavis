@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=dadc8a5f02">
+  <link rel="stylesheet" href="assets/css/site.css?v=28023777d1">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can you or anyone recover my files?","acceptedAnswer":{"@type":"Answer","text":"No. Your files are locked with your password (and recovery key). We never see either, so we can't open your files even if asked."}},{"@type":"Question","name":"How does sharing a file work?","acceptedAnswer":{"@type":"Answer","text":"Everyone has a Clavis ID: a public key you can give to anyone. When you encrypt a file for someone, Clavis locks it with a fresh random key and seals that key separately to each person's ID — using X25519 and the post-quantum ML-KEM-768 together — and to yours. The whole file is signed with your key, so the people you send it to can see it's from you and that nothing changed on the way. No password is ever shared. Compare the short fingerprint with the person (on the phone or in person) when you add them."}},{"@type":"Question","name":"Is Clavis safe against quantum computers?","acceptedAnswer":{"@type":"Answer","text":"Your files are encrypted with AES-256, which is considered safe against quantum computers. The recovery key — the one part that uses public-key cryptography — is protected by X25519 together with ML-KEM-768, the post-quantum standard, since Clavis 3.3. Recovery keys made with older versions still work; Settings shows “classic” next to them and lets you upgrade."}},{"@type":"Question","name":"Is my password sent anywhere?","acceptedAnswer":{"@type":"Answer","text":"Never. It's turned into a key on your computer and used locally. Clavis has no server that could receive it."}},{"@type":"Question","name":"Why does Windows warn me?","acceptedAnswer":{"@type":"Answer","text":"The installer isn't signed with a paid certificate yet. Click More info → Run anyway, or scan it on VirusTotal first."}}]}</script>
 </head>
 <body>
@@ -174,6 +174,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=806b50ada0" defer></script>
+  <script src="assets/js/site.js?v=a4863961be" defer></script>
 </body>
 </html>

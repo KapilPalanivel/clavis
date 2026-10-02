@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=dadc8a5f02">
+  <link rel="stylesheet" href="assets/css/site.css?v=28023777d1">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://clavisenc.com/#website","url":"https://clavisenc.com/","name":"Clavis","description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","inLanguage":"en","publisher":{"@id":"https://clavisenc.com/#author"}},{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},{"@type":"SoftwareApplication","@id":"https://clavisenc.com/#software","name":"Clavis","alternateName":"Clavis file encryption for Windows","description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","url":"https://clavisenc.com/","applicationCategory":"SecurityApplication","applicationSubCategory":"File encryption","operatingSystem":"Windows 10, Windows 11, Linux (64-bit)","softwareVersion":"3.8.0","dateModified":"2026-10-02","downloadUrl":"https://github.com/KapilPalanivel/FileEncryptionApp-updates/releases/latest/download/Clavis-Setup.exe","installUrl":"https://clavisenc.com/download.html","fileSize":"41 MB","image":"https://clavisenc.com/assets/img/icon-512.png","screenshot":"https://clavisenc.com/assets/img/app-light.png","featureList":["AES-256-GCM authenticated encryption","Argon2id password-based key derivation","Streaming encryption of large files in 64 KiB authenticated chunks","Integrity verification on every decrypt","Post-quantum recovery key (X25519 + ML-KEM-768)","Encrypted file names","Best-effort secure delete of originals","Auto-lock on system sleep, Windows lock and inactivity","File Explorer right-click menu","Activity history","Ed25519-signed in-app updates","Installer or portable ZIP; per-user install without administrator rights; Linux .deb","English, French, German, Tamil and Hindi","Pro: folder and batch encryption, open encrypted files without a decrypted copy, browse encrypted folders by real names, watch folders, secure notes, multiple vaults, key-file two-factor","Premium: encrypt into OneDrive, Google Drive or Dropbox folders, public-key file sharing with signed files, one-file vault backups, previous versions, command-line tool (clavis-cli)"],"isAccessibleForFree":true,"offers":[{"@type":"Offer","name":"Clavis Free","price":"0","priceCurrency":"USD","url":"https://clavisenc.com/download.html"},{"@type":"Offer","name":"Clavis Pro (lifetime licence)","price":"29","priceCurrency":"USD","url":"https://clavisenc.com/pricing.html","availability":"https://schema.org/PreOrder"},{"@type":"Offer","name":"Clavis Premium (lifetime licence)","price":"39","priceCurrency":"USD","url":"https://clavisenc.com/pricing.html","availability":"https://schema.org/PreOrder"}],"author":{"@id":"https://clavisenc.com/#author"},"publisher":{"@id":"https://clavisenc.com/#author"}}]}</script>
 </head>
 <body>
@@ -115,15 +115,31 @@
                 </div>
                 <div class="seal" id="seal">
                   <div class="seal-in">
-                    <div class="ring" id="ring"></div>
-                    <div class="medal"><svg viewBox="0 0 34 48" id="hole"><circle cx="17" cy="15" r="10" fill="#02050C"/><path d="M11 20h12l-3.5 24h-5z" fill="#02050C"/></svg></div>
-                    <svg class="key" id="key" viewBox="0 0 210 64">
-                      <defs><linearGradient id="brassKey" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="210" y2="0"><stop offset="0" stop-color="#B07D2E"/><stop offset=".6" stop-color="#D9A84F"/><stop offset="1" stop-color="#F3D592"/></linearGradient></defs>
-                      <g fill="none" stroke="url(#brassKey)" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 32 H150" stroke-width="11"/>
-                        <path d="M34 32 V48 M54 32 V44" stroke-width="9"/>
-                        <g id="bow"><circle cx="176" cy="32" r="22" stroke-width="11"/></g>
+                    <!-- Lock seen at an angle; the key slides along its keyway and everything past the
+                         keyhole is clipped away, so it reads as going in. Then it turns on its own axis. -->
+                    <svg class="lockkey" viewBox="0 0 320 160" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="brassKey" gradientUnits="userSpaceOnUse" x1="60" y1="0" x2="250" y2="0"><stop offset="0" stop-color="#B07D2E"/><stop offset=".6" stop-color="#D9A84F"/><stop offset="1" stop-color="#F3D592"/></linearGradient>
+                        <linearGradient id="brassRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0CD86"/><stop offset=".5" stop-color="#B9842F"/><stop offset="1" stop-color="#7A5520"/></linearGradient>
+                        <radialGradient id="lockFace" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#26304D"/><stop offset="1" stop-color="#0A0F1E"/></radialGradient>
+                        <clipPath id="keyway"><rect x="110" y="0" width="900" height="160"/></clipPath>
+                      </defs>
+                      <ellipse id="ring" cx="110" cy="80" rx="36" ry="60" fill="none" stroke="#D9A84F" stroke-width="2" opacity="0"/>
+                      <path d="M96 22 H110 V138 H96 Z" fill="url(#brassRim)"/>
+                      <ellipse cx="96" cy="80" rx="34" ry="58" fill="#7A5520"/>
+                      <ellipse cx="110" cy="80" rx="34" ry="58" fill="url(#lockFace)" stroke="url(#brassRim)" stroke-width="3"/>
+                      <ellipse cx="110" cy="80" rx="26" ry="46" fill="none" stroke="#D9A84F" stroke-opacity=".25"/>
+                      <g transform="translate(110 80) scale(.55 1)"><g id="hole"><circle cx="0" cy="-9" r="10" fill="#02050C"/><path d="M-6 -3 h12 l-3.5 25 h-5 z" fill="#02050C"/></g></g>
+                      <g clip-path="url(#keyway)">
+                        <g id="key" opacity="0">
+                          <g fill="none" stroke="url(#brassKey)" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M74 80 H204" stroke-width="9"/>
+                            <path d="M84 80 V94 M98 80 V90" stroke-width="7"/>
+                            <g id="bow"><circle cx="224" cy="80" r="18" stroke-width="9"/></g>
+                          </g>
+                        </g>
                       </g>
+                      <ellipse cx="110" cy="80" rx="3" ry="6" fill="#02050C" opacity=".55"/>
                     </svg>
                   </div>
                 </div>
@@ -287,6 +303,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=806b50ada0" defer></script>
+  <script src="assets/js/site.js?v=a4863961be" defer></script>
 </body>
 </html>

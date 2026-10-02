@@ -135,14 +135,14 @@
       exec.style.transform = `scale(${(1 - .03 * press).toFixed(3)})`;
       const so = range(p, .43, .46) * (1 - range(p, .59, .62));
       seal.style.opacity = so; seal.style.visibility = so > 0 ? "visible" : "hidden";
-      const kin = out(range(p, .45, .52)), turn = ease(range(p, .52, .56));
-      key.style.opacity = range(p, .45, .47) * (1 - range(p, .58, .6));
-      key.style.transform = `translateX(${((1 - kin) * 240).toFixed(1)}px)`;
-      bow.setAttribute("transform", `translate(176 32) scale(1 ${(1 - .8 * turn).toFixed(3)}) translate(-176 -32)`);
-      hole.style.transform = `rotate(${(90 * turn).toFixed(1)}deg)`;
-      const c = range(p, .555, .61);
-      ring.style.opacity = c > 0 && c < 1 ? 1 - c : 0;
-      ring.style.transform = `scale(${(1 + .9 * c).toFixed(3)})`;
+      const kin = out(range(p, .45, .53)), turn = ease(range(p, .53, .57));
+      key.setAttribute("opacity", range(p, .45, .47).toFixed(3));
+      key.setAttribute("transform", `translate(${((1 - kin) * 190).toFixed(1)} 0)`);        // slides into the keyway
+      bow.setAttribute("transform", `translate(224 80) scale(1 ${(1 - .82 * turn).toFixed(3)}) translate(-224 -80)`);  // turns on its axis
+      hole.setAttribute("transform", `rotate(${(90 * turn).toFixed(1)})`);
+      const c = range(p, .565, .62);
+      ring.setAttribute("opacity", (c > 0 && c < 1 ? 1 - c : 0).toFixed(3));
+      ring.setAttribute("transform", `translate(110 80) scale(${(1 + .7 * c).toFixed(3)}) translate(-110 -80)`);
       // status bar, worded like the app's own
       const prog = range(p, .55, .64);
       pbar.style.transform = `scaleX(${prog.toFixed(3)})`;
