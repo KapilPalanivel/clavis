@@ -398,6 +398,10 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .plan .plan-cta.is-soon { cursor: default; opacity: .75; pointer-events: none; }
 .plan .plan-ask { display: block; margin-top: 12px; text-align: center; font: 500 13px/1.4 var(--mono); color: var(--cyan); }
 .plan .plan-ask:hover { text-decoration: underline; }
+.trial-note { max-width: 680px; margin: 28px auto 0; padding: 16px 22px; border: 1px solid var(--brass-glow);
+  border-radius: 14px; background: var(--brass-soft); color: var(--muted); font-size: 15px; line-height: 1.55; text-align: center; }
+.trial-note b { color: var(--brass-hi); }
+.trial-note a { color: var(--cyan); }
 .price-grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1120px; }
 .plan .feat li code { font: 500 13px var(--mono); color: var(--text); }
 .plan .soon { margin-left: 6px; font: 600 10px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase;
