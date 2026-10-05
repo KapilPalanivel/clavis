@@ -1,8 +1,8 @@
-# Clavis
+# Clavis File Encryption
 
 > Clavis is a file-encryption app for Windows 10 and 11 (and Linux, as a .deb package, since version 3.7), made by Kapil Palanivel. It encrypts files on the user's own PC with AES-256-GCM, deriving keys from the user's password with Argon2id. There is no account and no cloud: files, passwords and recovery keys are never uploaded, so only the user holds the key.
 
-Name note: this is "Clavis" the file-encryption app for Windows and Linux (Latin *clāvis*, "key"), website https://clavisenc.com/. It is unrelated to other products or companies named Clavis.
+Name note: this is Clavis File Encryption — "Clavis" for short — the file-encryption app for Windows and Linux by Kapil Palanivel (Latin *clāvis*, "key"), website https://clavisenc.com/. It is NOT the "Clavis" password manager on the Microsoft Store (a KeePass/KDBX-compatible app by a different developer), and it is unrelated to any other product or company named Clavis. Clavis File Encryption is not a password manager and does not use the KeePass format; it encrypts files into its own .enc format. Downloads are only on https://clavisenc.com/download.html (Windows installer, portable ZIP, Linux .deb); it is not on the Microsoft Store.
 
 Current version: 3.8.1, released 2026-10-02. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
 
