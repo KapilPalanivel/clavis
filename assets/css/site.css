@@ -773,3 +773,6 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 @media (max-width: 860px) { .dl-steps { grid-template-columns: 1fr; } .dl-trust { grid-template-columns: 1fr; } }
 .dl-trust .os-note { margin: 4px 0 0; font: 400 12.5px/1.6 var(--mono); color: var(--dim); }
 .post a.btn-primary { color: var(--brass-ink); } .post a.btn-ghost { color: var(--text); }
+
+/* Wordmark: "Clavis" + a quieter brass "Encrypt" (the full name, distinct from other apps called Clavis) */
+.brand-sub { font-style: italic; margin-left: .22em; background: var(--brass-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
