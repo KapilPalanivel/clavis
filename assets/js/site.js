@@ -295,4 +295,65 @@
   s.src = "//gc.zgo.at/count.js";
   s.setAttribute("data-goatcounter", ENDPOINT);
   document.head.appendChild(s);
+
+  /* Where people lose interest, still without cookies: anonymous events for how
+     far each page is read, which sections come into view and how long the tab
+     stays open. Each fires at most once per page view. They show up in
+     GoatCounter as e.g. "read 75% /pricing.html", "saw #features /",
+     "stayed 30s /download.html". */
+  const page = location.pathname.replace(/\/index\.html$/, "/") || "/";
+  const sent = new Set();
+  const queue = [];
+  const send = (name) => {
+    if (sent.has(name)) return;
+    sent.add(name);
+    queue.push(name);
+    flush();
+  };
+  const flush = () => {
+    const gc = window.goatcounter;
+    if (!gc || typeof gc.count !== "function") { setTimeout(flush, 1000); return; }
+    while (queue.length) {
+      const name = queue.shift();
+      gc.count({ path: name + " " + page, title: name, event: true });
+    }
+  };
+
+  // Read depth: 25 / 50 / 75 / 100 % of the page.
+  const depth = () => {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const pct = max <= 0 ? 100 : (window.scrollY / max) * 100;
+    for (const mark of [25, 50, 75, 100]) if (pct >= mark - 1) send("read " + mark + "%");
+  };
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; depth(); });
+  }, { passive: true });
+  window.addEventListener("load", depth);   // short pages are read in full without scrolling
+
+  // Sections reached (any <section id> or element with data-track="name").
+  if ("IntersectionObserver" in window) {
+    const seen = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        const el = e.target;
+        send("saw " + (el.dataset.track || "#" + el.id));
+        seen.unobserve(el);
+      }
+    }, { threshold: 0.35 });
+    document.querySelectorAll("section[id], [data-track]").forEach((el) => seen.observe(el));
+  }
+
+  // Time on page: still open (and visible) after 30 s and 2 min.
+  let visibleMs = 0, last = Date.now();
+  setInterval(() => {
+    const now = Date.now();
+    if (document.visibilityState === "visible") visibleMs += now - last;
+    last = now;
+    if (visibleMs >= 30000) send("stayed 30s");
+    if (visibleMs >= 120000) send("stayed 2m");
+  }, 5000);
 })();
