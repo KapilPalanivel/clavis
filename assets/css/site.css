@@ -516,6 +516,12 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .term .t-dim { color: #6E7FA8; }
 .help-card[hidden], .help-cat[hidden], .help-empty[hidden] { display: none; }
 .os-note a, .mobile-note a { color: var(--cyan); }
+.os-warn { margin-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
+.os-warn summary { cursor: pointer; color: var(--brass-hi); font-weight: 600; }
+.os-warn ol { margin: 8px 0; padding-left: 20px; display: grid; gap: 6px; }
+.os-warn p { margin: 8px 0 0; }
+.os-warn kbd { font: 500 12px/1 var(--mono); padding: 2px 5px; border: 1px solid var(--line-2); border-radius: 5px; }
+.os-warn a { color: var(--cyan); }
 
 /* ══ Home ════════════════════════════════════════════════════════════════
    One pinned scroll story. The stage is split into three measured zones —
