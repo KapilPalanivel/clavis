@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/site.css?v=93052ee4f6">
+  <link rel="stylesheet" href="assets/css/site.css?v=e2a24051c8">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clavisenc.com/help-command-line.html#article","headline":"Encrypt from the command line (clavis-cli)","description":"Use clavis-cli to encrypt, decrypt, verify and list files from PowerShell, cmd or a Linux shell — for scripts and scheduled backups.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/help-command-line.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"proficiencyLevel":"Beginner"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://clavisenc.com/help.html"},{"@type":"ListItem","position":3,"name":"Encrypt from the command line (clavis-cli)","item":"https://clavisenc.com/help-command-line.html"}]}]}</script>
 </head>
 <body>
@@ -55,19 +55,19 @@ The Windows installer adds it to your PATH, so it works in any new PowerShell or
 <code>/opt/clavis/bin/clavis-cli</code>.</p>
 <figure class="term" aria-label="clavis-cli in PowerShell"><div class="term-bar"><i></i><i></i><i></i><span>Windows PowerShell</span></div><pre><span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli encrypt Reports</span>
 <span class="t-dim">Password:</span>
-encrypted  Reports\Board minutes.docx  -&gt;  4d40b068-ab83-4ecb-8868-c9512cceee10.enc
-encrypted  Reports\Q3 sales.xlsx  -&gt;  deb63b14-5ad4-4631-918f-b71617bcb7a0.enc
+encrypted  Reports\Board minutes.docx  -&gt;  df864a7a-4a06-4ad6-900d-f9d6837b175d.enc
+encrypted  Reports\Q3 sales.xlsx  -&gt;  c78db179-343c-4297-9094-b0bfabd72770.enc
 2 files.
 
 <span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli list Reports</span>
 <span class="t-dim">Password:</span>
-Board minutes.docx	4d40b068-ab83-4ecb-8868-c9512cceee10.enc
-Q3 sales.xlsx	deb63b14-5ad4-4631-918f-b71617bcb7a0.enc
+Q3 sales.xlsx	c78db179-343c-4297-9094-b0bfabd72770.enc
+Board minutes.docx	df864a7a-4a06-4ad6-900d-f9d6837b175d.enc
 
 <span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli verify Reports</span>
 <span class="t-dim">Password:</span>
-ok         Reports\4d40b068-ab83-4ecb-8868-c9512cceee10.enc  (Board minutes.docx, 8.8 KB)
-ok         Reports\deb63b14-5ad4-4631-918f-b71617bcb7a0.enc  (Q3 sales.xlsx, 7.3 KB)
+ok         Reports\c78db179-343c-4297-9094-b0bfabd72770.enc  (Q3 sales.xlsx, 7.3 KB)
+ok         Reports\df864a7a-4a06-4ad6-900d-f9d6837b175d.enc  (Board minutes.docx, 8.8 KB)
 2 files.</pre></figure>
 <h2>Commands</h2>
 <div class="table-wrap"><table>
@@ -110,6 +110,6 @@ It never accepts a password as an argument: arguments are visible to other progr
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=18a9ddd433" defer></script>
+  <script src="assets/js/site.js?v=37131564cf" defer></script>
 </body>
 </html>

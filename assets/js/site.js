@@ -205,6 +205,12 @@
     const os = phone ? "" : /win/i.test(ua) ? "windows" : /linux|x11/i.test(ua) ? "linux" : "";
     const mine = tiles.find(t => t.dataset.os === os);
     if (phone) { const n = $("#mobile-note"); if (n) n.hidden = false; }
+    const copy = $("#copy-dl-link");
+    if (copy) copy.addEventListener("click", async () => {
+      const url = location.origin + "/download.html";
+      try { await navigator.clipboard.writeText(url); copy.textContent = "Link copied"; }
+      catch (e) { copy.textContent = url; }
+    });
     if (mine) { mine.classList.add("is-you"); mine.parentNode.classList.add("detected"); mine.parentNode.prepend(mine); }
   }
 
