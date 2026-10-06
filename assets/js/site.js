@@ -204,7 +204,10 @@
     const phone = /android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent);
     const os = phone ? "" : /win/i.test(ua) ? "windows" : /linux|x11/i.test(ua) ? "linux" : "";
     const mine = tiles.find(t => t.dataset.os === os);
-    if (phone) { const n = $("#mobile-note"); if (n) n.hidden = false; }
+    if (phone) {
+      const n = $("#mobile-note"); if (n) n.hidden = false;
+      $$("form[data-phone-only]").forEach(f => { f.hidden = false; });   // on a PC the download button is enough
+    }
     const copy = $("#copy-dl-link");
     if (copy) copy.addEventListener("click", async () => {
       const url = location.origin + "/download.html";

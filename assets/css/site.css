@@ -805,6 +805,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .signup-msg[data-kind=ok] { color: var(--ok); }
 .signup-msg[data-kind=error] { color: #ff8a80; }
 .signup.is-done .signup-row, .signup.is-done .signup-consent { opacity: .5; }
+.signup[hidden] { display: none; }
 .signup-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .signup-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 520px) { .signup { padding: 18px 16px; } .signup-row .btn { flex: 1 1 100%; justify-content: center; } }
