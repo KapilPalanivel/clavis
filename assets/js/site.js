@@ -363,3 +363,40 @@
     if (visibleMs >= 120000) send("stayed 2m");
   }, 5000);
 })();
+
+/* ── Email sign-up (Brevo double opt-in) ──────────────────────────────────
+   Posts the form to Brevo in the background and shows the result in place.
+   Brevo answers {"success":true} and emails a confirmation link; the address
+   joins the "Website signups" list only after that link is clicked. */
+(() => {
+  "use strict";
+  document.querySelectorAll("form.signup").forEach((form) => {
+    const msg = form.querySelector(".signup-msg");
+    const button = form.querySelector("button[type=submit]");
+    const say = (text, kind) => { msg.textContent = text; msg.dataset.kind = kind || ""; };
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      const email = form.querySelector("input[name=EMAIL]");
+      const consent = form.querySelector("input[name=OPT_IN]");
+      if (!email.value.trim() || !email.checkValidity()) { say("Please enter a valid email address.", "error"); email.focus(); return; }
+      if (!consent.checked) { say("Please tick the box so we're allowed to email you.", "error"); consent.focus(); return; }
+      button.disabled = true;
+      say("Sending…");
+      try {
+        const res = await fetch(form.action + (form.action.includes("?") ? "&" : "?") + "isAjax=1",
+                                { method: "POST", body: new FormData(form) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.success) throw new Error("rejected");
+        say("Almost done: check your inbox and click the link to confirm.", "ok");
+        form.classList.add("is-done");
+        const gc = window.goatcounter;
+        if (gc && typeof gc.count === "function")
+          gc.count({ path: form.dataset.signup || "signup", title: "Email sign-up", event: true });
+      } catch (e) {
+        say("That didn't go through. Please try again, or email hello@clavisenc.com.", "error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+  });
+})();

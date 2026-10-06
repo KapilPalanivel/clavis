@@ -1,4 +1,4 @@
-Contact: mailto:clavis.enc@gmail.com
+Contact: mailto:hello@clavisenc.com
 Expires: 2027-09-27T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://clavisenc.com/.well-known/security.txt
