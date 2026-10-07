@@ -367,13 +367,64 @@
   }, 5000);
 })();
 
+/* ── Email before download ──────────────────────────────────────────────────
+   Download buttons first ask for an email (required); updates are an optional box.
+   The email goes to Brevo ("Downloaders"), which sends the setup guide. The download
+   starts either way once a valid email is given, even if Brevo can't be reached.
+   Asked once per browser. Off until the form has its Brevo address (data-action). */
+(() => {
+  "use strict";
+  const dlg = document.getElementById("dl-gate");
+  const form = document.getElementById("dl-signup");
+  if (!dlg || !form || !form.dataset.action || typeof dlg.showModal !== "function") return;
+  const KEY = "clavis-dl-email";
+  const known = () => { try { return !!localStorage.getItem(KEY); } catch (e) { return false; } };
+  const remember = () => { try { localStorage.setItem(KEY, "1"); } catch (e) {} };
+  const msg = form.querySelector(".signup-msg"), btn = form.querySelector("button[type=submit]");
+  const email = form.querySelector("input[name=EMAIL]");
+  const event = name => { const gc = window.goatcounter; if (gc && typeof gc.count === "function") gc.count({ path: name, title: name, event: true }); };
+  let target = null;
+  const start = href => { const a = document.createElement("a"); a.href = href; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove(); };
+
+  document.querySelectorAll('a[data-goatcounter-click^="download-"]').forEach(a => a.addEventListener("click", ev => {
+    if (known()) return;                                   // asked before: download straight away
+    ev.preventDefault();
+    target = a.href;
+    msg.textContent = ""; btn.disabled = false;
+    dlg.showModal();
+    setTimeout(() => email.focus(), 50);
+  }));
+  form.querySelector(".dl-gate-x").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    if (!email.value.trim() || !email.checkValidity()) { msg.textContent = "Please enter a valid email address."; msg.dataset.kind = "error"; email.focus(); return; }
+    btn.disabled = true; msg.textContent = "Starting your download…"; msg.dataset.kind = "";
+    let ok = false;
+    try {
+      const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 6000);
+      const res = await fetch(form.dataset.action + (form.dataset.action.includes("?") ? "&" : "?") + "isAjax=1",
+                              { method: "POST", body: new FormData(form), signal: ctl.signal });
+      clearTimeout(t);
+      const data = await res.json().catch(() => ({}));
+      ok = res.ok && !!data.success;
+    } catch (e) { ok = false; }
+    event(ok ? "download-email-given" : "download-email-failed");
+    if (form.querySelector("input[name=OPT_IN]").checked) event("download-email-updates-yes");
+    remember();
+    dlg.close();
+    if (target) start(target);
+  });
+})();
+
 /* ── Email sign-up (Brevo double opt-in) ──────────────────────────────────
    Posts the form to Brevo in the background and shows the result in place.
    Brevo answers {"success":true} and emails a confirmation link; the address
    joins the "Website signups" list only after that link is clicked. */
 (() => {
   "use strict";
-  document.querySelectorAll("form.signup").forEach((form) => {
+  document.querySelectorAll("form.signup:not([data-gate])").forEach((form) => {
     const msg = form.querySelector(".signup-msg");
     const button = form.querySelector("button[type=submit]");
     const say = (text, kind) => { msg.textContent = text; msg.dataset.kind = kind || ""; };
@@ -390,7 +441,7 @@
                                 { method: "POST", body: new FormData(form) });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || !data.success) throw new Error("rejected");
-        say("Almost done: check your inbox and click the link to confirm. Not there in a minute? Look in Junk or Spam (Outlook and Hotmail often put new senders there) and mark it Not junk.", "ok");
+        say(form.dataset.ok || "Almost done: check your inbox and click the link to confirm. Not there in a minute? Look in Junk or Spam (Outlook and Hotmail often put new senders there) and mark it Not junk.", "ok");
         form.classList.add("is-done");
         const gc = window.goatcounter;
         if (gc && typeof gc.count === "function")
