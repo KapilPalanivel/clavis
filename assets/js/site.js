@@ -390,7 +390,7 @@
                                 { method: "POST", body: new FormData(form) });
         const data = await res.json().catch(() => ({}));
         if (!res.ok || !data.success) throw new Error("rejected");
-        say("Almost done: check your inbox and click the link to confirm.", "ok");
+        say("Almost done: check your inbox and click the link to confirm. Not there in a minute? Look in Junk or Spam (Outlook and Hotmail often put new senders there) and mark it Not junk.", "ok");
         form.classList.add("is-done");
         const gc = window.goatcounter;
         if (gc && typeof gc.count === "function")
