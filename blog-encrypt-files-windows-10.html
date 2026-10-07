@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files on Windows 10 (free) — Clavis Encrypt</title>
+  <meta name="description" content="How to encrypt a file or folder on Windows 10: EFS on Pro, what to use on Windows 10 Home (7-Zip, Clavis Encrypt), and drive encryption — step by step, with the catches.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files on Windows 10 (free)">
+  <meta property="og:description" content="Encrypt files on Windows 10 Home or Pro — every free method, step by step.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-files-windows-10.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-files-windows-10.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=2c45905006">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-files-windows-10.html#article","headline":"How to encrypt files on Windows 10 (free)","description":"How to encrypt a file or folder on Windows 10: EFS on Pro, what to use on Windows 10 Home (7-Zip, Clavis Encrypt), and drive encryption — step by step, with the catches.","datePublished":"2026-10-07","dateModified":"2026-10-07","inLanguage":"en","author":{"@type":"Person","@id":"https://clavisenc.com/#author","name":"Kapil Palanivel","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-files-windows-10.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files on Windows 10 (free)","item":"https://clavisenc.com/blog-encrypt-files-windows-10.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why is “Encrypt contents to secure data” greyed out on Windows 10?","acceptedAnswer":{"@type":"Answer","text":"Because your PC runs Windows 10 Home. EFS, the feature behind that option, is only in Windows 10 Pro, Enterprise and Education. On Home, use a password-protected 7-Zip archive or a file-encryption app such as Clavis Encrypt."}},{"@type":"Question","name":"Can I password-protect a single file on Windows 10?","acceptedAnswer":{"@type":"Answer","text":"Not with a built-in password. EFS ties encryption to your Windows account rather than a password. To lock one file with its own password, put it in a 7-Zip archive with a password, or encrypt it with Clavis Encrypt."}},{"@type":"Question","name":"Is it safe to keep using Windows 10?","acceptedAnswer":{"@type":"Answer","text":"Windows 10 no longer gets free security updates (they ended on 14 October 2025), so it's more exposed than a supported version. If you keep using it, encrypt your most sensitive files and keep backups, and plan an upgrade when you can."}},{"@type":"Question","name":"Will encrypted files still open after I upgrade to Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Yes, as long as you keep what opens them. EFS files need the same Windows account or your key backup; 7-Zip archives need the password; Clavis Encrypt files open with your vault password or recovery key on Windows 10, Windows 11 or Linux."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 7, 2026</p>
+        <h1>How to encrypt files on Windows 10 (free)</h1>
+        <p>Windows 10 can encrypt a file with a few clicks — but only on some editions, and only in a way that has catches worth knowing. Here's the quick answer, then each method step by step, so you can pick the one that fits your PC.</p>
+
+        <h2>The quick answer</h2>
+        <ul>
+          <li><strong>Windows 10 Pro, Enterprise or Education:</strong> right-click the file → <strong>Properties → Advanced → “Encrypt contents to secure data”</strong> (EFS). Back up the encryption key when Windows asks.</li>
+          <li><strong>Windows 10 Home:</strong> that option is greyed out. Use a password-protected 7-Zip archive, or a file-encryption app such as <a href="./">Clavis Encrypt</a>.</li>
+          <li><strong>Any edition, to protect a lost or stolen laptop:</strong> turn on Device encryption or BitLocker as well, if your PC has them.</li>
+        </ul>
+
+        <h2>First: which edition of Windows 10 do you have?</h2>
+        <p>Open <strong>Settings → System → About</strong> and look at <strong>Edition</strong> under Windows specifications. It says Windows 10 Home, Pro, Enterprise or Education. Most laptops sold to consumers run Home.</p>
+
+        <h2>Option 1: EFS (Windows 10 Pro, Enterprise, Education)</h2>
+        <ol>
+          <li>Right-click the file or folder → <strong>Properties</strong>.</li>
+          <li>On the General tab, click <strong>Advanced…</strong></li>
+          <li>Tick <strong>Encrypt contents to secure data</strong> → OK → Apply. For a folder, choose to apply it to the folder, subfolders and files.</li>
+          <li>When Windows offers to <strong>back up your file encryption key</strong>, do it, and keep the backup somewhere other than this PC.</li>
+        </ol>
+        <ul>
+          <li><strong>Good:</strong> built in, free, and invisible once it's on — you open files normally.</li>
+          <li><strong>Catch:</strong> it's tied to your Windows account. Anyone who signs in as you can open the files, and if the account or PC breaks and you never backed up the key, the files are gone. Files lose their encryption when copied to a USB stick, email or most cloud folders.</li>
+        </ul>
+
+        <h2>Option 2: a password-protected 7-Zip archive (any edition)</h2>
+        <p>Install the free <a href="https://www.7-zip.org/" rel="noopener">7-Zip</a>, select the files → <strong>7-Zip → Add to archive</strong>, choose 7z, set a password and tick <strong>Encrypt file names</strong>. It uses AES-256.</p>
+        <ul>
+          <li><strong>Good:</strong> free, strong, works on Windows 10 Home, and the archive stays encrypted wherever you copy it.</li>
+          <li><strong>Catch:</strong> you extract the archive to use a file, and the extracted copies are easy to forget. A lost password can't be recovered.</li>
+        </ul>
+
+        <h2>Option 3: an encryption app (any edition)</h2>
+        <p><a href="./">Clavis Encrypt</a> encrypts files where they are, on Windows 10 Home and Pro alike. It installs without administrator rights and gives you a recovery key in case you forget your password.</p>
+        <ol>
+          <li><a href="download.html">Download Clavis Encrypt</a> and run the installer.</li>
+          <li>Create your vault with a strong password and write down or print the <a href="help-recovery-key.html">recovery key</a> it shows you.</li>
+          <li>In File Explorer, right-click a file → <strong>Clavis → Encrypt</strong>. On Windows 10 the Clavis entry is right in the menu. You can also drag files onto the Clavis window.</li>
+        </ol>
+        <p>The file becomes a <code>.enc</code> file with a random name, sealed with AES-256-GCM, and it stays encrypted when you copy it to a USB stick, email it or put it in OneDrive. Double-click it to open it again. Clavis Free encrypts files one at a time; <a href="pricing.html">Clavis Pro</a> encrypts whole folders at once.</p>
+
+        <h2>Also protect the whole drive</h2>
+        <p>File encryption protects specific files everywhere they go. Drive encryption protects everything on the PC if it's lost or stolen while switched off. They work well together.</p>
+        <ul>
+          <li><strong>Device encryption</strong> (many newer PCs, including Home): <strong>Settings → Update &amp; Security → Device encryption</strong>. If you don't see it, your hardware doesn't support it.</li>
+          <li><strong>BitLocker</strong> (Pro, Enterprise, Education): Control Panel → <strong>BitLocker Drive Encryption</strong> → Turn on BitLocker. Save the recovery key somewhere off the PC.</li>
+        </ul>
+        <p>More on the difference: <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">BitLocker vs Device encryption</a>.</p>
+
+        <h2>Why it matters more on Windows 10 now</h2>
+        <p>Microsoft ended free security updates for Windows 10 on 14 October 2025. A PC that no longer gets security fixes is easier to break into, so the files on it deserve an extra layer. Encrypting your most private files means that even if something does get in, those files are unreadable without your password.</p>
+
+        <h2>Which should you use?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Windows 10 Home</th><th>Stays encrypted when copied</th><th>If you forget</th></tr></thead>
+            <tbody>
+              <tr><td>EFS</td><td>No (Pro and up)</td><td>No</td><td>Only with a backed-up key</td></tr>
+              <tr><td>7-Zip archive</td><td>Yes</td><td>Yes</td><td>No way back in</td></tr>
+              <tr><td>Clavis Encrypt</td><td>Yes, no admin rights</td><td>Yes</td><td>One-time recovery key</td></tr>
+              <tr><td>Device encryption / BitLocker</td><td>Device encryption on supported PCs</td><td>No — protects the drive</td><td>Recovery key</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Using Windows 11, or a Home edition? See <a href="blog-encrypt-files-windows-11-home.html">how to encrypt files on Windows 11 Home</a>. Want to lock a whole folder? See <a href="blog-encrypt-folder-on-windows.html">how to encrypt a folder on Windows</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>Why is “Encrypt contents to secure data” greyed out on Windows 10?</summary><p>Because your PC runs Windows 10 Home. EFS, the feature behind that option, is only in Windows 10 Pro, Enterprise and Education. On Home, use a password-protected 7-Zip archive or a file-encryption app such as Clavis Encrypt.</p></details>
+          <details><summary>Can I password-protect a single file on Windows 10?</summary><p>Not with a built-in password. EFS ties encryption to your Windows account rather than a password. To lock one file with its own password, put it in a 7-Zip archive with a password, or encrypt it with Clavis Encrypt.</p></details>
+          <details><summary>Is it safe to keep using Windows 10?</summary><p>Windows 10 no longer gets free security updates (they ended on 14 October 2025), so it's more exposed than a supported version. If you keep using it, encrypt your most sensitive files and keep backups, and plan an upgrade when you can.</p></details>
+          <details><summary>Will encrypted files still open after I upgrade to Windows 11?</summary><p>Yes, as long as you keep what opens them. EFS files need the same Windows account or your key backup; 7-Zip archives need the password; Clavis Encrypt files open with your vault password or recovery key on Windows 10, Windows 11 or Linux.</p></details>
+        </div>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Kapil Palanivel</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=dc0aa7bc2d" defer></script>
+</body>
+</html>

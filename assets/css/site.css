@@ -809,3 +809,6 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .signup-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
 .signup-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 @media (max-width: 520px) { .signup { padding: 18px 16px; } .signup-row .btn { flex: 1 1 100%; justify-content: center; } }
+
+/* Article download buttons may wrap on small screens instead of widening the page */
+@media (max-width: 520px) { .post-cta .btn { white-space: normal; height: auto; min-height: var(--h); padding-block: 12px; text-align: center; } }
