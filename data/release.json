@@ -1,9 +1,9 @@
 {
-  "version": "3.8.1",
-  "date": "2026-10-02",
+  "version": "3.9.0",
+  "date": "2026-10-07",
   "size": "42 MB",
-  "sha256": "fccb2dc2f2e0a580aad5170b13be88af27c50420a1865720067e70d6ce7efec3",
-  "zipSha256": "659a470df21f4d7cb3ff9841134956e28d93a0f94be4a9ddccfb786d68388dbd",
-  "debSha256": "67aecb6ba1e4eebb4ba7fb9c1f928d3817beaf3cdb7214fb43a888d423e8b026",
-  "notes": "# Clavis 3.8.1\n\n## 🌍 Every window in your language\n\n- Clavis is now fully translated into **French, German, Tamil and Hindi** — Settings, Sharing, Secure Notes, Backups, Watch Folders, Browse Encrypted, Open Files, Activity, recovery keys, updates and every message along the way. (Settings → Language, then restart.)\n\n## ✨ Fixes\n\n- Text no longer gets cut off in any language: long buttons move onto a second line, explanations wrap neatly, and Hindi words are never split in half.\n- In Sharing, the Close and Encrypt buttons always stay in view, and the fingerprint label shows correctly in Tamil and Hindi.\n- Fixed the wording of the \"Watch Folder not found\" and \"Watch Folder was deleted or moved\" messages.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "c00dd428319285f3f7a4961f602250ae8fbdc8980b80ff8da2e6289e3451183d",
+  "zipSha256": "f44ad742ef48484280d388797c0644212ed47225d4f8862e10cc79b330cca8e7",
+  "debSha256": "802a77c28dad34f103735da751ef915509b46492722b1492e1d2f253b42812d6",
+  "notes": "# Clavis Encrypt 3.9.0\n\n## ✨ A clearer name: Clavis Encrypt\n\n- Clavis is now called **Clavis Encrypt** — in the title bar, the sidebar, About and the tray. Other apps share the name \"Clavis\" (including a password manager), and the new name makes it easy to tell which one is yours.\n- Nothing else changes: same app, same install, same encryption. Your vaults, settings, licence and files are exactly as they were, and the Explorer menu and `clavis-cli` work as before.\n- New and cheaper: **Pro is now $19 and Premium $29**, still one-time payments with every future update included.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now).\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
