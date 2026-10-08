@@ -1,9 +1,9 @@
 {
-  "version": "3.9.1",
-  "date": "2026-10-08",
+  "version": "3.9.2",
+  "date": "2026-10-09",
   "size": "42 MB",
-  "sha256": "96afb4efb6f957bd27aeb070ad3c71c11f0cdec6fc18834fe82211ecc6501f7d",
-  "zipSha256": "47846bbe2ae4f56d3e8fdd866c627954db16d1625719e4ca5540c03d357a9eff",
-  "debSha256": "32bbf6dfa8d4368beece6232c103625951b83b419c5b38d0d026d2d40fbce81a",
-  "notes": "# Clavis Encrypt 3.9.1\n\n## ✨ A proper setup wizard\n\n- Installing Clavis Encrypt now works like other Windows apps: a welcome page, the terms, a choice of install folder, whether you want desktop and Start menu shortcuts, and a **Launch Clavis Encrypt** box on the last page so the app opens straight away.\n- It still installs just for you, with no administrator rights needed, and Windows now lists it as **Clavis Encrypt** in Settings → Apps.\n- Nothing changes in the app itself. Your vaults, settings, licence and files are exactly as they were.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "5bb42351c79b9c73328ace495afa1156364034bb7d9259e33a9020c3a07679c4",
+  "zipSha256": "d8d449d43d194288a09e7cb86cccf2114c20f60bb997fbbaecdecdf48cc97c85",
+  "debSha256": "525a98a5d9f2fb2ae8beae66083382e59083dcc6a384ff989979f778156e2109",
+  "notes": "# Clavis Encrypt 3.9.2\n\n## 🔑 Ready for Premium\n\n- Clavis Encrypt Premium licence keys bought from our store now activate in the app (Settings → License → Activate), unlocking cloud folders, sharing, vault backups, previous versions and the command line.\n- A Pro or Premium licence works on up to two of your PCs. To move it to a new PC, choose Remove license on the old one first.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
