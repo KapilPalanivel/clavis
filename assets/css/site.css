@@ -516,6 +516,11 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .term .t-dim { color: #6E7FA8; }
 .help-card[hidden], .help-cat[hidden], .help-empty[hidden] { display: none; }
 .os-note a, .mobile-note a { color: var(--cyan); }
+.ms-store { display: flex; gap: 14px; align-items: center; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+.ms-store-badge { flex: 0 0 auto; line-height: 0; }
+.ms-store-badge img { display: block; height: 44px; width: auto; }
+.ms-store p { margin: 0; font-size: 13.5px; line-height: 1.5; color: var(--muted); }
+@media (max-width: 520px) { .ms-store { flex-direction: column; align-items: flex-start; } }
 .os-warn { margin-top: 12px; font-size: 13.5px; line-height: 1.55; color: var(--muted); }
 .os-warn summary { cursor: pointer; color: var(--brass-hi); font-weight: 600; }
 .os-warn ol { margin: 8px 0; padding-left: 20px; display: grid; gap: 6px; }
