@@ -1,9 +1,9 @@
 {
-  "version": "3.9.3",
+  "version": "3.9.4",
   "date": "2026-10-09",
   "size": "42 MB",
-  "sha256": "0ae60743cb912d12b45014530fac5cc22274eb091c9f6e58a0c0b35aca33723f",
-  "zipSha256": "e66034a6c168cd9a74025c6ce5c7b4869c831433cde666715e8d097ec5e4a659",
-  "debSha256": "23dab2df4d3b6b7f7df5d4c1f32d37f635cb2ea902b2d3132ada09898e9a6d0a",
-  "notes": "# Clavis Encrypt 3.9.3\n\n## 🎁 Trial keys\n\n- Clavis Encrypt now accepts the new trial and gift keys we send to testers and reviewers. They unlock Pro or Premium on one PC for a set number of days; when the trial ends, the app simply returns to Free and your files and vaults stay exactly as they are.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "5402eaef64d7e81bff0fcf36feccd4a1dbf992741e6b5539c5c64a31d52b7d99",
+  "zipSha256": "dd64627ed618372dee7a2d1922e654c62ad98d9e38f7cebef7fdb22f5c6c412e",
+  "debSha256": "a08fe38fdacc14cdbc90df83a9dd34e5f164a8c12a5a1b3f292739b0924e1782",
+  "notes": "# Clavis Encrypt 3.9.4\n\n## ✨ A friendlier first five minutes\n\n- The big button now says what it will do: **Encrypt now**, **Decrypt now** or **Verify now**, instead of \"Execute\".\n- The very first password screen welcomes you and explains that a recovery key comes next.\n- When files are encrypted, Clavis tells you what changed (they now end in `.enc`) and how to get them back. A new **Show in folder** button takes you straight to them.\n- Counts read naturally: \"1 file\", \"5 files\", in the confirm and done messages.\n- Available in all five languages.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
