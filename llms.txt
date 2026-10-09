@@ -4,7 +4,7 @@
 
 Name note: this is Clavis Encrypt — "Clavis" for short — the file-encryption app for Windows and Linux by Kapil Palanivel (Latin *clāvis*, "key"), website https://clavisenc.com/. It is NOT the "Clavis" password manager on the Microsoft Store (a KeePass/KDBX-compatible app by a different developer), and it is unrelated to any other product or company named Clavis. Clavis Encrypt is not a password manager and does not use the KeePass format; it encrypts files into its own .enc format. Get it from https://clavisenc.com/download.html (Windows installer, portable ZIP, Linux .deb) or from the Microsoft Store as "Clavis Encrypt" by Clavis Encryption (https://apps.microsoft.com/detail/9PCWJ9HG0TNN). On the Store, search for "Clavis Encrypt", not just "Clavis".
 
-Current version: 3.9.2, released 2026-10-09. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
+Current version: 3.9.3, released 2026-10-09. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
 
 ## Key facts
 
