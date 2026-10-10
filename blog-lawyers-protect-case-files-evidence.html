@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lawyers: how to protect case files, client documents and digital evidence on your laptop — Clavis Encrypt</title>
+  <meta name="description" content="A guide for advocates and law firms in India: keep client case files and electronic evidence encrypted on a laptop, preserve the hash value needed under Section 63 of the Bharatiya Sakshya Adhiniyam, and protect privileged communications.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Lawyers: how to protect case files, client documents and digital evidence on your laptop">
+  <meta property="og:description" content="Encrypt client case files and evidence on your laptop, without breaking the hash value your Section 63 BSA certificate depends on.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-10">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=78444f02c0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html#article","headline":"Lawyers: how to protect case files, client documents and digital evidence on your laptop","description":"A guide for advocates and law firms in India: keep client case files and electronic evidence encrypted on a laptop, preserve the hash value needed under Section 63 of the Bharatiya Sakshya Adhiniyam, and protect privileged communications.","datePublished":"2026-10-10","dateModified":"2026-10-10","inLanguage":"en-IN","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://www.scconline.com/blog/?p=389747","https://www.advocatekhoj.com/library/bareacts/bharatiyaaakshya2023/b.php","https://ksandk.com/corporate/professional-privilege-under-the-bharatiya-sakshya-adhiniyam/","https://law.drishtiias.com/current-affairs/advocates-cannot-be-summoned-for-merely-representing-clients-except-under-section-132-bsa","https://clavisenc.com/security.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Lawyers: how to protect case files, client documents and digital evidence on your laptop","item":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How should a lawyer store client case files on a laptop securely?","acceptedAnswer":{"@type":"Answer","text":"Keep them encrypted rather than in ordinary folders, use separate vaults per matter, and keep encrypted backups. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, hides file names, and works offline, so no client data goes to a cloud service."}},{"@type":"Question","name":"Does encrypting electronic evidence change its hash value?","acceptedAnswer":{"@type":"Answer","text":"The encrypted file has a different hash, but decrypting it with Clavis Encrypt restores the exact original bytes, so the original SHA-256 hash matches again. Record the hash before encrypting, and re-check it after decrypting and before filing."}},{"@type":"Question","name":"What hash value does a Section 63 BSA certificate need?","acceptedAnswer":{"@type":"Answer","text":"The Schedule certificate under Section 63(4) of the Bharatiya Sakshya Adhiniyam asks for the hash value of the electronic record and the algorithm used: SHA-1, SHA-256, MD5 or another legally acceptable standard. On Windows you can calculate SHA-256 with PowerShell's Get-FileHash."}},{"@type":"Question","name":"Is attorney-client communication privileged in India?","acceptedAnswer":{"@type":"Answer","text":"Yes. Section 132 of the Bharatiya Sakshya Adhiniyam, 2023, which replaced Section 126 of the Evidence Act, protects professional communications between an advocate and client, with exceptions such as communications made in furtherance of a crime or fraud."}},{"@type":"Question","name":"Can I share an encrypted file with a client without sending a password?","acceptedAnswer":{"@type":"Answer","text":"Yes. With Clavis Premium you encrypt the file for the client's Clavis ID (a public key); only they can open it, and opening shared files is free for them. No password is sent."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Use case · Updated October 10, 2026</p>
+        <h1>Lawyers: how to protect case files, client documents and digital evidence on your laptop</h1>
+
+        <p>An advocate's laptop carries case files, client instructions, draft pleadings, and increasingly the evidence itself: WhatsApp exports, CCTV clips, call recordings, screenshots. Clients trust you with all of it, and Indian law protects professional communications. This guide shows how to keep those files encrypted on an ordinary laptop, and how to do it without disturbing the integrity of electronic evidence.</p>
+
+        <div class="callout"><b>Short answer:</b> keep client files and evidence copies encrypted on your laptop with a file-encryption app such as <a href="./">Clavis Encrypt</a> (AES-256-GCM, works offline, no account). Before encrypting any electronic evidence, record its SHA-256 hash, which is the value a Section 63(4) Bharatiya Sakshya Adhiniyam certificate asks for. Clavis decrypts files back to the exact original bytes, so the hash still matches after decryption. Keep original devices and media untouched and sealed.</div>
+
+        <h2>Why it matters</h2>
+        <ul>
+          <li><strong>Privilege:</strong> Section 132 of the Bharatiya Sakshya Adhiniyam, 2023 (which replaced Section 126 of the Evidence Act) protects professional communications between advocate and client. In 2025 the Supreme Court held that investigators cannot summon an advocate merely for advising or representing a client, and commentary on the ruling notes stronger protection for data on an advocate's digital devices.</li>
+          <li><strong>Professional conduct:</strong> the Bar Council of India Rules treat confidentiality as a core duty to the client.</li>
+          <li><strong>Evidence integrity:</strong> Section 63(4) BSA requires a certificate with the hash value of the electronic record (SHA-1, SHA-256, MD5 or another accepted algorithm). In 2026 the Supreme Court upheld this requirement in <em>Pune Bar Association v. Union of India</em>, describing a hash value as an electronic fingerprint.</li>
+          <li><strong>Everyday risks:</strong> a laptop left in a car or a court corridor, a junior's pen drive, a shared chamber PC, phishing.</li>
+        </ul>
+
+        <h2>Set it up</h2>
+        <ol>
+          <li><a href="download.html">Install Clavis Encrypt</a> on your laptop (Windows 10 or 11, or Linux). No administrator rights or internet needed.</li>
+          <li>Create a vault with a strong password, and keep the one-time <a href="help-recovery-key.html">recovery key</a> in your office safe.</li>
+          <li>Use a <a href="help-multiple-vaults.html">separate vault</a> per matter or per client group (Clavis Pro), each with its own password.</li>
+          <li>Encrypt case folders (Pro encrypts whole folders; Free encrypts files one at a time). File names are hidden too, so a folder listing doesn't reveal a client's name.</li>
+          <li>Work on documents with Pro's <a href="help-open-files.html">Open</a>: a pleading opens in Word, and your changes are saved back into the encrypted file when you close it.</li>
+        </ol>
+
+        <h2>Handling electronic evidence without breaking the hash</h2>
+        <ol>
+          <li><strong>Hash first.</strong> Before you encrypt, move or edit a piece of evidence, record its SHA-256 hash. In Windows PowerShell: <code>Get-FileHash "C:\Evidence\video.mp4" -Algorithm SHA256</code>. Note the value in your file and on the certificate.</li>
+          <li><strong>Encrypt the working copy.</strong> Clavis protects the file at rest; when you decrypt it, you get back the exact same bytes, so the SHA-256 hash is unchanged.</li>
+          <li><strong>Re-check before filing.</strong> Decrypt, run <code>Get-FileHash</code> again, and confirm it matches the recorded value.</li>
+          <li><strong>Keep originals untouched.</strong> Leave the original phone, DVR or media sealed, as your court and expert require. Encryption is for your copies, not a substitute for proper custody.</li>
+          <li><strong>Clavis also detects tampering:</strong> every encrypted file is authenticated, and a changed or corrupted file is refused instead of opening silently.</li>
+        </ol>
+
+        <h2>What it does and doesn't do</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Need</th><th>Clavis Encrypt</th></tr></thead>
+            <tbody>
+              <tr><td>Keep client files unreadable if the laptop is lost or stolen</td><td>Yes</td></tr>
+              <tr><td>Hide client names in file names</td><td>Yes (random names)</td></tr>
+              <tr><td>Send a file to a client or colleague securely</td><td>Yes: encrypt it for their Clavis ID (Premium); opening is free</td></tr>
+              <tr><td>Preserve evidence hash values</td><td>Yes: decryption restores identical bytes. Record the hash before encrypting.</td></tr>
+              <tr><td>Replace forensic imaging or chain-of-custody procedures</td><td>No</td></tr>
+              <tr><td>Practice management, diaries, billing</td><td>No (it protects the files those tools save)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How should a lawyer store client case files on a laptop securely?</summary><p>Keep them encrypted rather than in ordinary folders, use separate vaults per matter, and keep encrypted backups. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, hides file names, and works offline, so no client data goes to a cloud service.</p></details>
+          <details><summary>Does encrypting electronic evidence change its hash value?</summary><p>The encrypted file has a different hash, but decrypting it with Clavis Encrypt restores the exact original bytes, so the original SHA-256 hash matches again. Record the hash before encrypting, and re-check it after decrypting and before filing.</p></details>
+          <details><summary>What hash value does a Section 63 BSA certificate need?</summary><p>The Schedule certificate under Section 63(4) of the Bharatiya Sakshya Adhiniyam asks for the hash value of the electronic record and the algorithm used: SHA-1, SHA-256, MD5 or another legally acceptable standard. On Windows you can calculate SHA-256 with PowerShell's Get-FileHash.</p></details>
+          <details><summary>Is attorney-client communication privileged in India?</summary><p>Yes. Section 132 of the Bharatiya Sakshya Adhiniyam, 2023, which replaced Section 126 of the Evidence Act, protects professional communications between an advocate and client, with exceptions such as communications made in furtherance of a crime or fraud.</p></details>
+          <details><summary>Can I share an encrypted file with a client without sending a password?</summary><p>Yes. With Clavis Premium you encrypt the file for the client's Clavis ID (a public key); only they can open it, and opening shared files is free for them. No password is sent.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://www.scconline.com/blog/?p=389747" rel="noopener">SCC Online — Supreme Court upholds Section 63(4) BSA hash-value certificate (Pune Bar Association v. Union of India, 2026)</a></li>
+          <li><a href="https://www.advocatekhoj.com/library/bareacts/bharatiyaaakshya2023/b.php" rel="noopener">AdvocateKhoj — Bharatiya Sakshya Adhiniyam, 2023 (text, including the Schedule certificate)</a></li>
+          <li><a href="https://ksandk.com/corporate/professional-privilege-under-the-bharatiya-sakshya-adhiniyam/" rel="noopener">K&amp;S Partners — professional privilege under the Bharatiya Sakshya Adhiniyam (Section 132)</a></li>
+          <li><a href="https://law.drishtiias.com/current-affairs/advocates-cannot-be-summoned-for-merely-representing-clients-except-under-section-132-bsa" rel="noopener">Drishti Judiciary — Supreme Court on summoning advocates and Section 132 BSA (2025)</a></li>
+          <li><a href="https://clavisenc.com/security.html" rel="noopener">Clavis Encrypt — security design (AES-256-GCM, Argon2id)</a></li>
+        </ul>
+        <p class="muted-note"><em>This guide explains general practice, not legal advice. Laws and rules change; check the current text or ask a lawyer for your situation.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=a8b8a7e26b" defer></script>
+</body>
+</html>
