@@ -55,19 +55,19 @@ The Windows installer adds it to your PATH, so it works in any new PowerShell or
 <code>/opt/clavis/bin/clavis-cli</code>.</p>
 <figure class="term" aria-label="clavis-cli in PowerShell"><div class="term-bar"><i></i><i></i><i></i><span>Windows PowerShell</span></div><pre><span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli encrypt Reports</span>
 <span class="t-dim">Password:</span>
-encrypted  Reports\Board minutes.docx  -&gt;  65407795-9aa0-4a30-b521-600a83b895ae.enc
-encrypted  Reports\Q3 sales.xlsx  -&gt;  f0f6ed21-5092-4fe9-bdd5-7095e3d884de.enc
+encrypted  Reports\Board minutes.docx  -&gt;  f0392b8a-f166-481e-8054-5b9845ec5366.enc
+encrypted  Reports\Q3 sales.xlsx  -&gt;  25864812-b3f8-4903-a24f-713d50e203fc.enc
 2 files.
 
 <span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli list Reports</span>
 <span class="t-dim">Password:</span>
-Board minutes.docx	65407795-9aa0-4a30-b521-600a83b895ae.enc
-Q3 sales.xlsx	f0f6ed21-5092-4fe9-bdd5-7095e3d884de.enc
+Q3 sales.xlsx	25864812-b3f8-4903-a24f-713d50e203fc.enc
+Board minutes.docx	f0392b8a-f166-481e-8054-5b9845ec5366.enc
 
 <span class="t-prompt">PS C:\Users\Alex&gt;</span> <span class="t-cmd">clavis-cli verify Reports</span>
 <span class="t-dim">Password:</span>
-ok         Reports\65407795-9aa0-4a30-b521-600a83b895ae.enc  (Board minutes.docx, 8.8 KB)
-ok         Reports\f0f6ed21-5092-4fe9-bdd5-7095e3d884de.enc  (Q3 sales.xlsx, 7.3 KB)
+ok         Reports\25864812-b3f8-4903-a24f-713d50e203fc.enc  (Q3 sales.xlsx, 7.3 KB)
+ok         Reports\f0392b8a-f166-481e-8054-5b9845ec5366.enc  (Board minutes.docx, 8.8 KB)
 2 files.</pre></figure>
 <h2>Commands</h2>
 <div class="table-wrap"><table>
