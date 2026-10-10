@@ -4,4 +4,4 @@ The website for **Clavis**, a free app that encrypts files on Windows 10, Window
 
 **Visit: https://clavisenc.com/** | **Download: https://clavisenc.com/download.html**
 
-> Clavis Encrypt is made by Kapil Palanivel. It is not related to other apps named Clavis, such as the Clavis password manager on the Microsoft Store.
+> Clavis Encrypt is made by Clavis Encryption. It is not related to other apps named Clavis, such as the Clavis password manager on the Microsoft Store.
