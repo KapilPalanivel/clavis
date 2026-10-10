@@ -829,3 +829,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 
 /* Article download buttons may wrap on small screens instead of widening the page */
 @media (max-width: 520px) { .post-cta .btn { white-space: normal; height: auto; min-height: var(--h); padding-block: 12px; text-align: center; } }
+
+/* cited sources at the end of use-case posts */
+.post .sources { font-size: .92em; }
+.post .sources a { overflow-wrap: anywhere; }
+.post .muted-note { color: var(--muted); font-size: .92em; }

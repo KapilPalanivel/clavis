@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doctors and clinics: how to keep patient records safe on a PC (DPDP Act guide) — Clavis Encrypt</title>
+  <meta name="description" content="How small clinics, doctors and diagnostic centres in India can protect patient records, prescriptions and reports on a computer: encryption, access, backups and what the DPDP Rules and medical-records rules expect.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Doctors and clinics: how to keep patient records safe on a PC (DPDP Act guide)">
+  <meta property="og:description" content="Protect patient records on a clinic PC: encryption, backups and what India&#x27;s DPDP Rules expect.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-10">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=78444f02c0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html#article","headline":"Doctors and clinics: how to keep patient records safe on a PC (DPDP Act guide)","description":"How small clinics, doctors and diagnostic centres in India can protect patient records, prescriptions and reports on a computer: encryption, access, backups and what the DPDP Rules and medical-records rules expect.","datePublished":"2026-10-10","dateModified":"2026-10-10","inLanguage":"en-IN","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://www.nmc.org.in/rules-regulations/code-of-medical-ethics-regulations-2002/","https://www.dpdpa.com/dpdparules/rule6.html","https://amlegals.com/health-data-and-the-dpdp-act-a-practical-guide/","https://clavisenc.com/security.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Doctors and clinics: how to keep patient records safe on a PC (DPDP Act guide)","item":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How can a small clinic keep patient records secure on a computer?","acceptedAnswer":{"@type":"Answer","text":"Encrypt patient files on the PC, give each person a separate Windows login, keep an encrypted backup on an external drive, and avoid sending reports over unprotected email or WhatsApp. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, works offline, and can encrypt new reports automatically."}},{"@type":"Question","name":"Does the DPDP Act apply to doctors and clinics?","acceptedAnswer":{"@type":"Answer","text":"Yes. Patient information is digital personal data, and clinics that process it are data fiduciaries under the DPDP Act, 2023. The DPDP Rules, 2025 (Rule 6) set security safeguards including encryption, access controls, logs and backups, taking effect around May 2027."}},{"@type":"Question","name":"How long must doctors keep medical records in India?","acceptedAnswer":{"@type":"Answer","text":"The Indian Medical Council Regulations, 2002, applied by the NMC, require records of indoor patients to be kept for 3 years from the start of treatment, and copies to be provided within 72 hours on request. Other laws or your state may require longer, so check with your association or a lawyer."}},{"@type":"Question","name":"Is it safe to send lab reports on WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp messages are end-to-end encrypted in transit, but copies stay on both phones and in any chat backups, and they're easy to forward to the wrong person. Encrypt sensitive reports first, or use a channel built for medical records."}},{"@type":"Question","name":"Will encrypted patient files open in my usual programs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Double-click the encrypted file in Clavis Encrypt and it opens in the program it normally opens in, whether that's a PDF viewer, an image viewer or Word."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Use case · Updated October 10, 2026</p>
+        <h1>Doctors and clinics: how to keep patient records safe on a PC (DPDP Act guide)</h1>
+
+        <p>A clinic's computer holds some of the most private information there is: diagnoses, prescriptions, lab reports, scans and phone numbers. Patients rarely think about where it's kept, until something goes wrong. Here's how a small clinic, a doctor's practice or a diagnostic centre can protect patient records on an ordinary Windows PC.</p>
+
+        <div class="callout"><b>Short answer:</b> keep patient files encrypted on the clinic PC, keep an encrypted backup, and give each person their own login. A file-encryption app such as <a href="./">Clavis Encrypt</a> seals each report or record with AES-256-GCM, works offline, and can automatically encrypt every new scan or report saved into a folder. Under India's DPDP Act, clinics are data fiduciaries, and the DPDP Rules, 2025 name encryption and backups among the required security safeguards.</div>
+
+        <h2>What the rules expect</h2>
+        <ul>
+          <li><strong>Medical records:</strong> the Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002, which the NMC currently applies, require physicians to keep indoor patients' records for 3 years from the start of treatment, and to provide records within 72 hours when a patient or a legal authority asks.</li>
+          <li><strong>DPDP Act, 2023:</strong> health data is digital personal data, and clinics and hospitals that process it are data fiduciaries. The Act has no special health-data category, so the general duties apply in full.</li>
+          <li><strong>DPDP Rules, 2025, Rule 6:</strong> security safeguards including encryption, obfuscation, masking or virtual tokens; access controls; access logs kept for one year; and backups so records survive a compromise. Rule 6 takes effect around 13 May 2027.</li>
+        </ul>
+
+        <h2>Set it up on the clinic PC</h2>
+        <ol>
+          <li><a href="download.html">Download Clavis Encrypt</a> and install it on the clinic PC. It needs no internet connection to work, and no administrator rights.</li>
+          <li>Create a vault with a strong password known only to the doctor or practice owner, and store the one-time <a href="help-recovery-key.html">recovery key</a> safely away from the PC.</li>
+          <li>Encrypt existing patient folders. Clavis Pro encrypts whole folders; Free encrypts files one at a time.</li>
+          <li>Make the folder where your scanner, ECG machine or lab software saves files a <a href="help-watch-folders.html">watch folder</a>, so every new report is encrypted automatically.</li>
+          <li>Open a record by double-clicking the <code>.enc</code> file; it opens in its usual program. With Pro's <a href="help-open-files.html">Open</a>, changes are saved and the file re-locked when you close it.</li>
+          <li>Back up regularly to an external drive. Encrypted files stay encrypted in the backup; Clavis Premium also makes one-file vault backups.</li>
+        </ol>
+
+        <h2>Everyday practices that prevent most leaks</h2>
+        <ul>
+          <li><strong>Separate Windows accounts</strong> for the doctor and the front desk, so staff only see what they need.</li>
+          <li><strong>Don't send reports over unprotected email or WhatsApp.</strong> Encrypt them first, or share through a secure channel. See <a href="blog-encrypt-files-before-emailing.html">encrypting files before emailing</a>.</li>
+          <li><strong>Lock the screen</strong> when you step away. Clavis locks itself when Windows locks or the PC sleeps.</li>
+          <li><strong>Before sending the PC for repair</strong>, make sure patient files are encrypted, or remove the drive.</li>
+          <li><strong>Turn on full-disk encryption</strong> (BitLocker or Device encryption) too, for a stolen PC.</li>
+        </ul>
+
+        <h2>Which tool fits a small clinic?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Need</th><th>Clinic software (EMR/HMS)</th><th>Clavis Encrypt</th></tr></thead>
+            <tbody>
+              <tr><td>Appointments, billing, prescriptions</td><td>Yes</td><td>No (not an EMR)</td></tr>
+              <tr><td>Protects scans, PDFs and reports saved as files</td><td>Depends on the product</td><td>Yes, any file type</td></tr>
+              <tr><td>Works without internet</td><td>Varies</td><td>Yes</td></tr>
+              <tr><td>Keeps data on your own PC</td><td>Often cloud-hosted</td><td>Yes</td></tr>
+              <tr><td>Cost</td><td>Monthly fees are common</td><td>Free for files; Pro one-time $19</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Clavis Encrypt doesn't replace clinic-management software; it protects the files around it: scanned reports, exported PDFs, referral letters and anything saved to disk.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How can a small clinic keep patient records secure on a computer?</summary><p>Encrypt patient files on the PC, give each person a separate Windows login, keep an encrypted backup on an external drive, and avoid sending reports over unprotected email or WhatsApp. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, works offline, and can encrypt new reports automatically.</p></details>
+          <details><summary>Does the DPDP Act apply to doctors and clinics?</summary><p>Yes. Patient information is digital personal data, and clinics that process it are data fiduciaries under the DPDP Act, 2023. The DPDP Rules, 2025 (Rule 6) set security safeguards including encryption, access controls, logs and backups, taking effect around May 2027.</p></details>
+          <details><summary>How long must doctors keep medical records in India?</summary><p>The Indian Medical Council Regulations, 2002, applied by the NMC, require records of indoor patients to be kept for 3 years from the start of treatment, and copies to be provided within 72 hours on request. Other laws or your state may require longer, so check with your association or a lawyer.</p></details>
+          <details><summary>Is it safe to send lab reports on WhatsApp?</summary><p>WhatsApp messages are end-to-end encrypted in transit, but copies stay on both phones and in any chat backups, and they're easy to forward to the wrong person. Encrypt sensitive reports first, or use a channel built for medical records.</p></details>
+          <details><summary>Will encrypted patient files open in my usual programs?</summary><p>Yes. Double-click the encrypted file in Clavis Encrypt and it opens in the program it normally opens in, whether that's a PDF viewer, an image viewer or Word.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://www.nmc.org.in/rules-regulations/code-of-medical-ethics-regulations-2002/" rel="noopener">National Medical Commission — Code of Medical Ethics Regulations, 2002</a></li>
+          <li><a href="https://www.dpdpa.com/dpdparules/rule6.html" rel="noopener">DPDP Rules, 2025 — Rule 6, reasonable security safeguards (text)</a></li>
+          <li><a href="https://amlegals.com/health-data-and-the-dpdp-act-a-practical-guide/" rel="noopener">AMLegals — health data and the DPDP Act, a practical guide</a></li>
+          <li><a href="https://clavisenc.com/security.html" rel="noopener">Clavis Encrypt — security design</a></li>
+        </ul>
+        <p class="muted-note"><em>This guide explains general practice, not legal advice. Laws and rules change; check the current text or ask a lawyer for your situation.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=a8b8a7e26b" defer></script>
+</body>
+</html>

@@ -52,6 +52,20 @@ Current version: 3.9.4, released 2026-10-09. Windows installer: Clavis-Setup.exe
 - If both the password and the recovery key are lost, the files cannot be recovered by anyone.
 - Windows and Linux only; there are no macOS or mobile versions yet. The File Explorer right-click menu is Windows-only.
 
+## Who it's for (use cases)
+
+Best for: people and small offices who keep sensitive files on a Windows or Linux PC and want them encrypted on their own computer, without an account or a cloud service. Typical users:
+
+- Journalists and newsrooms protecting source material if a laptop is lost, stolen or seized: [guide](https://clavisenc.com/blog-journalists-protect-sources-laptop-seized.html)
+- Chartered accountants and tax practitioners keeping client ITR, PAN and Aadhaar files confidential (and preparing for Rule 6 of India's DPDP Rules, 2025, which names encryption among the security safeguards): [guide](https://clavisenc.com/blog-chartered-accountants-protect-client-data.html)
+- Doctors, small clinics and diagnostic centres protecting patient reports and scans on a clinic PC: [guide](https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html)
+- Anyone keeping Aadhaar, PAN, passport or bank-statement scans on a laptop: [guide](https://clavisenc.com/blog-keep-aadhaar-pan-scans-safe-laptop.html)
+- Families sharing one PC: [guide](https://clavisenc.com/blog-keep-files-private-shared-family-pc.html)
+- Sending files by email, or keeping files in OneDrive, Google Drive or Dropbox: [email](https://clavisenc.com/blog-encrypt-files-before-emailing.html), [cloud](https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html)
+- USB drives and moving to a new PC: [USB](https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html), [new PC](https://clavisenc.com/blog-move-encrypted-files-to-new-pc.html)
+
+Not for: storing passwords (it is not a password manager), macOS, Android or iPhone (not available yet), replacing full-disk encryption (use BitLocker or Device encryption as well; Clavis protects individual files wherever they are copied), or protecting a PC that already has malware. It is not clinic-management or accounting software; it protects the files those programs save.
+
 ## Pages
 
 - [Home](https://clavisenc.com/): overview
