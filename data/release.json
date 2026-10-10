@@ -1,9 +1,9 @@
 {
-  "version": "3.9.4",
-  "date": "2026-10-09",
+  "version": "3.9.5",
+  "date": "2026-10-10",
   "size": "42 MB",
-  "sha256": "5402eaef64d7e81bff0fcf36feccd4a1dbf992741e6b5539c5c64a31d52b7d99",
-  "zipSha256": "dd64627ed618372dee7a2d1922e654c62ad98d9e38f7cebef7fdb22f5c6c412e",
-  "debSha256": "a08fe38fdacc14cdbc90df83a9dd34e5f164a8c12a5a1b3f292739b0924e1782",
-  "notes": "# Clavis Encrypt 3.9.4\n\n## ✨ A friendlier first five minutes\n\n- The big button now says what it will do: **Encrypt now**, **Decrypt now** or **Verify now**, instead of \"Execute\".\n- The very first password screen welcomes you and explains that a recovery key comes next.\n- When files are encrypted, Clavis tells you what changed (they now end in `.enc`) and how to get them back. A new **Show in folder** button takes you straight to them.\n- Counts read naturally: \"1 file\", \"5 files\", in the confirm and done messages.\n- Available in all five languages.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "6187590afe4a9d1d5eca16234ceac8830fc4b6a1aba67b8b48edfaead4399739",
+  "zipSha256": "de2ba92c842baa55a2716d42370f3220cc1febc7c23365f2be70f93b1f08dec8",
+  "debSha256": "a562361beca029680b4cee4a816cf6b17901e067441cd8ba069a1ccdd0df80c2",
+  "notes": "# Clavis Encrypt 3.9.5\n\n## 🛠 Fixes\n\n- The message shown after encrypting files no longer cuts off its **OK** and **Show in folder** buttons.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
