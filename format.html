@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The .enc file format, and a free decryptor — Clavis Encrypt</title>
+  <meta name="description" content="Your files never depend on Clavis Encrypt. The complete .enc file format is public, and a free open-source decryptor opens any file with just your password.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Your files will always open: the Clavis .enc format">
+  <meta property="og:description" content="The complete file format, plus a free open-source decryptor that needs only your password.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/format.html">
+  <meta property="og:url" content="https://clavisenc.com/format.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=78444f02c0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clavisenc.com/format.html#article","headline":"The Clavis Encrypt .enc file format","description":"The complete .enc file format, plus a free open-source decryptor that opens any file with just your password.","datePublished":"2026-10-12","dateModified":"2026-10-12","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/format.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Security","item":"https://clavisenc.com/security.html"},{"@type":"ListItem","position":3,"name":"The .enc file format","item":"https://clavisenc.com/format.html"}]}]}</script>
+  <style>
+    .post pre { background: rgba(255,255,255,.04); border: 1px solid var(--line-2); border-radius: 12px; padding: 16px 18px; overflow-x: auto; margin: 0 0 18px; }
+    .post pre, .post code { font: 400 14px/1.6 var(--mono); color: var(--text); }
+    .post p code, .post li code, .post td code { font-size: 13.5px; background: rgba(255,255,255,.06); border-radius: 5px; padding: 1px 5px; }
+  </style>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html" aria-current="page">Security</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="security.html">Security</a> · File format · October 12, 2026</p>
+        <h1>Your files will always open</h1>
+        <p>An encryption app shouldn't hold your files hostage. If Clavis Encrypt ever stopped being developed, or you simply stopped using it, you'd still need your files back. So the complete <code>.enc</code> format is described on this page, and there's a small free decryptor that opens any file with just your password, without Clavis Encrypt.</p>
+
+        <div class="callout"><b>Download the decryptor:</b> <a href="tools/clavis_decrypt.py" download>clavis_decrypt.py</a>, about 300 lines of readable Python under the MIT licence. Run it on Windows, macOS or Linux:
+          <pre>pip install cryptography argon2-cffi
+python clavis_decrypt.py "C:\Files\9f3c….enc" -o restored</pre>
+          It asks for your password (add <code>--keyfile</code> if your vault uses one), restores each file under its original name and never deletes anything. <code>--verify</code> only checks that files open.</div>
+
+        <p>Everything below is what the decryptor implements; together they let anyone check that Clavis does what the <a href="security.html">Security page</a> says. One <code>.enc</code> file holds everything needed to open it except your password: there's no separate key file, account or vault you'd also have to keep, unless you chose a key file as a second factor.</p>
+
+        <h2>The current format (version 3)</h2>
+        <p>Written by Clavis Encrypt 2.0 and later. Numbers are big-endian.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Bytes</th><th>Field</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>4</td><td><code>FENC</code></td><td>Marks a Clavis file</td></tr>
+            <tr><td>1</td><td><code>0x03</code></td><td>Format version</td></tr>
+            <tr><td>16</td><td>salt</td><td>Random, new for every file</td></tr>
+            <tr><td>4</td><td>Argon2id memory</td><td>In KiB (Clavis picks up to 131072 for your PC)</td></tr>
+            <tr><td>1</td><td>Argon2id passes</td><td>Iterations</td></tr>
+            <tr><td>1</td><td>Argon2id lanes</td><td>Parallelism</td></tr>
+            <tr><td>4</td><td>chunk size</td><td>Plaintext bytes per chunk (65536)</td></tr>
+            <tr><td>7</td><td>nonce prefix</td><td>Random, new for every file</td></tr>
+            <tr><td>…</td><td>chunks</td><td>Each chunk: AES-256-GCM ciphertext + 16-byte tag</td></tr>
+          </tbody>
+        </table></div>
+        <p><strong>The key.</strong> <code>key = Argon2id(password as UTF-8, salt, memory, passes, lanes, version 0x13, 32 bytes)</code>. With a key file: <code>key = HKDF-SHA256(ikm = key || SHA-256(key file), salt = salt, info = "fileencryptionapp-keyfile-v1", 32 bytes)</code>.</p>
+        <p><strong>The chunks.</strong> The plaintext stream is cut into chunks of exactly <em>chunk size</em> bytes (the last may be shorter). Chunk <em>n</em> is sealed with AES-256-GCM using:</p>
+        <ul>
+          <li><strong>nonce</strong> = the 7-byte prefix, then <em>n</em> as 4 bytes, then one byte: <code>0x01</code> for the last chunk, <code>0x00</code> for all others;</li>
+          <li><strong>associated data</strong> = the whole 38-byte header above.</li>
+        </ul>
+        <p>This is the "STREAM" construction also used by Tink and age: the counter stops chunks being reordered or removed, the last-chunk flag stops a file being cut short or extended, and the associated data ties every chunk to its header. Each chunk is checked before its contents are used.</p>
+        <p><strong>Inside.</strong> The decrypted stream is: the original file name's length (2 bytes), the file name (UTF-8), then the file's content compressed with GZIP. That's why the file on disk can have a random name: the real name is encrypted inside it.</p>
+
+        <h2>Older formats</h2>
+        <p>Clavis still opens files from every earlier version, and so does the decryptor. They protect the whole file with one AES-256-GCM tag (no associated data). The decrypted payload is <code>SHA-256(content) (32 bytes) · name length (2) · name · GZIP(content)</code>, and the SHA-256 is checked after decompressing.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Version</th><th>Header</th><th>Key</th></tr></thead>
+          <tbody>
+            <tr><td>2 (Argon2id)</td><td><code>FENC · 0x02 · salt 16 · memory 4 · passes 1 · lanes 1 · IV 12</code></td><td>Argon2id as above</td></tr>
+            <tr><td>1 (PBKDF2)</td><td><code>FENC · 0x01 · iterations 4 · salt 16 · IV 12</code></td><td>PBKDF2-HMAC-SHA256, 32 bytes</td></tr>
+            <tr><td>Original</td><td><code>FENC · salt 16 · IV 12</code> (no version byte)</td><td>PBKDF2-HMAC-SHA256, 65536 iterations</td></tr>
+          </tbody>
+        </table></div>
+        <p>For PBKDF2 files with a key file, the password used is <code>password + NUL + hex(SHA-256(key file))</code>. An original-format file's salt can start with <code>0x03</code>; if a file looks like version 3 but its first chunk doesn't open, try it as an original-format file.</p>
+
+        <h2>What this decryptor doesn't open</h2>
+        <ul>
+          <li><strong>Files made with "Encrypt for someone"</strong> (version byte <code>0x04</code>). They're sealed to the recipient's Clavis ID (X25519 + ML-KEM-768 public keys), so they open only with the recipient's private keys inside Clavis Encrypt. That's the point of them.</li>
+          <li><strong>Secure notes, the vault's own files and recovery kits</strong>: they belong to the app and aren't files you'd need to rescue.</li>
+        </ul>
+
+        <h2>Why publish this?</h2>
+        <p>Clavis Encrypt itself isn't open source, and it hasn't had an independent audit yet; we'd rather say so than pretend. Publishing the format and a decryptor is the next best thing: anyone can check how files are protected, and nobody is ever locked in. Found a mistake? Write to <a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a>.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=a8b8a7e26b" defer></script>
+</body>
+</html>
