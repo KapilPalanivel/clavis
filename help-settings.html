@@ -53,7 +53,7 @@
 <p>Open <strong>Settings</strong> from the sidebar. Changes take effect when you press <strong>Save</strong>.</p>
 <h2>Security and auto-lock</h2>
 <figure class="help-shot">
-  <img src="assets/img/help/settings-security.webp" width="884" height="599" alt="Security and auto-lock settings" loading="lazy">
+  <img src="assets/img/help/settings-security.webp" width="878" height="599" alt="Security and auto-lock settings" loading="lazy">
   <ol class="help-steps"><li>Lock the vault after this many idle minutes</li><li>Size Argon2id to this PC&#x27;s speed</li><li>Lock when the PC sleeps or you lock Windows</li></ol>
 </figure>
 <ul>
@@ -62,6 +62,16 @@
       setting that still unlocks quickly on your computer. It applies to files you encrypt from now on.</li>
   <li><strong>Lock on system sleep</strong> and <strong>lock on session deactivate</strong> (locking Windows or switching user)
       lock the vault straight away.</li>
+</ul>
+<h2>Unlock with Windows Hello</h2>
+<p>Tick <strong>Unlock with Windows Hello</strong>, confirm your vault password, then confirm twice with your face, fingerprint or PIN.
+From then on Clavis asks Windows Hello first when you unlock; cancel it to type your password instead. It's free.</p>
+<ul>
+  <li>Your password is stored sealed with a key that only Windows Hello can recreate after you verify yourself, so the file alone
+      (copied, or read by other software) doesn't reveal it.</li>
+  <li>Changing your password turns it off; turn it on again afterwards. It isn't offered for a vault that uses a
+      <a href="help-key-file.html">key file</a>, so Windows Hello never skips your second factor.</li>
+  <li>Windows Hello needs a PIN, face or fingerprint set up in Windows Settings → Accounts → Sign-in options.</li>
 </ul>
 <h2>Licence</h2>
 <p>Shows your plan. See <a href="help-license.html">Activate Pro or Premium</a>.</p>
@@ -72,7 +82,7 @@
 <p>See <a href="help-language.html">Change the language</a>.</p>
 <h2>Updates and Explorer</h2>
 <figure class="help-shot">
-  <img src="assets/img/help/settings-updates.webp" width="884" height="488" alt="Updates and Explorer settings" loading="lazy">
+  <img src="assets/img/help/settings-updates.webp" width="878" height="488" alt="Updates and Explorer settings" loading="lazy">
   <ol class="help-steps"><li>Check for a new version</li><li>Clavis in the Explorer right-click menu</li></ol>
 </figure>
 <p>Clavis checks for updates once a day (untick to turn that off) and every update is signature-checked before it's installed.

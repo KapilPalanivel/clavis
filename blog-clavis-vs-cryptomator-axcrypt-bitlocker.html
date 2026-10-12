@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/site.css?v=78444f02c0">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html#article","headline":"Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?","description":"An honest comparison of four popular ways to encrypt files on Windows — what each protects, how they work day to day, and who each one suits.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?","item":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html#article","headline":"Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?","description":"An honest comparison of four popular ways to encrypt files on Windows — what each protects, how they work day to day, and who each one suits.","datePublished":"2026-10-01","dateModified":"2026-10-13","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?","item":"https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html"}]}]}</script>
 </head>
 <body>
   <div class="sky" aria-hidden="true"></div>
@@ -48,7 +48,7 @@
   <main>
     <article class="block">
       <div class="wrap post">
-        <p class="post-meta"><a href="blog.html">Blog</a> · Comparison · October 1, 2026</p>
+        <p class="post-meta"><a href="blog.html">Blog</a> · Comparison · October 1, 2026 · Updated October 13, 2026</p>
         <h1>Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?</h1>
 <p>"Encryption" covers very different jobs. BitLocker protects a lost laptop; Cryptomator protects a cloud folder; AxCrypt and Clavis protect individual files.
 Here's an honest comparison, including where Clavis is <em>not</em> the best choice.</p>
@@ -58,10 +58,10 @@ Here's an honest comparison, including where Clavis is <em>not</em> the best cho
 <tbody>
 <tr><td>Protects</td><td>Whole drive, when the PC is off</td><td>A vault folder (often in the cloud)</td><td>Individual files</td><td>Individual files and folders</td></tr>
 <tr><td>Works by</td><td>Encrypting the disk</td><td>Mounting the vault as a drive</td><td>Encrypting files in place</td><td>Encrypting files in place (random names)</td></tr>
-<tr><td>Platforms</td><td>Windows Pro/Enterprise (Home has "device encryption")</td><td>Windows, macOS, Linux, mobile</td><td>Windows, macOS, mobile</td><td>Windows, Linux</td></tr>
-<tr><td>Source</td><td>Closed</td><td>Open source</td><td>Closed</td><td>Closed (standard, public algorithms)</td></tr>
+<tr><td>Platforms</td><td>Windows Pro/Enterprise (Home has "device encryption")</td><td>Windows, macOS, Linux, mobile</td><td>Windows, macOS, mobile</td><td>Windows, Linux; <code>.enc</code> files also open in any browser</td></tr>
+<tr><td>Source</td><td>Closed</td><td>Open source</td><td>Closed</td><td>Closed app; public file format with an open-source decryptor</td></tr>
 <tr><td>Account needed</td><td>Microsoft account for key backup (optional)</td><td>No</td><td>Yes</td><td>No</td></tr>
-<tr><td>Sharing with others</td><td>—</td><td>Share the vault password</td><td>With other AxCrypt users</td><td>Public-key, no password shared</td></tr>
+<tr><td>Sharing with others</td><td>—</td><td>Share the vault password</td><td>With other AxCrypt users</td><td>Public-key, no password shared; or a one-time password that opens in any browser</td></tr>
 </tbody></table></div>
 
 <h2>BitLocker: turn it on, but it's not file encryption</h2>
@@ -80,8 +80,10 @@ or sending one to someone.</p>
 <p><a href="./">Clavis</a> encrypts files and folders in place with AES-256-GCM and Argon2id, gives encrypted files random names, and works from
 the Explorer right-click menu. No account, nothing uploaded. Free covers everyday encryption; Pro and Premium are one-time purchases that add
 watch folders, notes, several vaults, encrypt-to-cloud, public-key sharing, backups, version history and a command line.</p>
-<p><strong>Where Clavis isn't the best fit:</strong> it's closed source and hasn't been independently audited yet; there's no macOS or mobile version;
-and it isn't full-disk encryption — use BitLocker (or LUKS on Linux) for that, alongside it.</p>
+<p><strong>Where Clavis isn't the best fit:</strong> the app is closed source and hasn't been independently audited yet (its
+<a href="format.html">file format is public</a>, with an open-source decryptor, so your files never depend on it); there's no macOS or mobile
+app, though <code>.enc</code> files <a href="open.html">open in any browser</a>; and it isn't full-disk encryption — use BitLocker (or LUKS on Linux)
+for that, alongside it.</p>
 
 <h2>The short answer</h2>
 <ul>
