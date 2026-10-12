@@ -1,9 +1,9 @@
 {
-  "version": "3.9.5",
-  "date": "2026-10-10",
+  "version": "3.10.0",
+  "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "6187590afe4a9d1d5eca16234ceac8830fc4b6a1aba67b8b48edfaead4399739",
-  "zipSha256": "de2ba92c842baa55a2716d42370f3220cc1febc7c23365f2be70f93b1f08dec8",
-  "debSha256": "a562361beca029680b4cee4a816cf6b17901e067441cd8ba069a1ccdd0df80c2",
-  "notes": "# Clavis Encrypt 3.9.5\n\n## 🛠 Fixes\n\n- The message shown after encrypting files no longer cuts off its **OK** and **Show in folder** buttons.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "2cd04ad887891461b4213df57cef1d5e84b069d7ba41acd1053437570f5633c4",
+  "zipSha256": "842ce1cfc71b6bc7f44f272c675237fa487398b3aec1956941d1f7f2eb5b0bbf",
+  "debSha256": "57af91931c6ba732e79219ac959826385036426bc16cf5258b14de58680ab3b5",
+  "notes": "# Clavis Encrypt 3.10.0\n\n## ✉️ Send with a password (free)\n\n- Need to send a private file to someone who doesn't use Clavis, like an accountant or a family member? Right-click it → **Clavis → Send with a password…** (or **Sharing → Send files with a password…**).\n- Clavis makes a locked copy named after the original and suggests a strong one-time password. Your original stays as it is.\n- You get a ready-to-send message: they open the file at **clavisenc.com/open.html** on a phone or any computer, with nothing uploaded. Send the password a different way, such as a call or a text.\n\n## 📂 Open files someone sent you\n\n- Double-click a `.enc` file that someone locked with their own password: Clavis now notices it isn't yours and asks for that file's password instead of saying it can't open it. A copy is saved next to it.\n\n## 🔓 Your files will always open\n\n- The complete `.enc` file format is now public, with a free open-source decryptor that opens any of your files with just your password, even without Clavis Encrypt: **clavisenc.com/format.html**.\n- And on any phone, Mac or Chromebook, **clavisenc.com/open.html** opens `.enc` files right in the browser, decrypted on the device.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept. The right-click menu updates itself the first time the new version starts.\n"
 }
