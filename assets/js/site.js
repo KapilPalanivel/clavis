@@ -299,6 +299,7 @@
   const ENDPOINT = "https://clavis.goatcounter.com/count";
   const host = location.hostname;
   if (!ENDPOINT || host === "localhost" || host === "127.0.0.1" || host === "") return;
+  if (document.documentElement.hasAttribute("data-no-analytics")) return;   // e.g. open.html: nothing leaves that page
   const s = document.createElement("script");
   s.async = true;
   s.src = "//gc.zgo.at/count.js";
