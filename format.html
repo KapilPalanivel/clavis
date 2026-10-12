@@ -61,6 +61,7 @@
           <pre>pip install cryptography argon2-cffi
 python clavis_decrypt.py "C:\Files\9f3c….enc" -o restored</pre>
           It asks for your password (add <code>--keyfile</code> if your vault uses one), restores each file under its original name and never deletes anything. <code>--verify</code> only checks that files open.</div>
+        <p>No Python? <a href="open.html">Open .enc files in your browser</a> instead, on any phone, Mac or PC. It decrypts on your device and sends nothing anywhere.</p>
 
         <p>Everything below is what the decryptor implements; together they let anyone check that Clavis does what the <a href="security.html">Security page</a> says. One <code>.enc</code> file holds everything needed to open it except your password: there's no separate key file, account or vault you'd also have to keep, unless you chose a key file as a second factor.</p>
 
