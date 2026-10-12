@@ -1,9 +1,9 @@
 {
-  "version": "3.10.1",
+  "version": "3.11.0",
   "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "5007ee4885aaba464e06f2d9a2cec2eb3179f4c09d04c5ef1ce5e3f0ed36a81f",
-  "zipSha256": "ecba8672a40dbdd4dbc903635ac092a846cddcfa807291576c5a5cd1e378f4a7",
-  "debSha256": "acf09b35ff5615fb7fa9932b69638797b78c494390b36a002704226601dc560f",
-  "notes": "# Clavis Encrypt 3.10.1\n\n## ✉️ Send with a password, now for encrypted files too\n\n- Right-click a file you've already encrypted (`.enc`) → **Clavis → Send with a password…**. Clavis opens a private copy, locks it with a new one-time password under its real name (for example `Passport scan.pdf.enc`), and wipes the temporary copy. Your own `.enc` file stays exactly as it was.\n- The person you send it to opens it at **clavisenc.com/open.html** on any phone or computer, or in Clavis Encrypt.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept. The right-click menu updates itself the first time the new version starts.\n"
+  "sha256": "6761519fd3fad534e85db05d722ac77a66d158db6c0854440be5156163a4d22b",
+  "zipSha256": "ad240dbaae90c4944593c1b7ebc975da3c7802daeca4a65cfc37b93e7c133872",
+  "debSha256": "cef72f0ba90e856f7daa753150307182262ed6494bb36a6a098fc7b145ca666e",
+  "notes": "# Clavis Encrypt 3.11.0\n\n## 👋 Unlock with Windows Hello (free)\n\n- Unlock your vault with your face, fingerprint or PIN instead of typing your password. Turn it on in **Settings → Windows Hello**.\n- When you open Clavis, Windows Hello asks first; cancel it to type your password as usual. Your password always works.\n- Your password is stored sealed with a key that only Windows Hello can recreate after you verify yourself, so the stored file alone doesn't reveal it.\n- Changing your password turns it off until you turn it on again. It isn't offered for vaults that use a key file, so your second factor is never skipped.\n- Needs a PIN, face or fingerprint set up in Windows (Settings → Accounts → Sign-in options).\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
