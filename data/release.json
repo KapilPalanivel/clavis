@@ -1,9 +1,9 @@
 {
-  "version": "3.11.0",
+  "version": "3.11.1",
   "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "6761519fd3fad534e85db05d722ac77a66d158db6c0854440be5156163a4d22b",
-  "zipSha256": "ad240dbaae90c4944593c1b7ebc975da3c7802daeca4a65cfc37b93e7c133872",
-  "debSha256": "cef72f0ba90e856f7daa753150307182262ed6494bb36a6a098fc7b145ca666e",
-  "notes": "# Clavis Encrypt 3.11.0\n\n## 👋 Unlock with Windows Hello (free)\n\n- Unlock your vault with your face, fingerprint or PIN instead of typing your password. Turn it on in **Settings → Windows Hello**.\n- When you open Clavis, Windows Hello asks first; cancel it to type your password as usual. Your password always works.\n- Your password is stored sealed with a key that only Windows Hello can recreate after you verify yourself, so the stored file alone doesn't reveal it.\n- Changing your password turns it off until you turn it on again. It isn't offered for vaults that use a key file, so your second factor is never skipped.\n- Needs a PIN, face or fingerprint set up in Windows (Settings → Accounts → Sign-in options).\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "47e7e8cca8c1c7ee1b003c99e25108eb8133b8144309400aefc2ff2913a46fd6",
+  "zipSha256": "6969276d41fb8ee7e14165f800ff9f3f02fa4f5df5de81132594908f7244d018",
+  "debSha256": "bffc5de5dbff5e6e8075abee0c2a23ca7a0a7c514f9f4340a70ae9287441eb8c",
+  "notes": "# Clavis Encrypt 3.11.1\n\n## 🆕 What's new, inside the app\n\n- After an update, Clavis now shows a short **What's new** note once, with a button to try each new feature: Windows Hello unlock, Send with a password, and opening files in any browser.\n- You can open it again any time from **About → What's new**.\n- New installs don't see it; it's only for people updating.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
