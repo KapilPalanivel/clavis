@@ -4,7 +4,7 @@
 
 Name note: this is Clavis Encrypt — "Clavis" for short — the file-encryption app for Windows and Linux by Clavis Encryption (Latin *clāvis*, "key"), website https://clavisenc.com/. It is NOT the "Clavis" password manager on the Microsoft Store (a KeePass/KDBX-compatible app by a different developer), and it is unrelated to any other product or company named Clavis. Clavis Encrypt is not a password manager and does not use the KeePass format; it encrypts files into its own .enc format. Get it from https://clavisenc.com/download.html (Windows installer, portable ZIP, Linux .deb) or from the Microsoft Store as "Clavis Encrypt" by Clavis Encryption (https://apps.microsoft.com/detail/9PCWJ9HG0TNN). On the Store, search for "Clavis Encrypt", not just "Clavis".
 
-Current version: 3.11.3, released 2026-10-13. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
+Current version: 3.11.4, released 2026-10-13. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
 
 ## Key facts
 
@@ -21,7 +21,7 @@ Current version: 3.11.3, released 2026-10-13. Windows installer: Clavis-Setup.ex
 
 ## Complete feature list
 
-- Encrypt, decrypt and verify files (Free); folders and batches of files (Pro). Originals are overwritten then deleted; encrypted files get random names with the real name stored inside.
+- Encrypt, decrypt and verify files, one or many at once (Free); whole folders (Pro). Originals are overwritten then deleted; encrypted files get random names with the real name stored inside.
 - Recovery key (Free): one-time, post-quantum (X25519 + ML-KEM-768); unlocks the vault and reveals the password if it is forgotten; can be replaced in Settings.
 - Open without decrypting (Pro): opens an encrypted file in its usual app from a temporary working copy; "Save changes & re-lock" or "Discard changes & re-lock"; leftovers are cleaned up on the next start.
 - Browse Encrypted (Pro): lists encrypted files by their real names, sizes and dates, with search, Open, Decrypt, Verify and Versions.
@@ -39,7 +39,7 @@ Current version: 3.11.3, released 2026-10-13. Windows installer: Clavis-Setup.ex
 ## Editions and price
 
 - Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks. Security features are never paywalled.
-- Clavis Pro: a one-time purchase of $19 (no subscription, future updates included), coming soon at https://clavisenc.com/pricing.html (not on sale yet; enquiries: hello@clavisenc.com). Adds folder and batch encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
+- Clavis Pro: a one-time purchase of $19 (no subscription, future updates included), coming soon at https://clavisenc.com/pricing.html (not on sale yet; enquiries: hello@clavisenc.com). Adds whole-folder encryption, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, and browsing encrypted folders by their real file names.
 - Clavis Premium: a one-time purchase of $29 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Premium also encrypts files for other people (see Sharing). Premium also makes one-file vault backups (recovery key, Clavis ID, contacts and notes, encrypted with the vault password) and keeps previous versions of files edited with Open; restoring a backup is free. Pro owners can upgrade by paying the difference.
 - Licences: no account is needed. A store key is checked once online with the payment provider (Lemon Squeezy) when activated, after which it works offline.
 - The Free/Pro split applies from version 3.0 and Premium from 3.4; earlier versions include every feature they had.
