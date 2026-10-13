@@ -1,9 +1,9 @@
 {
-  "version": "3.11.1",
+  "version": "3.11.2",
   "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "47e7e8cca8c1c7ee1b003c99e25108eb8133b8144309400aefc2ff2913a46fd6",
-  "zipSha256": "6969276d41fb8ee7e14165f800ff9f3f02fa4f5df5de81132594908f7244d018",
-  "debSha256": "bffc5de5dbff5e6e8075abee0c2a23ca7a0a7c514f9f4340a70ae9287441eb8c",
-  "notes": "# Clavis Encrypt 3.11.1\n\n## 🆕 What's new, inside the app\n\n- After an update, Clavis now shows a short **What's new** note once, with a button to try each new feature: Windows Hello unlock, Send with a password, and opening files in any browser.\n- You can open it again any time from **About → What's new**.\n- New installs don't see it; it's only for people updating.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "96c22f8439010460d0fd5188cbd10e775c7767a723e3c44b23d0c34af6ae782e",
+  "zipSha256": "33ad583f11a46d9307fc75c6694a9d922f41c55050d91667064cad3316ddd005",
+  "debSha256": "d1ef972f9e96a6acade0fd1b6fa5a382f325d3a3e5776c5c430c279e0544daac",
+  "notes": "# Clavis Encrypt 3.11.2\n\n## 🛠️ Fixed: originals are now overwritten in place\n\n- When Clavis deletes an original after encrypting (and when it cleans up temporary copies), it overwrites the file with random data first. Earlier versions wrote that random data to a new place on the disk, so on a hard disk the old contents could stay behind until something else reused the space. Clavis now overwrites the file's own contents, then deletes it.\n- This is still best effort: on SSDs, USB sticks and memory cards, and where backups, File History or cloud version history keep copies, earlier versions of a file can survive. Encrypting a file is what protects it.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
