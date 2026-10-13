@@ -1,9 +1,9 @@
 {
-  "version": "3.11.3",
+  "version": "3.11.4",
   "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "33f5ffed2898049e11c6ee3a8a14e8597df5857fba57404e90b074b6ff04df72",
-  "zipSha256": "602777dbf28acc057f33e22d068e09245fe5f8d1c03fd3432437ae2c69ff3803",
-  "debSha256": "082f0e50fbbb4805b20ed4c462aeba57d298e74fedc50df7bc3ade4b06e32ccb",
-  "notes": "# Clavis Encrypt 3.11.3\n\n## 🛠️ Fixed: editing a file someone shared with several people\n\n- If you opened an \"Encrypt for someone\" file with **Open without saving**, edited it and saved, Clavis replaced it with a copy locked with your password, so the other people it was meant for could no longer open it.\n- Now the shared file is left exactly as it was, and your changes are saved as a new encrypted file in the same folder, which opens with your password. Clavis tells you where it is.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "a0d0ba44c260c3b1a8e20f165514bd4152aedd700a4cd446fc0d6f8699405e04",
+  "zipSha256": "e3ea39a64e457cccf52a4a45a04a9dbf5434faaa70f5b93f9ebb65d249a8b878",
+  "debSha256": "5f51d58c874d1ac86b954105b989e384e319d4af20f4e50d69cfeb94be074503",
+  "notes": "# Clavis Encrypt 3.11.4\n\n## 🛠️ Safer saving\n\n- Your vault and settings are now saved in one step: Clavis writes the new version first and only then swaps it in. A crash, a power cut or a USB stick pulled out at the wrong moment can no longer leave them empty or damaged.\n\n## 💾 Large files on USB sticks\n\n- Many USB sticks use FAT32, which can't hold files of 4 GB or more. Clavis now checks before it starts and tells you plainly, instead of failing part-way through.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
