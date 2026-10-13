@@ -1,9 +1,9 @@
 {
-  "version": "3.11.2",
+  "version": "3.11.3",
   "date": "2026-10-13",
   "size": "42 MB",
-  "sha256": "96c22f8439010460d0fd5188cbd10e775c7767a723e3c44b23d0c34af6ae782e",
-  "zipSha256": "33ad583f11a46d9307fc75c6694a9d922f41c55050d91667064cad3316ddd005",
-  "debSha256": "d1ef972f9e96a6acade0fd1b6fa5a382f325d3a3e5776c5c430c279e0544daac",
-  "notes": "# Clavis Encrypt 3.11.2\n\n## 🛠️ Fixed: originals are now overwritten in place\n\n- When Clavis deletes an original after encrypting (and when it cleans up temporary copies), it overwrites the file with random data first. Earlier versions wrote that random data to a new place on the disk, so on a hard disk the old contents could stay behind until something else reused the space. Clavis now overwrites the file's own contents, then deletes it.\n- This is still best effort: on SSDs, USB sticks and memory cards, and where backups, File History or cloud version history keep copies, earlier versions of a file can survive. Encrypting a file is what protects it.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "33f5ffed2898049e11c6ee3a8a14e8597df5857fba57404e90b074b6ff04df72",
+  "zipSha256": "602777dbf28acc057f33e22d068e09245fe5f8d1c03fd3432437ae2c69ff3803",
+  "debSha256": "082f0e50fbbb4805b20ed4c462aeba57d298e74fedc50df7bc3ade4b06e32ccb",
+  "notes": "# Clavis Encrypt 3.11.3\n\n## 🛠️ Fixed: editing a file someone shared with several people\n\n- If you opened an \"Encrypt for someone\" file with **Open without saving**, edited it and saved, Clavis replaced it with a copy locked with your password, so the other people it was meant for could no longer open it.\n- Now the shared file is left exactly as it was, and your changes are saved as a new encrypted file in the same folder, which opens with your password. Clavis tells you where it is.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
