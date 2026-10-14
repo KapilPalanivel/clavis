@@ -4,7 +4,7 @@
 
 Name note: this is Clavis Encrypt — "Clavis" for short — the file-encryption app for Windows and Linux by Clavis Encryption (Latin *clāvis*, "key"), website https://clavisenc.com/. It is NOT the "Clavis" password manager on the Microsoft Store (a KeePass/KDBX-compatible app by a different developer), and it is unrelated to any other product or company named Clavis. Clavis Encrypt is not a password manager and does not use the KeePass format; it encrypts files into its own .enc format. Get it from https://clavisenc.com/download.html (Windows installer, portable ZIP, Linux .deb) or from the Microsoft Store as "Clavis Encrypt" by Clavis Encryption (https://apps.microsoft.com/detail/9PCWJ9HG0TNN). On the Store, search for "Clavis Encrypt", not just "Clavis".
 
-Current version: 3.11.4, released 2026-10-13. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
+Current version: 3.12.0, released 2026-10-14. Windows installer: Clavis-Setup.exe (42 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
 
 ## Key facts
 
@@ -95,6 +95,7 @@ Not for: storing passwords (it is not a password manager), macOS, Android or iPh
 - [Use Clavis from the File Explorer right-click menu](https://clavisenc.com/help-explorer-menu.html): Encrypt, decrypt, open, verify and share files straight from Windows File Explorer with the Clavis right-click menu.
 - [Change your vault password](https://clavisenc.com/help-change-password.html): How to change a Clavis vault password safely, and why to re-encrypt existing files with the new one.
 - [See what Clavis has done (Activity)](https://clavisenc.com/help-activity.html): The Activity history lists every encrypt, decrypt and verify run with its result, size and vault.
+- [Shred files and clean up other copies](https://clavisenc.com/help-shred.html): Overwrite and delete files and folders you no longer need, what Shred can and can't reach, and where other copies of a file tend to be.
 - [Encrypt new files automatically with watch folders](https://clavisenc.com/help-watch-folders.html): Set up a Clavis watch folder so every file you save, scan or download into it is encrypted automatically.
 - [Keep secure notes in your vault](https://clavisenc.com/help-secure-notes.html): Store Wi-Fi passwords, PINs and other small secrets as encrypted notes inside your Clavis vault.
 - [Browse encrypted files by their real names](https://clavisenc.com/help-browse-encrypted.html): Clavis gives encrypted files random names. Browse Encrypted shows their real names, sizes and dates, and lets you search and open them.

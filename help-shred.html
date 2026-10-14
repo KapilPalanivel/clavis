@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shred files and clean up other copies — Clavis Encrypt Help</title>
+  <meta name="description" content="Overwrite and delete files and folders you no longer need, what Shred can and can&#x27;t reach, and where other copies of a file tend to be.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Shred files and clean up other copies — Clavis Encrypt Help">
+  <meta property="og:description" content="Overwrite and delete files and folders you no longer need, what Shred can and can&#x27;t reach, and where other copies of a file tend to be.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/help-shred.html">
+  <meta property="og:url" content="https://clavisenc.com/help-shred.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=78444f02c0">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","@id":"https://clavisenc.com/help-shred.html#article","headline":"Shred files and clean up other copies","description":"Overwrite and delete files and folders you no longer need, what Shred can and can't reach, and where other copies of a file tend to be.","datePublished":"2026-10-01","dateModified":"2026-10-01","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/help-shred.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"proficiencyLevel":"Beginner"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://clavisenc.com/help.html"},{"@type":"ListItem","position":3,"name":"Shred files and clean up other copies","item":"https://clavisenc.com/help-shred.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html" aria-current="page">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post help-article">
+        <p class="post-meta"><a href="help.html">Help</a> · Everyday use · <span class="plan-chip plan-free">Free</span></p>
+        <h1>Shred files and clean up other copies</h1>
+<p><strong>Shred Files</strong> in the sidebar overwrites files once with random data, gives them a random name and deletes them.
+They don't go to the Recycle Bin, and Clavis can't bring them back. It's free, folders included.</p>
+<h2>Shred files or folders</h2>
+<ol>
+  <li>Open <strong>Shred Files</strong>, then <strong>Add files…</strong> or <strong>Add folder…</strong>, or drag them onto the page.
+      Dropping only adds them to the list; nothing is shredded yet.</li>
+  <li>Press the red <strong>Shred…</strong> button. Clavis lists everything it's about to shred.</li>
+  <li>Tick <strong>I understand this can't be undone.</strong> and press <strong>Shred</strong>. <kbd>Enter</kbd> and <kbd>Esc</kbd> both cancel.</li>
+</ol>
+<p>On Windows you can also right-click files or folders and choose <strong>Clavis → Shred…</strong>. <strong>Stop</strong> finishes the
+current file and leaves the rest untouched. Files another app has open are skipped and listed, so you can close that app and press
+<strong>Try again</strong>. Activity records how many files were shredded and their size, never their names.</p>
+<div class="callout"><b>What Clavis won't shred.</b> Whole drives, Windows and program folders, your user folder and its top folders
+(Documents, Downloads, Desktop and so on), AppData, and Clavis's own folder with your vaults and keys. Choose the files inside them instead.
+Links and junctions are removed without touching what they point to.</div>
+<h2>What Shred can and can't do</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Where the file is</th><th>What to expect</th></tr></thead>
+<tbody>
+<tr><td>Hard disk inside the PC</td><td>Overwritten in place and deleted. Recovery tools can't get the contents back; the name can linger in the file system's records for a while.</td></tr>
+<tr><td>SSD inside the PC</td><td>Deleted, and ordinary recovery tools usually can't get it back, but an SSD may keep old copies of blocks where no app can reach. Best effort.</td></tr>
+<tr><td>USB stick or memory card</td><td>Overwritten and deleted, but flash drives can keep copies no app can reach. Best effort.</td></tr>
+<tr><td>Cloud-synced folder (OneDrive, Google Drive, Dropbox)</td><td>Removed from this PC. The cloud keeps deleted files and older versions for about 30 days: delete them online too. Online-only files are removed without being downloaded.</td></tr>
+<tr><td>Backups, restore points, email, chat apps</td><td>Not touched. See the checklist below.</td></tr>
+</tbody></table></div>
+<p>Clavis overwrites once. More passes don't make it safer on today's drives; they only wear out flash memory. Clavis doesn't wipe free space.
+For the strongest protection, turn on <strong>BitLocker</strong> or <strong>Device Encryption</strong>, and keep sensitive files
+encrypted from the moment you create them.</p>
+<h2>Clean up other copies</h2>
+<p>Encrypting replaces the file you chose. Copies saved elsewhere earlier stay as they were. After encrypting, or from the Shred Files page,
+<strong>Clean up other copies…</strong> lists the places to check: Downloads and Desktop, the Recycle Bin, email and chat apps, your cloud,
+USB and backup drives, File History and restore points, and Windows' picture previews (Disk Cleanup → Thumbnails). It only opens those
+places for you; it doesn't search, read or delete anything.</p>
+        <nav class="help-pager" aria-label="More help"><a href="help-activity.html"><span>← Previous</span>See what Clavis has done (Activity)</a><a class="next" href="help-watch-folders.html"><span>Next →</span>Encrypt new files automatically with watch folders</a></nav>
+        <p class="help-more">Can't find what you need? <a href="help.html">All help articles</a> · <a href="mailto:hello@clavisenc.com">Email us</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=912e92a0e3" defer></script>
+</body>
+</html>
