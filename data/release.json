@@ -1,9 +1,9 @@
 {
-  "version": "3.11.4",
-  "date": "2026-10-13",
+  "version": "3.12.0",
+  "date": "2026-10-14",
   "size": "42 MB",
-  "sha256": "a0d0ba44c260c3b1a8e20f165514bd4152aedd700a4cd446fc0d6f8699405e04",
-  "zipSha256": "e3ea39a64e457cccf52a4a45a04a9dbf5434faaa70f5b93f9ebb65d249a8b878",
-  "debSha256": "5f51d58c874d1ac86b954105b989e384e319d4af20f4e50d69cfeb94be074503",
-  "notes": "# Clavis Encrypt 3.11.4\n\n## 🛠️ Safer saving\n\n- Your vault and settings are now saved in one step: Clavis writes the new version first and only then swaps it in. A crash, a power cut or a USB stick pulled out at the wrong moment can no longer leave them empty or damaged.\n\n## 💾 Large files on USB sticks\n\n- Many USB sticks use FAT32, which can't hold files of 4 GB or more. Clavis now checks before it starts and tells you plainly, instead of failing part-way through.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "946daab7177117c4490fd82d0a3aad3de56a88f9999b8ec7bcca0c08e4e0f17e",
+  "zipSha256": "f6589e37bf87da103fd07b080aa4e742621afa613de5c859b99009f3e847bf1a",
+  "debSha256": "9c0633c9f1e3346af10486ab799eccb6435ba6505a514d5ce59e711694ae6c4e",
+  "notes": "# Clavis Encrypt 3.12.0\n\n## 🆕 Shred files and folders (Free)\n\n- Remove files you no longer need for good: Clavis overwrites each file once with random data, then deletes it.\n- **Right-click** any file or folder → **Clavis → Shred…**, or use the new **Shred Files** page in the sidebar (drag files onto it).\n- Before anything happens you see every file that will be shredded and tick **\"I understand this can't be undone.\"** Cancel is always the default.\n- Clavis refuses to shred Windows and program folders, your user folder, whole drives and its own vault folder.\n- After encrypting, a new **Clean up other copies…** link shows where leftover copies often hide (Downloads, Desktop, Recycle Bin, WhatsApp, cloud version history).\n- Honest note: on SSDs, USB sticks and memory cards, and where backups or cloud version history keep copies, earlier versions of a file can survive. Encrypting is what protects a file.\n\n## Also\n\n- The sidebar scrolls when the window is short, so every item stays reachable.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically. (The Store version has no right-click menu; use the Shred Files page.)\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
