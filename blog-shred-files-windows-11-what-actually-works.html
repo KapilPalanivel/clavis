@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Can you permanently delete a file on Windows 11? What actually works — Clavis Encrypt</title>
+  <meta name="description" content="What Delete, Shift+Delete and file shredders really do on Windows 11: hard disks, SSDs and TRIM, USB sticks, OneDrive and Google Drive version history, File History and restore points. With sources, and how to shred files for free.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Can you permanently delete a file on Windows 11? What actually works">
+  <meta property="og:description" content="Hard disk, SSD, USB stick or cloud: what deleting and shredding really do, and why encrypting first is what protects a file.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-14">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=54265df882">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html#article","headline":"Can you permanently delete a file on Windows 11? What actually works","description":"What Delete, Shift+Delete and file shredders really do on Windows 11: hard disks, SSDs and TRIM, USB sticks, OneDrive and Google Drive version history, File History and restore points. With sources, and how to shred files for free.","datePublished":"2026-10-14","dateModified":"2026-10-14","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html","image":["https://clavisenc.com/assets/img/og.png","https://clavisenc.com/assets/img/help/shred.webp","https://clavisenc.com/assets/img/help/shred-confirm.webp"],"isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://csrc.nist.gov/pubs/sp/800/88/r2/final","https://csrc.nist.gov/files/pubs/sp/800/88/r2/final/docs/sp800-88r2-faq.pdf","https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf","https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior","https://support.microsoft.com/en-us/windows/windows-file-recovery-61f5b28a-f5b8-3cc2-0f8e-a63cb4e1d4c4","https://learn.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service","https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete","https://support.microsoft.com/en-US/Windows/Experience/backup-recovery/backup-and-restore-with-file-history","https://support.microsoft.com/en-us/office/restore-deleted-files-or-folders-in-onedrive-949ada80-0026-4db3-a953-c99083e6a84f","https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893","https://support.google.com/drive/answer/2375102?hl=en","https://support.google.com/drive/answer/2409045?hl=en","https://help.dropbox.com/account-settings/data-retention-policy","https://support.microsoft.com/en-us/windows/reset-your-pc-0ef73740-b927-549b-b7c9-e6f2b48d275e","https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Can you permanently delete a file on Windows 11? What actually works","item":"https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I permanently delete files on Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Shift+Delete and emptying the Recycle Bin only free the space, so recovery tools can often get the file back from a hard disk. Overwriting the file once before deleting it, with a free shredder such as Clavis Encrypt's Shred Files, stops that on a hard disk. On SSDs and USB sticks no shredder can guarantee it, and cloud version history and backups keep their own copies, so encrypt sensitive files and turn on BitLocker or Device Encryption."}},{"@type":"Question","name":"Does deleting a file remove it from an SSD?","acceptedAnswer":{"@type":"Answer","text":"Not reliably. Windows sends TRIM when you delete a file on an NTFS SSD, and most drives then stop returning the old data, so ordinary recovery tools usually find nothing. But the old data can stay in the flash chips until the drive erases them, and a 2011 USENIX study found 4% to 75% of overwritten files still on SSDs. Full-disk encryption is the reliable fix."}},{"@type":"Question","name":"Is it safe to use a file shredder on an SSD?","acceptedAnswer":{"@type":"Answer","text":"Yes, it won't harm the drive: a single overwrite pass adds very little wear. It just isn't guaranteed to destroy every copy, because the SSD may write the new data to different cells. Avoid 7-pass or 35-pass modes and free-space wiping on SSDs; NIST says multi-pass overwriting is unnecessary and degrades flash."}},{"@type":"Question","name":"How many passes do I need to securely delete a file?","acceptedAnswer":{"@type":"Answer","text":"One. NIST SP 800-88 Rev. 2 says multi-pass overwriting is unnecessary for modern storage and that clearing typically uses a single pass. Extra passes don't make an SSD or USB stick any safer."}},{"@type":"Question","name":"How do I delete my files before selling my laptop in India?","acceptedAnswer":{"@type":"Answer","text":"Back up what you need, then use Settings, System, Recovery, Reset PC, Remove everything, with Clean data turned on. Microsoft recommends this when you sell, donate or recycle a PC. If the laptop has an SSD, it helps most if Device Encryption or BitLocker was on. Also sign out of your Microsoft, Google and WhatsApp accounts first."}},{"@type":"Question","name":"How do I securely delete a copy of my Aadhaar card from my laptop?","acceptedAnswer":{"@type":"Answer","text":"Shred the file with a tool such as Clavis Encrypt's free Shred Files (best effort on SSDs), then check where other copies hide: Downloads, WhatsApp Desktop and email attachments, OneDrive or Google Drive and their trash, and any pen drive you copied it to. If you need to keep one copy, keep it encrypted instead of deleting it."}},{"@type":"Question","name":"If I delete a file on my PC, is it deleted from OneDrive or Google Drive?","acceptedAnswer":{"@type":"Answer","text":"The file is removed from your synced folder, but the cloud keeps it in its recycle bin or trash, usually for 30 days (93 days on OneDrive work or school accounts), and keeps older versions too. Delete it on the website and empty the cloud's recycle bin or trash."}},{"@type":"Question","name":"Can deleted files be recovered from a pen drive?","acceptedAnswer":{"@type":"Answer","text":"Often, yes. Files deleted from USB sticks and memory cards usually skip the Recycle Bin but stay on the flash until reused, and Microsoft's own Windows File Recovery can scan USB drives. Shredding helps but is best effort on flash, so encrypt files you keep on a pen drive."}},{"@type":"Question","name":"Is Clavis Shred free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shred Files, including whole folders, is part of Clavis Encrypt Free on Windows and Linux. Security features in Clavis are never behind a paywall."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 14, 2026</p>
+        <h1>Can you permanently delete a file on Windows 11? What actually works</h1>
+
+        <p>You're about to sell your laptop, or you've finally encrypted that Aadhaar scan or old bank statement, and you want the readable copy gone for good. Windows says Shift+Delete will "permanently delete" a file. A dozen free shredders promise the same. The honest answer depends on where the file lives: a hard disk, an SSD, a USB stick, a cloud folder, or a backup you forgot about. Here's what each one really does, what the research says, and what actually protects a file.</p>
+
+        <div class="callout"><b>Short answer:</b> deleting a file on Windows 11, even with Shift+Delete or by emptying the Recycle Bin, only marks its space as free; on a hard disk, recovery tools can often get it back. Overwriting the file once before deleting it (what a file shredder does) is enough on a hard disk, and US government guidance (NIST SP 800-88 Rev. 2) says extra passes are unnecessary. On SSDs, USB sticks and memory cards, no file shredder can guarantee it: in a USENIX study, 4% to 75% of a "shredded" file was still readable from the SSDs' flash chips. And copies in OneDrive or Google Drive version history, recycle bins, File History and restore points survive any shredder. What reliably protects a file is encryption: encrypt sensitive files as soon as you get them, and turn on BitLocker or Device Encryption for the whole drive.</div>
+
+        <h2>What Delete actually does on Windows 11</h2>
+        <ul>
+          <li><strong>Delete</strong> moves the file to the Recycle Bin. It's still there, fully readable, until you empty the bin.</li>
+          <li><strong>Shift+Delete</strong> or <strong>Empty Recycle Bin</strong> removes the file's entry and marks its space as free. The contents stay where they were until something else is written there.</li>
+          <li>That's why recovery tools work. Microsoft makes one itself: <strong>Windows File Recovery</strong>, a free command-line app in the Microsoft Store for files "that can't be restored from the Recycle Bin", on internal drives, external drives and USB devices.</li>
+          <li>On an SSD, Windows also sends <strong>TRIM</strong>: it tells the drive which blocks were freed. Microsoft documents it as on by default for NTFS, the file system on almost every Windows 11 PC. Most SSDs then stop returning the old data, which is why Microsoft's recovery page warns that the space may already be overwritten, "especially on a solid-state drive (SSD)". TRIM is a hint to the drive, not an erase: the study below found it "does not have any reliable effect on data security".</li>
+        </ul>
+        <p>To check TRIM yourself, open Terminal as administrator and run <code>fsutil behavior query DisableDeleteNotify</code>. <code>NTFS DisableDeleteNotify = 0</code> means TRIM is on.</p>
+
+        <h2>It depends on where the file is</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Where the file is</th><th>After a normal delete</th><th>Does overwriting first (shredding) help?</th></tr></thead>
+            <tbody>
+              <tr><td>Hard disk (HDD)</td><td>Contents stay until reused; recovery tools often find them</td><td>Yes. One pass of overwriting is enough</td></tr>
+              <tr><td>SSD inside the PC</td><td>TRIM usually stops ordinary recovery, but old copies can stay in the flash</td><td>Only partly. The drive may write the new data somewhere else</td></tr>
+              <tr><td>USB stick, pen drive, memory card</td><td>Usually no Recycle Bin, often recoverable</td><td>Only partly, for the same reason as SSDs</td></tr>
+              <tr><td>OneDrive, Google Drive, Dropbox</td><td>Kept in the cloud's recycle bin and version history, usually for 30 days</td><td>No. Overwriting a synced file just uploads a new version</td></tr>
+              <tr><td>File History, backup drives, restore points</td><td>Earlier copies stay until they expire or are deleted</td><td>No. Shredding doesn't touch them</td></tr>
+              <tr><td>Email, WhatsApp Desktop, Telegram, Downloads</td><td>Their own copies stay as they were</td><td>Only if you shred those copies too</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Hard disks: one overwrite is enough</h3>
+        <p>On a spinning hard disk, writing over a file's space replaces its contents. The old belief that you need 7 or 35 passes doesn't hold up for modern drives. NIST's FAQ for SP 800-88 Rev. 2 (the US government's media-sanitization guidance) says plainly that "multi-pass overwriting is unnecessary", that such legacy practices "achieve very little confidentiality protection and can significantly degrade the lifespan of flash-based media", and that clearing a drive means overwriting "typically in a single pass". The USENIX researchers agree that on hard disks, "overwriting and then deleting a file suffices", with one caveat: sectors the drive has retired as bad may keep old data.</p>
+        <p>Two smaller catches: Windows may keep the file's <em>name</em> in the file system's records for a while, and Microsoft's SDelete documentation notes that files using NTFS compression, EFS encryption or sparse storage may not be overwritten in place.</p>
+
+        <h3>SSDs: why shredding a single file isn't reliable</h3>
+        <p>An SSD can't overwrite flash in place. When you write over a file, the drive's controller puts the new data in fresh cells and quietly retires the old ones, which stay on the chips until the drive erases them in its own time. Spare "over-provisioned" space, invisible to Windows, makes this worse.</p>
+        <p>The best-known test is <a href="https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf" rel="noopener">"Reliably Erasing Data From Flash-Based Solid State Drives"</a> by Wei, Grupp, Spada and Swanson (USENIX FAST '11). They shredded files with 13 methods, including the 35-pass Gutmann method and Mac OS X's Secure Empty Trash, then read the flash chips directly. Their verdict: "Single-file sanitization techniques ... consistently fail." Between <strong>4% and 75%</strong> of each file's contents remained on the SATA SSDs. Wiping the free space 100 times didn't help either: <strong>79% to 87%</strong> of the data was still on the SSD. The paper is from 2011 and drives have changed, but we know of no newer evidence that shredding a single file on an SSD became reliable.</p>
+        <p>In practice: after a delete with TRIM, ordinary recovery tools usually find nothing on an SSD. Someone who removes the chips and reads them in a lab may still find pieces. That's why Clavis calls its Shred "best effort" on SSDs.</p>
+
+        <h3>USB sticks and memory cards: the same problem, often worse</h3>
+        <p>Pen drives and SD cards use the same kind of flash with simpler controllers. In the same study, <strong>0.57% to 84.9%</strong> of a shredded file remained on a USB drive, and overwriting free space 100 times left 53% to 64%. USB sticks also don't support the drive-level erase commands that SSDs have. If a pen drive has held sensitive files unencrypted and you're giving it away, the safe answer is to keep it or physically destroy it, and to <a href="blog-encrypt-usb-drive-windows-11-home.html">encrypt the files on the next one</a> from the start.</p>
+
+        <h3>OneDrive, Google Drive and Dropbox: the cloud keeps copies</h3>
+        <p>Deleting or shredding a file in a synced folder removes it from your PC, and the deletion syncs. But the cloud keeps it for a while:</p>
+        <ul>
+          <li><strong>OneDrive:</strong> deleted files can be restored for 30 days on personal accounts and 93 days on work or school accounts (unless an admin changed it), and file version history is kept for 30 days.</li>
+          <li><strong>Google Drive:</strong> files in Trash are deleted forever after 30 days. Older versions of uploaded files may be removed after 30 days or once there are 100 newer versions, unless someone ticked <strong>Keep forever</strong>.</li>
+          <li><strong>Dropbox:</strong> 30 days on Basic, Plus and Family; 180 or 365 days on business plans.</li>
+        </ul>
+        <p>Overwriting a synced file first doesn't help: the cloud just saves the random data as a new version and keeps the old one in history. To really remove it, delete it on the website too, then empty the cloud's recycle bin or trash. To stop it happening again, <a href="blog-encrypt-before-onedrive-google-drive-dropbox.html">encrypt files before they reach the cloud folder</a>.</p>
+
+        <h3>File History, backups and restore points</h3>
+        <p><strong>File History</strong> backs up your libraries to an external drive or network location and keeps earlier versions, so a shredded file can still be in last month's backup. The same goes for any backup drive or backup app.</p>
+        <p><strong>Restore points</strong> (System Protection) are made with Windows' Volume Shadow Copy Service. Microsoft explains that before a block on the drive is changed, it "is read and then written to the volume's shadow copy storage area", so the old version is preserved. Restore points are meant for system files, but these snapshots cover the whole drive, so while one exists it can still hold an earlier copy of a file you later shredded. Windows deletes old ones, oldest first, when their space runs out. If you need them gone now, <strong>System Properties → System Protection → Configure → Delete</strong> removes all restore points for that drive, at the cost of your safety net. Clavis never does this for you.</p>
+
+        <h2>How to shred files with Clavis Encrypt (free)</h2>
+        <p><a href="./">Clavis Encrypt</a> has a free <strong>Shred Files</strong> page (since version 3.12), folders included. It overwrites each file once with random data, in place, then empties it, gives it a random name and deletes it. Nothing goes to the Recycle Bin.</p>
+        <ol>
+          <li><a href="download.html">Install Clavis Encrypt</a> (Windows 10 or 11, or Linux; on Windows it installs without administrator rights) and open it.</li>
+          <li>Click <strong>Shred Files</strong> in the sidebar, then <strong>Add files…</strong> or <strong>Add folder…</strong>, or drag files onto the page. Dropping only adds them to the list; nothing is shredded yet.</li>
+          <li>Or, on Windows, right-click files or a folder in File Explorer and choose <strong>Clavis → Shred…</strong> (on Windows 11 it's under <strong>Show more options</strong>). The Microsoft Store version has no right-click menu, so use the page.</li>
+          <li>Press the red <strong>Shred…</strong> button. Clavis lists every file it's about to shred, with a warning if any are encrypted <code>.enc</code> files, in a cloud folder or on a USB drive.</li>
+          <li>Tick <strong>I understand this can't be undone.</strong> and press <strong>Shred</strong>. <strong>Cancel</strong> is the default; <kbd>Enter</kbd> and <kbd>Esc</kbd> both cancel.</li>
+          <li>Check the result. Files another app has open are skipped and listed: close that app and press <strong>Try again</strong>.</li>
+        </ol>
+        <figure class="help-shot"><img src="assets/img/help/shred.webp" width="1212" height="859" alt="The Shred Files page in Clavis Encrypt with three items listed" loading="lazy"></figure>
+        <figure class="help-shot"><img src="assets/img/help/shred-confirm.webp" width="756" height="510" alt="The Confirm Shred dialog listing every file, with the I understand this can't be undone checkbox" loading="lazy"></figure>
+        <p>To stop accidents, Clavis refuses whole drives, Windows and program folders, your user folder and its top folders (Documents, Downloads, Desktop and so on), AppData, and its own folder with your vaults and keys. Choose the files inside them instead. Shortcuts and junctions are removed without touching what they point to, and online-only OneDrive files are deleted without being downloaded first. The <a href="help-shred.html">Shred help page</a> has the details.</p>
+
+        <h2>What Clavis Shred can and can't do</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Can</th><th>Can't</th></tr></thead>
+            <tbody>
+              <tr><td>Overwrite an ordinary file once, in place, on a hard disk, so recovery tools can't read its contents</td><td>Guarantee anything on SSDs, USB sticks or memory cards. It's best effort there</td></tr>
+              <tr><td>Shred whole folders, free, with one confirmation listing every file</td><td>Reach copies in OneDrive, Google Drive or Dropbox version history or their recycle bins</td></tr>
+              <tr><td>Remove online-only cloud files without downloading them</td><td>Remove copies in File History, backup drives or restore points</td></tr>
+              <tr><td>Keep Activity free of names: it records only how many files and how much space</td><td>Find other copies for you (Downloads, email, WhatsApp). <strong>Clean up other copies…</strong> lists where to look</td></tr>
+              <tr><td>Refuse system folders, your user folder and its own vault folder</td><td>Bring a file back. There's no undo</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Clavis overwrites once, on purpose: more passes only wear out flash. It doesn't wipe free space, which the study above found ineffective on SSDs and USB drives.</p>
+
+        <h2>Why encrypting first is what really protects a file</h2>
+        <p>Shredding tries to destroy data after the fact. Encryption makes sure there's nothing readable to destroy. If a file was only ever stored encrypted, every leftover copy, whether in a retired flash cell, a restore point or a cloud version, is unreadable without your password.</p>
+        <p>NIST makes the same point about cryptographic erase: destroying the key instead of the data. It treats this as a purge method, notes that modern SSDs encrypt internally, and calls it "often the only viable purge method" for cloud storage. But it counts only if "no sensitive data can have been stored ... in plaintext prior to the encryption keys being established". In everyday terms: encrypt early, not after the file has sat around unencrypted for a year.</p>
+        <ol>
+          <li><strong>Turn on BitLocker or Device Encryption</strong> if your PC has it (Settings → Privacy &amp; security → Device encryption on Windows 11 Home). Then everything the drive writes, including the pieces an SSD keeps behind your back, is encrypted. See <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">BitLocker vs Device encryption</a>.</li>
+          <li><strong>Encrypt sensitive files as soon as they arrive:</strong> the Aadhaar or PAN PDF from DigiLocker, the bank statement, the payslip. With Clavis, right-click → <strong>Clavis → Encrypt</strong> turns it into a <code>.enc</code> file with a random name, which stays encrypted in OneDrive, on a USB stick or in an email.</li>
+          <li><strong>Then clean up the copies.</strong> Encrypting replaces the file you chose, but copies saved elsewhere earlier stay as they were. After encrypting, <strong>Clean up other copies…</strong> walks you through the usual places: Downloads and Desktop, the Recycle Bin, email and chat apps, your cloud, USB and backup drives, File History and restore points, and Windows' picture previews (Disk Cleanup → Thumbnails). It only opens those places; it doesn't search or delete anything.</li>
+        </ol>
+        <p>Before a repair or a hand-over, our <a href="blog-protect-files-before-laptop-repair.html">laptop repair checklist</a> covers the rest. Still on Windows 10? See <a href="blog-encrypt-files-windows-10.html">how to encrypt files on Windows 10</a>.</p>
+
+        <h2>Selling or exchanging your laptop?</h2>
+        <p>Whether it's an exchange offer, a resale site or a relative, don't shred file by file. Reset the whole PC: <strong>Settings → System → Recovery → Reset PC → Remove everything</strong>, and turn on <strong>Clean data</strong> under the additional settings. Microsoft says "If you're planning to donate, recycle, or sell your PC, use this option": it takes longer but "makes it harder for other people to recover files you've removed". On an SSD, the strongest protection is Device Encryption or BitLocker having been on all along, so the leftovers were never readable.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I permanently delete files on Windows 11?</summary><p>Shift+Delete and emptying the Recycle Bin only free the space, so recovery tools can often get the file back from a hard disk. Overwriting the file once before deleting it, with a free shredder such as Clavis Encrypt's Shred Files, stops that on a hard disk. On SSDs and USB sticks no shredder can guarantee it, and cloud version history and backups keep their own copies, so encrypt sensitive files and turn on BitLocker or Device Encryption.</p></details>
+          <details><summary>Does deleting a file remove it from an SSD?</summary><p>Not reliably. Windows sends TRIM when you delete a file on an NTFS SSD, and most drives then stop returning the old data, so ordinary recovery tools usually find nothing. But the old data can stay in the flash chips until the drive erases them, and a 2011 USENIX study found 4% to 75% of overwritten files still on SSDs. Full-disk encryption is the reliable fix.</p></details>
+          <details><summary>Is it safe to use a file shredder on an SSD?</summary><p>Yes, it won't harm the drive: a single overwrite pass adds very little wear. It just isn't guaranteed to destroy every copy, because the SSD may write the new data to different cells. Avoid 7-pass or 35-pass modes and free-space wiping on SSDs; NIST says multi-pass overwriting is unnecessary and degrades flash.</p></details>
+          <details><summary>How many passes do I need to securely delete a file?</summary><p>One. NIST SP 800-88 Rev. 2 says multi-pass overwriting is unnecessary for modern storage and that clearing typically uses a single pass. Extra passes don't make an SSD or USB stick any safer.</p></details>
+          <details><summary>How do I delete my files before selling my laptop in India?</summary><p>Back up what you need, then use Settings, System, Recovery, Reset PC, Remove everything, with Clean data turned on. Microsoft recommends this when you sell, donate or recycle a PC. If the laptop has an SSD, it helps most if Device Encryption or BitLocker was on. Also sign out of your Microsoft, Google and WhatsApp accounts first.</p></details>
+          <details><summary>How do I securely delete a copy of my Aadhaar card from my laptop?</summary><p>Shred the file with a tool such as Clavis Encrypt's free Shred Files (best effort on SSDs), then check where other copies hide: Downloads, WhatsApp Desktop and email attachments, OneDrive or Google Drive and their trash, and any pen drive you copied it to. If you need to keep one copy, keep it encrypted instead of deleting it.</p></details>
+          <details><summary>If I delete a file on my PC, is it deleted from OneDrive or Google Drive?</summary><p>The file is removed from your synced folder, but the cloud keeps it in its recycle bin or trash, usually for 30 days (93 days on OneDrive work or school accounts), and keeps older versions too. Delete it on the website and empty the cloud's recycle bin or trash.</p></details>
+          <details><summary>Can deleted files be recovered from a pen drive?</summary><p>Often, yes. Files deleted from USB sticks and memory cards usually skip the Recycle Bin but stay on the flash until reused, and Microsoft's own Windows File Recovery can scan USB drives. Shredding helps but is best effort on flash, so encrypt files you keep on a pen drive.</p></details>
+          <details><summary>Is Clavis Shred free?</summary><p>Yes. Shred Files, including whole folders, is part of Clavis Encrypt Free on Windows and Linux. Security features in Clavis are never behind a paywall.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://csrc.nist.gov/pubs/sp/800/88/r2/final" rel="noopener">NIST SP 800-88 Rev. 2, Guidelines for Media Sanitization (September 2025)</a></li>
+          <li><a href="https://csrc.nist.gov/files/pubs/sp/800/88/r2/final/docs/sp800-88r2-faq.pdf" rel="noopener">NIST, Frequently Asked Questions for SP 800-88r2 (July 16, 2026), Q6, Q9 and Q13</a></li>
+          <li><a href="https://static.usenix.org/event/fast11/tech/full_papers/Wei.pdf" rel="noopener">Wei, Grupp, Spada, Swanson, "Reliably Erasing Data From Flash-Based Solid State Drives", USENIX FAST '11 (Tables 3 and 4)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-behavior" rel="noopener">Microsoft Learn: fsutil behavior (DisableDeleteNotify, TRIM)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/windows-file-recovery-61f5b28a-f5b8-3cc2-0f8e-a63cb4e1d4c4" rel="noopener">Microsoft Support: Windows File Recovery</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows-server/storage/file-server/volume-shadow-copy-service" rel="noopener">Microsoft Learn: Volume Shadow Copy Service (copy-on-write, System Restore)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/sysinternals/downloads/sdelete" rel="noopener">Microsoft Sysinternals: SDelete (compressed, encrypted and sparse files)</a></li>
+          <li><a href="https://support.microsoft.com/en-US/Windows/Experience/backup-recovery/backup-and-restore-with-file-history" rel="noopener">Microsoft Support: Backup and restore with File History</a></li>
+          <li><a href="https://support.microsoft.com/en-us/office/restore-deleted-files-or-folders-in-onedrive-949ada80-0026-4db3-a953-c99083e6a84f" rel="noopener">Microsoft Support: Restore files deleted from your OneDrive</a></li>
+          <li><a href="https://support.microsoft.com/en-us/office/restore-a-previous-version-of-a-file-stored-in-onedrive-159cad6d-d76e-4981-88ef-de6e96c93893" rel="noopener">Microsoft Support: Restore a previous version of a file stored in OneDrive</a></li>
+          <li><a href="https://support.google.com/drive/answer/2375102?hl=en" rel="noopener">Google Drive Help: Delete files in Google Drive (Trash)</a></li>
+          <li><a href="https://support.google.com/drive/answer/2409045?hl=en" rel="noopener">Google Drive Help: Check activity &amp; file versions</a></li>
+          <li><a href="https://help.dropbox.com/account-settings/data-retention-policy" rel="noopener">Dropbox Help: How long does Dropbox keep my deleted files?</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/reset-your-pc-0ef73740-b927-549b-b7c9-e6f2b48d275e" rel="noopener">Microsoft Support: Reset your PC (Clean data)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df" rel="noopener">Microsoft Support: Device Encryption in Windows</a></li>
+        </ul>
+        <p class="muted-note"><em>Cloud retention periods are the providers' own figures as of October 2026 and can change; check your provider's help page and your organisation's settings.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=1320c36c77" defer></script>
+</body>
+</html>

@@ -118,6 +118,7 @@ Not for: storing passwords (it is not a password manager), macOS, Android or iPh
 
 ## Guides
 
+- [Can you permanently delete a file on Windows 11? What actually works](https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html): what Delete, TRIM and file shredders do on hard disks, SSDs, USB sticks and cloud folders, with sources (NIST SP 800-88 Rev. 2, USENIX FAST '11), and why encrypting first protects a file
 - [BitLocker vs Device encryption on Windows 11 Home: what's the difference?](https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html)
 - [How to encrypt files on Windows 10 (free)](https://clavisenc.com/blog-encrypt-files-windows-10.html)
 - [How to keep files private on a shared family PC (Windows 11)](https://clavisenc.com/blog-keep-files-private-shared-family-pc.html)
