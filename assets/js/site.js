@@ -384,24 +384,23 @@
   const msg = form.querySelector(".signup-msg"), btn = form.querySelector("button[type=submit]");
   const email = form.querySelector("input[name=EMAIL]");
   const event = name => { const gc = window.goatcounter; if (gc && typeof gc.count === "function") gc.count({ path: name, title: name, event: true }); };
-  let target = null;
-  const start = href => { const a = document.createElement("a"); a.href = href; a.rel = "noopener"; document.body.appendChild(a); a.click(); a.remove(); };
 
-  document.querySelectorAll('a[data-goatcounter-click^="download-"]').forEach(a => a.addEventListener("click", ev => {
-    if (known()) return;                                   // asked before: download straight away
-    ev.preventDefault();
-    target = a.href;
+  // The download always starts at once (the link is followed as usual); the guide is offered
+  // afterwards on every download until an email is given ("No thanks" isn't remembered).
+  document.querySelectorAll('a[data-goatcounter-click^="download-"]').forEach(a => a.addEventListener("click", () => {
+    if (known() || dlg.open) return;
     msg.textContent = ""; btn.disabled = false;
-    dlg.showModal();
-    setTimeout(() => email.focus(), 50);
+    setTimeout(() => { dlg.show(); event("download-email-offered"); }, 400);
   }));
-  form.querySelector(".dl-gate-x").addEventListener("click", () => dlg.close());
-  dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+  const dismiss = () => { if (!dlg.open) return; event("download-email-dismissed"); dlg.close(); };
+  form.querySelector(".dl-gate-x").addEventListener("click", dismiss);
+  form.querySelector(".dl-gate-no").addEventListener("click", dismiss);
+  dlg.addEventListener("cancel", e => { e.preventDefault(); dismiss(); });
 
   form.addEventListener("submit", async ev => {
     ev.preventDefault();
     if (!email.value.trim() || !email.checkValidity()) { msg.textContent = "Please enter a valid email address."; msg.dataset.kind = "error"; email.focus(); return; }
-    btn.disabled = true; msg.textContent = "Starting your download…"; msg.dataset.kind = "";
+    btn.disabled = true; msg.textContent = "Sending…"; msg.dataset.kind = "";
     let ok = false;
     try {
       const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 6000);
@@ -414,8 +413,9 @@
     event(ok ? "download-email-given" : "download-email-failed");
     if (form.querySelector("input[name=OPT_IN]").checked) event("download-email-updates-yes");
     remember();
-    dlg.close();
-    if (target) start(target);
+    msg.textContent = ok ? "Sent. Check your inbox (Outlook or Hotmail: Junk)." : "That didn't go through. Your download isn't affected.";
+    msg.dataset.kind = ok ? "" : "error";
+    setTimeout(() => dlg.close(), ok ? 3500 : 5000);
   });
 })();
 
