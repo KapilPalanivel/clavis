@@ -455,3 +455,40 @@
     });
   });
 })();
+
+/* ── After uninstall (uninstalled.html) ─────────────────────────────────
+   The Windows uninstaller opens this page as uninstalled.html?v=<version>. The
+   app itself sends nothing; this page counts one anonymous event for the version
+   and, only if the visitor clicks one, one for the reason. */
+(() => {
+  "use strict";
+  const box = document.querySelector("[data-uninstall-reasons]");
+  if (!box) return;
+  const queue = [];
+  let tries = 0;
+  const flush = () => {
+    const gc = window.goatcounter;
+    if (!gc || typeof gc.count !== "function") { if (++tries < 30) setTimeout(flush, 1000); return; }
+    while (queue.length) { const name = queue.shift(); gc.count({ path: name, title: name, event: true }); }
+  };
+  const event = name => { queue.push(name); flush(); };
+
+  // Version: digits and dots only (anything else in ?v= is ignored). Once per tab, so a reload doesn't count twice.
+  const v = new URLSearchParams(location.search).get("v") || "";
+  if (/^\d{1,4}(\.\d{1,6}){0,3}$/.test(v)) {
+    let seen = false;
+    try { seen = sessionStorage.getItem("clavis-uninstalled") === v; sessionStorage.setItem("clavis-uninstalled", v); } catch (e) {}
+    if (!seen) event("uninstalled-v" + v);
+  }
+
+  const thanks = document.querySelector("[data-reason-thanks]");
+  const buttons = [...box.querySelectorAll("button[data-reason]")];
+  buttons.forEach(b => b.addEventListener("click", () => {
+    const reason = b.dataset.reason;
+    if (box.dataset.done || !/^[a-z-]{1,32}$/.test(reason)) return;
+    box.dataset.done = "1";
+    event("uninstall-reason-" + reason);
+    buttons.forEach(o => { o.disabled = true; o.setAttribute("aria-pressed", String(o === b)); });
+    if (thanks) thanks.hidden = false;
+  }));
+})();
