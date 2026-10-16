@@ -1,9 +1,9 @@
 {
-  "version": "3.13.1",
-  "date": "2026-10-14",
+  "version": "3.13.2",
+  "date": "2026-10-16",
   "size": "42 MB",
-  "sha256": "7ed2b29cb462cc9901ae610c41c9e581c4ec0f61313f857657343bf61cf37db5",
-  "zipSha256": "1a7c7d239fb297b6584a9322cf371ab701f27ffdf2f5da5fb349641d45106eeb",
-  "debSha256": "022f422ce09a79ccc2280f95bb9a5dc548d2818922a5aae0d055a583e6897006",
-  "notes": "# Clavis Encrypt 3.13.1\n\n## 🛠️ Fixes\n\n- **Sidebar:** all menu items now fit at the normal window size; \"Settings\" was cut off at the bottom. The window opens a little taller, and on small screens the menu scrolls as before.\n- **Tamil:** the sidebar's subtitle under \"Clavis Encrypt\" is no longer cut off.\n- **Find sensitive files:** the \"never suggest\" list is now stored with this PC's own random salt, so a copy of your settings can't be used to check a guessed file location. Files you hid in 3.13.0 stay hidden.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
+  "sha256": "d8d643ea562b7395633b8ddabcc1d2c80b976717917b2a8bc0e0603b4bcb9111",
+  "zipSha256": "d9127bcbfa6d4b0382f69efc8b2b03bfe02bb55ef19848f401a333a64ad2c0a2",
+  "debSha256": "52b28901eda1f444d455ee661d7245865f83edb65571510c2d44f400c85a7ed8",
+  "notes": "# Clavis Encrypt 3.13.2\n\n## 👋 When you uninstall\n\n- If you uninstall Clavis on Windows (installer version), a short page opens in your browser. It reminds you that your encrypted files and vault stay on your PC and how to open them again, and asks why you uninstalled. Answering is optional and anonymous. The app itself still sends nothing.\n- Updates and silent uninstalls don't open the page.\n\n## Install / upgrade\n\n- **Windows, already installed:** the app updates itself (Settings → Updates → Check now), or download the new installer from https://clavisenc.com/download.html.\n- **Microsoft Store:** the Store updates it automatically.\n- **Linux:** install the new `.deb` from https://clavisenc.com/download.html.\n\nYour vaults and settings are kept.\n"
 }
