@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to carry encrypted files on a USB stick and open them on another PC — Clavis Encrypt</title>
+  <meta name="description" content="Put Clavis, your vault and your encrypted files on a USB stick, and open them on other Windows PCs without installing anything there, or in a browser where programs are blocked.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to carry encrypted files on a USB stick and open them on another PC">
+  <meta property="og:description" content="Carry your encrypted files on a USB stick and open them on other Windows PCs without installing anything there. Steps, limits and questions.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:published_time" content="2026-10-19">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html#article","headline":"How to carry encrypted files on a USB stick and open them on another PC","description":"Put Clavis, your vault and your encrypted files on a USB stick, and open them on other Windows PCs without installing anything there, or in a browser where programs are blocked.","datePublished":"2026-10-19","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption","https://veracrypt.io/en/Portable%20Mode.html","https://support.microsoft.com/en-us/topic/what-is-smart-app-control-285ea03d-fa88-4d56-882e-6698afdb7003","https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison","https://learn.microsoft.com/en-us/windows-hardware/drivers/install/setupapi-text-logs","https://clavisenc.com/help-usb-stick.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to carry encrypted files on a USB stick and open them on another PC","item":"https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I open encrypted files on another computer without installing anything?","acceptedAnswer":{"@type":"Answer","text":"Carry the program on the stick. Clavis Encrypt's USB Stick window (Clavis Pro) copies Clavis, your vault and your encrypted files onto a USB stick; on another Windows PC you double-click Clavis.exe on the stick and unlock with your password. Nothing is installed there. Where programs from USB sticks are blocked, double-click Open my files.html on the stick to open the files in the web browser, without internet."}},{"@type":"Question","name":"How do I put a password on a USB stick without BitLocker on Windows 11 Home?","acceptedAnswer":{"@type":"Answer","text":"Encrypt the files on it. With Clavis Encrypt (free) each file becomes a locked .enc file that only your password opens, and with Clavis Pro the USB Stick window also puts Clavis on the stick so the files open on other PCs. BitLocker To Go isn't available on Windows 11 Home."}},{"@type":"Question","name":"Is there portable encryption software that runs from a USB stick without admin rights?","acceptedAnswer":{"@type":"Answer","text":"Yes. Clavis Encrypt runs from a USB stick on Windows without administrator rights and keeps its data on the stick. VeraCrypt's portable mode, by its own documentation, needs administrator privileges on each PC."}},{"@type":"Question","name":"Does it leave any trace on the other PC?","acceptedAnswer":{"@type":"Answer","text":"Clavis installs nothing and keeps its vault, settings and working copies on the stick, and Finish and remove stick removes its working files. Windows itself still records that a USB device was connected and which programs ran, programs such as Word may keep recent-files lists, and files you save from the browser page stay until you delete them."}},{"@type":"Question","name":"What if the office or print shop PC blocks programs on USB sticks?","acceptedAnswer":{"@type":"Answer","text":"Double-click Open my files.html on the stick. It opens your .enc files in Edge, Chrome or Firefox without internet and without uploading anything. If the PC blocks USB storage entirely, neither will work; clavisenc.com/open.html opens files from other places, such as email or a phone."}},{"@type":"Question","name":"What happens if I lose the USB stick?","acceptedAnswer":{"@type":"Answer","text":"The files and the vault on it stay encrypted, so whoever finds it needs your password. Use a strong password, keep your recovery key and key file somewhere other than the stick, and keep a second copy of your files."}},{"@type":"Question","name":"Does my Clavis Pro licence work on other PCs?","acceptedAnswer":{"@type":"Answer","text":"Pro and Premium licences are copied to the stick so paid features work on other PCs. A key made for one PC, such as a trial key, makes Clavis run as Free on other PCs; your files still open as usual."}},{"@type":"Question","name":"Why can't I copy a 5 GB video to my encrypted USB stick?","acceptedAnswer":{"@type":"Answer","text":"Sticks formatted as FAT32 can't hold files of 4 GB or more. Clavis checks before it encrypts and tells you. Use a smaller file, or reformat the stick as exFAT (this erases everything on it)."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 19, 2026</p>
+        <h1>How to carry encrypted files on a USB stick and open them on another PC</h1>
+
+        <p>A USB stick (a flash drive, or pen drive) goes everywhere: to the office, your accountant at tax time, a college lab, the print shop that prints your forms, your parents' PC. So do the files on it: passport and ID scans, tax papers, payslips, a project report. Encrypting the files is the easy half. The hard half is opening them on a PC that isn't yours, where you can't install software, and where Windows 11 Home can't use BitLocker To Go anyway. Since version 3.14, <a href="./">Clavis Encrypt</a> can put itself on the stick, so the stick carries both the locked files and the program that opens them.</p>
+
+        <div class="callout"><b>Short answer:</b> to carry encrypted files on a USB stick and open them on other Windows PCs without installing anything there, open <b>USB Stick</b> in the Clavis Encrypt sidebar on your own PC, pick the drive and press <b>Set up stick</b> (Clavis Pro). Clavis copies itself (about 55 MB), your vault and a page called <b>Open my files.html</b> onto the stick. On another PC, double-click <b>Clavis.exe</b> in the stick's <b>Clavis Encrypt</b> folder, unlock with your usual password, and press <b>Finish and remove stick</b> when you're done: nothing is installed or left behind on that PC by Clavis. If the PC won't run programs from USB sticks, double-click <b>Open my files.html</b> instead: it opens your <code>.enc</code> files in the web browser, without internet. Adding only that page to a stick is free.</div>
+
+        <h2>What you need</h2>
+        <ul>
+          <li><strong>Clavis Encrypt 3.14 or later</strong> on your own Windows PC, from the <a href="download.html">download page</a> (installer or portable ZIP).</li>
+          <li><strong>A USB stick, memory card, or portable USB SSD or hard drive.</strong> Clavis never lists internal disks. If Windows has a connected USB drive switched off, Clavis says so: open Disk Management, right-click the disk and choose <strong>Online</strong>.</li>
+          <li><strong>Clavis Pro</strong> to copy Clavis and your vault onto the stick, and to update it later. Adding the browser page and repairing a stick are free (<a href="pricing.html">plans</a>).</li>
+        </ul>
+
+        <h2>Set up the stick (on your own PC)</h2>
+        <ol>
+          <li>Plug in the stick, open Clavis and choose <strong>USB Stick</strong> in the sidebar. Pick your drive.</li>
+          <li>Check <strong>What goes on the stick</strong>: Clavis Encrypt, your vault (so your usual password unlocks it), your licence on Pro and Premium, a page that opens your files in a web browser, and an <code>Encrypted files</code> folder.</li>
+          <li>Press <strong>Set up stick</strong>. You can press <strong>Stop</strong> at any time; if you stop or the stick is unplugged, nothing is left half-copied.</li>
+          <li>When <strong>Your USB stick is ready.</strong> appears, press <strong>Encrypt files onto the stick</strong>. It opens the stick's <code>Encrypted files</code> folder; put your files there and encrypt them as usual (right-click → <strong>Clavis → Encrypt</strong>, or <strong>Encrypt &amp; Decrypt</strong> in the app).</li>
+        </ol>
+        <p>On Clavis Free, <strong>Add the page only</strong> puts just <code>Open my files.html</code> and the <code>Encrypted files</code> folder on the stick; each file then opens in the browser with its password. The Microsoft Store version of Clavis can also add the page and the folder, but copying the app itself needs the version from <a href="download.html">clavisenc.com</a>.</p>
+        <p>A tip for flash drives: encrypt files on your PC first and then copy the <code>.enc</code> files to the stick. Deleting from flash memory is best effort, so files that sat on the stick unencrypted can leave old copies behind (<a href="blog-shred-files-windows-11-what-actually-works.html">what deleting really does</a>).</p>
+
+        <h2>Open your files on another PC</h2>
+        <ol>
+          <li>Plug in the stick, open it in File Explorer and double-click <strong>Clavis.exe</strong> in the <strong>Clavis Encrypt</strong> folder. A <strong>USB stick mode</strong> badge shows at the top of the window. Windows SmartScreen may warn the first time; choose <strong>More info</strong>, then <strong>Run anyway</strong>.</li>
+          <li>Unlock with your usual vault password and open or decrypt your files as you would at home. Clavis keeps its vault, settings and temporary working copies on the stick, not on the PC.</li>
+          <li>When you're done, press <strong>Finish and remove stick</strong> (the window's close button asks the same). Clavis locks your vault, removes its working files and closes. Then unplug the stick.</li>
+        </ol>
+        <p>Running from a stick, Clavis adds nothing to the PC: no right-click menu, no activity history, no Windows Hello, and it doesn't download updates there. Secure notes, Sharing and Activity are hidden on the other PC. If a file is still open in another program, such as Word, Clavis asks you to save and close it there first, so it can remove its working copy.</p>
+
+        <h2>If the PC won't run programs from the stick</h2>
+        <p>Some PCs block programs on USB sticks: office PCs with strict policies, and PCs with Smart App Control turned on, which blocks apps it can't vouch for. That's what the page is for.</p>
+        <ol>
+          <li>Open the stick in File Explorer and double-click <strong>Open my files.html</strong>. It opens in the web browser and works without internet; nothing is uploaded.</li>
+          <li>Choose or drop a <code>.enc</code> file, type your password and press <strong>Open</strong>.</li>
+          <li><strong>View</strong> it, or save a readable copy with <strong>Save to Downloads</strong> (in Edge and Chrome, <strong>Save to…</strong> lets you choose where). Delete the readable copy when you're done: it's an ordinary file on that PC.</li>
+        </ol>
+        <p>No stick with you? The same thing works online at <a href="open.html">clavisenc.com/open.html</a>, on a phone too, and the file is still decrypted on the device, not uploaded.</p>
+
+        <h2>Keep the stick up to date and safe</h2>
+        <p>Plug the stick into your own PC and open <strong>USB Stick</strong>. While that window is open, Clavis compares the program files on the stick with its own copy, so a stick that someone changed doesn't quietly record your password.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>If Clavis finds</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td>The stick matches this PC's copy</td><td>Nothing. After changing your password, press <strong>Update vault on stick</strong> (Pro).</td></tr>
+              <tr><td>An older version on the stick</td><td>Press <strong>Update stick</strong> (Pro). Your vault on the stick isn't touched.</td></tr>
+              <tr><td>Some Clavis files on this stick have been changed</td><td>Don't run Clavis from that stick. Press <strong>Repair</strong>: it's free and puts back this PC's copy.</td></tr>
+              <tr><td>A newer version on the stick than on this PC</td><td>Update Clavis on this PC first.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>What it can and can't do</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>It can</th><th>It can't</th></tr></thead>
+            <tbody>
+              <tr><td>Run Clavis from the stick on other Windows PCs, with no install and no administrator rights</td><td>Run on macOS or Linux PCs (the browser page still opens files there)</td></tr>
+              <tr><td>Keep the vault, settings and working copies on the stick, and remove its working files when you finish</td><td>Stop Windows itself from noting that a USB device was connected, or programs like Word from keeping their own recent-files lists</td></tr>
+              <tr><td>Open files in the browser, offline, where programs from USB sticks are blocked</td><td>Get past every company policy: some PCs block USB storage completely</td></tr>
+              <tr><td>Keep a lost stick's files locked: without your password they can't be opened</td><td>Protect a weak password: anyone holding the stick can keep guessing, so use a strong one</td></tr>
+              <tr><td>Warn you if its program files on the stick were changed, and repair them for free</td><td>Make an untrusted PC safe: a PC with malware can record your password as you type it</td></tr>
+              <tr><td>Check before encrypting whether a file is too big for a FAT32 stick</td><td>Store files of 4 GB or more on FAT32 (reformat as exFAT; that erases the stick)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Three things stay on your own PC on purpose: your <a href="help-key-file.html">key file</a>, Windows Hello and your <a href="help-recovery-key.html">recovery key</a>. If your vault uses a key file, carry it separately (for example on your phone), and never keep the recovery key on the stick: whoever finds both has everything. And keep a second copy of your files somewhere else, because USB sticks fail without warning.</p>
+        <p>Full step-by-step help, with every message the window shows: <a href="help-usb-stick.html">Carry your files on a USB stick</a>. Still choosing how to protect a USB drive at all? Compare 7-Zip, VeraCrypt and BitLocker To Go in <a href="blog-encrypt-usb-drive-windows-11-home.html">how to encrypt a USB drive on Windows 11 Home</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I open encrypted files on another computer without installing anything?</summary><p>Carry the program on the stick. Clavis Encrypt's USB Stick window (Clavis Pro) copies Clavis, your vault and your encrypted files onto a USB stick; on another Windows PC you double-click Clavis.exe on the stick and unlock with your password. Nothing is installed there. Where programs from USB sticks are blocked, double-click Open my files.html on the stick to open the files in the web browser, without internet.</p></details>
+          <details><summary>How do I put a password on a USB stick without BitLocker on Windows 11 Home?</summary><p>Encrypt the files on it. With Clavis Encrypt (free) each file becomes a locked .enc file that only your password opens, and with Clavis Pro the USB Stick window also puts Clavis on the stick so the files open on other PCs. BitLocker To Go isn't available on Windows 11 Home.</p></details>
+          <details><summary>Is there portable encryption software that runs from a USB stick without admin rights?</summary><p>Yes. Clavis Encrypt runs from a USB stick on Windows without administrator rights and keeps its data on the stick. VeraCrypt's portable mode, by its own documentation, needs administrator privileges on each PC.</p></details>
+          <details><summary>Does it leave any trace on the other PC?</summary><p>Clavis installs nothing and keeps its vault, settings and working copies on the stick, and Finish and remove stick removes its working files. Windows itself still records that a USB device was connected and which programs ran, programs such as Word may keep recent-files lists, and files you save from the browser page stay until you delete them.</p></details>
+          <details><summary>What if the office or print shop PC blocks programs on USB sticks?</summary><p>Double-click Open my files.html on the stick. It opens your .enc files in Edge, Chrome or Firefox without internet and without uploading anything. If the PC blocks USB storage entirely, neither will work; clavisenc.com/open.html opens files from other places, such as email or a phone.</p></details>
+          <details><summary>What happens if I lose the USB stick?</summary><p>The files and the vault on it stay encrypted, so whoever finds it needs your password. Use a strong password, keep your recovery key and key file somewhere other than the stick, and keep a second copy of your files.</p></details>
+          <details><summary>Does my Clavis Pro licence work on other PCs?</summary><p>Pro and Premium licences are copied to the stick so paid features work on other PCs. A key made for one PC, such as a trial key, makes Clavis run as Free on other PCs; your files still open as usual.</p></details>
+          <details><summary>Why can't I copy a 5 GB video to my encrypted USB stick?</summary><p>Sticks formatted as FAT32 can't hold files of 4 GB or more. Clavis checks before it encrypts and tells you. Use a smaller file, or reformat the stick as exFAT (this erases everything on it).</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption" rel="noopener">Microsoft Support: BitLocker Drive Encryption (not available on Windows Home edition)</a></li>
+          <li><a href="https://veracrypt.io/en/Portable%20Mode.html" rel="noopener">VeraCrypt documentation: Portable Mode (needs administrator privileges)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/topic/what-is-smart-app-control-285ea03d-fa88-4d56-882e-6698afdb7003" rel="noopener">Microsoft Support: Smart App Control (blocks apps it considers untrusted)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows/win32/fileio/filesystem-functionality-comparison" rel="noopener">Microsoft Learn: File system functionality comparison (FAT32 maximum file size 4 GiB)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows-hardware/drivers/install/setupapi-text-logs" rel="noopener">Microsoft Learn: SetupAPI text logs (Windows logs device installations)</a></li>
+          <li><a href="https://clavisenc.com/help-usb-stick.html" rel="noopener">Clavis Encrypt help: Carry your files on a USB stick</a></li>
+        </ul>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free, no admin rights
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

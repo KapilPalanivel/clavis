@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clinics and doctors: how to protect patient records on a PC — Clavis Encrypt</title>
+  <meta name="description" content="How small clinics, doctors and therapists can protect patient records, prescriptions, scans and reports on an ordinary Windows PC: encryption, separate logins, backups, and what health-privacy laws such as HIPAA and the GDPR expect.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Clinics and doctors: how to protect patient records on a PC">
+  <meta property="og:description" content="Protect patient records on a clinic PC: encryption, separate logins, encrypted backups, and what privacy laws expect.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html#article","headline":"Clinics and doctors: how to protect patient records on a PC","description":"How small clinics, doctors and therapists can protect patient records, prescriptions, scans and reports on an ordinary Windows PC: encryption, separate logins, backups, and what health-privacy laws such as HIPAA and the GDPR expect.","datePublished":"2026-10-10","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://www.law.cornell.edu/cfr/text/45/164.312","https://www.law.cornell.edu/cfr/text/45/164.306","https://gdpr-info.eu/art-32-gdpr/","https://gdpr-info.eu/art-9-gdpr/","https://www.dpdpa.com/dpdparules/rule6.html","https://clavisenc.com/security.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Clinics and doctors: how to protect patient records on a PC","item":"https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How should a small clinic store patient records on a PC?","acceptedAnswer":{"@type":"Answer","text":"Encrypt patient files on the PC, give each person a separate Windows login, keep an encrypted backup on an external drive, and avoid sending reports over unprotected email or messaging apps. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, works offline, and can encrypt new reports automatically."}},{"@type":"Question","name":"Does HIPAA require encryption of patient records?","acceptedAnswer":{"@type":"Answer","text":"Encryption is an \"addressable\" implementation specification in the HIPAA Security Rule (45 CFR 164.312). Addressable isn't the same as optional: you must assess whether encryption is reasonable and appropriate for your practice, implement it if it is, and if not, document why and use an equivalent alternative where reasonable. For patient files on laptops and office PCs, encryption is usually the simplest way to meet it."}},{"@type":"Question","name":"Does the GDPR require doctors to encrypt patient data?","acceptedAnswer":{"@type":"Answer","text":"The GDPR requires security appropriate to the risk and names encryption as one example measure (Article 32). Health data is a special category of personal data (Article 9), so the risk is higher. It doesn't mandate a particular tool, but encrypting patient files on practice computers is a common, practical safeguard."}},{"@type":"Question","name":"Does Clavis Encrypt make my clinic HIPAA or GDPR compliant?","acceptedAnswer":{"@type":"Answer","text":"No single tool does that. Clavis Encrypt encrypts files on your PC, which helps with the encryption safeguard; compliance also needs policies, access controls, risk assessments and staff training. Clavis runs locally with no account, so patient files never pass through our servers."}},{"@type":"Question","name":"Is it safe to send lab reports on WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"WhatsApp messages are end-to-end encrypted in transit, but copies stay on both phones and in any chat backups, and they're easy to forward to the wrong person. Encrypt sensitive reports first, or use a channel built for medical records."}},{"@type":"Question","name":"Will encrypted patient files open in my usual programs?","acceptedAnswer":{"@type":"Answer","text":"Yes. Double-click the encrypted file in Clavis Encrypt and it opens in the program it normally opens in, whether that's a PDF viewer, an image viewer or Word."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Use case · Updated October 19, 2026</p>
+        <h1>Clinics and doctors: how to protect patient records on a PC</h1>
+
+        <p>A clinic's computer holds some of the most private information there is: diagnoses, prescriptions, lab reports, scans, therapy notes and phone numbers. Patients rarely think about where it's kept, until something goes wrong. Here's how a small clinic, a doctor's or therapist's practice, or a diagnostic centre can protect patient records on an ordinary Windows PC.</p>
+
+        <div class="callout"><b>Short answer:</b> keep patient files encrypted on the clinic PC, keep an encrypted backup, and give each person their own login. A file-encryption app such as <a href="./">Clavis Encrypt</a> seals each report or record with AES-256-GCM, works offline, and can automatically encrypt every new scan or report saved into a folder. Health-privacy and data-protection laws, such as HIPAA in the US and the EU's GDPR, expect reasonable security safeguards, and both name encryption among them.</div>
+
+        <h2>What the rules expect</h2>
+        <p>Most health-privacy and data-protection laws ask for "appropriate" or "reasonable" safeguards rather than one particular product, and many name encryption. A few examples:</p>
+        <ul>
+          <li><strong>HIPAA (US):</strong> the Security Rule lists encryption of electronic protected health information as an "addressable" implementation specification (45 CFR 164.312(a)(2)(iv)). Addressable doesn't mean optional: you must assess whether it's reasonable and appropriate for your practice, implement it if it is, and if not, document why and use an equivalent alternative where reasonable (45 CFR 164.306(d)(3)).</li>
+          <li><strong>GDPR (EU):</strong> Article 32 requires security appropriate to the risk and lists "the pseudonymisation and encryption of personal data" among the measures. Health data is a special category under Article 9, so the risk, and the care expected, is higher.</li>
+          <li><strong>Elsewhere:</strong> other laws take a similar approach. India's DPDP Rules, 2025, for example, list encryption, access controls, access logs and backups among the security safeguards in Rule 6.</li>
+          <li><strong>Record keeping:</strong> how long you must keep patient records depends on your country, your profession and the type of record. Your medical council, licensing board or professional association can tell you; encryption lets you keep records for as long as required without leaving them readable.</li>
+        </ul>
+
+        <h2>Set it up on the clinic PC</h2>
+        <ol>
+          <li><a href="download.html">Download Clavis Encrypt</a> and install it on the clinic PC. It needs no internet connection to work, and no administrator rights.</li>
+          <li>Create a vault with a strong password known only to the doctor or practice owner, and store the one-time <a href="help-recovery-key.html">recovery key</a> safely away from the PC.</li>
+          <li>Encrypt existing patient folders. Clavis Free encrypts one file or many at once; Clavis Pro also encrypts whole folders in one step.</li>
+          <li>Make the folder where your scanner, ECG machine or lab software saves files a <a href="help-watch-folders.html">watch folder</a> (Pro), so every new report is encrypted automatically.</li>
+          <li>Open a record by double-clicking the <code>.enc</code> file; it opens in its usual program. With Pro's <a href="help-open-files.html">Open</a>, changes are saved and the file re-locked when you close it.</li>
+          <li>Back up regularly to an external drive. Encrypted files stay encrypted in the backup; Clavis Premium also makes one-file vault backups.</li>
+        </ol>
+
+        <h2>Everyday practices that prevent most leaks</h2>
+        <ul>
+          <li><strong>Separate Windows accounts</strong> for the doctor and the front desk, so staff only see what they need.</li>
+          <li><strong>Don't send reports over unprotected email or messaging apps.</strong> Encrypt them first, or use a channel built for medical records. Clavis's free <strong>Send with a password</strong> makes a locked copy the patient opens in their browser. See <a href="blog-encrypt-files-before-emailing.html">encrypting files before emailing</a>.</li>
+          <li><strong>Lock the screen</strong> when you step away. Clavis locks itself when Windows locks or the PC sleeps.</li>
+          <li><strong>Before sending the PC to a repair shop</strong>, make sure patient files are encrypted, or remove the drive. See <a href="blog-protect-files-before-laptop-repair.html">protecting files before a laptop repair</a>.</li>
+          <li><strong>Turn on full-disk encryption</strong> (BitLocker or Device encryption) too, for a stolen PC.</li>
+        </ul>
+
+        <h2>Which tool fits a small clinic?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Need</th><th>Practice-management or EHR software</th><th>Clavis Encrypt</th></tr></thead>
+            <tbody>
+              <tr><td>Appointments, billing, prescriptions</td><td>Yes</td><td>No (not an EHR)</td></tr>
+              <tr><td>Protects scans, PDFs and reports saved as files</td><td>Depends on the product</td><td>Yes, any file type</td></tr>
+              <tr><td>Works without internet</td><td>Varies</td><td>Yes</td></tr>
+              <tr><td>Keeps data on your own PC</td><td>Often cloud-hosted</td><td>Yes</td></tr>
+              <tr><td>Cost</td><td>Monthly fees are common</td><td>Free for files; Pro one-time $19</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Clavis Encrypt doesn't replace clinic-management software, and no single tool makes a practice compliant: policies, access controls, risk assessments and staff training matter too. Clavis protects the files around your software: scanned reports, exported PDFs, referral letters and anything saved to disk.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How should a small clinic store patient records on a PC?</summary><p>Encrypt patient files on the PC, give each person a separate Windows login, keep an encrypted backup on an external drive, and avoid sending reports over unprotected email or messaging apps. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, works offline, and can encrypt new reports automatically.</p></details>
+          <details><summary>Does HIPAA require encryption of patient records?</summary><p>Encryption is an "addressable" implementation specification in the HIPAA Security Rule (45 CFR 164.312). Addressable isn't the same as optional: you must assess whether encryption is reasonable and appropriate for your practice, implement it if it is, and if not, document why and use an equivalent alternative where reasonable. For patient files on laptops and office PCs, encryption is usually the simplest way to meet it.</p></details>
+          <details><summary>Does the GDPR require doctors to encrypt patient data?</summary><p>The GDPR requires security appropriate to the risk and names encryption as one example measure (Article 32). Health data is a special category of personal data (Article 9), so the risk is higher. It doesn't mandate a particular tool, but encrypting patient files on practice computers is a common, practical safeguard.</p></details>
+          <details><summary>Does Clavis Encrypt make my clinic HIPAA or GDPR compliant?</summary><p>No single tool does that. Clavis Encrypt encrypts files on your PC, which helps with the encryption safeguard; compliance also needs policies, access controls, risk assessments and staff training. Clavis runs locally with no account, so patient files never pass through our servers.</p></details>
+          <details><summary>Is it safe to send lab reports on WhatsApp?</summary><p>WhatsApp messages are end-to-end encrypted in transit, but copies stay on both phones and in any chat backups, and they're easy to forward to the wrong person. Encrypt sensitive reports first, or use a channel built for medical records.</p></details>
+          <details><summary>Will encrypted patient files open in my usual programs?</summary><p>Yes. Double-click the encrypted file in Clavis Encrypt and it opens in the program it normally opens in, whether that's a PDF viewer, an image viewer or Word.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://www.law.cornell.edu/cfr/text/45/164.312" rel="noopener">45 CFR 164.312 — HIPAA Security Rule technical safeguards, encryption (addressable)</a></li>
+          <li><a href="https://www.law.cornell.edu/cfr/text/45/164.306" rel="noopener">45 CFR 164.306(d) — how addressable implementation specifications work</a></li>
+          <li><a href="https://gdpr-info.eu/art-32-gdpr/" rel="noopener">GDPR Article 32 — security of processing</a></li>
+          <li><a href="https://gdpr-info.eu/art-9-gdpr/" rel="noopener">GDPR Article 9 — special categories of personal data, including health</a></li>
+          <li><a href="https://www.dpdpa.com/dpdparules/rule6.html" rel="noopener">India's DPDP Rules, 2025 — Rule 6, reasonable security safeguards (text)</a></li>
+          <li><a href="https://clavisenc.com/security.html" rel="noopener">Clavis Encrypt — security design</a></li>
+        </ul>
+        <p class="muted-note"><em>This guide explains general practice, not legal advice. Laws and rules differ by country and change over time; check the current text or ask a lawyer for your situation.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

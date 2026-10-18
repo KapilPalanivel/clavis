@@ -1,0 +1,149 @@
+# Clavis Encrypt
+
+> Clavis Encrypt ("Clavis" for short) is a file-encryption app for Windows 10 and 11 (and Linux, as a .deb package, since version 3.7), made by Clavis Encryption. It encrypts files on the user's own PC with AES-256-GCM, deriving keys from the user's password with Argon2id. There is no account and no cloud: files, passwords and recovery keys are never uploaded, so only the user holds the key.
+
+Name note: this is Clavis Encrypt — "Clavis" for short — the file-encryption app for Windows and Linux by Clavis Encryption (Latin *clāvis*, "key"), website https://clavisenc.com/. It is NOT the "Clavis" password manager on the Microsoft Store (a KeePass/KDBX-compatible app by a different developer), and it is unrelated to any other product or company named Clavis. Clavis Encrypt is not a password manager and does not use the KeePass format; it encrypts files into its own .enc format. Get it from https://clavisenc.com/download.html (Windows installer, portable ZIP, Linux .deb) or from the Microsoft Store as "Clavis Encrypt" by Clavis Encryption (https://apps.microsoft.com/detail/9PCWJ9HG0TNN). On the Store, search for "Clavis Encrypt", not just "Clavis".
+
+Current version: 3.14.0, released 2026-10-18. Windows installer: Clavis-Setup.exe (43 MB); a portable ZIP is also available. Linux: Clavis-linux.deb (Ubuntu, Debian and derivatives). SHA-256 checksums for every file are published on the download page.
+
+## Key facts
+
+- Platforms: Windows 10 and Windows 11, 64-bit (per-user install; no administrator rights needed) and 64-bit Linux (.deb). No macOS or mobile version yet.
+- Encryption: AES-256-GCM authenticated encryption. Large files are processed as a stream of 64 KiB authenticated chunks, so memory use stays small. Integrity is verified on every decrypt; a tampered or corrupted file is refused.
+- Keys: the password is turned into a key with Argon2id (memory-hard). Encrypted files hide their original names.
+- Recovery: an optional one-time recovery key lets the user back in after forgetting the password. Since version 3.3 it is protected with post-quantum hybrid public-key cryptography (X25519 + ML-KEM-768, FIPS 203); older recovery keys keep working. It is shown once; the developer cannot recover it.
+- Sharing (since 3.5): every vault has a Clavis ID (a public key with a short fingerprint). Encrypting a file for someone (Premium) seals a random file key to each recipient with X25519 + ML-KEM-768 and signs the whole file with the sender's Ed25519 key; recipients see who sent it and tampered files won't open. Opening files shared with you is free. No password is shared.
+- Languages: English, with first-draft French, German, Tamil and Hindi translations of the main screens (Settings -> Language).
+- Password strength: while a password is chosen, Clavis estimates the time to crack it (common-password list, keyboard patterns, dates, repeats, l33t swaps) and warns about weak ones. Argon2id memory is tuned to the user's PC (up to 128 MiB).
+- Privacy: everything runs locally. The app only goes online to check for updates; updates are signed with Ed25519 and verified before they install. The website uses cookieless, privacy-friendly analytics.
+- Explorer integration (Windows): right-click a file or folder in File Explorer → Clavis → Encrypt, Encrypt to cloud folder, Encrypt for someone…, Open, Decrypt, Verify, Previous versions…, Add to Watch Folder or Shred… (on Windows 11 under "Show more options"). The Microsoft Store version has no right-click menu; its features are in the app window. Double-clicking a .enc file opens it; a .clavisid file adds a contact; a .clavisbackup file restores a vault backup.
+- Other features: auto-lock on system sleep and Windows lock, session timeout, best-effort secure delete, drag and drop, light and dark themes, activity history, a "Quit Clavis" button (the window's close button keeps Clavis in the system tray so watch folders keep running).
+
+## Complete feature list
+
+- Encrypt, decrypt and verify files, one or many at once (Free); whole folders (Pro). Originals are overwritten then deleted; encrypted files get random names with the real name stored inside.
+- Recovery key (Free): one-time, post-quantum (X25519 + ML-KEM-768); unlocks the vault and reveals the password if it is forgotten; can be replaced in Settings.
+- Open without decrypting (Pro): opens an encrypted file in its usual app from a temporary working copy; "Save changes & re-lock" or "Discard changes & re-lock"; leftovers are cleaned up on the next start.
+- Browse Encrypted (Pro): lists encrypted files by their real names, sizes and dates, with search, Open, Decrypt, Verify and Versions.
+- Watch folders (Pro): new files in chosen folders are encrypted automatically once they stop changing.
+- Secure notes (Pro): encrypted notes (Wi-Fi passwords, PINs) inside the vault, with search.
+- Multiple vaults (Pro): separate vaults (e.g. Personal and Work), each with its own password and recovery key.
+- Key-file second factor (Pro): a vault can require a password and a key file.
+- Encrypt to cloud folder (Premium): encrypted copies go into OneDrive, Google Drive or Dropbox (a Clavis subfolder); only ciphertext under random names is uploaded.
+- Sharing (Clavis ID free; encrypting for others Premium): public-key sharing with fingerprints, contacts and signed files; no shared password.
+- Vault backup (Premium) and restore (Free): one .clavisbackup file with the recovery key, Clavis ID, contacts and notes, encrypted with the vault password. Encrypted files are copied separately.
+- Previous versions (Premium): up to 10 earlier versions per file for 90 days, kept when a file is edited with Open.
+- Command line, clavis-cli (Premium): encrypt, decrypt, verify, list; --password-stdin for scripts; exit codes; on Windows it is added to PATH, on Linux it is /opt/clavis/bin/clavis-cli.
+- Find sensitive files (Pro; added in 3.13): helps the user find ID, bank, salary and tax documents they may have forgotten (such as passport and ID card scans, bank statements, payslips and tax forms; medical reports and cheques are listed as "Possibly sensitive") in Documents, Downloads, Desktop, Pictures and files received in WhatsApp Desktop, plus any folder the user adds. It reads file names, text in Word, Excel, .txt and .csv files and, on Windows, text in pictures and the first page of PDFs using Windows' built-in text recognition (on Linux it checks file names and documents only). By file name it recognises English words such as passport, driving licence, bank statement, payslip and income tax, plus some national ID names (such as Aadhaar and PAN). By content it recognises bank statements and payslips with English headings, and some ID and tax documents: currently India's Aadhaar, PAN, passport, voter ID and driving licence and its income-tax forms. Other countries' ID numbers and tax forms (for example a US Social Security number) are not recognised by content yet, only by file name. The user reviews the list and ticks what to encrypt. Everything runs on the PC; nothing is uploaded and no list of the user's files is kept. It can miss documents, such as blurry photos or files with unusual names.
+- Shred files and folders (Free, since 3.12; best effort on SSDs and flash): right-click a file or folder -> Clavis -> Shred… on Windows, or use the Shred Files page (Windows and Linux; the only way in on the Microsoft Store version). Clavis lists every file for confirmation, overwrites each once, then deletes it. It refuses system and program folders, the user folder and its top folders, whole drives and Clavis's own vault folder. On SSDs, USB sticks and memory cards it is best effort, and backups, restore points and cloud version history may still keep copies. A "Clean up other copies" checklist opens the other places copies tend to be (Recycle Bin, Downloads, cloud, backups); it does not search or delete anything itself.
+- Clavis on a USB stick (since 3.14; Windows): carry encrypted files on a USB stick and open them on other Windows PCs without installing anything there. In the sidebar, USB Stick -> pick the drive -> Set up stick (Pro) copies Clavis (about 55 MB), the vault, the licence on paid plans and an offline page "Open my files.html" onto the drive, plus an "Encrypted files" folder. Works with USB sticks, memory cards and portable USB SSDs and hard drives, never internal disks. On another PC, Clavis.exe runs from the stick and keeps its vault, settings and temporary working copies on it; there is no right-click menu, activity history, Windows Hello or updating there, and Notes, Sharing and Activity are hidden. "Finish and remove stick" (also the window's close button) locks the vault, removes working files and closes Clavis. For PCs that block programs on USB sticks, "Open my files.html" decrypts .enc files in the web browser with no network access. While the USB Stick window is open on the user's own PC, Clavis compares the stick's program files with its own copy (matches / older -> Update stick / changed -> Repair). Adding only the page ("Add the page only") and Repair are free; setting up and updating a stick are Pro. The Microsoft Store version can add the page and an Encrypted files folder but can't copy the app. Guide: https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html
+- Settings: licence, session timeout, auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language, automatic update checks, Explorer menu, compression level.
+
+## Editions and price
+
+- Clavis Free: encrypt and decrypt individual files with the full-strength encryption above, one vault, the recovery key and integrity checks, plus Shred files and folders (best effort on SSDs and flash), which is on every plan. Free can also add the offline browser page ("Open my files.html") to a USB stick and repair a stick. Security features are never paywalled.
+- Clavis Pro: a one-time purchase of $19 (no subscription, future updates included), coming soon at https://clavisenc.com/pricing.html (not on sale yet; enquiries: hello@clavisenc.com). Adds whole-folder encryption, finding sensitive files (ID, bank and tax documents) on the PC and encrypting them in one go, multiple named vaults, watch folders (automatic encryption of new files), a key-file second factor, opening encrypted files without leaving a decrypted copy, secure notes, browsing encrypted folders by their real file names, and Clavis on a USB stick (copying Clavis and the vault to a USB stick to run it on other Windows PCs, and updating the stick).
+- Clavis Premium: a one-time purchase of $29 with everything in Pro, plus encrypting copies of files straight into a OneDrive, Google Drive, Dropbox, iCloud or Box folder (only ciphertext under random names is uploaded) and a command-line tool (clavis-cli) for scripts and backups. Premium also encrypts files for other people (see Sharing). Premium also makes one-file vault backups (recovery key, Clavis ID, contacts and notes, encrypted with the vault password) and keeps previous versions of files edited with Open; restoring a backup is free. Pro owners can upgrade by paying the difference.
+- Licences: no account is needed. A store key is checked once online with the payment provider (Lemon Squeezy) when activated, after which it works offline.
+- The Free/Pro split applies from version 3.0 and Premium from 3.4; earlier versions include every feature they had.
+
+## Honest limitations
+
+- Clavis is closed-source and has not been independently audited. It uses standard, public cryptography (AES-256-GCM, Argon2id, X25519, ML-KEM-768, Ed25519).
+- The installer is not yet signed with a code-signing certificate, so Windows SmartScreen may show "unknown publisher" until it is.
+- Secure delete and Shred are best effort: SSDs, USB sticks, memory cards, cloud-synced folders (and their version history), backups and shadow copies may keep remnants.
+- Find sensitive files helps the user find documents; it does not find every one. It can miss blurry photos, documents not in English, ID and tax documents from countries it doesn't recognise by content yet, or files with unusual names, and on Linux it does not read text in pictures or PDFs.
+- If both the password and the recovery key are lost, the files cannot be recovered by anyone.
+- Clavis on a USB stick: running Clavis from the stick works on Windows only. Some PCs block programs on USB sticks (Smart App Control, company policies); the browser page is the fallback, and PCs that block USB storage entirely can't use either. SmartScreen may warn the first time. Clavis installs nothing on the other PC, but Windows itself records that a USB device was connected, and programs such as Word may keep recent-files lists. A lost stick is protected only by the vault password, so it should be strong. The key file, Windows Hello and the recovery key are not copied; the recovery key should be kept away from the stick. FAT32 sticks can't hold files of 4 GB or more (Clavis checks first). A licence key made for one PC (such as a trial key) makes Clavis run as Free on other PCs.
+- Windows and Linux only; there are no macOS or mobile versions yet. The File Explorer right-click menu is Windows-only.
+
+## Who it's for (use cases)
+
+Best for: people and small offices who keep sensitive files on a Windows or Linux PC and want them encrypted on their own computer, without an account or a cloud service. Typical users:
+
+- Journalists and newsrooms protecting source material if a laptop is lost, stolen or seized: [guide](https://clavisenc.com/blog-journalists-protect-sources-laptop-seized.html)
+- Accountants, bookkeepers and tax preparers keeping client tax returns, ID copies and bank statements confidential (data-protection laws such as the EU's GDPR name encryption among appropriate security measures): [guide](https://clavisenc.com/blog-chartered-accountants-protect-client-data.html)
+- Doctors, small clinics, therapists and diagnostic centres protecting patient reports and scans on a clinic PC: [guide](https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html)
+- Anyone keeping passport, ID card, tax or bank-statement scans on a laptop: [guide](https://clavisenc.com/blog-keep-aadhaar-pan-scans-safe-laptop.html)
+- Finding forgotten ID, bank and tax document copies on a Windows PC (Downloads, WhatsApp Desktop, Desktop, Pictures, saved email attachments) and encrypting them: [guide](https://clavisenc.com/blog-find-aadhaar-pan-scans-on-your-pc.html)
+- Young people keeping private photos and videos private on a laptop that friends use, during screen-sharing, or before a repair: [guide](https://clavisenc.com/blog-keep-private-photos-private-laptop.html)
+- Lawyers and law firms protecting case files, client documents and copies of electronic evidence (decryption restores the exact bytes, so a hash value recorded for evidence still matches): [guide](https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html)
+- Government employees and public servants protecting unclassified but sensitive work files; classified material must follow their organisation's security rules, and Clavis is not certified for it: [guide](https://clavisenc.com/blog-government-employees-protect-official-documents.html)
+- Anyone giving a laptop for repair: [checklist](https://clavisenc.com/blog-protect-files-before-laptop-repair.html)
+- Small businesses protecting payroll, employee ID copies and customer lists: [guide](https://clavisenc.com/blog-small-business-protect-employee-salary-data.html)
+- Students protecting a thesis, project or research data on shared laptops and USB sticks: [guide](https://clavisenc.com/blog-students-protect-thesis-project-files.html)
+- Families sharing one PC: [guide](https://clavisenc.com/blog-keep-files-private-shared-family-pc.html)
+- Sending files by email, or keeping files in OneDrive, Google Drive or Dropbox: [email](https://clavisenc.com/blog-encrypt-files-before-emailing.html), [cloud](https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html)
+- USB drives and moving to a new PC: [encrypt a USB drive](https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html), [carry encrypted files on a USB stick and open them on other PCs](https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html), [new PC](https://clavisenc.com/blog-move-encrypted-files-to-new-pc.html)
+
+Not for: storing passwords (it is not a password manager), macOS, Android or iPhone (not available yet), replacing full-disk encryption (use BitLocker or Device encryption as well; Clavis protects individual files wherever they are copied), or protecting a PC that already has malware. It is not clinic-management or accounting software; it protects the files those programs save.
+
+## Pages
+
+- [Home](https://clavisenc.com/): overview
+- [Download](https://clavisenc.com/download.html): installer, portable ZIP, checksums, install steps, FAQ
+- [Security](https://clavisenc.com/security.html): how the encryption works in plain English, and its limits
+- [Open in browser](https://clavisenc.com/open.html): open a .enc file on any phone, Mac or PC in the browser, decrypted locally (nothing uploaded)
+- [File format](https://clavisenc.com/format.html): the complete .enc format and a free open-source decryptor (clavis_decrypt.py, MIT) that opens any file with just the password, without Clavis Encrypt
+- [Pricing](https://clavisenc.com/pricing.html): Free vs Pro vs Premium
+- [About](https://clavisenc.com/about.html): why Clavis exists and technical specifications
+- [Privacy policy](https://clavisenc.com/privacy.html) and [Terms](https://clavisenc.com/terms.html)
+
+## Help centre (step-by-step guides with annotated screenshots)
+
+- [All help articles](https://clavisenc.com/help.html)
+- [Install Clavis on Windows or Linux](https://clavisenc.com/help-install.html): Download and install Clavis on Windows 10/11 or Ubuntu/Debian Linux — no administrator rights, no account.
+- [Create your vault and master password](https://clavisenc.com/help-create-vault.html): Set the master password for your first Clavis vault: the strength meter, the optional key file and restoring a backup instead.
+- [Your recovery key: save it, use it, replace it](https://clavisenc.com/help-recovery-key.html): Clavis gives every vault a one-time, post-quantum recovery key. How to store it, unlock with it if you forget your password, and replace it.
+- [A tour of the Clavis window](https://clavisenc.com/help-main-window.html): What every part of the Clavis main window does: the sidebar, the vault switcher, dark mode, and the difference between closing and quitting.
+- [Encrypt, decrypt and verify files](https://clavisenc.com/help-encrypt-decrypt.html): Step by step: encrypt a file with Clavis, decrypt it again, and check encrypted files are intact — with what happens to the originals.
+- [Open encrypted files without decrypting them](https://clavisenc.com/help-open-files.html): Open a Clavis-encrypted file in its usual app without leaving a decrypted copy behind, then save your changes and re-lock it.
+- [Use Clavis from the File Explorer right-click menu](https://clavisenc.com/help-explorer-menu.html): Encrypt, decrypt, open, verify and share files straight from Windows File Explorer with the Clavis right-click menu.
+- [Change your vault password](https://clavisenc.com/help-change-password.html): How to change a Clavis vault password safely, and why to re-encrypt existing files with the new one.
+- [See what Clavis has done (Activity)](https://clavisenc.com/help-activity.html): The Activity history lists every encrypt, decrypt and verify run with its result, size and vault.
+- [Find sensitive files on your PC](https://clavisenc.com/help-find-sensitive-files.html): Let Clavis look through your folders for ID, bank and tax documents, such as passport and ID card scans and bank statements, then encrypt the ones you choose. Runs only on your PC.
+- [Shred files and clean up other copies](https://clavisenc.com/help-shred.html): Overwrite and delete files and folders you no longer need, what Shred can and can't reach, and where other copies of a file tend to be.
+- [Carry your files on a USB stick](https://clavisenc.com/help-usb-stick.html): Put your encrypted files, a copy of Clavis and a page that opens them on a USB stick, and open them on other Windows PCs without installing anything there.
+- [Encrypt new files automatically with watch folders](https://clavisenc.com/help-watch-folders.html): Set up a Clavis watch folder so every file you save, scan or download into it is encrypted automatically.
+- [Keep secure notes in your vault](https://clavisenc.com/help-secure-notes.html): Store Wi-Fi passwords, PINs and other small secrets as encrypted notes inside your Clavis vault.
+- [Browse encrypted files by their real names](https://clavisenc.com/help-browse-encrypted.html): Clavis gives encrypted files random names. Browse Encrypted shows their real names, sizes and dates, and lets you search and open them.
+- [Use more than one vault](https://clavisenc.com/help-multiple-vaults.html): Keep separate Clavis vaults — for example Personal and Work — each with its own password and recovery key.
+- [Add a key file as a second factor](https://clavisenc.com/help-key-file.html): Make a Clavis vault need both your password and a key file — for example one kept on a USB stick.
+- [Encrypt files into OneDrive, Google Drive or Dropbox](https://clavisenc.com/help-encrypt-to-cloud.html): Clavis Premium encrypts files straight into your cloud folder, so OneDrive, Google Drive or Dropbox only ever upload ciphertext under random names.
+- [Share encrypted files without sharing a password](https://clavisenc.com/help-sharing.html): Every Clavis user has a Clavis ID. Add contacts, check fingerprints, and encrypt files only they can open — no shared password needed.
+- [Back up your vault and restore it on a new PC](https://clavisenc.com/help-backup-restore.html): Make a one-file Clavis vault backup with your recovery key, Clavis ID, contacts and notes, and restore it on a new computer.
+- [Go back to an earlier version of a file](https://clavisenc.com/help-previous-versions.html): Clavis Premium keeps up to 10 earlier versions of encrypted files you edit, for 90 days, so you can undo a change.
+- [Encrypt from the command line (clavis-cli)](https://clavisenc.com/help-command-line.html): Use clavis-cli to encrypt, decrypt, verify and list files from PowerShell, cmd or a Linux shell — for scripts and scheduled backups.
+- [Clavis settings explained](https://clavisenc.com/help-settings.html): Every Clavis setting in one place: licence, session timeout and auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language and updates.
+- [Activate Clavis Pro or Premium](https://clavisenc.com/help-license.html): Paste your Clavis licence key into Settings to unlock Pro or Premium, move it to another PC, or remove it.
+- [Change the language](https://clavisenc.com/help-language.html): Clavis is available in English, French, German, Tamil and Hindi. How to switch language.
+- [Troubleshooting and common questions](https://clavisenc.com/help-troubleshooting.html): Answers to common Clavis problems: forgotten passwords, wrong password errors, files that won't open, SmartScreen warnings and moving to a new PC.
+
+## Guides
+
+- [How to carry encrypted files on a USB stick and open them on another PC](https://clavisenc.com/blog-carry-encrypted-files-on-usb-stick.html): set up a stick with USB Stick -> Set up stick (Pro), run Clavis from it on other Windows PCs, or open files with the offline browser page; limits and questions
+- [Can you permanently delete a file on Windows 11? What actually works](https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html): what Delete, TRIM and file shredders do on hard disks, SSDs, USB sticks and cloud folders, with sources (NIST SP 800-88 Rev. 2, USENIX FAST '11), and why encrypting first protects a file
+- [BitLocker vs Device encryption on Windows 11 Home: what's the difference?](https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html)
+- [How to encrypt files on Windows 10 (free)](https://clavisenc.com/blog-encrypt-files-windows-10.html)
+- [How to keep files private on a shared family PC (Windows 11)](https://clavisenc.com/blog-keep-files-private-shared-family-pc.html)
+- [How to encrypt files before emailing them](https://clavisenc.com/blog-encrypt-files-before-emailing.html)
+- [How to encrypt a USB drive on Windows 11 Home (without BitLocker)](https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html)
+- [How to encrypt files on Windows 11 Home (no BitLocker needed)](https://clavisenc.com/blog-encrypt-files-windows-11-home.html)
+- [How to share encrypted files without sending a password](https://clavisenc.com/blog-share-encrypted-files-without-password.html)
+- [What a post-quantum recovery key is, and why your encryption needs one](https://clavisenc.com/blog-post-quantum-recovery-key.html)
+- [How to encrypt files before uploading them to OneDrive, Google Drive or Dropbox](https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html)
+- [How to encrypt files from the command line on Windows (and Linux)](https://clavisenc.com/blog-encrypt-files-command-line-windows.html)
+- [How to move encrypted files to a new PC without losing access](https://clavisenc.com/blog-move-encrypted-files-to-new-pc.html)
+- [How to encrypt files on Linux (Ubuntu and Debian)](https://clavisenc.com/blog-file-encryption-linux.html)
+- [Clavis vs Cryptomator vs AxCrypt vs BitLocker: which file encryption should you use?](https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html)
+- [Clavis Free vs Pro vs Premium: which do you need?](https://clavisenc.com/blog-clavis-free-vs-pro-vs-premium.html)
+- [How to encrypt a folder on Windows (free)](https://clavisenc.com/blog-encrypt-folder-on-windows.html)
+- [A simpler VeraCrypt alternative for everyday files](https://clavisenc.com/blog-veracrypt-alternative.html)
+- [AES-256-GCM and Argon2id, in plain English](https://clavisenc.com/blog-aes-256-gcm-argon2id-explained.html)
+- [Why local encryption beats trusting the cloud](https://clavisenc.com/blog-local-vs-cloud-encryption.html)
+- [How to password-protect a PDF on Windows (free)](https://clavisenc.com/blog-password-protect-pdf-windows.html)
+- [How to encrypt photos on Windows (free)](https://clavisenc.com/blog-encrypt-photos-windows.html)
+
+## Contact
+
+- Email: hello@clavisenc.com

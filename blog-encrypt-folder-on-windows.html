@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt a folder in Windows 11 and 10 (free) — Clavis Encrypt</title>
+  <meta name="description" content="How to encrypt a folder in Windows 10 or 11, Home or Pro: EFS, a 7-Zip archive, VeraCrypt or Clavis, with steps, a comparison table and honest limits.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt a folder in Windows 11 and 10 (free)">
+  <meta property="og:description" content="Every real way to encrypt a folder on Windows 10 and 11, Home or Pro, with steps and honest limits.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-folder-on-windows.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-folder-on-windows.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-folder-on-windows.html#article","headline":"How to encrypt a folder in Windows 11 and 10 (free)","description":"How to encrypt a folder in Windows 10 or 11, Home or Pro: EFS, a 7-Zip archive, VeraCrypt or Clavis, with steps, a comparison table and honest limits.","datePublished":"2026-09-27","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-folder-on-windows.html","image":["https://clavisenc.com/assets/img/og.png","https://clavisenc.com/assets/img/help/main-encrypt.webp"],"isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cipher","https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption","https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df","https://www.7-zip.org/","https://www.veracrypt.fr/"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt a folder in Windows 11 and 10 (free)","item":"https://clavisenc.com/blog-encrypt-folder-on-windows.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I encrypt a folder in Windows 11?","acceptedAnswer":{"@type":"Answer","text":"On Windows 11 Pro, Enterprise or Education: right-click the folder, Properties, Advanced, tick Encrypt contents to secure data, then OK and Apply, and back up your encryption key. On Windows 11 Home, use a password-protected 7-Zip archive, a VeraCrypt container, or a file-encryption app such as Clavis Encrypt."}},{"@type":"Question","name":"How do I encrypt a folder in Windows 10?","acceptedAnswer":{"@type":"Answer","text":"The same way as Windows 11. On Windows 10 Pro, use Properties, Advanced, Encrypt contents to secure data. On Windows 10 Home, which has no EFS, use 7-Zip, VeraCrypt or a file-encryption app such as Clavis."}},{"@type":"Question","name":"How do I encrypt a folder in Windows 11 Home?","acceptedAnswer":{"@type":"Answer","text":"Windows 11 Home has no built-in folder encryption. Put the folder in a 7-Zip archive with a password (7z format, Encrypt file names ticked), keep it in a VeraCrypt container, or encrypt its files with Clavis Encrypt: select all the files and encrypt them at once for free, or encrypt the whole folder in one step with Clavis Pro."}},{"@type":"Question","name":"Why is Encrypt contents to secure data greyed out?","acceptedAnswer":{"@type":"Answer","text":"Usually because the PC runs a Home edition of Windows, which doesn't include EFS. It can also be greyed out on drives that aren't NTFS, such as FAT32 or exFAT USB sticks, or when an organisation's policy turns EFS off."}},{"@type":"Question","name":"Can I password protect a folder in Windows without software?","acceptedAnswer":{"@type":"Answer","text":"Not on Home. On Pro, EFS encrypts a folder without extra software, but it uses your Windows sign-in rather than a separate password. Windows' built-in ZIP compression doesn't add a password, so for a folder password you need a tool such as 7-Zip, VeraCrypt or Clavis."}},{"@type":"Question","name":"Is encrypting a folder with 7-Zip safe?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you use the 7z format with AES-256, tick Encrypt file names and choose a strong password. The weak points are the password and the extracted copies you leave on the PC after opening the archive."}},{"@type":"Question","name":"Does BitLocker encrypt a single folder?","acceptedAnswer":{"@type":"Answer","text":"No. BitLocker and device encryption encrypt whole drives. They protect a laptop that's lost or stolen while switched off, but once you're signed in every folder is open as normal."}},{"@type":"Question","name":"Can I encrypt a folder for free with Clavis?","acceptedAnswer":{"@type":"Answer","text":"Clavis Free encrypts one or several files at once, so you can select every file in a folder and encrypt them together. Encrypting a folder itself, including its subfolders, in one step is part of Clavis Pro, a one-time purchase."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · September 27, 2026 · Updated October 19, 2026</p>
+        <h1>How to encrypt a folder in Windows 11 and 10 (free)</h1>
+        <p>If you keep tax returns, passport and ID scans, contracts, client files or private photos in a folder on your PC, encrypting it means that even if your laptop is lost, stolen, sent for repair or used by someone else, those files stay unreadable without your password. What works depends on your edition of Windows: most laptops come with <strong>Home</strong>, which lacks the built-in folder encryption that <strong>Pro</strong> has. Here's every real option, step by step, with what each one can't do.</p>
+
+        <div class="callout"><b>Short answer:</b> on <b>Windows 10 or 11 Pro, Enterprise or Education</b>, right-click the folder → <b>Properties → Advanced</b> → tick <b>Encrypt contents to secure data</b> (EFS). It's tied to your Windows account, so back up your encryption key. On <b>Windows 10 or 11 Home</b> that box is greyed out, because Home doesn't include EFS or BitLocker. Instead, use a free <b>7-Zip</b> archive with a password (AES-256, with <b>Encrypt file names</b> ticked), a <b>VeraCrypt</b> container (needs administrator rights), or a file-encryption app such as <b>Clavis Encrypt</b>: select the files in the folder and right-click → <b>Clavis → Encrypt</b> (free), or encrypt the whole folder with subfolders in one step (Clavis Pro). BitLocker and device encryption protect a whole drive while the PC is off; they don't lock a single folder once you're signed in.</div>
+
+        <h2>Which option works on your Windows?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Method</th><th>Windows edition</th><th>What it locks</th><th>Protects while you're signed in</th><th>If you forget the password</th></tr></thead>
+            <tbody>
+              <tr><td>EFS (Encrypt contents to secure data)</td><td>Pro, Enterprise, Education</td><td>A folder and its files, on NTFS drives</td><td>No: open to anyone using your Windows account</td><td>Tied to your Windows account; restore from a key backup</td></tr>
+              <tr><td>7-Zip archive</td><td>Any, including Home</td><td>A copy of the folder inside one archive file</td><td>Yes, inside the archive</td><td>No way back in</td></tr>
+              <tr><td>VeraCrypt container</td><td>Any (admin rights to install)</td><td>A virtual drive you keep files in</td><td>Yes, while it's not mounted</td><td>No way back in</td></tr>
+              <tr><td>BitLocker / device encryption</td><td>BitLocker: Pro and up. Device encryption: Home too, on supported PCs</td><td>The whole drive, not a folder</td><td>No</td><td>Recovery key</td></tr>
+              <tr><td>Clavis Encrypt</td><td>Any, including Home (no admin rights)</td><td>Each file, with a random name; whole folders in Pro</td><td>Yes, each file</td><td>One-time recovery key</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>1. EFS: “Encrypt contents to secure data” (Pro, Enterprise, Education)</h2>
+        <ol>
+          <li>Right-click the folder → <strong>Properties</strong>.</li>
+          <li>On the <strong>General</strong> tab, click <strong>Advanced…</strong>.</li>
+          <li>Tick <strong>Encrypt contents to secure data</strong> → <strong>OK</strong> → <strong>Apply</strong>.</li>
+          <li>Choose <strong>Apply changes to this folder, subfolders and files</strong> → <strong>OK</strong>.</li>
+          <li>When Windows offers to back up your file encryption key, do it, and keep the backup off the PC. (From the command line, <code>cipher /x</code> backs up your EFS certificate and keys.)</li>
+        </ol>
+        <ul>
+          <li><strong>Good:</strong> built in, no download, invisible once set up. New files you save in the folder are encrypted too.</li>
+          <li><strong>Catch:</strong> not on Home. It only works on NTFS drives, so copies on a FAT32 or exFAT USB stick, in email or in most cloud storage aren't protected. It's tied to your Windows account: anyone signed in as you can open the files, and if the account or PC breaks and you didn't back up the key, the files are gone.</li>
+        </ul>
+        <p><strong>Why is it greyed out?</strong> Almost always because the PC runs Windows 10 or 11 Home. On a Windows 11 Home PC, even the command-line tool <code>cipher /e</code> answers “The request is not supported.” It can also be greyed out on non-NTFS drives, or when an organisation's policy turns EFS off.</p>
+
+        <h2>2. A password-protected 7-Zip archive (any Windows)</h2>
+        <ol>
+          <li>Install the free <a href="https://www.7-zip.org/" rel="noopener">7-Zip</a>.</li>
+          <li>Right-click the folder → <strong>Show more options</strong> (Windows 11) → <strong>7-Zip → Add to archive…</strong></li>
+          <li>Set <strong>Archive format</strong> to <strong>7z</strong>, enter a password twice and tick <strong>Encrypt file names</strong>. 7-Zip uses AES-256.</li>
+          <li>Press <strong>OK</strong>, check the archive opens with your password, then delete the original folder (and empty the Recycle Bin).</li>
+        </ol>
+        <ul>
+          <li><strong>Good:</strong> free, works on any edition of Windows 10 and 11, strong encryption, and one file is easy to copy or email.</li>
+          <li><strong>Catch:</strong> it's a locked <em>copy</em>. To use anything inside you extract it, and the extracted files are easy to forget on the PC. Changing a file means re-packing the archive. Windows' own <strong>Compress to ZIP file</strong> doesn't add a password.</li>
+        </ul>
+
+        <h2>3. A VeraCrypt container (any Windows, admin rights)</h2>
+        <p><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a> creates an encrypted file that you mount as a drive letter; anything you put in it is encrypted. It's free, open source and strong, and works on Home. The catches: installing it needs administrator rights, you choose the container's size up front, you mount and unmount it each time, and a lost password can't be recovered.</p>
+
+        <h2>4. BitLocker and device encryption: whole drives, not folders</h2>
+        <p>BitLocker (Pro and up) and device encryption (also on Home, on supported PCs) encrypt the whole drive. Turn one on: it's the right protection for a lost or stolen laptop. But it isn't folder encryption. Once you're signed in, every folder is open as normal, and copies you make elsewhere aren't encrypted. <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">Device encryption vs BitLocker</a> explains the difference.</p>
+
+        <h2>5. Clavis Encrypt (any Windows, no admin rights)</h2>
+        <p><a href="./">Clavis Encrypt</a> encrypts files where they are, with AES-256-GCM, and gives each encrypted file a random name so even file names give nothing away. No account, nothing uploaded.</p>
+        <ol>
+          <li><a href="download.html">Install Clavis</a> (Windows 10 or 11, or Linux; no administrator prompt) and create your vault. Write down or print the <a href="help-recovery-key.html">recovery key</a> it shows you.</li>
+          <li><strong>Free:</strong> open the folder, select its files (<kbd>Ctrl</kbd>+<kbd>A</kbd>), right-click → <strong>Show more options → Clavis → Encrypt</strong>. Clavis handles them as one batch with a single confirmation.</li>
+          <li><strong>Pro:</strong> right-click the folder itself → <strong>Clavis → Encrypt</strong>, or drag the folder onto the Clavis window, choose <strong>Encrypt</strong> and press <strong>Encrypt now</strong>. Every file in it, subfolders included, is encrypted in one go.</li>
+          <li>Check the list Clavis shows you and confirm. To get files back, choose <strong>Decrypt</strong> and press <strong>Decrypt now</strong>.</li>
+        </ol>
+        <figure class="help-shot"><img src="assets/img/help/main-encrypt.webp" width="1212" height="859" alt="The Encrypt &amp; Decrypt page in Clavis Encrypt, ready to encrypt" loading="lazy"></figure>
+        <ul>
+          <li><strong>Good:</strong> works on Home without admin rights, each file stays encrypted wherever you copy it (USB stick, email, OneDrive), and there's a recovery key if you forget your password. <a href="pricing.html">Clavis Pro</a> can also watch a folder, such as Downloads, and encrypt new files automatically.</li>
+          <li><strong>Catch:</strong> the app is closed source and hasn't been independently audited yet (the <a href="format.html">file format is public</a>, with an open-source decryptor); it's Windows and Linux only; and it doesn't encrypt the whole drive, so keep device encryption or BitLocker on too. The originals are overwritten and deleted after encrypting, but on SSDs and USB sticks that's best effort; see <a href="blog-shred-files-windows-11-what-actually-works.html">what deleting really does on Windows 11</a>.</li>
+        </ul>
+        <p>Not sure which folders hold sensitive files? Clavis Pro's Find Sensitive Files page helps you <a href="blog-find-aadhaar-pan-scans-on-your-pc.html">find forgotten ID, bank and tax document scans</a> on your PC, without uploading anything.</p>
+
+        <h2>Which should you use?</h2>
+        <ul>
+          <li><strong>On Pro and only you use the PC?</strong> EFS is fine, as long as you back up the key.</li>
+          <li><strong>Need to send or archive a folder once?</strong> A 7-Zip archive.</li>
+          <li><strong>Comfortable with mounting drives and have admin rights?</strong> VeraCrypt.</li>
+          <li><strong>On Home, or want files to stay encrypted wherever you copy them, with a recovery key?</strong> A file-encryption app like Clavis.</li>
+          <li><strong>Everyone:</strong> also turn on device encryption or BitLocker for the whole drive.</li>
+        </ul>
+        <p>On Windows 11 Home specifically, see <a href="blog-encrypt-files-windows-11-home.html">how to encrypt files on Windows 11 Home</a>. Still on Windows 10? See <a href="blog-encrypt-files-windows-10.html">how to encrypt files on Windows 10</a>. Comparing apps? Read <a href="blog-clavis-vs-cryptomator-axcrypt-bitlocker.html">Clavis vs Cryptomator vs AxCrypt vs BitLocker</a>.</p>
+
+        <h2>Whatever you choose, remember two things</h2>
+        <p><strong>Use a strong, unique password</strong> — encryption is only as strong as the password behind it. And <strong>keep a way back in.</strong> Good encryption means nobody can open your files without the password — including you. A recovery key or a key backup is what saves you if you forget it.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I encrypt a folder in Windows 11?</summary><p>On Windows 11 Pro, Enterprise or Education: right-click the folder, Properties, Advanced, tick Encrypt contents to secure data, then OK and Apply, and back up your encryption key. On Windows 11 Home, use a password-protected 7-Zip archive, a VeraCrypt container, or a file-encryption app such as Clavis Encrypt.</p></details>
+          <details><summary>How do I encrypt a folder in Windows 10?</summary><p>The same way as Windows 11. On Windows 10 Pro, use Properties, Advanced, Encrypt contents to secure data. On Windows 10 Home, which has no EFS, use 7-Zip, VeraCrypt or a file-encryption app such as Clavis.</p></details>
+          <details><summary>How do I encrypt a folder in Windows 11 Home?</summary><p>Windows 11 Home has no built-in folder encryption. Put the folder in a 7-Zip archive with a password (7z format, Encrypt file names ticked), keep it in a VeraCrypt container, or encrypt its files with Clavis Encrypt: select all the files and encrypt them at once for free, or encrypt the whole folder in one step with Clavis Pro.</p></details>
+          <details><summary>Why is Encrypt contents to secure data greyed out?</summary><p>Usually because the PC runs a Home edition of Windows, which doesn't include EFS. It can also be greyed out on drives that aren't NTFS, such as FAT32 or exFAT USB sticks, or when an organisation's policy turns EFS off.</p></details>
+          <details><summary>Can I password protect a folder in Windows without software?</summary><p>Not on Home. On Pro, EFS encrypts a folder without extra software, but it uses your Windows sign-in rather than a separate password. Windows' built-in ZIP compression doesn't add a password, so for a folder password you need a tool such as 7-Zip, VeraCrypt or Clavis.</p></details>
+          <details><summary>Is encrypting a folder with 7-Zip safe?</summary><p>Yes, if you use the 7z format with AES-256, tick Encrypt file names and choose a strong password. The weak points are the password and the extracted copies you leave on the PC after opening the archive.</p></details>
+          <details><summary>Does BitLocker encrypt a single folder?</summary><p>No. BitLocker and device encryption encrypt whole drives. They protect a laptop that's lost or stolen while switched off, but once you're signed in every folder is open as normal.</p></details>
+          <details><summary>Can I encrypt a folder for free with Clavis?</summary><p>Clavis Free encrypts one or several files at once, so you can select every file in a folder and encrypt them together. Encrypting a folder itself, including its subfolders, in one step is part of Clavis Pro, a one-time purchase.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cipher" rel="noopener">Microsoft Learn: cipher (EFS on NTFS volumes; /x backs up the EFS certificate and keys)</a></li>
+          <li><a href="https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption" rel="noopener">Microsoft Support: BitLocker Drive Encryption (not available on Windows Home)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df" rel="noopener">Microsoft Support: Device Encryption in Windows</a></li>
+          <li><a href="https://www.7-zip.org/" rel="noopener">7-Zip (AES-256 encryption in 7z and ZIP formats)</a></li>
+          <li><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a></li>
+        </ul>
+        <p class="muted-note"><em>The <code>cipher /e</code> result is from our own test on Windows 11 Home, October 2026.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

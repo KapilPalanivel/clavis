@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lawyers: how to protect case files, client documents and digital evidence on your laptop — Clavis Encrypt</title>
+  <meta name="description" content="A guide for lawyers and law firms: keep client case files and electronic evidence encrypted on a laptop, keep the hash values that show a copy is unchanged, and meet your duty of confidentiality.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Lawyers: how to protect case files, client documents and digital evidence on your laptop">
+  <meta property="og:description" content="Encrypt client case files and evidence copies on your laptop, without breaking the hash values that show they&#x27;re unchanged.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html#article","headline":"Lawyers: how to protect case files, client documents and digital evidence on your laptop","description":"A guide for lawyers and law firms: keep client case files and electronic evidence encrypted on a laptop, keep the hash values that show a copy is unchanged, and meet your duty of confidentiality.","datePublished":"2026-10-10","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_6_confidentiality_of_information/","https://www.sra.org.uk/solicitors/standards-regulations/code-conduct-solicitors/","https://gdpr-info.eu/art-32-gdpr/","https://www.law.cornell.edu/rules/fre/rule_902","https://www.advocatekhoj.com/library/bareacts/bharatiyaaakshya2023/b.php","https://clavisenc.com/security.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"Lawyers: how to protect case files, client documents and digital evidence on your laptop","item":"https://clavisenc.com/blog-lawyers-protect-case-files-evidence.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How should lawyers store client files on a laptop?","acceptedAnswer":{"@type":"Answer","text":"Keep them encrypted rather than in ordinary folders, use separate vaults per matter, and keep encrypted backups. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, hides file names, and works offline, so no client data goes to a cloud service."}},{"@type":"Question","name":"Do lawyers have to encrypt client files?","acceptedAnswer":{"@type":"Answer","text":"Most professional rules require reasonable efforts or effective safeguards rather than a specific technology. In the US, ABA Model Rule 1.6(c) requires reasonable efforts to prevent unauthorized access to client information, and encrypting files on a laptop that can be lost or stolen is a common, practical way to meet it. Check your own bar's or law society's guidance."}},{"@type":"Question","name":"Does encrypting electronic evidence change its hash value?","acceptedAnswer":{"@type":"Answer","text":"The encrypted file has a different hash, but decrypting it with Clavis Encrypt restores the exact original bytes, so the original SHA-256 hash matches again. Record the hash before encrypting, and re-check it after decrypting and before filing."}},{"@type":"Question","name":"Why do courts use hash values for digital evidence?","acceptedAnswer":{"@type":"Answer","text":"A hash value is a short fingerprint calculated from a file's contents. If a copy has the same hash as the original, it's an exact duplicate; if even one byte changes, the hash changes. US Federal Rule of Evidence 902(14) relies on this \"process of digital identification\", and other systems ask for hash values on evidence certificates too. On Windows you can calculate SHA-256 with PowerShell's Get-FileHash."}},{"@type":"Question","name":"Can I share an encrypted file with a client without sending a password?","acceptedAnswer":{"@type":"Answer","text":"Yes. With Clavis Premium you encrypt the file for the client's Clavis ID (a public key); only they can open it, and opening shared files is free for them. No password is sent. For a client who won't install anything, the free Send with a password makes a locked copy they open in their browser; send that password by phone, not in the same email."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Use case · Updated October 19, 2026</p>
+        <h1>Lawyers: how to protect case files, client documents and digital evidence on your laptop</h1>
+
+        <p>A lawyer's laptop carries case files, client instructions, draft pleadings, and increasingly the evidence itself: chat exports, CCTV clips, call recordings, screenshots. Clients trust you with all of it, and professional rules almost everywhere require you to keep their affairs confidential. This guide shows how to keep those files encrypted on an ordinary laptop, and how to do it without disturbing the integrity of electronic evidence.</p>
+
+        <div class="callout"><b>Short answer:</b> keep client files and evidence copies encrypted on your laptop with a file-encryption app such as <a href="./">Clavis Encrypt</a> (AES-256-GCM, works offline, no account). Before encrypting any electronic evidence, record its SHA-256 hash: courts and forensic examiners use hash values to show that a copy is unchanged. Clavis decrypts files back to the exact original bytes, so the hash still matches after decryption. Keep original devices and media untouched and sealed.</div>
+
+        <h2>Why it matters</h2>
+        <ul>
+          <li><strong>Confidentiality is a core professional duty.</strong> In the US, ABA Model Rule 1.6(c) says a lawyer "shall make reasonable efforts to prevent the inadvertent or unauthorized disclosure of, or unauthorized access to, information relating to the representation of a client." In England and Wales, paragraph 6.3 of the SRA Code of Conduct for Solicitors requires you to keep the affairs of current and former clients confidential. Your own bar or law society will have a similar rule.</li>
+          <li><strong>Data protection:</strong> client files are full of personal data. Where the EU's GDPR applies, Article 32 requires security appropriate to the risk and names encryption among the measures.</li>
+          <li><strong>Evidence integrity:</strong> hash values are how a copy is shown to be identical to the original. In US federal courts, Rule 902(14) of the Federal Rules of Evidence lets data copied from a device be authenticated "by a process of digital identification", and the committee note explains that identical hash values reliably show two files are exact duplicates. Other systems use hashes too; India's Bharatiya Sakshya Adhiniyam, for example, asks for the hash value on its Section 63 certificate.</li>
+          <li><strong>Everyday risks:</strong> a laptop left in a car or a court corridor, a junior's USB stick, a shared office PC, phishing.</li>
+        </ul>
+
+        <h2>Set it up</h2>
+        <ol>
+          <li><a href="download.html">Install Clavis Encrypt</a> on your laptop (Windows 10 or 11, or Linux). No administrator rights or internet needed.</li>
+          <li>Create a vault with a strong password, and keep the one-time <a href="help-recovery-key.html">recovery key</a> in your office safe.</li>
+          <li>Use a <a href="help-multiple-vaults.html">separate vault</a> per matter or per client group (Clavis Pro), each with its own password.</li>
+          <li>Encrypt case folders (Free encrypts one file or many at once; Pro also encrypts whole folders in one step). File names are hidden too, so a folder listing doesn't reveal a client's name.</li>
+          <li>Work on documents with Pro's <a href="help-open-files.html">Open</a>: a pleading opens in Word, and your changes are saved back into the encrypted file when you close it.</li>
+        </ol>
+
+        <h2>Handling electronic evidence without breaking the hash</h2>
+        <ol>
+          <li><strong>Hash first.</strong> Before you encrypt, move or edit a piece of evidence, record its SHA-256 hash. In Windows PowerShell: <code>Get-FileHash "C:\Evidence\video.mp4" -Algorithm SHA256</code>. Note the value in your file and on any certificate or statement your court requires.</li>
+          <li><strong>Encrypt the working copy.</strong> Clavis protects the file at rest; when you decrypt it, you get back the exact same bytes, so the SHA-256 hash is unchanged.</li>
+          <li><strong>Re-check before filing.</strong> Decrypt, run <code>Get-FileHash</code> again, and confirm it matches the recorded value.</li>
+          <li><strong>Keep originals untouched.</strong> Leave the original phone, DVR or media sealed, as your court and expert require. Encryption is for your copies, not a substitute for proper custody.</li>
+          <li><strong>Clavis also detects tampering:</strong> every encrypted file is authenticated, and a changed or corrupted file is refused instead of opening silently.</li>
+        </ol>
+
+        <h2>What it does and doesn't do</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Need</th><th>Clavis Encrypt</th></tr></thead>
+            <tbody>
+              <tr><td>Keep client files unreadable if the laptop is lost or stolen</td><td>Yes</td></tr>
+              <tr><td>Hide client names in file names</td><td>Yes (random names)</td></tr>
+              <tr><td>Send a file to a client or colleague securely</td><td>Yes: encrypt it for their Clavis ID (Premium), or <strong>Send with a password</strong> (free) for clients without Clavis: they open it in a browser</td></tr>
+              <tr><td>Preserve evidence hash values</td><td>Yes: decryption restores identical bytes. Record the hash before encrypting.</td></tr>
+              <tr><td>Replace forensic imaging or chain-of-custody procedures</td><td>No</td></tr>
+              <tr><td>Practice management, diaries, billing</td><td>No (it protects the files those tools save)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How should lawyers store client files on a laptop?</summary><p>Keep them encrypted rather than in ordinary folders, use separate vaults per matter, and keep encrypted backups. A file-encryption app such as Clavis Encrypt seals each file with AES-256-GCM, hides file names, and works offline, so no client data goes to a cloud service.</p></details>
+          <details><summary>Do lawyers have to encrypt client files?</summary><p>Most professional rules require reasonable efforts or effective safeguards rather than a specific technology. In the US, ABA Model Rule 1.6(c) requires reasonable efforts to prevent unauthorized access to client information, and encrypting files on a laptop that can be lost or stolen is a common, practical way to meet it. Check your own bar's or law society's guidance.</p></details>
+          <details><summary>Does encrypting electronic evidence change its hash value?</summary><p>The encrypted file has a different hash, but decrypting it with Clavis Encrypt restores the exact original bytes, so the original SHA-256 hash matches again. Record the hash before encrypting, and re-check it after decrypting and before filing.</p></details>
+          <details><summary>Why do courts use hash values for digital evidence?</summary><p>A hash value is a short fingerprint calculated from a file's contents. If a copy has the same hash as the original, it's an exact duplicate; if even one byte changes, the hash changes. US Federal Rule of Evidence 902(14) relies on this "process of digital identification", and other systems ask for hash values on evidence certificates too. On Windows you can calculate SHA-256 with PowerShell's Get-FileHash.</p></details>
+          <details><summary>Can I share an encrypted file with a client without sending a password?</summary><p>Yes. With Clavis Premium you encrypt the file for the client's Clavis ID (a public key); only they can open it, and opening shared files is free for them. No password is sent. For a client who won't install anything, the free <strong>Send with a password</strong> makes a locked copy they open in their browser; send that password by phone, not in the same email.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_1_6_confidentiality_of_information/" rel="noopener">American Bar Association — Model Rule 1.6, confidentiality of information</a></li>
+          <li><a href="https://www.sra.org.uk/solicitors/standards-regulations/code-conduct-solicitors/" rel="noopener">Solicitors Regulation Authority — Code of Conduct for Solicitors (6.3, confidentiality)</a></li>
+          <li><a href="https://gdpr-info.eu/art-32-gdpr/" rel="noopener">GDPR Article 32 — security of processing</a></li>
+          <li><a href="https://www.law.cornell.edu/rules/fre/rule_902" rel="noopener">Federal Rules of Evidence, Rule 902(14) and 2017 committee note on hash values (Cornell LII)</a></li>
+          <li><a href="https://www.advocatekhoj.com/library/bareacts/bharatiyaaakshya2023/b.php" rel="noopener">Bharatiya Sakshya Adhiniyam, 2023 (text, including the Section 63 certificate)</a></li>
+          <li><a href="https://clavisenc.com/security.html" rel="noopener">Clavis Encrypt — security design (AES-256-GCM, Argon2id)</a></li>
+        </ul>
+        <p class="muted-note"><em>This guide explains general practice, not legal advice. Laws and professional rules differ by country and change over time; check the current text or ask your bar or a lawyer for your situation.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

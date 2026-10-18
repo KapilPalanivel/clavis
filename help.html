@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clavis Encrypt Help — guides with screenshots for every feature</title>
+  <meta name="description" content="How to use Clavis: install, create a vault, encrypt and decrypt files, watch folders, secure notes, cloud folders, sharing, backups, the command line and more — step by step with screenshots.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Clavis Encrypt Help — guides with screenshots for every feature">
+  <meta property="og:description" content="How to use Clavis: install, create a vault, encrypt and decrypt files, watch folders, secure notes, cloud folders, sharing, backups, the command line and more — step by step with screenshots.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/help.html">
+  <meta property="og:url" content="https://clavisenc.com/help.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://clavisenc.com/help.html#page","name":"Clavis Help","description":"Step-by-step guides with screenshots for every Clavis feature.","inLanguage":"en","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"hasPart":[{"@type":"TechArticle","headline":"Install Clavis on Windows or Linux","url":"https://clavisenc.com/help-install.html"},{"@type":"TechArticle","headline":"Create your vault and master password","url":"https://clavisenc.com/help-create-vault.html"},{"@type":"TechArticle","headline":"Your recovery key: save it, use it, replace it","url":"https://clavisenc.com/help-recovery-key.html"},{"@type":"TechArticle","headline":"A tour of the Clavis window","url":"https://clavisenc.com/help-main-window.html"},{"@type":"TechArticle","headline":"Encrypt, decrypt and verify files","url":"https://clavisenc.com/help-encrypt-decrypt.html"},{"@type":"TechArticle","headline":"Open encrypted files without decrypting them","url":"https://clavisenc.com/help-open-files.html"},{"@type":"TechArticle","headline":"Use Clavis from the File Explorer right-click menu","url":"https://clavisenc.com/help-explorer-menu.html"},{"@type":"TechArticle","headline":"Change your vault password","url":"https://clavisenc.com/help-change-password.html"},{"@type":"TechArticle","headline":"See what Clavis has done (Activity)","url":"https://clavisenc.com/help-activity.html"},{"@type":"TechArticle","headline":"Shred files and clean up other copies","url":"https://clavisenc.com/help-shred.html"},{"@type":"TechArticle","headline":"Find sensitive files on your PC","url":"https://clavisenc.com/help-find-sensitive-files.html"},{"@type":"TechArticle","headline":"Carry your files on a USB stick","url":"https://clavisenc.com/help-usb-stick.html"},{"@type":"TechArticle","headline":"Encrypt new files automatically with watch folders","url":"https://clavisenc.com/help-watch-folders.html"},{"@type":"TechArticle","headline":"Keep secure notes in your vault","url":"https://clavisenc.com/help-secure-notes.html"},{"@type":"TechArticle","headline":"Browse encrypted files by their real names","url":"https://clavisenc.com/help-browse-encrypted.html"},{"@type":"TechArticle","headline":"Use more than one vault","url":"https://clavisenc.com/help-multiple-vaults.html"},{"@type":"TechArticle","headline":"Add a key file as a second factor","url":"https://clavisenc.com/help-key-file.html"},{"@type":"TechArticle","headline":"Encrypt files into OneDrive, Google Drive or Dropbox","url":"https://clavisenc.com/help-encrypt-to-cloud.html"},{"@type":"TechArticle","headline":"Share encrypted files without sharing a password","url":"https://clavisenc.com/help-sharing.html"},{"@type":"TechArticle","headline":"Back up your vault and restore it on a new PC","url":"https://clavisenc.com/help-backup-restore.html"},{"@type":"TechArticle","headline":"Go back to an earlier version of a file","url":"https://clavisenc.com/help-previous-versions.html"},{"@type":"TechArticle","headline":"Encrypt from the command line (clavis-cli)","url":"https://clavisenc.com/help-command-line.html"},{"@type":"TechArticle","headline":"Clavis settings explained","url":"https://clavisenc.com/help-settings.html"},{"@type":"TechArticle","headline":"Activate Clavis Pro or Premium","url":"https://clavisenc.com/help-license.html"},{"@type":"TechArticle","headline":"Change the language","url":"https://clavisenc.com/help-language.html"},{"@type":"TechArticle","headline":"Troubleshooting and common questions","url":"https://clavisenc.com/help-troubleshooting.html"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Help","item":"https://clavisenc.com/help.html"}]}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html" aria-current="page">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="help-top" id="top">
+      <div class="wrap intro">
+        <span class="eyebrow">Clavis Help</span>
+        <h1 class="display">How can we <em>help?</em></h1>
+        <p class="lede">Step-by-step guides with annotated screenshots for every part of Clavis.</p>
+        <label class="help-search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input type="search" placeholder="Search 26 guides — e.g. recovery key, OneDrive, share" aria-label="Search help" data-help-search></label>
+        <nav class="help-chips" aria-label="Popular questions"><a href="help-recovery-key.html">Forgot my password</a><a href="help-encrypt-to-cloud.html">OneDrive &amp; Google Drive</a><a href="help-backup-restore.html">Move to a new PC</a><a href="help-explorer-menu.html">Right-click menu</a><a href="help-install.html">Install</a></nav>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <nav class="help-tiles" aria-label="Help topics">
+        <a class="help-tile" href="#start">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>
+          <b>Getting started</b><span>4 guides</span>
+        </a>
+        <a class="help-tile" href="#everyday">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          <b>Everyday use</b><span>8 guides</span>
+        </a>
+        <a class="help-tile" href="#pro">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          <b>Pro features</b><span>5 guides</span>
+        </a>
+        <a class="help-tile" href="#premium">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg>
+          <b>Premium features</b><span>5 guides</span>
+        </a>
+        <a class="help-tile" href="#general">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          <b>Settings &amp; troubleshooting</b><span>4 guides</span>
+        </a>
+      </nav>
+    </div>
+
+    <div class="block" style="padding-top:clamp(56px,7vw,88px)">
+    <div class="wrap">
+      <p class="help-empty" hidden>No guides match. Try another word, or <a href="mailto:hello@clavisenc.com">email us</a>.</p>
+      <section class="help-cat" id="start">
+        <div class="help-cat-head"><h2>Getting started</h2><p class="help-cat-blurb">Install Clavis, create your vault and keep your recovery key safe.</p></div>
+        <div class="help-list">
+          <a class="help-card help-row" href="help-install.html">
+            <span class="hr-main"><b>Install Clavis on Windows or Linux</b><span>Download and install Clavis on Windows 10/11 or Ubuntu/Debian Linux — no administrator rights, no account.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-create-vault.html">
+            <span class="hr-main"><b>Create your vault and master password</b><span>Set the master password for your first Clavis vault: the strength meter, the optional key file and restoring a backup instead.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-recovery-key.html">
+            <span class="hr-main"><b>Your recovery key: save it, use it, replace it</b><span>Clavis gives every vault a one-time, post-quantum recovery key. How to store it, unlock with it if you forget your password, and replace it.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-main-window.html">
+            <span class="hr-main"><b>A tour of the Clavis window</b><span>What every part of the Clavis main window does: the sidebar, the vault switcher, dark mode, and the difference between closing and quitting.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+      <section class="help-cat" id="everyday">
+        <div class="help-cat-head"><h2>Everyday use</h2><p class="help-cat-blurb">Encrypt, decrypt, verify and open files — the things you&#x27;ll do most.</p></div>
+        <div class="help-list">
+          <a class="help-card help-row" href="help-encrypt-decrypt.html">
+            <span class="hr-main"><b>Encrypt, decrypt and verify files</b><span>Step by step: encrypt a file with Clavis, decrypt it again, and check encrypted files are intact — with what happens to the originals.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-open-files.html">
+            <span class="hr-main"><b>Open encrypted files without decrypting them</b><span>Open a Clavis-encrypted file in its usual app without leaving a decrypted copy behind, then save your changes and re-lock it.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-explorer-menu.html">
+            <span class="hr-main"><b>Use Clavis from the File Explorer right-click menu</b><span>Encrypt, decrypt, open, verify and share files straight from Windows File Explorer with the Clavis right-click menu.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-change-password.html">
+            <span class="hr-main"><b>Change your vault password</b><span>How to change a Clavis vault password safely, and why to re-encrypt existing files with the new one.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-activity.html">
+            <span class="hr-main"><b>See what Clavis has done (Activity)</b><span>The Activity history lists every encrypt, decrypt and verify run with its result, size and vault.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-shred.html">
+            <span class="hr-main"><b>Shred files and clean up other copies</b><span>Overwrite and delete files and folders you no longer need, what Shred can and can&#x27;t reach, and where other copies of a file tend to be.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-find-sensitive-files.html">
+            <span class="hr-main"><b>Find sensitive files on your PC</b><span>Let Clavis look through your folders for ID, bank and tax documents, such as passport and ID card scans and bank statements, then encrypt the ones you choose. Runs only on your PC.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-usb-stick.html">
+            <span class="hr-main"><b>Carry your files on a USB stick</b><span>Put your encrypted files, a copy of Clavis and a page that opens them on a USB stick, and open them on other Windows PCs without installing anything there.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+      <section class="help-cat" id="pro">
+        <div class="help-cat-head"><h2>Pro features</h2><p class="help-cat-blurb">Folders, watch folders, finding sensitive files, notes, browsing, several vaults and key-file 2FA.</p></div>
+        <div class="help-list">
+          <a class="help-card help-row" href="help-watch-folders.html">
+            <span class="hr-main"><b>Encrypt new files automatically with watch folders</b><span>Set up a Clavis watch folder so every file you save, scan or download into it is encrypted automatically.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-secure-notes.html">
+            <span class="hr-main"><b>Keep secure notes in your vault</b><span>Store Wi-Fi passwords, PINs and other small secrets as encrypted notes inside your Clavis vault.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-browse-encrypted.html">
+            <span class="hr-main"><b>Browse encrypted files by their real names</b><span>Clavis gives encrypted files random names. Browse Encrypted shows their real names, sizes and dates, and lets you search and open them.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-multiple-vaults.html">
+            <span class="hr-main"><b>Use more than one vault</b><span>Keep separate Clavis vaults — for example Personal and Work — each with its own password and recovery key.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-key-file.html">
+            <span class="hr-main"><b>Add a key file as a second factor</b><span>Make a Clavis vault need both your password and a key file — for example one kept on a USB stick.</span></span>
+            <span class="plan-chip plan-pro">Clavis Pro</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+      <section class="help-cat" id="premium">
+        <div class="help-cat-head"><h2>Premium features</h2><p class="help-cat-blurb">Your cloud folder, sharing, backups, version history and the command line.</p></div>
+        <div class="help-list">
+          <a class="help-card help-row" href="help-encrypt-to-cloud.html">
+            <span class="hr-main"><b>Encrypt files into OneDrive, Google Drive or Dropbox</b><span>Clavis Premium encrypts files straight into your cloud folder, so OneDrive, Google Drive or Dropbox only ever upload ciphertext under random names.</span></span>
+            <span class="plan-chip plan-premium">Clavis Premium</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-sharing.html">
+            <span class="hr-main"><b>Share encrypted files without sharing a password</b><span>Every Clavis user has a Clavis ID. Add contacts, check fingerprints, and encrypt files only they can open — no shared password needed.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-backup-restore.html">
+            <span class="hr-main"><b>Back up your vault and restore it on a new PC</b><span>Make a one-file Clavis vault backup with your recovery key, Clavis ID, contacts and notes, and restore it on a new computer.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-previous-versions.html">
+            <span class="hr-main"><b>Go back to an earlier version of a file</b><span>Clavis Premium keeps up to 10 earlier versions of encrypted files you edit, for 90 days, so you can undo a change.</span></span>
+            <span class="plan-chip plan-premium">Clavis Premium</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-command-line.html">
+            <span class="hr-main"><b>Encrypt from the command line (clavis-cli)</b><span>Use clavis-cli to encrypt, decrypt, verify and list files from PowerShell, cmd or a Linux shell — for scripts and scheduled backups.</span></span>
+            <span class="plan-chip plan-premium">Clavis Premium</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+      <section class="help-cat" id="general">
+        <div class="help-cat-head"><h2>Settings &amp; troubleshooting</h2><p class="help-cat-blurb">Licence, language, updates, settings and answers to common problems.</p></div>
+        <div class="help-list">
+          <a class="help-card help-row" href="help-settings.html">
+            <span class="hr-main"><b>Clavis settings explained</b><span>Every Clavis setting in one place: licence, session timeout and auto-lock, Argon2id tuning, recovery key, backup, cloud folder, language and updates.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-license.html">
+            <span class="hr-main"><b>Activate Clavis Pro or Premium</b><span>Paste your Clavis licence key into Settings to unlock Pro or Premium, move it to another PC, or remove it.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-language.html">
+            <span class="hr-main"><b>Change the language</b><span>Clavis is available in English, French, German, Tamil and Hindi. How to switch language.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+          <a class="help-card help-row" href="help-troubleshooting.html">
+            <span class="hr-main"><b>Troubleshooting and common questions</b><span>Answers to common Clavis problems: forgotten passwords, wrong password errors, files that won&#x27;t open, SmartScreen warnings and moving to a new PC.</span></span>
+            <span class="plan-chip plan-free">Free</span><span class="hr-go" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+    </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

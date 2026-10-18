@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clavis Encrypt — free, local file encryption for Windows and Linux</title>
+  <meta name="description" content="Clavis encrypts your files and folders on your own PC with AES-256-GCM. No account, no cloud — only you hold the key.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:title" content="Clavis — Lock what matters. Keep the key.">
+  <meta property="og:description" content="Private, local file encryption for Windows. No account, no cloud.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/">
+  <meta property="og:url" content="https://clavisenc.com/">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://clavisenc.com/#website","url":"https://clavisenc.com/","name":"Clavis Encrypt","alternateName":["Clavis","Clavis Encrypt"],"description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","inLanguage":"en","publisher":{"@id":"https://clavisenc.com/#author"}},{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html","email":"hello@clavisenc.com"},{"@type":"SoftwareApplication","@id":"https://clavisenc.com/#software","name":"Clavis Encrypt","alternateName":["Clavis","Clavis Encrypt","Clavis file encryption for Windows"],"description":"Clavis is a file-encryption app for Windows 10 and 11. It encrypts files on your own PC with AES-256-GCM, deriving keys from your password with Argon2id. No account, no cloud and nothing uploaded: only you hold the key.","url":"https://clavisenc.com/","applicationCategory":"SecurityApplication","applicationSubCategory":"File encryption","operatingSystem":"Windows 10, Windows 11, Linux (64-bit)","softwareVersion":"3.14.0","dateModified":"2026-10-18","downloadUrl":"https://github.com/clavisenc/FileEncryptionApp-updates/releases/latest/download/Clavis-Setup.exe","installUrl":"https://clavisenc.com/download.html","fileSize":"43 MB","image":"https://clavisenc.com/assets/img/icon-512.png","screenshot":"https://clavisenc.com/assets/img/app-light.png","featureList":["AES-256-GCM authenticated encryption","Argon2id password-based key derivation","Streaming encryption of large files in 64 KiB authenticated chunks","Integrity verification on every decrypt","Post-quantum recovery key (X25519 + ML-KEM-768)","Encrypted file names","Best-effort secure delete of originals","Shred files and folders (best effort on SSDs and flash)","Clavis on a USB stick: run from a stick on other Windows PCs (Pro)","Auto-lock on system sleep, Windows lock and inactivity","File Explorer right-click menu","Activity history","Ed25519-signed in-app updates","Installer or portable ZIP; per-user install without administrator rights; Linux .deb","English, French, German, Tamil and Hindi","Pro: whole-folder encryption, find sensitive files (ID and bank documents) and encrypt them in one go, open encrypted files without a decrypted copy, browse encrypted folders by real names, watch folders, secure notes, multiple vaults, key-file two-factor, Clavis on a USB stick","Premium: encrypt into OneDrive, Google Drive or Dropbox folders, public-key file sharing with signed files, one-file vault backups, previous versions, command-line tool (clavis-cli)"],"isAccessibleForFree":true,"offers":[{"@type":"Offer","name":"Clavis Free","price":"0","priceCurrency":"USD","url":"https://clavisenc.com/download.html"},{"@type":"Offer","name":"Clavis Pro (lifetime licence)","price":"19","priceCurrency":"USD","url":"https://clavisenc.com/pricing.html","availability":"https://schema.org/PreOrder"},{"@type":"Offer","name":"Clavis Premium (lifetime licence)","price":"29","priceCurrency":"USD","url":"https://clavisenc.com/pricing.html","availability":"https://schema.org/PreOrder"}],"author":{"@id":"https://clavisenc.com/#author"},"publisher":{"@id":"https://clavisenc.com/#author"}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./" aria-current="page">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Scroll story on the real Clavis window: three files fly into Source, the key turns,
+         they come back out as .enc. site.js measures the stage so copy, window and tray never overlap. -->
+    <section class="story" id="story">
+      <div class="stage" id="stage">
+        <div class="hero-copy intro" id="hero">
+          <span class="eyebrow">Free file encryption · Windows &amp; Linux</span>
+          <h1 class="display">Lock what matters.<br><em>Keep the key.</em></h1>
+          <p class="lede">Tax returns, passport scans, the photos you'd never post. Lock them on your own PC in two clicks. No account, no cloud, nothing to learn.</p>
+          <div class="btn-row" style="justify-content:center">
+            <a class="btn btn-primary" href="download.html">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+              Download free
+            </a>
+            <a class="btn btn-ghost" href="pricing.html">Compare plans</a>
+          </div>
+          <div class="checkline">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>No sign-up</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Works offline</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Works on Windows Home</span>
+          </div>
+        </div>
+
+        <div class="copy" id="copy">
+          <div class="chap" data-a=".15" data-b=".41"><span class="eyebrow">Step one</span><h2>Point it at what matters.</h2><p>Drag a file or folder onto Clavis, or right-click it in File Explorer. Nothing is uploaded.</p></div>
+          <div class="chap" data-a=".41" data-b=".67"><span class="eyebrow">Step two</span><h2>Turn the key.</h2><p>Your password becomes a 256-bit key through Argon2id. Every 64 KiB piece is sealed with AES-256-GCM and checked when you open it.</p></div>
+          <div class="chap" data-a=".67" data-b=".86"><span class="eyebrow">Step three</span><h2>Locked, and still yours.</h2><p>Open a locked file in its usual app, put it in OneDrive, or send it to a contact. No decrypted copy is left behind.</p></div>
+          <div class="chap" data-a=".86" data-b="9"><h2>Your files. <em class="grad-text">Your key.</em></h2>
+            <div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="download.html">Download free</a><a class="btn btn-ghost" href="help.html">See every feature</a></div></div>
+        </div>
+
+        <div class="device" id="device">
+          <div class="win" id="win" role="img" aria-label="The Clavis window: the Encrypt and Decrypt page, a folder chosen as the source and Encrypt selected">
+            <div class="tb">
+              <img src="assets/img/icon-64.png" alt="">Clavis — Vault: Personal
+              <span class="ctl" aria-hidden="true"><span><svg viewBox="0 0 10 10"><path d="M0 5h10"/></svg></span><span><svg viewBox="0 0 10 10"><rect x=".5" y=".5" width="9" height="9"/></svg></span><span><svg viewBox="0 0 10 10"><path d="M0 0l10 10M10 0 0 10"/></svg></span></span>
+            </div>
+            <div class="wb">
+              <div class="sb">
+                <div class="sb-brand"><img src="assets/img/icon-64.png" alt=""><div><b>Clavis</b><small>File encryption</small></div></div>
+                <div class="sb-lbl">MENU</div>
+                <div class="sb-item on">Encrypt &amp; Decrypt</div>
+                <div class="sb-item">Watch Folders</div>
+                <div class="sb-item">Activity</div>
+                <div class="sb-item">Settings</div>
+                <div class="sb-sp"></div>
+                <div class="sb-lbl">VAULT</div>
+                <div class="vault"><i></i>Personal<svg viewBox="0 0 16 16"><path d="M2 5h11l-3-3M14 11H3l3 3"/></svg></div>
+                <div class="sb-foot c">Dark mode</div>
+                <div class="sb-foot">About</div>
+              </div>
+              <div class="mn">
+                <div class="mn-h">Encrypt &amp; Decrypt</div>
+                <div class="mn-sub">AES-256-GCM · Argon2id · Vault: Personal</div>
+                <div class="w-card">
+                  <div class="w-lbl">SOURCE</div>
+                  <div class="src">
+                    <div class="field" id="field"><span class="path" id="path"><span class="ph">Choose a file or folder…</span></span><span class="chev"><svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4"/></svg></span></div>
+                    <div class="abtn">Browse…</div>
+                  </div>
+                  <div class="tip">Tip — drag &amp; drop files or folders anywhere on this window</div>
+                </div>
+                <div class="w-card">
+                  <div class="w-lbl">OPERATION</div>
+                  <div class="segm"><span class="on">Encrypt</span><span>Decrypt</span><span>Verify</span></div>
+                  <div class="desc">Encrypts files in place — originals are overwritten, then deleted.</div>
+                  <div class="ops"><div class="exec" id="exec">Encrypt now</div><div class="chpw">Change Password</div></div>
+                </div>
+                <div class="seal" id="seal">
+                  <div class="seal-in">
+                    <!-- Combination padlock: the dial turns right to 27, left to 04, right to 91, then the shackle snaps shut. -->
+                    <svg class="combolock" viewBox="0 0 220 236" aria-hidden="true">
+                      <defs>
+                        <linearGradient id="pl-shk" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AA5BF"/><stop offset=".5" stop-color="#E8ECF6"/><stop offset="1" stop-color="#7C879F"/></linearGradient>
+                        <linearGradient id="pl-body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3D592"/><stop offset=".45" stop-color="#D9A84F"/><stop offset="1" stop-color="#8E6224"/></linearGradient>
+                        <radialGradient id="pl-face" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#2A3556"/><stop offset="1" stop-color="#0A0F1E"/></radialGradient>
+                        <radialGradient id="pl-knob" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#F3D592"/><stop offset="1" stop-color="#8E6224"/></radialGradient>
+                      </defs>
+                      <g id="pl-shackle"><path d="M80 92 V58 a30 30 0 0 1 60 0 V92" fill="none" stroke="url(#pl-shk)" stroke-width="13" stroke-linecap="round"/></g>
+                      <rect x="42" y="80" width="136" height="136" rx="26" fill="url(#pl-body)"/>
+                      <rect x="42" y="80" width="136" height="50" rx="26" fill="#fff" opacity=".12"/>
+                      <rect id="pl-glow" x="42" y="80" width="136" height="136" rx="26" fill="none" stroke="#F3D592" stroke-width="2.5" opacity="0"/>
+                      <circle cx="110" cy="152" r="46" fill="#141A2B" stroke="#7A5520" stroke-width="3"/>
+                      <path d="M110 100 l-6 -8 h12 z" fill="#1C1305"/>
+                      <g id="pl-dial">
+                        <circle cx="110" cy="152" r="42" fill="url(#pl-face)"/>
+                        <g id="pl-ticks" stroke="#D9A84F"></g>
+                        <g id="pl-nums" font-family="JetBrains Mono, monospace" font-size="7" fill="#F0CD86" text-anchor="middle"></g>
+                        <circle cx="110" cy="152" r="15" fill="url(#pl-knob)"/>
+                        <g id="pl-grip" stroke="#6E4A18" stroke-width="1.5"></g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div class="sbar" id="sbar"><span class="pbar" id="pbar"></span><i></i><span id="stxt">Ready</span><small id="ssub"></small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tray" id="tray" aria-hidden="true">
+          <div class="chips">
+            <div class="chip"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg></span><span class="nm"><b data-in="tax_return_2025.pdf" data-out="3f9a1c7e…b21d.enc">tax_return_2025.pdf</b><small data-in="PDF · 1.2 MB" data-out="AES-256-GCM">PDF · 1.2 MB</small></span></div>
+            <div class="chip"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4"/></svg></span><span class="nm"><b data-in="W-2_2025.pdf" data-out="a7d40e91…6c3f.enc">W-2_2025.pdf</b><small data-in="PDF · 214 KB" data-out="AES-256-GCM">PDF · 214 KB</small></span></div>
+            <div class="chip"><span class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M4 15h16M10 9v12"/></svg></span><span class="nm"><b data-in="receipts_2025.xlsx" data-out="e12b58c0…9a7e.enc">receipts_2025.xlsx</b><small data-in="Excel · 88 KB" data-out="AES-256-GCM">Excel · 88 KB</small></span></div>
+          </div>
+          <div class="pills">
+            <span class="feat-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3l6 17 2.2-6.8L20 11z"/></svg>Right-click in File Explorer</span>
+            <span class="feat-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18a5 5 0 1 1 1-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg>Straight into OneDrive</span>
+            <span class="feat-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M19 8v6M16 11h6"/></svg>Share by Clavis ID</span>
+            <span class="feat-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>Open with no decrypted copy</span>
+          </div>
+        </div>
+
+        <div class="rail" id="rail" aria-hidden="true"><div>Choose</div><div>Lock</div><div>Live</div><div>Keep</div></div>
+      </div>
+    </section>
+
+    <div class="facts" aria-label="At a glance">
+      <div class="wrap">
+        <div class="fact"><b>AES-256-GCM</b><span>Encryption</span></div>
+        <div class="fact"><b>Argon2id</b><span>Password to key</span></div>
+        <div class="fact"><b>ML-KEM-768</b><span>Recovery key</span></div>
+        <div class="fact"><b>0 accounts</b><span>Nothing to sign up for</span></div>
+        <div class="fact"><b>$0</b><span>To start, forever</span></div>
+      </div>
+    </div>
+
+    <section class="block" id="features">
+      <div class="wrap">
+        <div class="block-head">
+          <span class="eyebrow">The details</span>
+          <h2 class="h2">Serious underneath. <em>Calm on top.</em></h2>
+        </div>
+        <div class="bento">
+          <article class="tile w4">
+            <div class="tiers"><span class="tier">Free</span></div>
+            <h3>Right-click. Encrypt. Done.</h3>
+            <p>Clavis sits in the File Explorer menu, so you lock files where they already live. <a class="tile-link" href="help-explorer-menu.html">How it works →</a></p>
+            <div class="fill menus" aria-hidden="true">
+              <ul><li>Open</li><li>Open with <span>›</span></li><li class="sep"></li><li>Copy as path</li><li>Share</li><li class="hi">Clavis <span>›</span></li><li class="sep"></li><li>Properties</li></ul>
+              <ul class="subm"><li class="go">Encrypt</li><li>Decrypt</li><li>Verify</li><li class="sep"></li><li>Encrypt to cloud folder</li></ul>
+            </div>
+          </article>
+          <article class="tile">
+            <div class="tiers"><span class="tier">Every plan</span></div>
+            <h3>The same lock for everyone.</h3>
+            <div class="big-mono">AES&#8209;256&#8209;GCM</div>
+            <p>Keys come from Argon2id. Free has the same encryption as paid. <a class="tile-link" href="security.html">The details →</a></p>
+            <div class="fill"><div class="chunks" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="chunk-cap">64 KiB chunks · each one checked</div></div>
+          </article>
+          <article class="tile">
+            <div class="tiers"><span class="tier">Free</span></div>
+            <h3>Forgot your password?</h3>
+            <div class="rk" aria-label="Example recovery key">K7Q2-M9XD-4HPW-T8NB</div>
+            <p class="fill">A one-time recovery key, sealed with post-quantum cryptography. Keep it on paper. <a class="tile-link" href="help-recovery-key.html">How it works →</a></p>
+          </article>
+          <article class="tile w4">
+            <div class="tiers"><span class="tier prem">Premium</span></div>
+            <h3>Into your cloud.</h3>
+            <p>Lock files straight into OneDrive, Google Drive or Dropbox. The cloud only stores ciphertext under random names.</p>
+            <div class="rows fill"><span>OneDrive <em>3f9a….enc</em></span><span>Google Drive <em>b21c….enc</em></span><span>Dropbox <em>7e04….enc</em></span></div>
+          </article>
+          <article class="tile w4">
+            <div class="tiers"><span class="tier pro">Pro</span></div>
+            <h3>Your files, on a USB stick.</h3>
+            <p>Carry your encrypted files on a USB stick and open them on other Windows PCs without installing anything there. Clavis runs from the stick and keeps everything on it, and where a PC blocks programs from USB sticks, a page on the stick opens your files in the browser. <a class="tile-link" href="blog-carry-encrypted-files-on-usb-stick.html">How it works →</a></p>
+            <div class="rows fill"><span>Clavis and your vault <em class="yes">on the stick</em></span><span>Installed on the other PC <em>nothing</em></span><span>Browser page, offline <em class="yes">free</em></span></div>
+          </article>
+          <article class="tile">
+            <div class="tiers"><span class="tier">Free</span></div>
+            <h3>Made for Windows Home.</h3>
+            <p>Home editions can't use BitLocker or EFS. Clavis doesn't need them, or administrator rights. <a class="tile-link" href="blog-encrypt-files-windows-11-home.html">Your options →</a></p>
+            <div class="rows fill"><span>BitLocker <em>Pro &amp; up</em></span><span>EFS <em>Pro &amp; up</em></span><span>Clavis <em class="yes">Every edition</em></span></div>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier pro">Pro</span></div>
+            <h3>Find what you forgot.</h3>
+            <p>Old passport and ID card scans, bank statements, payslips, tax papers. Clavis helps you find them in Documents, Downloads, Desktop and Pictures, and you tick what to encrypt. It all happens on your PC, and no list of your files is kept. <a class="tile-link" href="help-find-sensitive-files.html">How it works →</a></p>
+            <div class="rows fill"><span>passport_scan.jpg <em class="yes">Likely</em></span><span>statement_mar.pdf <em class="yes">Likely</em></span><span>scan_0412.pdf <em>Possibly</em></span></div>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier">Free</span></div>
+            <h3>Shred what you don't need.</h3>
+            <p>Right-click a file or folder and choose Shred, or use the Shred Files page. Clavis lists every file, overwrites each one once, then deletes it. On SSDs, USB sticks and memory cards it's best effort, and backups or cloud history may still keep copies. <a class="tile-link" href="help-shred.html">How it works →</a></p>
+            <div class="rows fill"><span>Every file listed <em class="yes">before you confirm</em></span><span>Each file <em class="yes">overwritten, then deleted</em></span><span>SSD, USB, memory card <em>best effort</em></span></div>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier pro">Pro</span><span class="tier prem">Premium</span></div>
+            <h3>Open, edit, re-lock.</h3>
+            <p>Open a locked file in Word or Photos, save, and Clavis seals it again with no decrypted copy left on disk. Premium keeps earlier versions. <a class="tile-link" href="help-open-files.html">How it works →</a></p>
+            <div class="rows versions fill"><span>Today, 14:02 <em class="yes">current</em></span><span>Today, 09:47 <em></em></span><span>Yesterday, 18:15 <em></em></span></div>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier">Free</span></div>
+            <h3>No account. No cloud. No telemetry.</h3>
+            <p>The app goes online only to check for updates, and every update is signed. Your password never leaves your PC.</p>
+            <div class="rows fill"><span>Account <em>none</em></span><span>Analytics in the app <em>none</em></span><span>Updates <em>Ed25519-signed</em></span></div>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier prem">Premium</span></div>
+            <h3>Share without a password.</h3>
+            <p>Encrypt a file for a contact's Clavis ID. Only they can open it, it's signed by you, and no password changes hands. <a class="tile-link" href="help-sharing.html">How it works →</a></p>
+          </article>
+          <article class="tile w3">
+            <div class="tiers"><span class="tier pro">Pro</span><span class="tier prem">Premium</span></div>
+            <h3>Folders, notes, the command line.</h3>
+            <p>Lock whole folders, watch Downloads for new files, keep secure notes, and script backups with clavis-cli on Windows or Linux. <a class="tile-link" href="help.html">Every feature →</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block paper-band" id="why">
+      <div class="wrap grid2">
+        <div>
+          <span class="eyebrow">Why bother</span>
+          <h2 class="h2">Your laptop goes places without you.</h2>
+          <p class="intro-p">Anything in Documents can be read by whoever is holding the PC. With Clavis, those files are noise to anyone without your key.</p>
+          <a class="btn" href="download.html">Lock your first file</a>
+        </div>
+        <div>
+          <div class="stake"><b>Repair shop</b><span>The technician who asks for your password to fix the screen.</span></div>
+          <div class="stake"><b>Shared login</b><span>The family PC where everyone uses the same account. <a href="blog-keep-files-private-shared-family-pc.html" style="color:inherit;text-decoration:underline">What to do about it</a></span></div>
+          <div class="stake"><b>Stolen bag</b><span>On Windows Home the drive isn't encrypted, so it reads fine in another machine.</span></div>
+          <div class="stake"><b>Cloud sync</b><span>OneDrive copies Documents to servers you don't control.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap promise">
+        <img src="assets/img/icon-192.png" alt="" width="88" height="88">
+        <div>
+          <p>Security is a right — never a receipt. Free and paid Clavis use the same locks. Paying buys time and convenience, and keeps Clavis independent.</p>
+          <small>The Clavis promise · <a href="pricing.html" style="color:var(--cyan)">See the plans</a></small>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer">
+      <div class="wrap">
+        <h2 class="tagline">Clavis.<br><em class="grad-text">Keep the key.</em></h2>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Download free
+          </a>
+          <a class="btn btn-ghost" href="pricing.html">See Pro &amp; Premium</a>
+        </div>
+        <p class="fineprint">Windows 10 &amp; 11 · also for Linux (<a href="download.html">.deb</a>) · 64-bit · Version <span data-release="version">3.14.0</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

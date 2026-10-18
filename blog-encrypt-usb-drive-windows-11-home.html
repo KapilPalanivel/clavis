@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt a USB drive on Windows 11 Home (without BitLocker) — Clavis Encrypt</title>
+  <meta name="description" content="Password-protect a USB flash drive without BitLocker on Windows 11 Home: 7-Zip, VeraCrypt, Clavis or BitLocker To Go on a Pro PC, and what Defender does.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt a USB drive on Windows 11 Home (without BitLocker)">
+  <meta property="og:description" content="No BitLocker To Go on Windows 11 Home? Four ways to password-protect a USB stick anyway, and what Microsoft Defender does and doesn't do.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html#article","headline":"How to encrypt a USB drive on Windows 11 Home (without BitLocker)","description":"Password-protect a USB flash drive without BitLocker on Windows 11 Home: 7-Zip, VeraCrypt, Clavis or BitLocker To Go on a Pro PC, and what Defender does.","datePublished":"2026-10-02","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption","https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/","https://learn.microsoft.com/en-us/defender-endpoint/device-control-overview","https://www.7-zip.org/","https://www.veracrypt.fr/","https://veracrypt.io/en/Portable%20Mode.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt a USB drive on Windows 11 Home (without BitLocker)","item":"https://clavisenc.com/blog-encrypt-usb-drive-windows-11-home.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I put a password on a USB flash drive without BitLocker in Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Use a password-protected 7-Zip archive (7z format, Encrypt file names ticked), a VeraCrypt container on the stick, or a file-encryption app such as Clavis Encrypt, which encrypts the files on the stick for free without administrator rights. All three work on Windows 11 Home, where BitLocker isn't available."}},{"@type":"Question","name":"How do I encrypt a USB drive in Windows 11?","acceptedAnswer":{"@type":"Answer","text":"On Windows 11 Pro, Enterprise or Education: search Start for Manage BitLocker, find the stick under Removable data drives - BitLocker To Go, choose Turn on BitLocker, set a password and save the recovery key. On Windows 11 Home, use 7-Zip, VeraCrypt or a file-encryption app such as Clavis instead."}},{"@type":"Question","name":"Can Windows 11 Home encrypt a USB drive with BitLocker?","acceptedAnswer":{"@type":"Answer","text":"No. Microsoft says BitLocker isn't available on Windows Home edition, and Home's device encryption doesn't cover USB drives. You can encrypt the stick on a Pro PC with BitLocker To Go, or use 7-Zip, VeraCrypt or Clavis on Home."}},{"@type":"Question","name":"Does Microsoft Defender encrypt USB drives?","acceptedAnswer":{"@type":"Answer","text":"No. Microsoft Defender Antivirus scans for malware. Microsoft Defender for Endpoint, a business product, can make company PCs accept only BitLocker-encrypted USB drives, but BitLocker does the encrypting, and that needs Windows Pro or higher."}},{"@type":"Question","name":"Does Windows device encryption protect my USB stick?","acceptedAnswer":{"@type":"Answer","text":"No. Device encryption covers the PC's internal drives only. Files you copy to a USB stick are not encrypted unless you encrypt them yourself."}},{"@type":"Question","name":"How do I password-protect a USB stick for free?","acceptedAnswer":{"@type":"Answer","text":"Put the files in a password-protected 7-Zip archive, create a VeraCrypt container on the stick, or encrypt the files with Clavis Free. All three are free."}},{"@type":"Question","name":"Will the encrypted files open on someone else's computer?","acceptedAnswer":{"@type":"Answer","text":"Only if that computer has the right tool and you have the password: 7-Zip for an archive, VeraCrypt for a container, Clavis or any web browser (at clavisenc.com/open.html) for .enc files, and Windows for BitLocker To Go. With Clavis Pro you can carry Clavis on the stick itself and run it on other Windows PCs without installing anything there."}},{"@type":"Question","name":"Can I open encrypted files from a USB stick on another PC without installing software?","acceptedAnswer":{"@type":"Answer","text":"Yes, with Clavis Encrypt 3.14 or later. USB Stick → Set up stick (Clavis Pro) copies Clavis, your vault and a browser page onto the stick. On the other PC, run Clavis.exe from the stick, or, where programs from USB sticks are blocked, double-click Open my files.html to open the files in the browser, offline."}},{"@type":"Question","name":"Is it safe to keep my only copy on an encrypted USB stick?","acceptedAnswer":{"@type":"Answer","text":"No. Encryption protects against people reading the files, not against the stick breaking or getting lost. Always keep a second copy somewhere else."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 2, 2026 · Updated October 19, 2026</p>
+        <h1>How to encrypt a USB drive on Windows 11 Home (without BitLocker)</h1>
+        <p>A USB stick is the easiest thing in the world to lose: it falls out of a bag, gets left in a print shop's computer, or is borrowed and never returned. Whatever is on it — tax papers, passport and ID scans, a backup of your photos — goes with it. Encrypting the stick means a finder sees nothing but locked files.</p>
+        <p>On Windows 11 Pro you'd use <strong>BitLocker To Go</strong>. On Windows 11 Home you can't turn it on. Here are the ways that do work on Home, and how to pick one.</p>
+
+        <div class="callout"><b>Short answer:</b> Windows 11 Home can't put a password on a USB flash drive by itself: Microsoft says BitLocker “isn't available on Windows Home edition”, and Home's device encryption doesn't cover external or USB drives. To encrypt a USB drive without BitLocker, use one of these: (1) a password-protected <b>7-Zip</b> archive (7z format, AES-256, with <b>Encrypt file names</b> ticked); (2) a <b>VeraCrypt</b> container on the stick (needs administrator rights to install); or (3) a file-encryption app such as <b>Clavis Encrypt</b>, which encrypts the files on the stick for free, without administrator rights, and whose <code>.enc</code> files also open in a web browser; Clavis Pro can also put Clavis itself on the stick, so the files open on other Windows PCs without installing anything there. If you can borrow a Windows 11 Pro PC, BitLocker To Go there encrypts the whole stick. Whatever you choose, keep a second copy: encryption doesn't stop a stick from failing.</div>
+
+        <h2>Option 1: a password-protected 7-Zip archive</h2>
+        <p>With the free <a href="https://www.7-zip.org/" rel="noopener">7-Zip</a>, select your files → <strong>7-Zip → Add to archive</strong>, choose 7z, set a password, tick <strong>Encrypt file names</strong>, and save the archive to the stick.</p>
+        <ul>
+          <li><strong>Good:</strong> free, works on every edition of Windows, and opens anywhere 7-Zip is installed.</li>
+          <li><strong>Catch:</strong> to change one file you extract, edit and re-pack the whole archive, and the extracted copies tend to be forgotten on whichever PC you used. A lost password can't be recovered.</li>
+        </ul>
+
+        <h2>Option 2: VeraCrypt</h2>
+        <p><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a> can encrypt the whole stick or keep an encrypted container file on it, which you mount as a drive letter.</p>
+        <ul>
+          <li><strong>Good:</strong> strong, free and open source, and works across Windows, macOS and Linux.</li>
+          <li><strong>Catch:</strong> every PC where you open the stick needs VeraCrypt, and installing it needs administrator rights — so office, college and print-shop PCs are often out. Mounting and unmounting adds steps, and a lost password can't be recovered.</li>
+        </ul>
+
+        <h2>Option 3: encrypt the files on the stick with Clavis</h2>
+        <p><a href="./">Clavis Encrypt</a> encrypts files where they are, so you can lock the files on your USB stick directly — no container, no archive, no Pro edition of Windows. It installs without administrator rights.</p>
+        <ol>
+          <li><a href="download.html">Install Clavis</a> and create your vault. Write down or print the <a href="help-recovery-key.html">recovery key</a> it shows you.</li>
+          <li>Plug in the stick and open it in File Explorer.</li>
+          <li>Select one file or several, right-click → <strong>Show more options → Clavis → Encrypt</strong>. Or drag them onto the Clavis window, choose <strong>Encrypt</strong> and press <strong>Encrypt now</strong>. Clavis lists what it's about to encrypt and asks you to confirm.</li>
+        </ol>
+        <p>Each file becomes a <code>.enc</code> file with a random name, so even the file names give nothing away. Clavis Free encrypts one file or several at once; <a href="pricing.html">Clavis Pro</a> also encrypts a whole folder on the stick, subfolders included, in one go. Many sticks are formatted FAT32, which can't hold files of 4 GB or more; Clavis checks before it starts and tells you, instead of failing part-way.</p>
+        <p>Clavis wipes the original after encrypting it, but on flash that's best effort: if the stick held the files unencrypted for a while, old copies can linger where no app can reach (<a href="blog-shred-files-windows-11-what-actually-works.html">what deleting from a USB stick really does</a>). The safest habit is to encrypt files on your PC first, then copy the <code>.enc</code> files to the stick.</p>
+        <p>To open the files on another computer, run Clavis from the stick itself (next section), use Clavis installed there, or, without installing anything, open them at
+<a href="open.html">clavisenc.com/open.html</a> with your password (on a phone too; nothing is uploaded). To keep working with them on a new PC,
+our guide to <a href="blog-move-encrypted-files-to-new-pc.html">moving encrypted files to a new PC</a> shows how to bring your vault along.</p>
+
+        <h2>New in Clavis 3.14: carry Clavis on the stick</h2>
+        <p>Since version 3.14, Clavis can put itself on the stick, so you can open your encrypted files on other Windows PCs without installing anything there. It works with USB sticks, memory cards and portable USB SSDs and hard drives.</p>
+        <ol>
+          <li>On your own PC, plug in the stick, open <strong>USB Stick</strong> in the Clavis sidebar and pick the drive.</li>
+          <li>Press <strong>Set up stick</strong> (Clavis Pro). Clavis copies itself, your vault and a page called <strong>Open my files.html</strong> onto the stick, plus an <code>Encrypted files</code> folder. On Clavis Free, <strong>Add the page only</strong> adds just the page and the folder.</li>
+          <li>On another PC, double-click <strong>Clavis.exe</strong> in the stick's <strong>Clavis Encrypt</strong> folder and unlock with your usual password. Clavis keeps its vault, settings and working copies on the stick.</li>
+          <li>When you're done, press <strong>Finish and remove stick</strong>, then unplug it.</li>
+        </ol>
+        <p>Where a PC doesn't allow programs from USB sticks, double-click <strong>Open my files.html</strong> instead: it opens your files in the web browser, without internet. Unlike VeraCrypt's portable mode, which its documentation says needs administrator privileges, Clavis needs no administrator rights on the other PC. Your key file, Windows Hello and recovery key aren't copied to the stick. The full walkthrough, with the limits: <a href="blog-carry-encrypted-files-on-usb-stick.html">how to carry encrypted files on a USB stick and open them on another PC</a>.</p>
+
+        <h2>Option 4: BitLocker To Go, set up on a Pro PC</h2>
+        <p>If you have access to a PC running Windows 11 Pro, Enterprise or Education (often an office PC), plug the stick in there, search Start for <strong>Manage BitLocker</strong>, find the stick under <strong>Removable data drives - BitLocker To Go</strong> and choose <strong>Turn on BitLocker</strong>. Pick <strong>Use a password to unlock the drive</strong>, save the recovery key somewhere other than the stick, and let it encrypt.</p>
+        <ul>
+          <li><strong>Good:</strong> the whole stick is encrypted, including anything you add to it later.</li>
+          <li><strong>Catch:</strong> you need a Pro PC to create it, and Windows 11 Home can't turn BitLocker on for a new stick. Before you rely on opening it on a Home PC, a Mac or Linux, test it there: macOS and Linux need extra tools. Once unlocked, everything on it is readable.</li>
+        </ul>
+
+        <h2>Does Microsoft Defender encrypt USB drives?</h2>
+        <p>No. People search for “Defender encrypted USB” for a few different things, so here's what each one really is:</p>
+        <ul>
+          <li><strong>Microsoft Defender Antivirus</strong> (in the Windows Security app on Windows 11 Home and Pro) scans files for malware. It doesn't encrypt drives or put a password on them.</li>
+          <li><strong>Microsoft Defender for Endpoint</strong> is a business security product run by IT teams. Its <em>device control</em> can allow only BitLocker-encrypted USB drives on company PCs, or block unencrypted ones. It decides which sticks may be used; BitLocker still does the encrypting. If your office PC refuses an unencrypted USB stick, that's usually why, and your IT team decides the rule.</li>
+          <li><strong>Device encryption</strong> on Windows 11 Home encrypts the PC's internal drives only. Microsoft says it “doesn't encrypt external/USB drives”.</li>
+          <li><strong>Hardware-encrypted USB sticks</strong> (some are sold under product names with “Defender” in them) encrypt inside the stick, with their own keypad or unlock software. They're a separate purchase, not part of Windows; check the maker's own documentation.</li>
+        </ul>
+        <p>So on Windows 11 Home, to password-protect a USB stick (flash drive, pen drive) yourself, use one of the options above.</p>
+
+        <h2>Which should you use?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Option</th><th>Set up on Windows 11 Home</th><th>Opens on other PCs</th><th>If you forget the password</th></tr></thead>
+            <tbody>
+              <tr><td>7-Zip archive</td><td>Yes</td><td>Any PC with 7-Zip</td><td>No way back in</td></tr>
+              <tr><td>VeraCrypt</td><td>Yes (admin rights to install)</td><td>PCs with VeraCrypt installed</td><td>No way back in</td></tr>
+              <tr><td>Clavis</td><td>Yes, no admin rights</td><td>Windows PCs, running Clavis from the stick (Pro); any device in a browser</td><td>One-time recovery key</td></tr>
+              <tr><td>BitLocker To Go</td><td>No — needs a Pro PC</td><td>Windows PCs (test on Home first)</td><td>Recovery key, if you saved it</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p><strong>Whatever you choose, keep a second copy.</strong> USB sticks fail without warning, and encryption doesn't change that. Keep the originals — or an encrypted backup — somewhere other than the stick, and keep your password or recovery key somewhere other than the stick too.</p>
+        <p>Also on Windows 11 Home? See <a href="blog-encrypt-files-windows-11-home.html">how to encrypt files on Windows 11 Home</a> for the files on your PC itself, and <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">device encryption vs BitLocker</a> for what your PC's own encryption covers.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I put a password on a USB flash drive without BitLocker in Windows 11?</summary><p>Use a password-protected 7-Zip archive (7z format, Encrypt file names ticked), a VeraCrypt container on the stick, or a file-encryption app such as Clavis Encrypt, which encrypts the files on the stick for free without administrator rights. All three work on Windows 11 Home, where BitLocker isn't available.</p></details>
+          <details><summary>How do I encrypt a USB drive in Windows 11?</summary><p>On Windows 11 Pro, Enterprise or Education: search Start for Manage BitLocker, find the stick under Removable data drives - BitLocker To Go, choose Turn on BitLocker, set a password and save the recovery key. On Windows 11 Home, use 7-Zip, VeraCrypt or a file-encryption app such as Clavis instead.</p></details>
+          <details><summary>Can Windows 11 Home encrypt a USB drive with BitLocker?</summary><p>No. Microsoft says BitLocker isn't available on Windows Home edition, and Home's device encryption doesn't cover USB drives. You can encrypt the stick on a Pro PC with BitLocker To Go, or use 7-Zip, VeraCrypt or Clavis on Home.</p></details>
+          <details><summary>Does Microsoft Defender encrypt USB drives?</summary><p>No. Microsoft Defender Antivirus scans for malware. Microsoft Defender for Endpoint, a business product, can make company PCs accept only BitLocker-encrypted USB drives, but BitLocker does the encrypting, and that needs Windows Pro or higher.</p></details>
+          <details><summary>Does Windows device encryption protect my USB stick?</summary><p>No. Device encryption covers the PC's internal drives only. Files you copy to a USB stick are not encrypted unless you encrypt them yourself.</p></details>
+          <details><summary>How do I password-protect a USB stick for free?</summary><p>Put the files in a password-protected 7-Zip archive, create a VeraCrypt container on the stick, or encrypt the files with Clavis Free. All three are free.</p></details>
+          <details><summary>Will the encrypted files open on someone else's computer?</summary><p>Only if that computer has the right tool and you have the password: 7-Zip for an archive, VeraCrypt for a container, Clavis or any web browser (at clavisenc.com/open.html) for .enc files, and Windows for BitLocker To Go. With Clavis Pro you can carry Clavis on the stick itself and run it on other Windows PCs without installing anything there.</p></details>
+          <details><summary>Can I open encrypted files from a USB stick on another PC without installing software?</summary><p>Yes, with Clavis Encrypt 3.14 or later. USB Stick → Set up stick (Clavis Pro) copies Clavis, your vault and a browser page onto the stick. On the other PC, run Clavis.exe from the stick, or, where programs from USB sticks are blocked, double-click Open my files.html to open the files in the browser, offline.</p></details>
+          <details><summary>Is it safe to keep my only copy on an encrypted USB stick?</summary><p>No. Encryption protects against people reading the files, not against the stick breaking or getting lost. Always keep a second copy somewhere else.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption" rel="noopener">Microsoft Support: BitLocker Drive Encryption (not available on Windows Home; Removable data drives - BitLocker To Go)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/" rel="noopener">Microsoft Learn: BitLocker overview (device encryption doesn't encrypt external/USB drives)</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/defender-endpoint/device-control-overview" rel="noopener">Microsoft Learn: Device control in Microsoft Defender for Endpoint</a></li>
+          <li><a href="https://www.7-zip.org/" rel="noopener">7-Zip (AES-256 encryption in 7z and ZIP formats)</a></li>
+          <li><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a></li>
+          <li><a href="https://veracrypt.io/en/Portable%20Mode.html" rel="noopener">VeraCrypt documentation: Portable Mode (needs administrator privileges)</a></li>
+        </ul>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free, no admin rights
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

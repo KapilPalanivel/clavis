@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to encrypt files in Windows 11 Home (no BitLocker) — Clavis Encrypt</title>
+  <meta name="description" content="How to encrypt files in Windows 11 Home: no BitLocker or EFS, so use device encryption for the disk plus 7-Zip, VeraCrypt or Clavis for your files.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to encrypt files in Windows 11 Home (no BitLocker needed)">
+  <meta property="og:description" content="No BitLocker or EFS on Windows 11 Home? How to encrypt the disk and your files anyway, and how to choose.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-encrypt-files-windows-11-home.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-encrypt-files-windows-11-home.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:modified_time" content="2026-10-19">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-encrypt-files-windows-11-home.html#article","headline":"How to encrypt files in Windows 11 Home (no BitLocker needed)","description":"How to encrypt files in Windows 11 Home: no BitLocker or EFS, so use device encryption for the disk plus 7-Zip, VeraCrypt or Clavis for your files.","datePublished":"2026-10-02","dateModified":"2026-10-19","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-encrypt-files-windows-11-home.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption","https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df","https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/","https://www.7-zip.org/","https://www.veracrypt.fr/"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to encrypt files in Windows 11 Home (no BitLocker needed)","item":"https://clavisenc.com/blog-encrypt-files-windows-11-home.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I encrypt files in Windows 11?","acceptedAnswer":{"@type":"Answer","text":"On Windows 11 Pro, Enterprise or Education you can use EFS (right-click, Properties, Advanced, Encrypt contents to secure data) or BitLocker for whole drives. On Windows 11 Home, turn on device encryption for the disk if your PC has it, and encrypt individual files with a 7-Zip archive, a VeraCrypt container or a file-encryption app such as Clavis Encrypt."}},{"@type":"Question","name":"Does Windows 11 Home have disk encryption?","acceptedAnswer":{"@type":"Answer","text":"Often, yes: device encryption, on supported hardware. It's BitLocker turned on automatically when you sign in with a Microsoft account, and it encrypts the internal drive. Check Settings, Privacy & security, Device encryption. Windows 11 Home doesn't have the full BitLocker tool."}},{"@type":"Question","name":"Does Windows 11 Home have BitLocker?","acceptedAnswer":{"@type":"Answer","text":"No. The BitLocker tool and EFS (Encrypt contents to secure data) are only in Windows 11 Pro, Enterprise and Education. Many Home PCs have device encryption instead, which encrypts the whole drive with fewer settings."}},{"@type":"Question","name":"Why is Encrypt contents to secure data greyed out in Windows 11?","acceptedAnswer":{"@type":"Answer","text":"Usually because the PC runs Windows 11 Home, which doesn't include EFS. On Pro, it can also be greyed out on drives that aren't NTFS (such as FAT32 or exFAT USB sticks) or when a policy turns EFS off. On Home, use device encryption for the disk and a file-encryption tool for files."}},{"@type":"Question","name":"Is device encryption the same as BitLocker?","acceptedAnswer":{"@type":"Answer","text":"It's BitLocker's own encryption, turned on automatically with fewer controls. It covers the internal drives, only on supported hardware, and saves the recovery key to your Microsoft account. Full BitLocker adds per-drive control, a startup PIN and USB encryption."}},{"@type":"Question","name":"Can I password-protect a folder on Windows 11 Home?","acceptedAnswer":{"@type":"Answer","text":"Not with a built-in tool. You can put the folder in a password-protected 7-Zip archive, keep it in a VeraCrypt container, or encrypt its files with Clavis (select all the files and encrypt them at once, free). Clavis Pro encrypts a whole folder, subfolders included, in one step."}},{"@type":"Question","name":"Is Clavis free on Windows 11 Home?","acceptedAnswer":{"@type":"Answer","text":"Yes. Clavis Free encrypts and decrypts files, one or several at once, with the same AES-256-GCM and Argon2id as the paid plans, and includes the recovery key, Windows Hello unlock, Shred and Send with a password. Pro adds whole folders, watch folders and Find Sensitive Files; Premium adds cloud folders and sharing with other people."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Guide · October 2, 2026 · Updated October 19, 2026</p>
+        <h1>How to encrypt files in Windows 11 Home (no BitLocker needed)</h1>
+        <p>You right-click a folder, open <strong>Properties → Advanced</strong>, and “Encrypt contents to secure data” is greyed out. You search for BitLocker and it isn't there. That's not a bug: Microsoft keeps <strong>BitLocker</strong> and <strong>EFS</strong> (the Encrypting File System behind that checkbox) for Windows 11 Pro, Enterprise and Education. Most laptops ship with Windows 11 Home, so most people can't use either.</p>
+        <p>You can still protect your files. Here are the real options on Windows 11 Home, what each one actually protects, and how to choose.</p>
+
+        <div class="callout"><b>Short answer:</b> to encrypt files in Windows 11 Home, use two layers. For the disk, turn on <b>device encryption</b> if your PC has it (<b>Settings → Privacy &amp; security → Device encryption</b>): it's Windows 11 Home's built-in disk encryption, based on BitLocker, and it protects a lost or stolen laptop. For individual files, which device encryption doesn't protect once you're signed in, use a password-protected <b>7-Zip</b> archive (AES-256), a <b>VeraCrypt</b> container, or a file-encryption app such as <b>Clavis Encrypt</b>: right-click a file → <b>Clavis → Encrypt</b>, free, no administrator rights. Windows 11 Home has no BitLocker tool and no EFS; on a Windows 11 Home PC, even <code>cipher /e</code> answers “The request is not supported.”</div>
+
+        <h2>Option 1: device encryption (Windows 11 Home disk encryption)</h2>
+        <p>Many PCs running Windows 11 Home have <strong>device encryption</strong>, which Microsoft describes as “a Windows feature that enables BitLocker encryption automatically”. Open <strong>Settings → Privacy &amp; security → Device encryption</strong>. If you see the page, you can turn it on. If you don't, your PC's hardware may not support it, or you're signed in with a standard account.</p>
+        <ul>
+          <li><strong>Good:</strong> free, built in, encrypts the internal drive. If the laptop is stolen while it's off, the thief can't read the disk in another machine.</li>
+          <li><strong>Catch:</strong> it needs supported hardware and a Microsoft account (with only a local account it isn't turned on automatically), and it protects the <em>drive</em>, not your files. Once you're signed in, every file is open to anyone using the PC, and a copy you put on a USB stick or in the cloud isn't encrypted. Your recovery key is stored in your Microsoft account.</li>
+        </ul>
+        <p>The full comparison, and how to check your PC in System Information, is in <a href="blog-bitlocker-vs-device-encryption-windows-11-home.html">device encryption vs BitLocker on Windows 11 Home</a>.</p>
+
+        <h2>Option 2: a password-protected 7-Zip archive</h2>
+        <p>Install the free <a href="https://www.7-zip.org/" rel="noopener">7-Zip</a>, right-click the files → <strong>7-Zip → Add to archive</strong>, choose the 7z format, set a password and tick <strong>Encrypt file names</strong>. It uses AES-256. (Windows' own <strong>Compress to ZIP file</strong> has no password option.)</p>
+        <ul>
+          <li><strong>Good:</strong> free and works on every edition of Windows.</li>
+          <li><strong>Catch:</strong> you extract the archive every time you want to use a file, and decrypted copies are easy to leave behind. If you forget the password, there's no way back in.</li>
+        </ul>
+
+        <h2>Option 3: VeraCrypt</h2>
+        <p><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a> creates an encrypted container that you mount like a drive. It's free, open source and very strong.</p>
+        <ul>
+          <li><strong>Good:</strong> excellent security and works on Windows 11 Home.</li>
+          <li><strong>Catch:</strong> it needs administrator rights to install, you decide the container's size in advance, and you mount and unmount it each time. It's built for experts, and a lost password can't be recovered.</li>
+        </ul>
+
+        <h2>Option 4: an app that encrypts files directly</h2>
+        <p>A file-encryption app like <a href="./">Clavis Encrypt</a> locks individual files where they are. There's nothing to mount and no archive to extract, and it works the same on Home and Pro. Clavis installs <strong>without administrator rights</strong> and gives you a recovery key in case you forget your password.</p>
+        <p>To encrypt files with Clavis on Windows 11 Home:</p>
+        <ol>
+          <li><a href="download.html">Download Clavis</a> and run the installer. No administrator prompt appears.</li>
+          <li>Create your vault with a strong password, then write down or print the <a href="help-recovery-key.html">recovery key</a> it shows you.</li>
+          <li>In File Explorer, select one file or several, right-click → <strong>Show more options → Clavis → Encrypt</strong>. Or drag them onto the Clavis window, choose <strong>Encrypt</strong> and press <strong>Encrypt now</strong>.</li>
+          <li>Check the list Clavis shows you and confirm.</li>
+        </ol>
+        <p>Each file becomes a <code>.enc</code> file with a random name, sealed with AES-256-GCM. To get it back, select it, choose <strong>Decrypt</strong> and press <strong>Decrypt now</strong>. Clavis Free encrypts one file or several at once; <a href="pricing.html">Clavis Pro</a> also locks whole folders in one step and can watch a folder such as Downloads to encrypt new files automatically.</p>
+        <p>Don't know where your sensitive files are? Clavis Pro's <strong>Find Sensitive Files</strong> page helps you <a href="blog-find-aadhaar-pan-scans-on-your-pc.html">find forgotten ID, bank and tax document scans</a> in Documents, Downloads, Desktop, Pictures and WhatsApp Desktop, and you tick which ones to encrypt. Nothing leaves your PC.</p>
+
+        <h2>Which should you use?</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Option</th><th>On every Home PC</th><th>Protects files after you sign in</th><th>If you forget the password</th></tr></thead>
+            <tbody>
+              <tr><td>Device encryption</td><td>Only on supported hardware</td><td>No — protects the drive</td><td>Recovery key in your Microsoft account</td></tr>
+              <tr><td>7-Zip archive</td><td>Yes</td><td>Yes, inside the archive</td><td>No way back in</td></tr>
+              <tr><td>VeraCrypt</td><td>Yes (admin rights to install)</td><td>Yes, while the container is closed</td><td>No way back in</td></tr>
+              <tr><td>Clavis</td><td>Yes, no admin rights</td><td>Yes, each file</td><td>One-time recovery key</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The best setup uses two layers. Turn on <strong>device encryption</strong> if your PC has it, so a stolen laptop is useless. Then encrypt your most private files with an app like Clavis, so they stay locked while you're signed in, on a USB stick and in OneDrive.</p>
+        <p>Need to lock a whole folder? See <a href="blog-encrypt-folder-on-windows.html">how to encrypt a folder on Windows</a>. Carrying files on a USB stick? See <a href="blog-encrypt-usb-drive-windows-11-home.html">how to encrypt a USB drive on Windows 11 Home</a>, and <a href="blog-carry-encrypted-files-on-usb-stick.html">how to open them on other PCs without installing anything there</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I encrypt files in Windows 11?</summary><p>On Windows 11 Pro, Enterprise or Education you can use EFS (right-click, Properties, Advanced, Encrypt contents to secure data) or BitLocker for whole drives. On Windows 11 Home, turn on device encryption for the disk if your PC has it, and encrypt individual files with a 7-Zip archive, a VeraCrypt container or a file-encryption app such as Clavis Encrypt.</p></details>
+          <details><summary>Does Windows 11 Home have disk encryption?</summary><p>Often, yes: device encryption, on supported hardware. It's BitLocker turned on automatically when you sign in with a Microsoft account, and it encrypts the internal drive. Check Settings, Privacy &amp; security, Device encryption. Windows 11 Home doesn't have the full BitLocker tool.</p></details>
+          <details><summary>Does Windows 11 Home have BitLocker?</summary><p>No. The BitLocker tool and EFS (Encrypt contents to secure data) are only in Windows 11 Pro, Enterprise and Education. Many Home PCs have device encryption instead, which encrypts the whole drive with fewer settings.</p></details>
+          <details><summary>Why is Encrypt contents to secure data greyed out in Windows 11?</summary><p>Usually because the PC runs Windows 11 Home, which doesn't include EFS. On Pro, it can also be greyed out on drives that aren't NTFS (such as FAT32 or exFAT USB sticks) or when a policy turns EFS off. On Home, use device encryption for the disk and a file-encryption tool for files.</p></details>
+          <details><summary>Is device encryption the same as BitLocker?</summary><p>It's BitLocker's own encryption, turned on automatically with fewer controls. It covers the internal drives, only on supported hardware, and saves the recovery key to your Microsoft account. Full BitLocker adds per-drive control, a startup PIN and USB encryption.</p></details>
+          <details><summary>Can I password-protect a folder on Windows 11 Home?</summary><p>Not with a built-in tool. You can put the folder in a password-protected 7-Zip archive, keep it in a VeraCrypt container, or encrypt its files with Clavis (select all the files and encrypt them at once, free). Clavis Pro encrypts a whole folder, subfolders included, in one step.</p></details>
+          <details><summary>Is Clavis free on Windows 11 Home?</summary><p>Yes. Clavis Free encrypts and decrypts files, one or several at once, with the same AES-256-GCM and Argon2id as the paid plans, and includes the recovery key, Windows Hello unlock, Shred and Send with a password. Pro adds whole folders, watch folders and Find Sensitive Files; Premium adds cloud folders and sharing with other people.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://support.microsoft.com/windows/security/encryption/bitlocker-drive-encryption" rel="noopener">Microsoft Support: BitLocker Drive Encryption (not available on Windows Home)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/windows/device-encryption-in-windows-cf7e2b6f-3e70-4882-9532-18633605b7df" rel="noopener">Microsoft Support: Device Encryption in Windows</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/" rel="noopener">Microsoft Learn: BitLocker overview (device encryption, local accounts)</a></li>
+          <li><a href="https://www.7-zip.org/" rel="noopener">7-Zip (AES-256 encryption in 7z and ZIP formats)</a></li>
+          <li><a href="https://www.veracrypt.fr/" rel="noopener">VeraCrypt</a></li>
+        </ul>
+        <p class="muted-note"><em>The <code>cipher /e</code> result is from our own test on Windows 11 Home, October 2026.</em></p>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis — free for Windows 11 Home
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>
