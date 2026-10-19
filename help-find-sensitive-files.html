@@ -78,22 +78,35 @@ already encrypted. Files that OneDrive keeps online only are checked by name, so
 and documents only.</p>
 <h2>What it recognises</h2>
 <ul>
-  <li><strong>By file name:</strong> English words such as <em>passport</em>, <em>driving licence</em>, <em>bank statement</em>,
-      <em>statement</em>, <em>passbook</em>, <em>payslip</em>, <em>salary slip</em>, <em>income tax</em>, <em>cheque</em>,
-      <em>birth certificate</em>, <em>KYC</em> and <em>medical report</em>, plus the names of some national ID cards, such as
-      <em>Aadhaar</em> and <em>PAN</em> (also in Hindi and Tamil).</li>
-  <li><strong>By what's inside:</strong> bank statements and payslips with English headings (such as "Account statement" with a closing
-      balance, or "Payslip" with net or gross pay), and some ID and tax documents: today these are India's Aadhaar (including masked
-      copies), PAN, passport, voter ID and driving licence, and its income-tax forms (such as Form 16). Medical reports and cheques are
-      listed as possibly sensitive.</li>
-  <li><strong>Not yet:</strong> ID numbers and tax forms from other countries (for example a Social Security card or a tax return form) aren't
-      recognised by what's inside. They're listed when the file name gives them away, so check your usual folders too.</li>
+  <li><strong>By file name:</strong> words such as <em>passport</em>, <em>ID card</em>, <em>driver's license</em>,
+      <em>bank statement</em>, <em>statement</em>, <em>payslip</em>, <em>pay stub</em>, <em>tax return</em>, <em>W-2</em>,
+      <em>P60</em>, <em>Social Security</em>, <em>National Insurance</em>, <em>cheque</em>, <em>birth certificate</em> and
+      <em>medical report</em>; German and French names such as <em>Reisepass</em>, <em>Personalausweis</em>,
+      <em>Kontoauszug</em>, <em>Lohnsteuerbescheinigung</em>, <em>passeport</em>, <em>carte d'identité</em>,
+      <em>relevé de compte</em> and <em>avis d'imposition</em>; and India's <em>Aadhaar</em> and <em>PAN</em> (also in Hindi and Tamil).</li>
+  <li><strong>By what's inside:</strong> ID, bank and tax documents from many countries, for example:
+    <ul>
+      <li>passports and ID cards from any country, by the machine-readable lines at the bottom (the ones full of <code>&lt;</code>);</li>
+      <li>ID and tax numbers: a US Social Security number, a UK National Insurance number, a French social security number (NIR),
+          a German tax ID (Steuer-ID), and India's Aadhaar (including masked copies) and PAN, plus Indian voter ID and driving licence cards;</li>
+      <li>bank statements in English, French and German, including ones that show an IBAN (an IBAN on its own, as on an invoice,
+          is listed as possibly sensitive);</li>
+      <li>payslips (such as "Payslip", "Pay stub" or "Earnings statement" with net or gross pay, "Gehaltsabrechnung" or
+          "Bulletin de paie");</li>
+      <li>tax forms such as the US W-2, 1099 and 1040, the UK P60 and P45, the German Lohnsteuerbescheinigung, the French avis
+          d'impôt, and India's Form 16, Form 26AS and ITR-V.</li>
+    </ul>
+    Medical reports and cheques are listed as possibly sensitive.</li>
+  <li><strong>Not everything:</strong> other ID numbers and forms (for example a Canadian SIN, an Australian tax file number or most
+      driving licences) aren't recognised by what's inside yet. They're listed when the file name gives them away, so check your usual
+      folders too.</li>
 </ul>
 <h2>Check the list, then encrypt</h2>
 <p>Files are grouped as <strong>Likely sensitive</strong> (ticked) and <strong>Possibly sensitive</strong> (not ticked: check these
 yourself). Each file says why it's listed, for example <em>Looks like a bank statement</em> or <em>File name says "passport"</em>. To
-avoid false alarms, a number on its own is never enough: a 12-digit number only counts as an Aadhaar number when it passes Aadhaar's check
-digit and the word Aadhaar is nearby, so bank statements full of payment reference numbers aren't mistaken for ID cards.</p>
+avoid false alarms, a number on its own is never enough: an ID number only counts when it passes the number's own check (where it has one)
+and its name is nearby, such as "Social Security" next to a Social Security number or "Aadhaar" next to an Aadhaar number, so bank
+statements full of payment reference numbers aren't mistaken for ID cards.</p>
 <figure class="help-shot">
   <img src="assets/img/help/find-sensitive.webp" width="1206" height="1144" alt="Search results: Likely and Possibly sensitive files with the reason for each" loading="lazy">
   <ol class="help-steps"><li>Likely sensitive: ticked for you</li><li>Why each file is listed</li><li>Possibly sensitive: not ticked, check these yourself</li><li>How many files are selected</li><li>Encrypt them with your vault password</li></ol>
@@ -104,8 +117,8 @@ unavailable in WhatsApp on this PC afterwards; the copy on your phone isn't affe
 <h2>Never suggest a file</h2>
 <p>Use <strong>⋯</strong> next to a file (or right-click it) and choose <strong>Never suggest this file</strong>. Clavis keeps only a
 fingerprint of the file's location, not its name. <strong>Settings → Find Sensitive Files → Clear list</strong> brings them back.</p>
-<div class="callout"><b>Clavis can miss some documents</b>, such as blurry photos, documents not in English, ID and tax documents from
-countries it doesn't recognise yet, or files with unusual names. "No sensitive files found" means nothing matched in the folders you chose, not that there's nothing to protect.</div>
+<div class="callout"><b>Clavis can miss some documents</b>, such as blurry photos, documents in other languages, ID and tax documents
+it doesn't recognise yet, or files with unusual names. "No sensitive files found" means nothing matched in the folders you chose, not that there's nothing to protect.</div>
         <nav class="help-pager" aria-label="More help"><a href="help-shred.html"><span>← Previous</span>Shred files and clean up other copies</a><a class="next" href="help-usb-stick.html"><span>Next →</span>Carry your files on a USB stick</a></nav>
         <p class="help-more">Can't find what you need? <a href="help.html">All help articles</a> · <a href="mailto:hello@clavisenc.com">Email us</a></p>
       </div>

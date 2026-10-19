@@ -55,6 +55,7 @@ FORMAT_STREAM = 0x03        # current format (since 3.0): chunked AES-256-GCM
 FORMAT_ARGON2 = 0x02        # one AES-256-GCM tag over the whole file, Argon2id key
 FORMAT_PBKDF2 = 0x01        # same, PBKDF2-HMAC-SHA256 key with the iteration count in the header
 FORMAT_SHARED = 0x04        # "Encrypt for someone" (public-key), not handled here
+FORMAT_TEAM = 0x05          # team-folder file (team key, sealed to each member's Clavis ID), not handled here
 LEGACY_PBKDF2_ITERATIONS = 65536   # the oldest files have no version byte
 KEYFILE_INFO = b"fileencryptionapp-keyfile-v1"
 TAG = 16
@@ -194,6 +195,12 @@ class Sink:
             os.remove(self.tmp)
 
 
+def is_team_header(head):
+    """Format 0x05, key source 0x01 (team), flags 0x03, key-source block of 52 bytes (format.html, team files).
+    The full check keeps the oldest files, whose random salt may start with 0x05, opening as before."""
+    return len(head) >= 9 and head[4] == FORMAT_TEAM and head[5] == 0x01 and head[6] == 0x03         and struct.unpack(">H", head[7:9])[0] == 52
+
+
 def decrypt_file(path, password, keyfile_hash, folder, verify):
     sink = Sink(folder or os.path.dirname(os.path.abspath(path)), verify)
     try:
@@ -203,6 +210,9 @@ def decrypt_file(path, password, keyfile_hash, folder, verify):
                 raise ValueError("not a Clavis Encrypt file")
             if head[4] == FORMAT_SHARED:
                 raise ValueError("made with 'Encrypt for someone': open it in Clavis Encrypt with the recipient's Clavis ID")
+            if is_team_header(head):
+                raise ValueError("this is a team-folder file (format 0x05): open it in Clavis Encrypt as a member "
+                                 "of the team, or use Export everything there")
             if head[4] == FORMAT_STREAM and len(head) == STREAM_HEADER:
                 try:
                     stream_decrypt(f, head, password, keyfile_hash, sink)
