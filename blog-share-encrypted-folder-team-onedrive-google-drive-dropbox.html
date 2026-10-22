@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to share encrypted files with your team in OneDrive, Google Drive or Dropbox (no shared password) — Clavis Encrypt</title>
+  <meta name="description" content="Keep one encrypted folder in OneDrive, Google Drive, Dropbox or a network drive that your family or office opens, each person with their own key and no shared password. Steps, limits and an honest comparison.">
+  <meta name="theme-color" content="#05080F">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How to share encrypted files with your team in OneDrive, Google Drive or Dropbox (no shared password)">
+  <meta property="og:description" content="One encrypted folder your team opens, each person with their own key: steps, honest limits, and how it compares with shared-password zips, Cryptomator, Personal Vault and Boxcryptor.">
+  <meta property="og:image" content="https://clavisenc.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html">
+  <meta property="og:url" content="https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html">
+  <meta property="og:site_name" content="Clavis Encrypt">
+  <meta property="article:published_time" content="2026-10-22">
+  <meta property="article:modified_time" content="2026-10-22">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css?v=89cbf04025">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html#article","headline":"How to share encrypted files with your team in OneDrive, Google Drive or Dropbox (no shared password)","description":"Keep one encrypted folder in OneDrive, Google Drive, Dropbox or a network drive that your family or office opens, each person with their own key and no shared password. Steps, limits and an honest comparison.","datePublished":"2026-10-22","dateModified":"2026-10-22","inLanguage":"en","author":{"@type":"Organization","@id":"https://clavisenc.com/#author","name":"Clavis Encryption","url":"https://clavisenc.com/about.html"},"publisher":{"@id":"https://clavisenc.com/#author"},"mainEntityOfPage":"https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html","image":"https://clavisenc.com/assets/img/og.png","isPartOf":{"@id":"https://clavisenc.com/#website"},"about":{"@id":"https://clavisenc.com/#software"},"citation":["https://www.7-zip.org/","https://docs.cryptomator.org/security/best-practices/","https://cryptomator.org/for-teams/","https://support.microsoft.com/en-us/office/protect-your-onedrive-files-in-personal-vault-6540ef37-e9bf-4121-a773-56f98dce78c4","https://help.dropbox.com/security/encrypted-team-folders","https://www.boxcryptor.com/","https://blog.dropbox.com/topics/company/dropbox-to-acquire-boxcryptor-assets-bring-end-to-end-encryption-to-business-users","https://clavisenc.com/help-team-folders.html"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://clavisenc.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://clavisenc.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to share encrypted files with your team in OneDrive, Google Drive or Dropbox","item":"https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I share encrypted files with my team on OneDrive without sharing a password?","acceptedAnswer":{"@type":"Answer","text":"Use a tool where each person has their own key. With Clavis Encrypt, the owner turns a shared OneDrive folder into a team folder (Sharing → Team folders → Create a team folder…, Clavis Premium) and adds each person's Clavis ID after checking its fingerprint. Members choose Join a team folder… and open files with their own vault. OneDrive only stores encrypted files with random names."}},{"@type":"Question","name":"Can I share files in OneDrive Personal Vault with someone?","acceptedAnswer":{"@type":"Answer","text":"No. Microsoft says sharing of files in Personal Vault is blocked; you have to move a file out of Personal Vault to share it. For a folder several people open, you need a separate encryption tool, such as a Clavis Encrypt team folder inside an ordinary shared OneDrive folder."}},{"@type":"Question","name":"What can I use instead of Boxcryptor for a shared team folder?","acceptedAnswer":{"@type":"Answer","text":"Boxcryptor has been discontinued. Options today include Cryptomator Hub (a per-seat subscription with a vendor-hosted or self-hosted server), Dropbox's encrypted team folders on its Business Plus, Advanced and Enterprise plans, and Clavis Encrypt team folders, which work in OneDrive, Google Drive, Dropbox or a network drive with no server and no account, each person using their own Clavis ID."}},{"@type":"Question","name":"Can I share a Cryptomator vault with other people?","acceptedAnswer":{"@type":"Answer","text":"You can share the vault folder in your cloud service and give people the vault password, but Cryptomator's own best-practice guide says sharing the vault password is generally not advised and recommends Cryptomator Hub for teams, which adds access management so people unlock with their own account."}},{"@type":"Question","name":"If I remove someone from a shared encrypted folder, can they still open the files?","acceptedAnswer":{"@type":"Answer","text":"In a Clavis team folder, a removed person can't open new or changed files, because those use a new team key. They can still open files they could open before if they kept copies or can still reach the folder, so also remove their access in OneDrive, Google Drive or Dropbox. No encryption tool can take back copies someone already has."}},{"@type":"Question","name":"Does everyone in the team need to pay for Clavis?","acceptedAnswer":{"@type":"Answer","text":"No. Only the person who creates the team folder and adds members needs Clavis Premium. Joining a team folder, opening files, adding files, saving copies and exporting everything work on the free plan. Editing a file in place with Open needs Clavis Pro."}},{"@type":"Question","name":"Can Google Drive or Dropbox see what's in a Clavis team folder?","acceptedAnswer":{"@type":"Answer","text":"They see encrypted files with random names, so not the contents or file names. They can see the folder's structure: subfolder names, file sizes and dates, the team name and the member list with public Clavis IDs."}},{"@type":"Question","name":"What happens if two people edit the same encrypted file at the same time?","acceptedAnswer":{"@type":"Answer","text":"Clavis keeps both versions. When you save a file that someone else saved while you had it open, your version becomes a second copy, and both show as Conflict copy so you can compare them and delete the one you don't need."}},{"@type":"Question","name":"What if the owner loses their Clavis ID or leaves the company?","acceptedAnswer":{"@type":"Answer","text":"Add a second owner when you create the team folder (a team can have up to 3), so someone can still add and remove members. If everyone loses their Clavis ID, with no recovery key and no vault backup, the files can't be opened: there's no master key."}}]}</script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./" aria-label="Clavis home"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+      <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h14M3 14h14"/></svg>
+      </button>
+      <nav class="nav-links" aria-label="Main">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="security.html">Security</a>
+        <a href="blog.html" aria-current="page">Blog</a>
+        <a href="help.html">Help</a>
+        <a href="pricing.html">Pricing</a>
+        <a class="btn btn-primary" href="download.html">Download</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="block">
+      <div class="wrap post">
+        <p class="post-meta"><a href="blog.html">Blog</a> · Use case · October 22, 2026</p>
+        <h1>How to share encrypted files with your team in OneDrive, Google Drive or Dropbox (no shared password)</h1>
+
+        <p>A family keeps passports, insurance papers and the house documents in one shared folder. A small office keeps contracts, payroll and client files in another. The folder lives in OneDrive, Google Drive, Dropbox or on a network drive, and everyone can open it. The usual way to keep it private is a password-protected zip or vault, with one password that the whole group shares, and that password ends up in a chat, on a sticky note, or with someone who left last year. Since version 3.15, <a href="./">Clavis Encrypt</a> has <strong>team folders</strong>: one encrypted folder that several people open, each with their own key.</p>
+
+        <div class="callout"><b>Short answer:</b> to share encrypted files with a team in OneDrive, Google Drive, Dropbox or a shared network drive without a shared password, make the folder a Clavis Encrypt team folder. The owner opens <b>Sharing → Team folders</b>, presses <b>Create a team folder…</b>, picks the folder and adds each person's Clavis ID with <b>Add members…</b>, checking the fingerprint they read out; then shares the folder in the cloud service as usual. Each member chooses <b>Join a team folder…</b> and opens files with their own vault. The cloud only ever stores encrypted files with random names, there's no Clavis server or account, and removing someone locks them out of new and changed files. Creating a team folder is part of Clavis Premium; joining, opening and adding files is free.</div>
+
+        <h2>What you need</h2>
+        <ul>
+          <li><strong>Clavis Encrypt 3.15 or later</strong> on each person's PC, from the <a href="download.html">download page</a>. Every person has their own vault and Clavis ID (a public key with a short fingerprint); the Clavis ID is free.</li>
+          <li><strong>A folder everyone can reach:</strong> a shared OneDrive, Google Drive or Dropbox folder, or a shared network drive.</li>
+          <li><strong>Clavis Premium for the owner</strong>, to create the team folder and add members. One licence owns up to 3 team folders, and a team can have up to 10 members and 3 owners. Members can join, open files, add files and save copies on the free plan; editing a file in place needs Clavis Pro (<a href="pricing.html">plans</a>).</li>
+        </ul>
+
+        <h2>Create the team folder (owner)</h2>
+        <ol>
+          <li>Open <strong>Sharing</strong> in the Clavis sidebar and choose the <strong>Team folders</strong> tab.</li>
+          <li>Press <strong>Create a team folder…</strong>, choose the folder in OneDrive, Google Drive, Dropbox or on the network drive, and give the team a name. Anyone who can see the folder can see that name, so keep it general.</li>
+          <li>If the folder already holds files, Clavis offers to encrypt them for the team. Your cloud service may still keep the earlier, unencrypted versions in its version history or recycle bin: delete them there if they matter.</li>
+          <li>Press <strong>Add members…</strong> and add each person from your contacts, the clipboard or their <code>.clavisid</code> file. Ask them to read their fingerprint to you on a call or in person, and add them only if it matches.</li>
+          <li>Share the folder with them in OneDrive, Google Drive or Dropbox (or give them access to the network folder). Clavis can't do this part for you.</li>
+          <li>Make a second person an owner. If you ever lose your Clavis ID, another owner can still add and remove members.</li>
+        </ol>
+
+        <h2>Join the team folder (member, free)</h2>
+        <ol>
+          <li>Once the folder is shared with you and has synced, open <strong>Sharing → Team folders → Join a team folder…</strong> and pick it.</li>
+          <li>Clavis shows the owner who added you and their fingerprint. Ask them to read it to you, and join only if it matches.</li>
+          <li>Not added yet? Clavis shows your own fingerprint and a <strong>Copy my ID</strong> button: send your ID to the owner.</li>
+        </ol>
+
+        <h2>Working in the folder</h2>
+        <ul>
+          <li><strong>Add files…</strong> (or drag files onto the window) puts encrypted copies into the team folder. Your originals stay where they were.</li>
+          <li><strong>Open</strong> (Clavis Pro) opens a file in its usual program, such as Word or Excel. When you save, Clavis saves it back for the team, signed by you. If someone else saved the same file while you had it open, both versions are kept and show as <strong>Conflict copy</strong>: compare them and delete the one you don't need.</li>
+          <li><strong>Save a copy…</strong> and <strong>More → Export everything…</strong> save decrypted copies outside the team folder. <strong>Decrypt</strong> never works inside a team folder, because it would upload the readable original to everyone.</li>
+          <li>Files your cloud hasn't downloaded yet show as <strong>Not downloaded yet</strong>; opening one downloads it first.</li>
+          <li>Every file is signed by whoever saved it last, and the list shows who that was. A file that fails the signature check shows as <strong>Can't open</strong>.</li>
+        </ul>
+
+        <h2>When someone leaves</h2>
+        <p>An owner opens <strong>Members</strong>, chooses the person and presses <strong>Remove…</strong>. From then on, new and changed files are locked with a new team key that person doesn't have. Removing someone can't take back copies they already have: they can still open files they could open before if they kept copies or can still reach the folder. So also remove their access to the folder in OneDrive, Google Drive, Dropbox or on the network drive. Removing people works on every plan.</p>
+
+        <h2>What it can and can't do</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>It can</th><th>It can't</th></tr></thead>
+            <tbody>
+              <tr><td>Let each person open the folder with their own Clavis ID, with no shared password</td><td>Share the folder in your cloud service for you: you do that in OneDrive, Google Drive or Dropbox</td></tr>
+              <tr><td>Keep file contents and file names away from the cloud provider (encrypted files with random names)</td><td>Hide the member list (names and public Clavis IDs), the team name, file sizes, dates or subfolder names from anyone who can see the folder</td></tr>
+              <tr><td>Lock removed people out of new and changed files</td><td>Take back copies someone already has, or stop new members opening older files (they can open every file in the folder)</td></tr>
+              <tr><td>Show who last saved each file, and flag files that fail the signature check</td><td>Recover the files if everyone loses their Clavis ID (no recovery key, no vault backup): there's no master key</td></tr>
+              <tr><td>Keep both versions when two people save the same file at once</td><td>Merge the two versions for you</td></tr>
+              <tr><td>Work with any synced folder or network drive, with no Clavis server or account</td><td>Open team files from the command line or the open-source decryptor yet (use <strong>Export everything</strong> in Clavis)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Like the rest of Clavis, team folders haven't had an independent security audit yet. The <a href="security.html">Security page</a> describes how Clavis IDs, signatures and file keys work.</p>
+
+        <h2>How it compares with what teams use today</h2>
+        <p>Most groups that want a private shared folder use one of these. Facts about other products come from their own pages, listed under Sources; descriptions of their features are the vendors' own.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Approach</th><th>How people get in</th><th>When someone leaves</th><th>Good to know</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Password-protected 7z or ZIP</strong> (for example 7-Zip, which offers AES-256 in both formats)</td><td>One password the whole group knows</td><td>Make a new archive with a new password and send it to everyone else; old copies still open with the old one</td><td>Free. Fine for sending a set of files; clumsy for a folder people edit, because every change means unpacking and repacking</td></tr>
+              <tr><td><strong>Cryptomator vault shared with its password</strong></td><td>One vault password, plus the Cryptomator app</td><td>Everyone who knows the password still has it; Cryptomator warns that people can pass the password on</td><td>Cryptomator's own guidance says sharing the vault password "is generally not advised" and recommends Cryptomator Hub for teams</td></tr>
+              <tr><td><strong>Cryptomator Hub</strong></td><td>Each person unlocks with their own account; access is managed in Hub</td><td>Access is removed in Hub, with an audit log (vendor's description)</td><td>A server, hosted by the vendor in the EU or self-hosted; per-seat subscription with a free trial</td></tr>
+              <tr><td><strong>OneDrive Personal Vault</strong></td><td>Only you</td><td>Not applicable</td><td>Not a team option: Microsoft says sharing of files in Personal Vault is blocked; you move a file out to share it</td></tr>
+              <tr><td><strong>Dropbox encrypted team folders</strong></td><td>Team members on the same Dropbox business account</td><td>Managed by team admins</td><td>Dropbox Business Plus, Advanced and Enterprise only; only admins create them; not in the mobile app; no shared links, previews or content search; file metadata stays in plain text</td></tr>
+              <tr><td><strong>Boxcryptor</strong></td><td>Was: each person's own account</td><td>No longer applies</td><td>Discontinued. Dropbox bought key Boxcryptor assets in 2022, and Boxcryptor's site says its operation ended as of December 31, 2025.</td></tr>
+              <tr><td><strong>Clavis Encrypt team folders</strong></td><td>Each person's own Clavis ID, checked by fingerprint</td><td>New and changed files get a new team key; also remove their cloud access</td><td>Any cloud folder or network drive, no server or account. Premium ($29 once) to create; joining is free. Desktop app; not independently audited</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If you send files to one or two people now and then rather than sharing a folder, you don't need a team folder: <a href="blog-share-encrypted-files-without-password.html">encrypt each file for the person</a> with their Clavis ID instead. For files only you use, <a href="blog-encrypt-before-onedrive-google-drive-dropbox.html">encrypt them before they reach the cloud</a>.</p>
+        <p>Full step-by-step help, with every status the window can show: <a href="help-team-folders.html">Share one encrypted folder with your team</a>.</p>
+
+        <h2>Questions</h2>
+        <div class="faq">
+          <details><summary>How do I share encrypted files with my team on OneDrive without sharing a password?</summary><p>Use a tool where each person has their own key. With Clavis Encrypt, the owner turns a shared OneDrive folder into a team folder (Sharing → Team folders → Create a team folder…, Clavis Premium) and adds each person's Clavis ID after checking its fingerprint. Members choose Join a team folder… and open files with their own vault. OneDrive only stores encrypted files with random names.</p></details>
+          <details><summary>Can I share files in OneDrive Personal Vault with someone?</summary><p>No. Microsoft says sharing of files in Personal Vault is blocked; you have to move a file out of Personal Vault to share it. For a folder several people open, you need a separate encryption tool, such as a Clavis Encrypt team folder inside an ordinary shared OneDrive folder.</p></details>
+          <details><summary>What can I use instead of Boxcryptor for a shared team folder?</summary><p>Boxcryptor has been discontinued. Options today include Cryptomator Hub (a per-seat subscription with a vendor-hosted or self-hosted server), Dropbox's encrypted team folders on its Business Plus, Advanced and Enterprise plans, and Clavis Encrypt team folders, which work in OneDrive, Google Drive, Dropbox or a network drive with no server and no account, each person using their own Clavis ID.</p></details>
+          <details><summary>Can I share a Cryptomator vault with other people?</summary><p>You can share the vault folder in your cloud service and give people the vault password, but Cryptomator's own best-practice guide says sharing the vault password is generally not advised and recommends Cryptomator Hub for teams, which adds access management so people unlock with their own account.</p></details>
+          <details><summary>If I remove someone from a shared encrypted folder, can they still open the files?</summary><p>In a Clavis team folder, a removed person can't open new or changed files, because those use a new team key. They can still open files they could open before if they kept copies or can still reach the folder, so also remove their access in OneDrive, Google Drive or Dropbox. No encryption tool can take back copies someone already has.</p></details>
+          <details><summary>Does everyone in the team need to pay for Clavis?</summary><p>No. Only the person who creates the team folder and adds members needs Clavis Premium. Joining a team folder, opening files, adding files, saving copies and exporting everything work on the free plan. Editing a file in place with Open needs Clavis Pro.</p></details>
+          <details><summary>Can Google Drive or Dropbox see what's in a Clavis team folder?</summary><p>They see encrypted files with random names, so not the contents or file names. They can see the folder's structure: subfolder names, file sizes and dates, the team name and the member list with public Clavis IDs.</p></details>
+          <details><summary>What happens if two people edit the same encrypted file at the same time?</summary><p>Clavis keeps both versions. When you save a file that someone else saved while you had it open, your version becomes a second copy, and both show as Conflict copy so you can compare them and delete the one you don't need.</p></details>
+          <details><summary>What if the owner loses their Clavis ID or leaves the company?</summary><p>Add a second owner when you create the team folder (a team can have up to 3), so someone can still add and remove members. If everyone loses their Clavis ID, with no recovery key and no vault backup, the files can't be opened: there's no master key.</p></details>
+        </div>
+
+        <h2>Sources</h2>
+        <ul class="sources">
+          <li><a href="https://www.7-zip.org/" rel="noopener">7-Zip: AES-256 encryption in 7z and ZIP formats</a></li>
+          <li><a href="https://docs.cryptomator.org/security/best-practices/" rel="noopener">Cryptomator documentation: Best practices (sharing the vault password is generally not advised; Hub recommended for teams)</a></li>
+          <li><a href="https://cryptomator.org/for-teams/" rel="noopener">Cryptomator Hub for teams (managed or self-hosted, per-seat pricing)</a></li>
+          <li><a href="https://support.microsoft.com/en-us/office/protect-your-onedrive-files-in-personal-vault-6540ef37-e9bf-4121-a773-56f98dce78c4" rel="noopener">Microsoft Support: Protect your OneDrive files in Personal Vault (sharing is blocked)</a></li>
+          <li><a href="https://help.dropbox.com/security/encrypted-team-folders" rel="noopener">Dropbox Help: Encrypted team folders, an overview (plans, admins, limits)</a></li>
+          <li><a href="https://www.boxcryptor.com/" rel="noopener">Boxcryptor: operation discontinued as of December 31, 2025</a></li>
+          <li><a href="https://blog.dropbox.com/topics/company/dropbox-to-acquire-boxcryptor-assets-bring-end-to-end-encryption-to-business-users" rel="noopener">Dropbox blog: Dropbox to acquire Boxcryptor assets (2022)</a></li>
+          <li><a href="https://clavisenc.com/help-team-folders.html" rel="noopener">Clavis Encrypt help: Share one encrypted folder with your team</a></li>
+        </ul>
+
+        <div class="post-cta">
+          <a class="btn btn-primary" href="download.html">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3v10M5.5 8.5 10 13l4.5-4.5M4 17h12"/></svg>
+            Try Clavis Encrypt — free, joining a team folder too
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="brand" href="./"><img src="assets/img/icon-64.png" alt=""><span>Clavis<em class="brand-sub">Encrypt</em></span></a>
+          <p class="latin">clāvis — Latin, “key”</p>
+          <p class="foot-line">File encryption that stays on your PC. No account, no cloud.</p>
+          <a class="btn btn-primary foot-cta" href="download.html">Download free</a>
+        </div>
+        <nav aria-label="Product"><b>Product</b><a href="./">Home</a><a href="download.html">Download</a><a href="pricing.html">Pricing</a><a href="security.html">Security</a></nav>
+        <nav aria-label="Learn"><b>Learn</b><a href="help.html">Help</a><a href="blog.html">Blog</a><a href="help-install.html">Install guide</a><a href="help-recovery-key.html">Recovery key</a></nav>
+        <nav aria-label="Clavis"><b>Clavis</b><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@clavisenc.com">Contact</a></nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Clavis Encryption</span><a href="mailto:hello@clavisenc.com">hello@clavisenc.com</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js?v=e725794481" defer></script>
+</body>
+</html>

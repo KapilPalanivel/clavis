@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://clavisenc.com/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://clavisenc.com/</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/about.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://clavisenc.com/blog-aes-256-gcm-argon2id-explained.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://clavisenc.com/blog-bitlocker-vs-device-encryption-windows-11-home.html</loc><lastmod>2026-10-19</lastmod></url>
@@ -9,7 +9,7 @@
   <url><loc>https://clavisenc.com/blog-clavis-free-vs-pro-vs-premium.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://clavisenc.com/blog-clavis-vs-cryptomator-axcrypt-bitlocker.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://clavisenc.com/blog-clinics-protect-patient-records-dpdp.html</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://clavisenc.com/blog-encrypt-before-onedrive-google-drive-dropbox.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/blog-encrypt-files-before-emailing.html</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://clavisenc.com/blog-encrypt-files-command-line-windows.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://clavisenc.com/blog-encrypt-files-windows-10.html</loc><lastmod>2026-10-18</lastmod></url>
@@ -30,12 +30,13 @@
   <url><loc>https://clavisenc.com/blog-password-protect-pdf-windows.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://clavisenc.com/blog-post-quantum-recovery-key.html</loc><lastmod>2026-10-10</lastmod></url>
   <url><loc>https://clavisenc.com/blog-protect-files-before-laptop-repair.html</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://clavisenc.com/blog-share-encrypted-files-without-password.html</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://clavisenc.com/blog-share-encrypted-files-without-password.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/blog-shred-files-windows-11-what-actually-works.html</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://clavisenc.com/blog-small-business-protect-employee-salary-data.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://clavisenc.com/blog-small-business-protect-employee-salary-data.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/blog-students-protect-thesis-project-files.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://clavisenc.com/blog-veracrypt-alternative.html</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://clavisenc.com/blog.html</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://clavisenc.com/blog.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/download.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://clavisenc.com/format.html</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://clavisenc.com/help-activity.html</loc><lastmod>2026-10-18</lastmod></url>
@@ -67,7 +68,7 @@
   <url><loc>https://clavisenc.com/help-watch-folders.html</loc><lastmod>2026-10-18</lastmod></url>
   <url><loc>https://clavisenc.com/help.html</loc><lastmod>2026-10-19</lastmod></url>
   <url><loc>https://clavisenc.com/open.html</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://clavisenc.com/pricing.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://clavisenc.com/pricing.html</loc><lastmod>2026-10-22</lastmod></url>
   <url><loc>https://clavisenc.com/privacy.html</loc><lastmod>2026-10-20</lastmod></url>
   <url><loc>https://clavisenc.com/security.html</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://clavisenc.com/terms.html</loc><lastmod>2026-10-10</lastmod></url>

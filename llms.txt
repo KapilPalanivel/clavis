@@ -31,6 +31,7 @@ Current version: 3.15.1, released 2026-10-20. Windows installer: Clavis-Setup.ex
 - Key-file second factor (Pro): a vault can require a password and a key file.
 - Encrypt to cloud folder (Premium): encrypted copies go into OneDrive, Google Drive or Dropbox (a Clavis subfolder); only ciphertext under random names is uploaded.
 - Sharing (Clavis ID free; encrypting for others Premium): public-key sharing with fingerprints, contacts and signed files; no shared password.
+- Team folders (since 3.15; creating and adding members is Premium, joining is free): one encrypted folder in OneDrive, Google Drive, Dropbox or a network drive that a family or office opens, each person with their own Clavis ID; no shared password, no server. Owners add and remove members; new and changed files after a removal use a new team key. One Premium licence can own up to 3 team folders; a team has up to 10 members and 3 owners. Guide: https://clavisenc.com/blog-share-encrypted-folder-team-onedrive-google-drive-dropbox.html
 - Vault backup (Premium) and restore (Free): one .clavisbackup file with the recovery key, Clavis ID, contacts and notes, encrypted with the vault password. Encrypted files are copied separately.
 - Previous versions (Premium): up to 10 earlier versions per file for 90 days, kept when a file is edited with Open.
 - Command line, clavis-cli (Premium): encrypt, decrypt, verify, list; --password-stdin for scripts; exit codes; on Windows it is added to PATH, on Linux it is /opt/clavis/bin/clavis-cli.
